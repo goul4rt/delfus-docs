@@ -1,0 +1,87 @@
+site_name: Delfus
+site_url: https://docs.delfus.app
+site_description: Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.
+site_author: Delfus
+copyright: © Delfus
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Inter
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Mudar para tema claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Mudar para tema escuro
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/mTjZg95UJV
+      name: Servidor de Suporte
+    - icon: fontawesome/solid/globe
+      link: https://delfus.app
+      name: Site
+    - icon: fontawesome/solid/gauge
+      link: https://admin.delfus.app
+      name: Dashboard
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Início: index.md
+  - Primeiros passos:
+      - Adicionar o bot: comecar/adicionar.md
+      - Configuração inicial: comecar/configuracao.md
+      - Idioma: comecar/idioma.md
+  - Funcionalidades:
+      - Visão geral: funcionalidades/index.md
+      - Moderação e segurança: funcionalidades/moderacao.md
+      - Boas-vindas e cargos: funcionalidades/recepcao.md
+      - VIP e recompensas: funcionalidades/vip.md
+      - Starboard: funcionalidades/starboard.md
+      - Análise e insights: funcionalidades/analise.md
+  - Suporte: suporte.md
