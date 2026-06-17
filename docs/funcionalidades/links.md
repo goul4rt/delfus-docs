@@ -2,6 +2,10 @@
 
 Transforma URLs longas em links curtos (`delfus.app/s/CODIGO`) com estatísticas de cliques detalhadas. Cada link pode ser vinculado ao seu servidor, ter senha, data de expiração, limite de cliques e até uma página de destino personalizada — tudo gerenciado pelo painel.
 
+![Encurtador de links no painel do Delfus](../assets/dashboard/links.png){ .dx-shot loading=lazy }
+
+*Encurtador de links no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O encurtador é gerenciado inteiramente pelo painel web (não há comando de Discord). O fluxo é:

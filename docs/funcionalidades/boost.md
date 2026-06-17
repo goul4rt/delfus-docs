@@ -2,6 +2,10 @@
 
 Reage automaticamente quando alguém impulsiona (boost) o seu servidor: envia uma mensagem de agradecimento personalizada e, opcionalmente, concede um plano VIP ao membro que impulsionou. Também pode enviar uma mensagem quando alguém deixa de impulsionar.
 
+![Recompensas de boost no painel do Delfus](../assets/dashboard/boost.png){ .dx-shot loading=lazy }
+
+*Recompensas de boost no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O bot fica de olho nos boosts do servidor em tempo real. Quando o Discord avisa que um membro começou (ou parou) de impulsionar, o seguinte acontece:

@@ -2,6 +2,10 @@
 
 Salve uma cópia completa da estrutura do seu servidor — cargos, canais, categorias, permissões e configurações — para poder restaurá-la depois caso algo dê errado (uma reformulação que não deu certo, um ataque que apagou canais, etc.).
 
+![Backups do servidor no painel do Delfus](../assets/dashboard/backup.png){ .dx-shot loading=lazy }
+
+*Backups do servidor no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O backup captura uma "foto" da estrutura do servidor em um determinado momento. Cada backup guarda:

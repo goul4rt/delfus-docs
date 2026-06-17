@@ -5,6 +5,10 @@ ativa módulos, escolhe canais e cargos, e ajusta tudo visualmente.
 
 [Abrir o Dashboard](https://admin.delfus.app){ .md-button .md-button--primary }
 
+![Visão geral do Dashboard do Delfus](../assets/dashboard/overview.png){ .dx-shot loading=lazy }
+
+*Visão geral do [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 1. Acesse o [Dashboard](https://admin.delfus.app) e faça login com o Discord.

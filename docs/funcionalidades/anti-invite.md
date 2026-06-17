@@ -2,6 +2,10 @@
 
 O Anti-invite remove automaticamente mensagens com convites de outros servidores do Discord (links `discord.gg` / `discord.com/invite`) e pode punir quem os envia, mantendo a divulgação de outras comunidades fora do seu servidor.
 
+![Configuração do anti-invite no painel do Delfus](../assets/dashboard/anti-invite.png){ .dx-shot loading=lazy }
+
+*Configuração do anti-invite no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O módulo analisa cada mensagem enviada por membros (mensagens de bots são ignoradas) nos servidores em que está ativado. O fluxo é:

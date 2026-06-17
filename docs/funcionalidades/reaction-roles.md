@@ -2,6 +2,10 @@
 
 Permite que os membros peguem (e devolvam) cargos sozinhos, clicando em botões de um painel que você publica em um canal. Ideal para cargos de notificação, cores, regiões, interesses e acesso a áreas do servidor — sem precisar de moderador.
 
+![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.png){ .dx-shot loading=lazy }
+
+*Cargos por reação no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O sistema é baseado em **painéis**: cada painel é uma mensagem que o bot publica em um canal do seu servidor, com um texto/embed e um ou mais **botões**, em que cada botão está ligado a um cargo.

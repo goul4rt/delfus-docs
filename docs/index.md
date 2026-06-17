@@ -6,6 +6,8 @@ hide:
 
 <div class="dx-hero" markdown>
 
+![](assets/mascote.png){ .dx-hero__mascot }
+
 ![Delfus](assets/logo.png){ .dx-hero__logo }
 
 # Delfus

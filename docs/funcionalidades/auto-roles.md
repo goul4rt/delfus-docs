@@ -2,6 +2,10 @@
 
 Atribui cargos automaticamente a novos membros e bots assim que eles entram no servidor, sem precisar de nenhuma ação manual da equipe.
 
+![Cargos automáticos no painel do Delfus](../assets/dashboard/auto-roles.png){ .dx-shot loading=lazy }
+
+*Cargos automáticos no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 Sempre que alguém (ou um bot) entra no servidor, o Delfus cuida da atribuição de cargos sozinho:

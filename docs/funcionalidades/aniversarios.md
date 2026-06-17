@@ -2,6 +2,10 @@
 
 Permite que os membros registrem a data de aniversário e o bot os parabenize automaticamente no canal escolhido, no dia certo, opcionalmente entregando um cargo temporário de aniversariante.
 
+![Configuração de aniversários no painel do Delfus](../assets/dashboard/aniversarios.png){ .dx-shot loading=lazy }
+
+*Configuração de aniversários no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 A funcionalidade combina o registro feito pelos próprios membros com um anúncio automático diário.

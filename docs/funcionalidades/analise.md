@@ -2,6 +2,10 @@
 
 O Delfus coleta automaticamente dados de atividade do seu servidor — mensagens, entradas e saídas de membros, uso de voz e emojis — e transforma tudo em gráficos e rankings que você consulta tanto no Discord quanto no painel web.
 
+![Insights do servidor no painel do Delfus](../assets/dashboard/analise.png){ .dx-shot loading=lazy }
+
+*Insights do servidor no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O bot está sempre observando a atividade do servidor em segundo plano e acumulando contagens para montar as estatísticas. O fluxo é o seguinte:

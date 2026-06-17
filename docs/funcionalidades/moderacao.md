@@ -2,6 +2,10 @@
 
 O Delfus oferece um sistema completo de moderação para o seu servidor: advertências (warns) com gatilhos automáticos, silenciamento, expulsão e banimento — tudo registrado em um histórico permanente, com notificação opcional ao usuário punido e ao canal de logs da staff.
 
+![Configuração de moderação no painel do Delfus](../assets/dashboard/moderacao.png){ .dx-shot loading=lazy }
+
+*Configuração de moderação no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 Toda punição parte de um comando da staff e segue um fluxo padronizado:

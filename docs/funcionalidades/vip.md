@@ -2,6 +2,10 @@
 
 O sistema VIP do Delfus permite que você crie níveis de assinatura (tiers) com benefícios automáticos — cargos, bônus de XP, mais entradas em sorteios, bônus diário extra e slots de família — e os distribua aos membros por código de resgate ou concessão manual, com expiração e renovação cuidadas pelo bot.
 
+![Planos VIP no painel do Delfus](../assets/dashboard/vip.png){ .dx-shot loading=lazy }
+
+*Planos VIP no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O VIP é montado em três peças: **recompensas**, **tiers** e **códigos**. Você cria recompensas (ex.: "Cargo Diamante", "XP 2x"), agrupa elas num tier (nível VIP) e então entrega esse tier aos membros.

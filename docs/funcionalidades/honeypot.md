@@ -2,6 +2,10 @@
 
 O Honeypot cria um "canal armadilha": qualquer membro que enviar mensagem nele é automaticamente punido e a equipe recebe um alerta. É uma forma simples de capturar spammers e contas maliciosas, que costumam disparar mensagens em todos os canais ao entrar no servidor.
 
+![Configuração do honeypot no painel do Delfus](../assets/dashboard/honeypot.png){ .dx-shot loading=lazy }
+
+*Configuração do honeypot no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 A ideia é deixar um canal visível mas onde ninguém legítimo deveria escrever (por exemplo, um canal chamado "nao-escreva-aqui" no topo da lista). Bots de spam normalmente escrevem em tudo, então caem na armadilha.

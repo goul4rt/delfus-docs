@@ -2,6 +2,10 @@
 
 O Anti-raid detecta e barra ataques coordenados de divulgação de golpes (scams) por imagem no seu servidor — aqueles posts em massa de "sorteio do MrBeast", "código promocional de crypto" e afins. Quando identifica um ataque, ele apaga a mensagem, pune o autor e avisa a sua moderação, tudo automaticamente.
 
+![Configuração do anti-raid no painel do Delfus](../assets/dashboard/anti-raid.png){ .dx-shot loading=lazy }
+
+*Configuração do anti-raid no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 O módulo entra em ação sempre que alguém envia uma **mensagem com imagem** em um servidor onde o Anti-raid está configurado. A partir daí ele combina várias camadas de checagem:

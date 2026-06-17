@@ -2,6 +2,10 @@
 
 O Delfus pode dar boas-vindas automáticas a quem entra no servidor e anunciar quando alguém sai, com mensagens personalizadas em texto, embed ou cartão de imagem. Também envia uma mensagem privada (DM) de boas-vindas, se você quiser.
 
+![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.png){ .dx-shot loading=lazy }
+
+*Configuração de boas-vindas no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+
 ## Como funciona
 
 Tudo acontece automaticamente, com base no que você configurar. São três tipos de mensagem, cada um ativado de forma independente:
