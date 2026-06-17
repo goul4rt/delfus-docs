@@ -79,9 +79,29 @@ nav:
       - Idioma: comecar/idioma.md
   - Funcionalidades:
       - Visão geral: funcionalidades/index.md
-      - Moderação e segurança: funcionalidades/moderacao.md
-      - Boas-vindas e cargos: funcionalidades/recepcao.md
-      - VIP e recompensas: funcionalidades/vip.md
-      - Starboard: funcionalidades/starboard.md
-      - Análise e insights: funcionalidades/analise.md
+      - Segurança:
+          - Moderação e punições: funcionalidades/moderacao.md
+          - Anti-raid: funcionalidades/anti-raid.md
+          - Anti-invite: funcionalidades/anti-invite.md
+          - Honeypot: funcionalidades/honeypot.md
+          - Backups: funcionalidades/backup.md
+      - Recepção e cargos:
+          - Boas-vindas e despedida: funcionalidades/recepcao.md
+          - Cargos automáticos: funcionalidades/auto-roles.md
+          - Cargos por reação: funcionalidades/reaction-roles.md
+      - Monetização:
+          - VIP, assinaturas e recompensas: funcionalidades/vip.md
+          - Recompensas de boost: funcionalidades/boost.md
+      - Engajamento:
+          - Starboard: funcionalidades/starboard.md
+          - Aniversários: funcionalidades/aniversarios.md
+          - Famílias: funcionalidades/familia.md
+          - Correio: funcionalidades/correio.md
+          - Automações de canal: funcionalidades/automacoes.md
+      - Análise:
+          - Análise e insights: funcionalidades/analise.md
+      - Utilidades:
+          - Encurtador de links: funcionalidades/links.md
+          - Download de vídeos: funcionalidades/video.md
+          - Oráculo: funcionalidades/oraculo.md
   - Suporte: suporte.md
