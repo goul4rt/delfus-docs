@@ -29,6 +29,89 @@
 }
 
 /* ============================================================
+   Header + barra de anúncio + tabs
+   ============================================================ */
+.md-header {
+  background: linear-gradient(90deg, #7c3aed 0%, #9333ea 55%, #a855f7 100%);
+  box-shadow: 0 2px 18px rgba(124, 58, 237, 0.4);
+}
+.md-tabs {
+  background: linear-gradient(90deg, #7c3aed 0%, #9333ea 55%, #a855f7 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.md-header__topic .md-ellipsis {
+  font-size: 1.05rem;
+}
+/* logo do header levemente destacado */
+.md-header__button.md-logo img {
+  height: 1.5rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+/* Tab ativa com destaque */
+.md-tabs__link {
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+}
+.md-tabs__item--active {
+  border-bottom: 2px solid #fff;
+}
+
+/* Barra de anúncio */
+.md-announce {
+  background: #0f0e1e;
+}
+.dx-announce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding: 0.55rem 1rem;
+  font-size: 0.72rem;
+  color: #e7e3f7;
+}
+.dx-announce__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  animation: dx-pulse 2s infinite;
+}
+.dx-announce strong {
+  color: #fff;
+}
+.dx-announce__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--dx-grad);
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.dx-announce__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(147, 51, 234, 0.5);
+}
+@keyframes dx-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/* ============================================================
    Tipografia
    ============================================================ */
 .md-typeset h1,
