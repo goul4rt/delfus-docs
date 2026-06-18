@@ -345,7 +345,7 @@
   transition: border-color .15s ease, background .15s ease;
 }
 .dxh-search:hover { border-color: var(--dx-violet); background: rgba(255, 255, 255, .08); }
-.dxh-search__icon { width: 15px; height: 15px; border: 1.8px solid #8b8398; border-radius: 50%; flex: none; }
+.dxh-search__icon { display: inline-flex; align-items: center; color: #8b8398; flex: none; }
 .dxh-search__ph { color: #857e96; font-size: .85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .dxh-kbd {
   margin-left: auto; font-family: "Space Mono", monospace; font-size: .72rem; color: #857e96;
@@ -413,7 +413,8 @@
 .dxh-cat:hover { border-color: var(--dx-violet); transform: translateY(-3px); background: rgba(255, 255, 255, .03); }
 .dxh-cat__ic {
   width: 2.5rem; height: 2.5rem; border-radius: .7rem; background: rgba(139, 92, 246, .16);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
+  color: var(--dx-violet);
 }
 .dxh-cat__t { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 1.05rem; margin-bottom: .35rem; }
 .dxh-cat__d { font-size: .8rem; line-height: 1.5; color: #857e96; margin-bottom: 1rem; }
@@ -428,7 +429,7 @@
 }
 .dxh-list a:last-child { border-bottom: 0; }
 .dxh-list a:hover { background: rgba(255, 255, 255, .025); }
-.dxh-list__arrow { font-family: "Space Mono", monospace; font-size: .8rem; color: #6f6884; }
+.dxh-list__arrow { display: inline-flex; align-items: center; color: #6f6884; flex: none; }
 .dxh-list__t { flex: 1; font-size: .88rem; font-weight: 500; }
 .dxh-list__tag { font-family: "Space Mono", monospace; font-size: .68rem; color: #6f6884; }
 .dxh-support {
