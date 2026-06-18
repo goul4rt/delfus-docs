@@ -61,7 +61,8 @@ plugins:
   - search
   - social:
       cards_layout_options:
-        background_color: "#15132b"
+        background_image: docs/assets/og-bg.png
+        background_color: transparent
         color: "#ECE9F1"
   - glightbox:
       touchNavigation: true
