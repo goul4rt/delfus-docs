@@ -1116,7 +1116,7 @@
   <a href="#para-os-membros-vip" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Para os membros — /vip
+        Para os membros: /vip
       
     </span>
   </a>
@@ -1127,7 +1127,7 @@
   <a href="#para-administradores-vip-admin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Para administradores — /vip-admin
+        Para administradores: /vip-admin
       
     </span>
   </a>
@@ -1773,7 +1773,7 @@
   <a href="#para-os-membros-vip" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Para os membros — /vip
+        Para os membros: /vip
       
     </span>
   </a>
@@ -1784,7 +1784,7 @@
   <a href="#para-administradores-vip-admin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Para administradores — /vip-admin
+        Para administradores: /vip-admin
       
     </span>
   </a>
@@ -1847,44 +1847,44 @@
 
 
 <h1 id="vip-assinaturas-e-recompensas">VIP, assinaturas e recompensas<a class="headerlink" href="#vip-assinaturas-e-recompensas" title="Permanent link">¶</a></h1>
-<p>Quer recompensar seus apoiadores ou montar planos de assinatura sem ficar entregando cargo na mão? O VIP do Delfus faz isso por você: você define os benefícios, e o bot ativa, controla o prazo, avisa o membro antes de acabar e remove tudo na hora certa — sem trabalho manual repetido.</p>
+<p>Defina os benefícios uma vez e o Delfus cuida do resto: ativa o VIP, controla o prazo, avisa o membro antes de acabar e remove tudo na hora certa, sem trabalho manual.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/vip.png" data-desc-position="bottom"><img alt="Planos VIP no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/vip.png"></a></p>
 <p><em>Planos VIP no <a href="https://admin.delfus.app">Dashboard</a> — exemplo com dados de demonstração.</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>Pense no VIP como três peças que se encaixam nesta ordem: <strong>benefícios → níveis → entrega</strong>.</p>
+<p>O VIP tem três peças, nesta ordem: benefícios, níveis e entrega.</p>
 <ol>
-<li><strong>Benefícios (recompensas)</strong> — as vantagens individuais: um cargo, XP em dobro, mais chances em sorteios, bônus no <code>/daily</code> ou um slot de família.</li>
-<li><strong>Níveis (tiers)</strong> — você junta vários benefícios num pacote, tipo "Ouro" ou "Diamante", e dá uma prioridade (quanto maior o número, mais alto o nível).</li>
-<li><strong>Entrega</strong> — você passa o nível pro membro de duas formas: gerando um <strong>código</strong> que ele resgata, ou <strong>concedendo direto</strong> pra alguém.</li>
+<li><strong>Benefícios (recompensas)</strong>: as vantagens individuais. Um cargo, XP em dobro, mais chances em sorteios, bônus no <code>/daily</code> ou um slot de família.</li>
+<li><strong>Níveis (tiers)</strong>: você junta vários benefícios num pacote, tipo "Ouro" ou "Diamante", e dá uma prioridade. Quanto maior o número, mais alto o nível.</li>
+<li><strong>Entrega</strong>: você passa o nível pro membro de duas formas. Gerando um código que ele resgata, ou concedendo direto pra alguém.</li>
 </ol>
-<p>Daí pra frente o Delfus assume: aplica os benefícios na hora, marca quando expira, avisa o membro antes do prazo, remove tudo quando acaba e ainda devolve sozinho cargos VIP que sumiram.</p>
+<p>A partir daí o Delfus assume. Aplica os benefícios na hora, marca quando expira, avisa o membro antes do prazo, remove tudo quando acaba e devolve sozinho cargos VIP que sumiram.</p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Você cria um cargo "VIP Ouro" e um bônus de XP em dobro. Junta os dois num nível "Ouro". Gera um código e vende. O membro digita <code>/vip resgatar</code>, o código é validado e — pronto — ele já está com o cargo e ganhando XP dobrado. Daqui a 30 dias o bot tira tudo automaticamente, depois de avisar ele antes.</p>
+<p>Você cria um cargo "VIP Ouro" e um bônus de XP em dobro. Junta os dois num nível "Ouro". Gera um código e vende. O membro digita <code>/vip resgatar</code>, o código é validado e ele já fica com o cargo e ganhando XP dobrado. Daqui a 30 dias o bot tira tudo automaticamente, depois de avisá-lo antes.</p>
 </div>
 <h3 id="os-tipos-de-beneficio">Os tipos de benefício<a class="headerlink" href="#os-tipos-de-beneficio" title="Permanent link">¶</a></h3>
 <p>Cada recompensa é de um tipo:</p>
 <ul>
-<li><strong>Cargo</strong> — dá um cargo automático ao membro VIP (e tira quando expira).</li>
-<li><strong>Multiplicador de XP</strong> — multiplica o XP que ele ganha (de 1x a 5x).</li>
-<li><strong>Sorteios</strong> — mais entradas nos sorteios (de 1 a 10 chances).</li>
-<li><strong>Bônus diário</strong> — moedas extras no <code>/daily</code>, fixas ("+50") ou em percentual ("+25%").</li>
-<li><strong>Família</strong> — libera um slot pro membro criar uma família com cargo próprio (com <code>/familia criar</code>).</li>
+<li><strong>Cargo</strong>: dá um cargo automático ao membro VIP e tira quando expira.</li>
+<li><strong>Multiplicador de XP</strong>: multiplica o XP que ele ganha, de 1x a 5x.</li>
+<li><strong>Sorteios</strong>: mais entradas nos sorteios, de 1 a 10 chances.</li>
+<li><strong>Bônus diário</strong>: moedas extras no <code>/daily</code>, fixas ("+50") ou em percentual ("+25%").</li>
+<li><strong>Família</strong>: libera um slot pro membro criar uma família com cargo próprio, via <code>/familia criar</code>.</li>
 </ul>
 <h3 id="o-que-acontece-nos-bastidores">O que acontece nos bastidores<a class="headerlink" href="#o-que-acontece-nos-bastidores" title="Permanent link">¶</a></h3>
-<p>Você não precisa se preocupar com nada disso, mas é bom saber que o bot:</p>
+<p>Você não precisa se preocupar com isso, mas é bom saber que o bot:</p>
 <ul>
 <li><strong>Calcula a expiração</strong> e cria a assinatura quando o VIP é ativado.</li>
-<li><strong>Avisa de hora em hora</strong> quem está perto de perder o VIP (por padrão, 3 dias antes).</li>
+<li><strong>Avisa de hora em hora</strong> quem está perto de perder o VIP. Por padrão, 3 dias antes.</li>
 <li><strong>Expira sozinho</strong>: tira os cargos, para os bônus e congela famílias vinculadas àquele VIP.</li>
 <li><strong>Conserta cargos a cada 6 horas</strong>: devolve cargo VIP que alguém tirou na mão e remove cargo que sobrou.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Já tem VIP e ganha outro?</p>
-<p>Se o novo nível for <strong>mais alto</strong>, o bot faz upgrade (troca o nível). Se for <strong>igual ou menor</strong>, ele <strong>soma os dias</strong> ao VIP atual em vez de recomeçar — ótimo pra quem renovou. Um VIP permanente continua permanente.</p>
+<p>Se o novo nível for mais alto, o bot faz upgrade e troca o nível. Se for igual ou menor, ele soma os dias ao VIP atual em vez de recomeçar, ótimo pra quem renovou. Um VIP permanente continua permanente.</p>
 </div>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<h3 id="para-os-membros-vip">Para os membros — <code>/vip</code><a class="headerlink" href="#para-os-membros-vip" title="Permanent link">¶</a></h3>
+<h3 id="para-os-membros-vip">Para os membros: <code>/vip</code><a class="headerlink" href="#para-os-membros-vip" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -1907,8 +1907,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="para-administradores-vip-admin">Para administradores — <code>/vip-admin</code><a class="headerlink" href="#para-administradores-vip-admin" title="Permanent link">¶</a></h3>
-<p>Restrito a admins. Estão organizados em grupos:</p>
+<h3 id="para-administradores-vip-admin">Para administradores: <code>/vip-admin</code><a class="headerlink" href="#para-administradores-vip-admin" title="Permanent link">¶</a></h3>
+<p>Restrito a admins. Os comandos estão organizados em grupos:</p>
 <table>
 <thead>
 <tr>
@@ -1957,20 +1957,20 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Como escrever a duração</p>
-<p>Aceita <code>30d</code> (dias), <code>2w</code> (semanas), <code>1m</code> (mês = 30 dias) ou só um número (<code>30</code> = 30 dias). Use <code>0</code> para deixar o VIP <strong>permanente</strong> — vale só ao conceder ou criar código.</p>
+<p>Aceita <code>30d</code> (dias), <code>2w</code> (semanas), <code>1m</code> (mês = 30 dias) ou só um número (<code>30</code> = 30 dias). Use <code>0</code> para deixar o VIP permanente. Vale só ao conceder ou criar código.</p>
 </div>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>Dá pra configurar tudo pelos comandos <code>/vip-admin config</code> <strong>ou</strong> pelo <a href="https://admin.delfus.app">Dashboard</a>. Dá no mesmo.</p>
-<p>O caminho mais tranquilo é:</p>
+<p>Configure tudo pelos comandos <code>/vip-admin config</code> ou pelo <a href="https://admin.delfus.app">Dashboard</a>. Dá no mesmo.</p>
+<p>O caminho mais tranquilo:</p>
 <ol>
 <li><strong>Crie os benefícios</strong> primeiro (<code>reward create</code>).</li>
 <li><strong>Monte os níveis</strong> juntando os benefícios e definindo a prioridade (<code>tier create</code>). Cada nível precisa de pelo menos um benefício, e nome e prioridade não podem repetir.</li>
 <li><strong>Distribua</strong>: gere códigos pra vender ou sortear (<code>code create</code>), ou conceda direto (<code>user give</code>).</li>
-<li><strong>Ajuste os avisos</strong> no grupo <code>config</code> — canal de notificações, DMs e quantos dias antes avisar.</li>
+<li><strong>Ajuste os avisos</strong> no grupo <code>config</code>: canal de notificações, DMs e quantos dias antes avisar.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Bom saber</p>
-<p>Cada servidor pode ter até <strong>10 níveis</strong>, <strong>20 benefícios por nível</strong> e <strong>100 códigos ativos</strong>. E um detalhe importante das DMs: se o membro está com as mensagens do servidor fechadas, o aviso não chega — mas o VIP ativa normalmente, sem problema nenhum.</p>
+<p>Cada servidor pode ter até 10 níveis, 20 benefícios por nível e 100 códigos ativos. Detalhe das DMs: se o membro está com as mensagens do servidor fechadas, o aviso não chega, mas o VIP ativa normalmente.</p>
 </div>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
@@ -1979,19 +1979,19 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Recompensar staff ou apoiador na hora</p>
-<p>Sem código nenhum: <code>/vip-admin user give usuario:@membro tier:Diamante duracao:0</code> dá um VIP <strong>permanente</strong> direto. Perfeito pra quem você quer premiar pra sempre.</p>
+<p>Sem código nenhum: <code>/vip-admin user give usuario:@membro tier:Diamante duracao:0</code> dá um VIP permanente direto. Ideal pra quem você quer premiar pra sempre.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Quem renovou ganha mais tempo, não recomeça</p>
-<p>Um membro já tem "Ouro" e compra outro mês? Entregue outro código do mesmo nível. O bot <strong>soma 30 dias</strong> à assinatura atual em vez de zerar o relógio.</p>
+<p>Um membro já tem "Ouro" e compra outro mês? Entregue outro código do mesmo nível. O bot soma 30 dias à assinatura atual em vez de zerar o relógio.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Família com cargo próprio</p>
-<p>Inclua um benefício de <strong>família</strong> num nível. Os assinantes montam a própria família com <code>/familia criar</code>, com cargo e tudo. Se o VIP expirar, a família é congelada automaticamente.</p>
+<p>Inclua um benefício de família num nível. Os assinantes montam a própria família com <code>/familia criar</code>, com cargo e tudo. Se o VIP expirar, a família é congelada automaticamente.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
 <p><strong>Um membro pode usar o mesmo código duas vezes?</strong>
-Não — cada pessoa resgata um código só uma vez. Mas o mesmo código pode ser usado por vários membros, até bater o limite de usos que você definiu.</p>
+Não. Cada pessoa resgata um código só uma vez. Mas o mesmo código pode ser usado por vários membros, até bater o limite de usos que você definiu.</p>
 <p><strong>E se o membro já tem VIP e resgata outro código?</strong>
 Se for de um nível mais alto, vira upgrade. Se for do mesmo nível ou menor, o bot soma os dias ao VIP atual (com a extensão habilitada, que é o padrão).</p>
 <p><strong>Tirei o cargo VIP de alguém na mão. O bot devolve?</strong>
@@ -2000,7 +2000,7 @@ Devolve. A cada 6 horas ele confere e restaura cargos VIP que sumiram. É só es
 Não. O bot bloqueia enquanto houver VIP ativo naquele nível. Espere os VIPs expirarem ou remova-os antes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Códigos podem ter uma <strong>validade própria</strong>, separada da duração do VIP. Use isso em promoções: <code>duracao:30d expira:7d</code> cria um código que dá 30 dias de VIP, mas só pode ser resgatado nos próximos 7 dias. Se você não escolher um código, o bot gera um automático no formato <code>VIP-XXXXXX</code>.</p>
+<p>Códigos podem ter validade própria, separada da duração do VIP. Use isso em promoções: <code>duracao:30d expira:7d</code> cria um código que dá 30 dias de VIP, mas só pode ser resgatado nos próximos 7 dias. Se você não escolher um código, o bot gera um automático no formato <code>VIP-XXXXXX</code>.</p>
 </div>
 
 
@@ -2022,7 +2022,7 @@ Não. O bot bloqueia enquanto houver VIP ativo naquele nível. Espere os VIPs ex
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     

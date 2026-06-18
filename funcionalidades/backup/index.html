@@ -1791,21 +1791,21 @@
 
 
 <h1 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
-<p>Imagine recriar todo o seu servidor — cargos, canais, categorias, permissões e configurações — com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. É exatamente isso que os backups do Delfus fazem: eles tiram uma "foto" da estrutura do seu servidor e guardam pra você restaurar quando precisar.</p>
+<p>Recrie cargos, canais, categorias, permissões e configurações do servidor com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. O Delfus tira uma "foto" da estrutura do servidor e guarda pra você restaurar quando precisar.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/backup.png" data-desc-position="bottom"><img alt="Backups do servidor no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/backup.png"></a></p>
 <p><em>Backups do servidor no <a href="https://admin.delfus.app">Dashboard</a> — exemplo com dados de demonstração.</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>O Delfus salva uma foto completa da <strong>estrutura</strong> do seu servidor: cargos, canais, categorias, permissões e configurações. Mensagens e a lista de membros <strong>não</strong> entram nessa foto — só o esqueleto do servidor.</p>
-<p>Essa foto é compactada pra ocupar pouco espaço, e tudo é gerenciado por um painel simples que abre com <code>/backup</code>.</p>
-<p>Existem três peças que trabalham juntas:</p>
+<p>O Delfus salva uma foto da estrutura do servidor: cargos, canais, categorias, permissões e configurações. Mensagens e a lista de membros não entram. Só o esqueleto.</p>
+<p>Essa foto é compactada pra ocupar pouco espaço. Você gerencia tudo pelo painel que abre com <code>/backup</code>.</p>
+<p>São três peças que trabalham juntas:</p>
 <ul>
-<li><strong>Backup de estrutura</strong> — a foto principal, criada e restaurada pelo painel <code>/backup</code>.</li>
-<li><strong>Backups automáticos</strong> — o bot tira essa foto sozinho, na frequência e horário que você definir.</li>
-<li><strong>Snapshot de cargos por membro</strong> — quando alguém sai, o Delfus guarda os cargos dessa pessoa pra você devolver depois com <code>/restaurar-cargos</code>.</li>
+<li><strong>Backup de estrutura</strong>: a foto principal, criada e restaurada pelo painel <code>/backup</code>.</li>
+<li><strong>Backups automáticos</strong>: o bot tira a foto sozinho, na frequência e horário que você definir.</li>
+<li><strong>Snapshot de cargos por membro</strong>: quando alguém sai, o Delfus guarda os cargos da pessoa pra você devolver depois com <code>/restaurar-cargos</code>.</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Você vai reorganizar todos os canais do servidor. Antes de mexer, roda <code>/backup</code>, clica em <strong>Criar</strong> e dá o nome "antes da reforma". Se a bagunça ficar pior do que estava, é só restaurar essa foto e voltar tudo ao lugar — sem reconfigurar nada na mão.</p>
+<p>Você vai reorganizar todos os canais. Antes de mexer, roda <code>/backup</code>, clica em <strong>Criar</strong> e dá o nome "antes da reforma". Se a bagunça piorar, restaura essa foto e volta tudo ao lugar, sem reconfigurar nada na mão.</p>
 </div>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
 <table>
@@ -1827,50 +1827,49 @@
 </tbody>
 </table>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>A parte do dia a dia — criar, restaurar e deletar backups — acontece no painel <code>/backup</code>, dentro do Discord. <strong>Só o dono do servidor</strong> consegue abrir.</p>
-<p>Já a automação e os limites ficam no <a href="https://admin.delfus.app">Dashboard</a>.</p>
-<p><strong>No painel <code>/backup</code></strong> você tem quatro botões:</p>
+<p>O dia a dia (criar, restaurar e deletar) acontece no painel <code>/backup</code>, dentro do Discord. Só o dono do servidor consegue abrir. A automação e os limites ficam no <a href="https://admin.delfus.app">Dashboard</a>.</p>
+<p>No painel <code>/backup</code> você tem quatro botões:</p>
 <ul>
-<li><strong>Criar</strong> — abre uma janelinha pedindo um nome (opcional). Em segundos o bot tira a foto e mostra um resumo: quantos cargos, canais e categorias foram salvos.</li>
-<li><strong>Listar</strong> — mostra todos os backups, com nome, data e contagens.</li>
-<li><strong>Restaurar</strong> — recria a estrutura a partir de um backup (mais sobre isso abaixo).</li>
-<li><strong>Deletar</strong> — remove um backup, com uma confirmação antes.</li>
+<li><strong>Criar</strong>: abre uma janela pedindo um nome (opcional). Em segundos o bot tira a foto e mostra um resumo: quantos cargos, canais e categorias foram salvos.</li>
+<li><strong>Listar</strong>: mostra todos os backups, com nome, data e contagens.</li>
+<li><strong>Restaurar</strong>: recria a estrutura a partir de um backup (mais sobre isso abaixo).</li>
+<li><strong>Deletar</strong>: remove um backup, com confirmação antes.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Limite de backups</p>
 <p>Cada servidor guarda um número máximo de backups (5 por padrão, de 1 a 10 no Dashboard). Quando você cria um novo acima do limite, o mais antigo some pra abrir espaço.</p>
 </div>
-<p><strong>No Dashboard</strong>, na página "Backups do Servidor", você liga o <strong>Auto-Backup</strong> e escolhe:</p>
+<p>No Dashboard, na página "Backups do Servidor", você liga o <strong>Auto-Backup</strong> e escolhe:</p>
 <ul>
-<li><strong>Frequência</strong> — <em>Diário</em> ou <em>Semanal (domingos)</em>.</li>
-<li><strong>Horário</strong> — a hora do dia em que ele roda. Atenção: o horário é <strong>em UTC</strong>, então some 3 horas do horário de Brasília (06:00 UTC = 03:00 no Brasil).</li>
-<li><strong>Backup de bans</strong> — incluir ou não a lista de banimentos (vem ligado).</li>
-<li><strong>Máximo de backups</strong> — de 1 a 10.</li>
+<li><strong>Frequência</strong>: <em>Diário</em> ou <em>Semanal (domingos)</em>.</li>
+<li><strong>Horário</strong>: a hora do dia em que ele roda. O horário é em UTC, então some 3 horas do horário de Brasília (06:00 UTC = 03:00 no Brasil).</li>
+<li><strong>Backup de bans</strong>: incluir ou não a lista de banimentos (vem ligado).</li>
+<li><strong>Máximo de backups</strong>: de 1 a 10.</li>
 </ul>
-<p>E na página "Backup de Usuários" você controla os snapshots de cargos por membro: liga a captura automática quando alguém sai e define quantas fotos guardar por pessoa (2 por padrão).</p>
+<p>Na página "Backup de Usuários" você controla os snapshots de cargos por membro: liga a captura automática quando alguém sai e define quantas fotos guardar por pessoa (2 por padrão).</p>
 <h3 id="restaurando-um-backup">Restaurando um backup<a class="headerlink" href="#restaurando-um-backup" title="Permanent link">¶</a></h3>
-<p>No botão <strong>Restaurar</strong>, você escolhe a foto e decide o modo:</p>
+<p>No botão <strong>Restaurar</strong>, escolha a foto e o modo:</p>
 <ul>
-<li><strong>Aditivo</strong> (seguro) — recria os cargos e canais <strong>ao lado</strong> do que já existe, sem apagar nada. Roda na hora.</li>
-<li><strong>Destrutivo</strong> — <strong>apaga</strong> os cargos e canais atuais antes de recriar tudo do zero a partir da foto. Como é irreversível, pede uma confirmação extra. Fique tranquilo: o <code>@everyone</code>, cargos de bots/boosters e canais obrigatórios de Comunidade nunca são apagados.</li>
+<li><strong>Aditivo</strong> (seguro): recria cargos e canais ao lado do que já existe, sem apagar nada. Roda na hora.</li>
+<li><strong>Destrutivo</strong>: apaga os cargos e canais atuais antes de recriar tudo do zero a partir da foto. Como é irreversível, pede uma confirmação extra. O <code>@everyone</code>, cargos de bots/boosters e canais obrigatórios de Comunidade nunca são apagados.</li>
 </ul>
 <p>Em backups completos, você ainda escolhe o que recriar: cargos e canais (sempre), configurações do servidor, cargos e apelidos dos membros, e bans.</p>
-<p>A restauração roda em fases, num ritmo controlado pra não esbarrar nos limites do Discord — em servidores grandes, pode levar alguns minutos. Você acompanha por uma barra de progresso e, no fim, recebe um resumo com o que deu certo e o que foi pulado.</p>
+<p>A restauração roda em fases, num ritmo controlado pra não esbarrar nos limites do Discord. Em servidores grandes, pode levar alguns minutos. Você acompanha por uma barra de progresso e, no fim, recebe um resumo com o que deu certo e o que foi pulado.</p>
 <div class="admonition warning">
 <p class="admonition-title">Suba o cargo do bot antes de restaurar</p>
-<p>O Delfus só consegue recriar cargos que estejam <strong>abaixo</strong> do cargo dele. Deixe o cargo do bot bem no topo da hierarquia antes de restaurar — senão os cargos acima dele são pulados e aparecem como "hierarquia" no resumo.</p>
+<p>O Delfus só recria cargos que estejam abaixo do cargo dele. Deixe o cargo do bot bem no topo da hierarquia antes de restaurar. Senão os cargos acima dele são pulados e aparecem como "hierarquia" no resumo.</p>
 </div>
 <h3 id="devolvendo-cargos-a-quem-saiu">Devolvendo cargos a quem saiu<a class="headerlink" href="#devolvendo-cargos-a-quem-saiu" title="Permanent link">¶</a></h3>
-<p>Quando o snapshot automático está ligado, o Delfus guarda os cargos de cada membro no momento em que ele sai. Depois, é só usar <code>/restaurar-cargos</code> apontando a pessoa.</p>
-<p>O bot mostra um preview do que vai acontecer — quais cargos serão adicionados, quais a pessoa já tem e quais não dá pra aplicar (porque foram deletados, são de integrações ou estão acima do bot). Você confere e confirma.</p>
+<p>Com o snapshot automático ligado, o Delfus guarda os cargos de cada membro no momento em que ele sai. Depois, use <code>/restaurar-cargos</code> apontando a pessoa.</p>
+<p>O bot mostra um preview do que vai acontecer: quais cargos serão adicionados, quais a pessoa já tem e quais não dá pra aplicar (porque foram deletados, são de integrações ou estão acima do bot). Você confere e confirma.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>O membro precisa estar <strong>de volta no servidor</strong> pra receber os cargos. Se ainda não voltou, o preview avisa que nada será aplicado.</p>
+<p>O membro precisa estar de volta no servidor pra receber os cargos. Se ainda não voltou, o preview avisa que nada será aplicado.</p>
 </div>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Reforma que deu errado</p>
-<p>Você reorganizou os canais e o servidor virou uma confusão. Sem problema: abra <code>/backup</code>, clique em <strong>Restaurar</strong>, escolha o backup "antes da reforma" no modo <strong>Aditivo</strong> e a estrutura antiga volta — lado a lado com o que já existe, sem apagar nada.</p>
+<p>Você reorganizou os canais e o servidor virou uma confusão. Abra <code>/backup</code>, clique em <strong>Restaurar</strong>, escolha o backup "antes da reforma" no modo <strong>Aditivo</strong> e a estrutura antiga volta, lado a lado com o que já existe, sem apagar nada.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Servidor atacado</p>
@@ -1878,26 +1877,26 @@
 </div>
 <div class="admonition example">
 <p class="admonition-title">Proteção no piloto automático</p>
-<p>No Dashboard, ligue o <strong>Auto-backup</strong>, escolha <em>Diário</em> às 06:00 UTC e deixe o máximo em 7. Pronto: o Delfus passa a guardar uma semana inteira de fotos diárias, sem você fazer nada.</p>
+<p>No Dashboard, ligue o <strong>Auto-backup</strong>, escolha <em>Diário</em> às 06:00 UTC e deixe o máximo em 7. O Delfus passa a guardar uma semana inteira de fotos diárias, sem você fazer nada.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Membro antigo voltou</p>
-<p>Aquele moderador veterano saiu e agora voltou. Com o snapshot ligado, é só rodar <code>/restaurar-cargos</code>, escolher ele, conferir o preview e confirmar. Todos os cargos que ele tinha voltam de uma vez.</p>
+<p>Aquele moderador veterano saiu e agora voltou. Com o snapshot ligado, rode <code>/restaurar-cargos</code>, escolha ele, confira o preview e confirme. Todos os cargos que ele tinha voltam de uma vez.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
 <p><strong>O backup salva as mensagens dos canais?</strong>
-Não. Ele guarda só a estrutura — cargos, canais, categorias, permissões e configurações. Nunca o conteúdo das mensagens nem a lista de membros.</p>
+Não. Ele guarda só a estrutura: cargos, canais, categorias, permissões e configurações. Nunca o conteúdo das mensagens nem a lista de membros.</p>
 <p><strong>Posso restaurar sem apagar o que já existe?</strong>
 Sim, é o modo <strong>Aditivo</strong>: ele recria os itens ao lado dos atuais, sem deletar nada. O modo <strong>Destrutivo</strong> (que apaga antes) só roda depois de uma confirmação extra.</p>
 <p><strong>Por que alguns cargos não foram restaurados?</strong>
-Cargos acima do cargo do bot, cargos já deletados ou cargos de integrações não podem ser recriados — eles aparecem no resumo como ignorados. Suba o cargo do bot ao topo e tente de novo.</p>
+Cargos acima do cargo do bot, cargos já deletados ou cargos de integrações não podem ser recriados. Eles aparecem no resumo como ignorados. Suba o cargo do bot ao topo e tente de novo.</p>
 <p><strong>Quantos backups o servidor guarda?</strong>
 De 1 a 10 (padrão 5), definido no Dashboard. Ao passar do limite, o mais antigo é apagado. Os snapshots de cargos por membro têm o próprio limite (padrão 2 por pessoa).</p>
 <p><strong>Preciso de alguma permissão pro bot?</strong>
 Sim. Ele precisa de <strong>Gerenciar Cargos</strong> e <strong>Gerenciar Canais</strong> pra criar e restaurar a estrutura. Pra restaurar configurações do servidor, também precisa de <strong>Gerenciar Servidor</strong>; pra restaurar bans, de <strong>Banir Membros</strong>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Antes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo <strong>Aditivo</strong> — ele não apaga nada e é fácil de desfazer. Deixe o <strong>Destrutivo</strong> só pra quando você realmente quer recomeçar do zero.</p>
+<p>Antes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo <strong>Aditivo</strong>, que não apaga nada e é fácil de desfazer. Deixe o <strong>Destrutivo</strong> só pra quando você realmente quer recomeçar do zero.</p>
 </div>
 
 
@@ -1919,7 +1918,7 @@ Sim. Ele precisa de <strong>Gerenciar Cargos</strong> e <strong>Gerenciar Canais
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     

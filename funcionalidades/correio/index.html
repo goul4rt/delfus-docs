@@ -1769,37 +1769,36 @@
 
 
 <h1 id="correio-elegante">Correio Elegante<a class="headerlink" href="#correio-elegante" title="Permanent link">¶</a></h1>
-<p>Quer dar um toque especial ao seu servidor numa data comemorativa? O Correio Elegante deixa qualquer membro mandar um recado <strong>anônimo</strong> para outro membro durante um evento que você marca na agenda. A equipe dá um ok rápido, o recado aparece num canal público com um visual caprichado e quem enviou continua em segredo.</p>
-<p>Perfeito para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer ocasião em que você queira espalhar carinho na comunidade.</p>
+<p>Deixe qualquer membro mandar um recado anônimo para outro durante um evento que você marca na agenda. A staff aprova, o recado vira post público com visual temático e quem enviou continua em segredo. Serve para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer data comemorativa.</p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>O Correio Elegante é um <strong>evento com hora marcada</strong>. Você define quando começa e quando termina, e o comando <code>/correio</code> só responde dentro dessa janela (e com o evento ligado no painel). Fora disso, o membro vê a mensagem de "evento inativo" que você escreveu.</p>
-<p>Quando um recado é enviado, o caminho é simples:</p>
+<p>O Correio Elegante é um evento com hora marcada. Você define início e fim, e o comando <code>/correio</code> só responde dentro dessa janela, com o evento ligado no painel. Fora disso, o membro vê a mensagem de "evento inativo" que você escreveu.</p>
+<p>O caminho de um recado:</p>
 <ol>
-<li><strong>O membro envia</strong> com <code>/correio</code>, escolhendo o destinatário e escrevendo o recado (até 500 caracteres). A resposta é sempre privada — ninguém ao lado descobre quem mandou.</li>
-<li><strong>A equipe avalia</strong> num canal interno, só para a staff. Lá aparece o recado, quem enviou, para quem é, e dois botões: <strong>Aprovar</strong> e <strong>Rejeitar</strong>.</li>
-<li><strong>Se aprovado, vira post anônimo</strong> no canal público, com a cara do tema que você escolheu (cor, banner, ícone, moldura). Mostra para quem é — mas nunca quem enviou.</li>
+<li><strong>O membro envia</strong> com <code>/correio</code>, escolhe o destinatário e escreve o recado (até 500 caracteres). A resposta é sempre privada: ninguém ao lado descobre quem mandou.</li>
+<li><strong>A staff avalia</strong> num canal interno. Lá aparece o recado, quem enviou, para quem é, e dois botões: <strong>Aprovar</strong> e <strong>Rejeitar</strong>.</li>
+<li><strong>Se aprovado, vira post anônimo</strong> no canal público, com o tema que você escolheu (cor, banner, ícone, moldura). Mostra para quem é, nunca quem enviou.</li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Na prática</p>
-<p>Ana usa <code>/correio</code> e manda um recado fofo pro Bruno. Só a Ana vê a confirmação. O recado cai no canal da moderação, alguém clica em <strong>Aprovar</strong>, e ele aparece bonito no <code>#correio-publico</code> marcando o Bruno. O Bruno fica todo feliz — e nunca vai saber que foi a Ana.</p>
+<p>Ana usa <code>/correio</code> e manda um recado fofo pro Bruno. Só a Ana vê a confirmação. O recado cai no canal da moderação, alguém clica em <strong>Aprovar</strong>, e ele aparece no <code>#correio-publico</code> marcando o Bruno. O Bruno nunca vai saber que foi a Ana.</p>
 </div>
-<p>Alguns cuidados que o bot toma sozinho:</p>
+<p>O bot cuida de alguns limites sozinho:</p>
 <ul>
-<li>Não dá pra mandar correio para <strong>bots</strong> nem <strong>para si mesmo</strong> — o recado é recusado na hora.</li>
-<li>Existe um <strong>intervalo entre envios</strong> (cooldown) por membro, pra ninguém inundar a fila. Tentativas barradas por validação não reiniciam esse cronômetro.</li>
+<li>Não dá pra mandar correio para <strong>bots</strong> nem <strong>para si mesmo</strong>. O recado é recusado na hora.</li>
+<li>Há um <strong>intervalo entre envios</strong> (cooldown) por membro, pra ninguém inundar a fila. Tentativas barradas por validação não reiniciam esse cronômetro.</li>
 <li><strong>Rejeitar</strong> descarta o recado de vez: some da fila e nada é publicado. Sem histórico, sem aviso ao remetente.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Detalhes que valem saber</p>
-<p>O cooldown vive na memória do bot — se ele reiniciar, os contadores zeram. Definir o cooldown como <code>0</code> desliga a espera. E só quem tem um dos cargos de aprovação consegue usar os botões; qualquer outra pessoa que clicar recebe um aviso privado e nada acontece.</p>
+<p>O cooldown vive na memória do bot. Se ele reiniciar, os contadores zeram. Cooldown <code>0</code> desliga a espera. E só quem tem um dos cargos de aprovação consegue usar os botões; quem mais clicar recebe um aviso privado e nada acontece.</p>
 </div>
 <h3 id="a-moldura-de-texto">A moldura de texto<a class="headerlink" href="#a-moldura-de-texto" title="Permanent link">¶</a></h3>
-<p>Cada tema pode ter uma <strong>moldura</strong>: um texto fixo que envolve o recado do membro. Você usa o marcador <code>{{mensagem}}</code> no lugar onde o recado deve entrar.</p>
+<p>Cada tema pode ter uma moldura: um texto fixo que envolve o recado do membro. Use o marcador <code>{{mensagem}}</code> no lugar onde o recado deve entrar.</p>
 <div class="admonition example">
 <p class="admonition-title">Moldura em ação</p>
-<p>Se a moldura for <code>"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"</code>, um recado simples como "você é incrível" sai assim, todo decorado, com saudação e assinatura. Sem moldura, o recado aparece sozinho.</p>
+<p>Com a moldura <code>"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"</code>, um recado como "você é incrível" sai decorado, com saudação e assinatura. Sem moldura, o recado aparece sozinho.</p>
 </div>
-<p>E se você ligar a opção <strong>mencionar destinatário</strong>, ele recebe um ping de verdade na publicação. Se ligar um <strong>cargo de recompensa</strong>, todo mundo que tem um correio aprovado ganha esse cargo automaticamente — um mimo pra quem participa.</p>
+<p>Ligue <strong>mencionar destinatário</strong> e ele recebe um ping de verdade na publicação. Ligue um <strong>cargo de recompensa</strong> e todo mundo com correio aprovado ganha esse cargo automaticamente.</p>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -1811,64 +1810,64 @@
 <tbody>
 <tr>
 <td><code>/correio usuario:&lt;membro&gt; mensagem:&lt;texto&gt;</code></td>
-<td>Manda um correio anônimo para outro membro. O recado (até 500 caracteres) vai para a fila da equipe e, se aprovado, é publicado sem revelar quem enviou. Só funciona durante o evento ativo.</td>
+<td>Manda um correio anônimo para outro membro. O recado (até 500 caracteres) vai para a fila da staff e, se aprovado, é publicado sem revelar quem enviou. Só funciona durante o evento ativo.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Toda a configuração do Correio Elegante é feita pelo painel — não há comandos de administração para essa função.</p>
+<p>Toda a configuração do Correio Elegante é feita pelo painel. Não há comandos de administração.</p>
 </div>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>A configuração fica no Dashboard, em <a href="https://admin.delfus.app">admin.delfus.app</a>, na seção <strong>Eventos → Correio Elegante</strong>. Com o evento ligado, você precisa preencher:</p>
+<p>A configuração fica no Dashboard, em <a href="https://admin.delfus.app">admin.delfus.app</a>, na seção <strong>Eventos → Correio Elegante</strong>. Com o evento ligado, preencha:</p>
 <ul>
-<li><strong>Período do evento</strong> — data/hora de início e fim (o fim tem que ser depois do início).</li>
-<li><strong>Canal de aprovação</strong> — onde a equipe avalia (deixe visível só para a staff).</li>
-<li><strong>Canal público</strong> — onde os correios aprovados aparecem.</li>
-<li><strong>Cargos de aprovação</strong> — um ou mais cargos que podem aprovar/rejeitar (pelo menos um).</li>
-<li><strong>Temas</strong> — pelo menos um, com um marcado como <strong>ativo</strong>. Cada tema tem nome, título, cor (<code>#rrggbb</code>) e, opcionalmente, banner, ícone, rodapé e a moldura de texto.</li>
+<li><strong>Período do evento</strong>: data/hora de início e fim (o fim tem que ser depois do início).</li>
+<li><strong>Canal de aprovação</strong>: onde a staff avalia (deixe visível só para ela).</li>
+<li><strong>Canal público</strong>: onde os correios aprovados aparecem.</li>
+<li><strong>Cargos de aprovação</strong>: um ou mais cargos que podem aprovar/rejeitar (pelo menos um).</li>
+<li><strong>Temas</strong>: pelo menos um, com um marcado como <strong>ativo</strong>. Cada tema tem nome, título, cor (<code>#rrggbb</code>) e, opcionalmente, banner, ícone, rodapé e moldura.</li>
 </ul>
-<p>E os ajustes opcionais:</p>
+<p>Ajustes opcionais:</p>
 <ul>
-<li><strong>Intervalo entre envios</strong> — de <code>0</code> a <code>86400</code> segundos. O sugerido é 300 (5 minutos).</li>
-<li><strong>Mencionar destinatário</strong> — liga/desliga o ping na publicação.</li>
-<li><strong>Cargo de recompensa</strong> — dado automaticamente a quem tem correio aprovado.</li>
-<li><strong>Mensagem de evento inativo</strong> — o texto que aparece fora do período.</li>
+<li><strong>Intervalo entre envios</strong>: de <code>0</code> a <code>86400</code> segundos. O sugerido é 300 (5 minutos).</li>
+<li><strong>Mencionar destinatário</strong>: liga/desliga o ping na publicação.</li>
+<li><strong>Cargo de recompensa</strong>: dado automaticamente a quem tem correio aprovado.</li>
+<li><strong>Mensagem de evento inativo</strong>: o texto que aparece fora do período.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">O painel é exigente (de propósito)</p>
 <p>Com o evento ativado, ele só salva se houver canal de aprovação, canal público, ao menos um cargo de aprovação, ao menos um tema, um tema ativo válido e datas coerentes. Faltou algo, não passa.</p>
 </div>
-<p>Vale também conferir as permissões do bot:</p>
+<p>Confira também as permissões do bot:</p>
 <ul>
-<li><strong>Enviar Mensagens</strong> e <strong>Inserir Links/Embeds</strong> nos dois canais, e acesso para enxergar esses canais.</li>
-<li>Se usar cargo de recompensa: <strong>Gerenciar Cargos</strong>, com o cargo de recompensa <strong>abaixo</strong> do cargo mais alto do bot. Se não, a recompensa falha em silêncio — mas a publicação acontece normalmente.</li>
+<li><strong>Enviar Mensagens</strong> e <strong>Inserir Links/Embeds</strong> nos dois canais, mais acesso para enxergá-los.</li>
+<li>Se usar cargo de recompensa: <strong>Gerenciar Cargos</strong>, com o cargo de recompensa <strong>abaixo</strong> do cargo mais alto do bot. Sem isso, a recompensa falha em silêncio, mas a publicação acontece normalmente.</li>
 </ul>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Dia dos Namorados</p>
-<p>Você cria o tema "Dia dos Namorados" com cor rosa, um banner romântico e a moldura <code>"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"</code>. Marca o período de 12 a 14 de junho, aponta <code>#correio-publico</code> pra publicação e <code>#staff-correio</code> pra aprovação, e dá o cargo de aprovação à moderação. Nesses dias, os recados anônimos pipocam e a equipe vai liberando.</p>
+<p>Crie o tema "Dia dos Namorados" com cor rosa, um banner romântico e a moldura <code>"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"</code>. Marque o período de 12 a 14 de junho, aponte <code>#correio-publico</code> pra publicação e <code>#staff-correio</code> pra aprovação, e dê o cargo de aprovação à moderação. Nesses dias, os recados anônimos pipocam e a staff vai liberando.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Recompensar quem participa</p>
-<p>Você cria o cargo "Cupido 2026" como recompensa. Quem tem um correio aprovado ganha o cargo na hora — um incentivo divertido pra mandar recados, sem ninguém saber quantos ou quais a pessoa enviou.</p>
+<p>Crie o cargo "Cupido 2026" como recompensa. Quem tem um correio aprovado ganha o cargo na hora, sem ninguém saber quantos ou quais enviou.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Segurar o spam</p>
-<p>Pra evitar que alguém entupa a fila, você põe o cooldown em 600 segundos (10 minutos). Cada membro só manda um novo correio a cada 10 minutos, e a equipe aprova com calma.</p>
+<p>Ponha o cooldown em 600 segundos (10 minutos). Cada membro só manda um novo correio a cada 10 minutos, e a staff aprova com calma.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
 <p><strong>Dá pra descobrir quem enviou o recado?</strong>
-No canal público, nunca — só aparece o destinatário. O remetente real só é visível na fila de aprovação, que deve ser restrita à equipe. Por isso, mantenha esse canal fechado para membros comuns.</p>
-<p><strong>O que acontece se a equipe rejeitar?</strong>
-O recado é descartado na hora: some da fila e nada é publicado. Não há reaproveitamento nem aviso ao remetente — pra ele, fica só a confirmação de que o correio "foi enviado para aprovação".</p>
+No canal público, nunca: só aparece o destinatário. O remetente real só é visível na fila de aprovação, que deve ser restrita à staff. Mantenha esse canal fechado para membros comuns.</p>
+<p><strong>O que acontece se a staff rejeitar?</strong>
+O recado é descartado na hora: some da fila e nada é publicado. Não há reaproveitamento nem aviso ao remetente. Pra ele, fica só a confirmação de que o correio "foi enviado para aprovação".</p>
 <p><strong>Por que o <code>/correio</code> diz que não há evento ativo?</strong>
-Ou o evento está desligado no painel, ou o momento atual está fora do período (antes do início ou depois do fim). Confira o toggle e as datas no painel.</p>
+Ou o evento está desligado no painel, ou o momento atual está fora do período (antes do início ou depois do fim). Confira o toggle e as datas.</p>
 <p><strong>Por que o remetente não ganhou o cargo de recompensa?</strong>
 A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot tem <strong>Gerenciar Cargos</strong> e se o cargo de recompensa está <strong>abaixo</strong> do cargo mais alto do bot. Se algo falhar, o correio é publicado mesmo assim, só sem o cargo.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Use a moldura de cada tema como uma "carta" pré-pronta: uma saudação no começo, o <code>{{mensagem}}</code> no meio e uma assinatura no fim. Assim, até os recados mais curtos saem caprichados e com a cara do evento.</p>
+<p>Use a moldura de cada tema como uma carta pré-pronta: saudação no começo, <code>{{mensagem}}</code> no meio, assinatura no fim. Assim até os recados mais curtos saem com a cara do evento.</p>
 </div>
 
 
@@ -1890,7 +1889,7 @@ A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot t
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     

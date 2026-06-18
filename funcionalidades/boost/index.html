@@ -1102,10 +1102,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#as-variaveis-que-voce-pode-usar-nas-mensagens" class="md-nav__link">
+  <a href="#variaveis-para-as-mensagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        As variáveis que você pode usar nas mensagens
+        Variáveis para as mensagens
       
     </span>
   </a>
@@ -1720,10 +1720,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#as-variaveis-que-voce-pode-usar-nas-mensagens" class="md-nav__link">
+  <a href="#variaveis-para-as-mensagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        As variáveis que você pode usar nas mensagens
+        Variáveis para as mensagens
       
     </span>
   </a>
@@ -1825,25 +1825,24 @@
 
 
 <h1 id="recompensas-de-boost">Recompensas de boost<a class="headerlink" href="#recompensas-de-boost" title="Permanent link">¶</a></h1>
-<p>Quando alguém impulsiona o seu servidor, o Delfus já agradece por você — e ainda pode dar um VIP de presente pra quem apoiou. Tudo automático, sem a moderação precisar mexer um dedo.</p>
-<p>A ideia é simples: reconhecer publicamente quem dá boost e premiar essas pessoas com benefícios, na hora.</p>
+<p>Quando alguém impulsiona o servidor, o Delfus agradece sozinho e ainda pode dar um VIP de presente pra quem apoiou. Sem a moderação precisar mexer um dedo.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/boost.png" data-desc-position="bottom"><img alt="Recompensas de boost no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/boost.png"></a></p>
 <p><em>Recompensas de boost no <a href="https://admin.delfus.app">Dashboard</a> — exemplo com dados de demonstração.</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>O Delfus fica de olho nos boosts do servidor em tempo real. Assim que o Discord avisa que alguém <strong>começou</strong> ou <strong>deixou</strong> de impulsionar, o bot reage na mesma hora.</p>
-<p>Quando alguém dá boost, duas coisas podem acontecer (você escolhe quais):</p>
+<p>O Delfus acompanha os boosts em tempo real. Assim que o Discord avisa que alguém começou ou deixou de impulsionar, o bot reage na hora.</p>
+<p>Quando alguém dá boost, você escolhe o que acontece:</p>
 <ul>
-<li><strong>Mensagem de agradecimento</strong> — o bot publica, no canal que você definir, a mensagem que você montou. Pode ser um texto simples ou um embed bonitão, com imagem e até 3 botões de link.</li>
-<li><strong>VIP automático</strong> — a pessoa ganha na hora o plano VIP que você escolher, válido pelos dias que você definir (padrão de 30 dias).</li>
+<li><strong>Mensagem de agradecimento:</strong> o bot publica, no canal que você definir, a mensagem que você montou. Pode ser texto simples ou um embed com imagem e até 3 botões de link.</li>
+<li><strong>VIP automático:</strong> a pessoa ganha na hora o plano VIP que você escolher, válido pelos dias que você definir (padrão de 30 dias).</li>
 </ul>
-<p>As duas coisas são independentes. Pode ativar só a mensagem, só o VIP, ou os dois.</p>
-<p>E tem um detalhe esperto: enquanto o boost continuar ativo, o Delfus <strong>renova o VIP sozinho</strong>. Ou seja, a pessoa nunca fica sem o benefício no meio do caminho.</p>
+<p>As duas opções são independentes. Ative só a mensagem, só o VIP, ou os dois.</p>
+<p>Enquanto o boost continuar ativo, o Delfus renova o VIP sozinho. A pessoa nunca fica sem o benefício no meio do caminho.</p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Imagine que a Maria impulsiona o seu servidor. Em segundos, aparece no canal de avisos: <em>"Maria acabou de dar boost! Agora temos 12 boosts 🚀"</em> — e, ao mesmo tempo, ela já recebe o cargo VIP de booster. Você não fez nada: o bot cuidou de tudo.</p>
+<p>A Maria impulsiona o servidor. Em segundos aparece no canal de avisos: <em>"Maria acabou de dar boost! Agora temos 12 boosts"</em>. Ao mesmo tempo, ela recebe o cargo VIP de booster. O bot cuidou de tudo.</p>
 </div>
-<h3 id="as-variaveis-que-voce-pode-usar-nas-mensagens">As variáveis que você pode usar nas mensagens<a class="headerlink" href="#as-variaveis-que-voce-pode-usar-nas-mensagens" title="Permanent link">¶</a></h3>
-<p>Em qualquer campo de texto da mensagem, você pode jogar essas variáveis — o bot troca elas pelo valor real na hora de enviar:</p>
+<h3 id="variaveis-para-as-mensagens">Variáveis para as mensagens<a class="headerlink" href="#variaveis-para-as-mensagens" title="Permanent link">¶</a></h3>
+<p>Use estas variáveis em qualquer campo de texto. O bot troca pelo valor real no envio.</p>
 <table>
 <thead>
 <tr>
@@ -1884,12 +1883,12 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">E quando alguém para de impulsionar?</p>
-<p>O Delfus também percebe quando alguém remove o boost e pode mandar uma mensagem de despedida, com as mesmas opções de personalização. Por enquanto, essa parte é configurada nos bastidores do bot — o painel ainda não traz essa opção na interface.</p>
+<p>O Delfus também percebe quando alguém remove o boost e pode mandar uma mensagem de despedida, com as mesmas opções de personalização. Por enquanto essa parte é configurada nos bastidores do bot. O painel ainda não traz essa opção na interface.</p>
 </div>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
 <p>Essa funcionalidade não tem comandos de barra. Toda a configuração é feita pelo <a href="https://admin.delfus.app">Dashboard</a>.</p>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>Tudo acontece no Dashboard, na seção <strong>Boost do Servidor</strong>, separado por servidor. A tela tem duas abas: <strong>Boost</strong> e <strong>VIP</strong>.</p>
+<p>A configuração fica no Dashboard, na seção <strong>Boost do Servidor</strong>, separada por servidor. A tela tem duas abas: <strong>Boost</strong> e <strong>VIP</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Antes de tudo, ative no Discord</p>
 <p>Vá em <strong>Configurações do Servidor → Visão geral / Sistema</strong> e ligue a opção <strong>"Enviar uma mensagem quando alguém impulsionar este servidor"</strong>, escolhendo um canal. Sem isso, o aviso de boost pode não chegar de forma confiável.</p>
@@ -1897,46 +1896,46 @@
 <h3 id="aba-boost-a-mensagem-de-agradecimento">Aba Boost (a mensagem de agradecimento)<a class="headerlink" href="#aba-boost-a-mensagem-de-agradecimento" title="Permanent link">¶</a></h3>
 <ol>
 <li>Ligue o interruptor <strong>Ativo</strong> no topo do cartão.</li>
-<li><strong>Canal</strong> — onde a mensagem vai aparecer.</li>
-<li><strong>Estilo</strong> — escolha <strong>Texto Simples</strong> ou <strong>Rich Embed</strong> (cartão estilizado com título, cor, imagem etc.).</li>
-<li><strong>Imagem (opcional)</strong> — cole a URL de uma imagem.</li>
-<li><strong>Botões de link (até 3)</strong> — cada um com um texto e uma URL.</li>
+<li><strong>Canal:</strong> onde a mensagem vai aparecer.</li>
+<li><strong>Estilo:</strong> escolha <strong>Texto Simples</strong> ou <strong>Rich Embed</strong> (cartão com título, cor, imagem etc.).</li>
+<li><strong>Imagem (opcional):</strong> cole a URL de uma imagem.</li>
+<li><strong>Botões de link (até 3):</strong> cada um com um texto e uma URL.</li>
 </ol>
-<p>Use as variáveis da tabela acima em qualquer campo de texto. O painel ainda mostra uma caixa com todas elas à mão.</p>
+<p>Use as variáveis da tabela acima em qualquer campo de texto. O painel também mostra todas elas à mão.</p>
 <h3 id="aba-vip-a-recompensa-automatica">Aba VIP (a recompensa automática)<a class="headerlink" href="#aba-vip-a-recompensa-automatica" title="Permanent link">¶</a></h3>
 <ol>
 <li>Ligue o interruptor <strong>Ativo</strong> no cartão <strong>VIP por Boost</strong>.</li>
-<li><strong>Tier VIP</strong> — qual plano a pessoa ganha. (Você precisa já ter pelo menos um plano VIP criado no servidor.)</li>
-<li><strong>Duração (dias)</strong> — quanto tempo o VIP dura a cada concessão. De 1 a 365 dias, padrão de 30.</li>
+<li><strong>Tier VIP:</strong> qual plano a pessoa ganha. Você precisa já ter pelo menos um plano VIP criado no servidor.</li>
+<li><strong>Duração (dias):</strong> quanto tempo o VIP dura a cada concessão. De 1 a 365 dias, padrão de 30.</li>
 </ol>
-<p>Quando terminar, é só <strong>Salvar</strong>. Se quiser desligar tudo de uma vez, o botão <strong>Deletar</strong> remove a configuração inteira (mensagens e VIP).</p>
+<p>Ao terminar, clique em <strong>Salvar</strong>. O botão <strong>Deletar</strong> remove a configuração inteira (mensagens e VIP) de uma vez.</p>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Agradecer cada novo boost na frente de todo mundo</p>
 <p>Ative a aba Boost, escolha o canal de avisos e use algo como:
-<code>{{@user}} acabou de dar boost! Agora temos {{boostCount}} boosts e estamos no {{boostTierName}} 🚀</code>
-Toda vez que alguém impulsionar, o servidor inteiro vê o agradecimento e a pessoa é marcada.</p>
+<code>{{@user}} acabou de dar boost! Agora temos {{boostCount}} boosts e estamos no {{boostTierName}}</code>
+Toda vez que alguém impulsionar, o servidor vê o agradecimento e a pessoa é marcada.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Premiar boosters com VIP no piloto automático</p>
-<p>Crie um plano VIP só pra boosters, vá na aba VIP, selecione esse plano e deixe a duração em 30 dias. Quem impulsiona ganha o VIP na hora — e o bot renova sozinho enquanto o boost continuar. A moderação nunca precisa acompanhar quem ainda está impulsionando.</p>
+<p>Crie um plano VIP só pra boosters, vá na aba VIP, selecione esse plano e deixe a duração em 30 dias. Quem impulsiona ganha o VIP na hora, e o bot renova sozinho enquanto o boost continuar. A moderação não precisa acompanhar quem ainda está impulsionando.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Uma mensagem caprichada com botões</p>
-<p>Monte a mensagem como embed, com a cor da marca do servidor e uma imagem comemorativa. Adicione botões de link tipo "Saiba mais sobre boost" ou "Entrar no canal VIP" apontando pra uma página ou canal de regras.</p>
+<p>Monte a mensagem como embed, com a cor da marca do servidor e uma imagem comemorativa. Adicione botões de link como "Saiba mais sobre boost" ou "Entrar no canal VIP", apontando pra uma página ou canal de regras.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>O membro perde o VIP assim que ele "vence", mesmo continuando a impulsionar?</strong>
-Não. A cada 6 horas o bot revisa quem ainda está com boost ativo e renova o VIP de quem continua impulsionando — mesmo que a concessão anterior já tenha vencido. O benefício só acaba quando o VIP vence <strong>e</strong> o boost some.</p>
+<p><strong>O membro perde o VIP assim que ele vence, mesmo continuando a impulsionar?</strong>
+Não. A cada 6 horas o bot revisa quem ainda está com boost ativo e renova o VIP de quem continua impulsionando, mesmo que a concessão anterior já tenha vencido. O benefício só acaba quando o VIP vence e o boost some.</p>
 <p><strong>Posso usar texto e embed ao mesmo tempo?</strong>
 Você escolhe um estilo por mensagem. No estilo embed, se você também preencher o campo de texto, o bot manda o texto junto com o embed. No estilo texto, vai só o texto (com a imagem como anexo, se houver).</p>
 <p><strong>Recebi uma reclamação de que a pessoa foi notificada sem querer. Por quê?</strong>
-A variável <code>{{@user}}</code> cria uma menção de verdade e notifica a pessoa. Se você só quer mostrar o nome sem incomodar ninguém, use <code>{{user}}</code>.</p>
+A variável <code>{{@user}}</code> cria uma menção de verdade e notifica a pessoa. Para mostrar só o nome sem incomodar ninguém, use <code>{{user}}</code>.</p>
 <p><strong>Existe comando de barra pra configurar isso?</strong>
 Não. Mensagens e VIP são configurados só pelo Dashboard.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Deixe o VIP ativo com duração perto de 30 dias. Como o bot renova sozinho a cada 6 horas enquanto o boost estiver de pé, a pessoa nunca fica sem o benefício — e só o perde quando para de verdade de impulsionar. Resultado: o VIP vira um incentivo contínuo pra manter o boost.</p>
+<p>Deixe o VIP ativo com duração perto de 30 dias. Como o bot renova a cada 6 horas enquanto o boost estiver de pé, a pessoa só perde o benefício quando para de impulsionar de verdade. O VIP vira um incentivo contínuo pra manter o boost.</p>
 </div>
 
 
@@ -1958,7 +1957,7 @@ Não. Mensagens e VIP são configurados só pelo Dashboard.</p>
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     

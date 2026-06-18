@@ -1835,66 +1835,66 @@
 
 
 <h1 id="anti-raid">Anti-raid<a class="headerlink" href="#anti-raid" title="Permanent link">¶</a></h1>
-<p>Sabe aqueles ataques em que dezenas de contas despejam a mesma arte de golpe — "sorteio do MrBeast", "código promocional de crypto", "resgate seu prêmio em USDT" — em vários canais ao mesmo tempo? O Anti-raid é a sua defesa contra isso. Ele identifica o ataque, apaga a mensagem, pune o autor, limpa o rastro e avisa a sua moderação. Tudo automático, em segundos.</p>
+<p>O Anti-raid bloqueia ataques de golpe em massa: dezenas de contas despejando a mesma arte ("sorteio do MrBeast", "código promocional de crypto", "resgate seu prêmio em USDT") em vários canais. Ele detecta, apaga a mensagem, pune o autor, limpa o rastro e avisa a moderação. Automático, em segundos.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/anti-raid.png" data-desc-position="bottom"><img alt="Configuração do anti-raid no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/anti-raid.png"></a></p>
 <p><em>Configuração do anti-raid no <a href="https://admin.delfus.app">Dashboard</a> — exemplo com dados de demonstração.</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>Sempre que alguém posta uma <strong>mensagem com imagem</strong> (num servidor onde o Anti-raid está ligado), o bot dá uma olhada rápida nela. Ele roda algumas checagens em ordem — das mais leves para as mais pesadas — e para na primeira que confirmar um golpe.</p>
-<p>Em resumo, ele olha três coisas:</p>
+<p>Quando alguém posta uma mensagem com imagem num servidor com o Anti-raid ligado, o bot analisa a imagem. Ele roda checagens em ordem, das mais leves para as mais pesadas, e para na primeira que confirmar um golpe.</p>
+<p>São três:</p>
 <ul>
-<li><strong>Já é reincidente?</strong> Quando o bot pune alguém, marca essa pessoa como golpista por <strong>5 minutos</strong>. Nesse tempo, qualquer coisa que ela postar é apagada na hora, sem nem reanalisar — pra ela não continuar espalhando enquanto a punição rola.</li>
-<li><strong>Está postando rápido demais?</strong> Se a mesma pessoa joga imagens em vários canais em poucos segundos, ou se um monte de contas novas começa a postar junto, o bot trata como ataque (mais sobre isso abaixo).</li>
-<li><strong>A imagem é um golpe conhecido?</strong> Essa é a camada principal. O bot calcula uma "impressão digital" visual da imagem e compara com uma base de golpes que ele já conhece. Se bater, é ataque.</li>
+<li><strong>Reincidência.</strong> Ao punir alguém, o bot marca a pessoa como golpista por 5 minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.</li>
+<li><strong>Velocidade.</strong> Se a mesma pessoa joga imagens em vários canais em poucos segundos, ou se um monte de contas novas posta junto, o bot trata como ataque (detalhes abaixo).</li>
+<li><strong>Imagem conhecida.</strong> A camada principal. O bot calcula uma impressão digital visual da imagem e compara com uma base de golpes conhecidos. Se bater, é ataque.</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast — resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor — antes que mais alguém clique no link.</p>
+<p>Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast — resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor, antes que mais alguém clique no link.</p>
 </div>
 <h3 id="velocidade-flood-e-enxame">Velocidade: flood e enxame<a class="headerlink" href="#velocidade-flood-e-enxame" title="Permanent link">¶</a></h3>
-<p>Quando a checagem de velocidade está ligada, o bot mede o <strong>ritmo de envio</strong> numa janela curta (por padrão, 10 segundos) e reage a dois cenários:</p>
+<p>Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta (padrão: 10 segundos) e reage a dois cenários:</p>
 <ul>
-<li><strong>Uma pessoa floodando vários canais.</strong> Se a mesma conta espalha imagens por vários canais distintos de uma vez (padrão: 3 canais em 10 segundos), é ataque confirmado — e aqui a punição é <strong>sempre ban</strong>, não importa o que você configurou.</li>
-<li><strong>Enxame de contas novas.</strong> Se várias contas recém-chegadas (padrão: 5 contas que entraram há menos de 24h) começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o <strong>modo lento</strong> no canal (slowmode de 30s) e chama a moderação. Ele <strong>nunca</strong> bane todo mundo em massa nesse caso — só desacelera e pede pra vocês revisarem.</li>
+<li><strong>Uma pessoa floodando vários canais.</strong> Se a mesma conta espalha imagens por vários canais distintos de uma vez (padrão: 3 canais em 10 segundos), é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.</li>
+<li><strong>Enxame de contas novas.</strong> Se várias contas recém-chegadas (padrão: 5 contas que entraram há menos de 24h) começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal (slowmode de 30s) e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Detalhe</p>
-<p>A "idade da conta" no caso do enxame conta a partir de quando o membro <strong>entrou no servidor</strong>, não da data de criação no Discord.</p>
+<p>A idade da conta no caso do enxame conta a partir de quando o membro entrou no servidor, não da data de criação no Discord.</p>
 </div>
 <h3 id="aprendizado-continuo">Aprendizado contínuo<a class="headerlink" href="#aprendizado-continuo" title="Permanent link">¶</a></h3>
-<p>E se aparecer uma arte de golpe totalmente nova, que o bot ainda não conhece? Ele tenta aprender com ela — sem travar a resposta ao usuário.</p>
-<p>Em segundo plano, o bot lê o texto da imagem (OCR) e procura por palavras típicas de golpe: crypto, "claim", "airdrop", "promo code", "withdrawal success", "MrBeast", "Elon" e por aí vai. Pra não errar, ele só considera golpe quando o texto bate em <strong>pelo menos 2 categorias diferentes</strong>.</p>
-<p>Quando reconhece o padrão, ele <strong>memoriza a arte pra sempre</strong>. Resultado: a primeira mensagem com uma arte nova pode escapar, mas da próxima vez o bot barra instantaneamente.</p>
+<p>Quando aparece uma arte de golpe nova que o bot ainda não conhece, ele tenta aprender com ela sem travar a resposta ao usuário.</p>
+<p>Em segundo plano, o bot lê o texto da imagem (OCR) e procura palavras típicas de golpe: crypto, "claim", "airdrop", "promo code", "withdrawal success", "MrBeast", "Elon" e outras. Para não errar, ele só considera golpe quando o texto bate em pelo menos 2 categorias diferentes.</p>
+<p>Ao reconhecer o padrão, ele memoriza a arte para sempre. A primeira mensagem com uma arte nova pode escapar, mas na próxima vez o bot barra na hora.</p>
 <div class="admonition note">
 <p class="admonition-title">Importante</p>
-<p>Essa leitura de texto é só pra <strong>aprender</strong> — ela não pune a mensagem atual. Quem pune são as camadas rápidas de reconhecimento de imagem e de velocidade.</p>
+<p>Essa leitura de texto serve só para aprender. Ela não pune a mensagem atual. Quem pune são as camadas rápidas de reconhecimento de imagem e de velocidade.</p>
 </div>
 <h3 id="o-que-acontece-quando-um-ataque-e-confirmado">O que acontece quando um ataque é confirmado<a class="headerlink" href="#o-que-acontece-quando-um-ataque-e-confirmado" title="Permanent link">¶</a></h3>
 <p>Assim que qualquer camada confirma o golpe, o bot, em sequência:</p>
 <ol>
 <li><strong>Apaga</strong> a mensagem.</li>
-<li><strong>Marca o autor como golpista por 5 minutos</strong> (pra apagar tudo que ele postar nesse intervalo).</li>
-<li><strong>Aplica a punição</strong> que você configurou — advertir, silenciar, expulsar ou banir.</li>
-<li><strong>Avisa o canal de moderação</strong>: qual módulo disparou, quem foi punido, qual ação foi tomada e o motivo.</li>
-<li><strong>Limpa o rastro</strong> — varre os canais e apaga tudo que aquele usuário postou nos <strong>últimos 10 minutos</strong>.</li>
+<li><strong>Marca o autor como golpista por 5 minutos</strong>, para apagar tudo que ele postar nesse intervalo.</li>
+<li><strong>Aplica a punição</strong> configurada: advertir, silenciar, expulsar ou banir.</li>
+<li><strong>Avisa o canal de moderação</strong>: qual módulo disparou, quem foi punido, qual ação e o motivo.</li>
+<li><strong>Limpa o rastro</strong>: varre os canais e apaga tudo que aquele usuário postou nos últimos 10 minutos.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Erra pro lado seguro</p>
-<p>Se qualquer etapa falhar (download da imagem, leitura, cache indisponível), o bot prefere <strong>deixar passar</strong> a punir por engano. E ele só consegue punir quem está <strong>abaixo do cargo dele</strong> na hierarquia — alguém acima do bot não é tocado.</p>
+<p>Se qualquer etapa falhar (download da imagem, leitura, cache indisponível), o bot prefere deixar passar a punir por engano. E ele só pune quem está abaixo do cargo dele na hierarquia. Alguém acima do bot não é tocado.</p>
 </div>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<p>O Anti-raid não tem comandos de barra. Ele age sozinho, automaticamente, sobre as mensagens dos canais. Toda a configuração é feita pelo painel.</p>
+<p>O Anti-raid não tem comandos de barra. Ele age sozinho sobre as mensagens dos canais. Toda a configuração é feita pelo painel.</p>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>Tudo pelo <strong>Dashboard</strong>, em <a href="https://admin.delfus.app">admin.delfus.app</a>, na seção <strong>Anti-Raid</strong>. Selecione o servidor, ajuste as opções e clique em <strong>Salvar</strong>. Pra desligar tudo de uma vez, use <strong>Remover Anti-Raid</strong>.</p>
+<p>Tudo pelo Dashboard, em <a href="https://admin.delfus.app">admin.delfus.app</a>, na seção <strong>Anti-Raid</strong>. Selecione o servidor, ajuste as opções e clique em <strong>Salvar</strong>. Para desligar tudo de uma vez, use <strong>Remover Anti-Raid</strong>.</p>
 <p><strong>Configuração global</strong></p>
 <ul>
-<li><strong>Canal de Alerta</strong> — onde a moderação recebe os avisos. É <strong>obrigatório</strong>: sem ele, o Anti-raid não funciona. Use um canal só da staff.</li>
+<li><strong>Canal de Alerta</strong> — onde a moderação recebe os avisos. Obrigatório: sem ele, o Anti-raid não funciona. Use um canal só da staff.</li>
 </ul>
 <p><strong>Módulo "MrsBeast Hack" (reconhecimento de imagem)</strong></p>
 <p>Um interruptor liga ou desliga o módulo. Com ele ativo, você define:</p>
 <ul>
-<li><strong>Ação</strong> — o que fazer com o golpista: <strong>Advertência</strong>, <strong>Mute</strong> (com duração entre 60s e 28 dias; padrão 10 min), <strong>Kick</strong> ou <strong>Ban</strong> (padrão).</li>
-<li><strong>Sensibilidade</strong> — de 5 a 30 (padrão 12). Quanto <strong>menor</strong>, mais sensível (pega variações, mas pode dar falso-positivo); quanto <strong>maior</strong>, mais tolerante. O recomendado fica entre 10 e 15.</li>
-<li><strong>Mínimo de imagens</strong> — de 1 a 10 (padrão 1). Quantas imagens a mensagem precisa ter pro bot analisar. Em 1, qualquer imagem é checada.</li>
+<li><strong>Ação</strong> — o que fazer com o golpista: <strong>Advertência</strong>, <strong>Mute</strong> (duração de 60s a 28 dias; padrão 10 min), <strong>Kick</strong> ou <strong>Ban</strong> (padrão).</li>
+<li><strong>Sensibilidade</strong> — de 5 a 30 (padrão 12). Quanto menor, mais sensível (pega variações, mas pode dar falso-positivo). Quanto maior, mais tolerante. O recomendado fica entre 10 e 15.</li>
+<li><strong>Mínimo de imagens</strong> — de 1 a 10 (padrão 1). Quantas imagens a mensagem precisa ter para o bot analisar. Em 1, qualquer imagem é checada.</li>
 <li><strong>Motivo (opcional)</strong> — texto que aparece na punição e no alerta. Vazio, o bot usa um padrão.</li>
 </ul>
 <div class="admonition note">
@@ -1904,37 +1904,37 @@
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Servidor grande, proteção firme</p>
-<p>Ative o <strong>MrsBeast Hack</strong>, deixe a ação em <strong>Ban</strong>, sensibilidade em torno de 12 e aponte o <strong>Canal de Alerta</strong> pra staff. Pronto: todo print do "sorteio do MrBeast" é apagado e o autor banido na hora, com o registro caindo no canal da moderação.</p>
+<p>Ative o <strong>MrsBeast Hack</strong>, deixe a ação em <strong>Ban</strong>, sensibilidade em torno de 12 e aponte o <strong>Canal de Alerta</strong> para a staff. Todo print do "sorteio do MrBeast" é apagado e o autor banido na hora, com o registro caindo no canal da moderação.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Modo cauteloso, sem banir na hora</p>
-<p>Prefere revisar antes? Escolha a ação <strong>Mute</strong> com 600 segundos. O golpe ainda é apagado e o autor fica calado por 10 minutos — tempo de a moderação conferir o alerta e decidir se bane manualmente.</p>
+<p>Prefere revisar antes? Escolha a ação <strong>Mute</strong> com 600 segundos. O golpe ainda é apagado e o autor fica calado por 10 minutos, tempo de a moderação conferir o alerta e decidir se bane manualmente.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Servidor de artes/memes</p>
-<p>Se membros legítimos postam imagens parecidas com golpes, suba a <strong>Sensibilidade</strong> para 15 e considere aumentar o <strong>Mínimo de imagens</strong>. Assim o bot fica mais tolerante e foca só nos ataques óbvios.</p>
+<p>Se membros legítimos postam imagens parecidas com golpes, suba a <strong>Sensibilidade</strong> para 15 e considere aumentar o <strong>Mínimo de imagens</strong>. O bot fica mais tolerante e foca só nos ataques óbvios.</p>
 </div>
 <h2 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">¶</a></h2>
-<p>Pra agir, o bot precisa das permissões certas:</p>
+<p>Para agir, o bot precisa das permissões certas:</p>
 <ul>
-<li><strong>Gerenciar mensagens</strong> — pra apagar o golpe e limpar o rastro.</li>
+<li><strong>Gerenciar mensagens</strong> — para apagar o golpe e limpar o rastro.</li>
 <li><strong>Banir</strong> e/ou <strong>Expulsar membros</strong> — conforme a ação escolhida (o flood sempre bane).</li>
 <li><strong>Moderar membros (timeout)</strong> — se a ação for silenciar.</li>
-<li><strong>Gerenciar canais</strong> — pra ligar o slowmode num enxame.</li>
+<li><strong>Gerenciar canais</strong> — para ligar o slowmode num enxame.</li>
 </ul>
-<p>E mais duas coisas: o <strong>cargo do bot precisa estar acima</strong> dos membros que ele vai punir, e o <strong>Canal de Alerta</strong> precisa estar configurado — sem ele, o módulo nem roda.</p>
+<p>Além disso, o cargo do bot precisa estar acima dos membros que ele vai punir, e o <strong>Canal de Alerta</strong> precisa estar configurado. Sem ele, o módulo nem roda.</p>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
 <p><strong>Funciona com qualquer imagem ou só com golpes conhecidos?</strong>
-Ele já vem com uma base de golpes de referência e barra qualquer imagem parecida com elas. Artes totalmente novas podem passar na primeira vez, mas o bot lê o texto delas em segundo plano e, ao reconhecer o padrão, memoriza a arte pra barrar instantaneamente depois.</p>
+Ele já vem com uma base de golpes de referência e barra qualquer imagem parecida. Artes totalmente novas podem passar na primeira vez, mas o bot lê o texto delas em segundo plano e, ao reconhecer o padrão, memoriza a arte para barrar na hora depois.</p>
 <p><strong>O bot pode banir um membro de boa-fé por engano?</strong>
-É raro — na dúvida, ele deixa passar. Mesmo assim, todo bloqueio fica registrado no Canal de Alerta, então dá pra revisar e reverter manualmente. Se aparecerem muitos falsos positivos, aumente a Sensibilidade.</p>
+É raro: na dúvida, ele deixa passar. Todo bloqueio fica registrado no Canal de Alerta, então dá para revisar e reverter manualmente. Se aparecerem muitos falsos positivos, aumente a Sensibilidade.</p>
 <p><strong>Ele bane todo mundo numa invasão de contas novas?</strong>
-Não. Enxame de contas novas gera só um <strong>bloqueio brando</strong>: modo lento no canal e aviso à moderação. Banimento automático rola pra golpes reconhecidos individualmente e pro flood de um único usuário em vários canais.</p>
+Não. Enxame de contas novas gera só um bloqueio brando: modo lento no canal e aviso à moderação. Banimento automático rola para golpes reconhecidos individualmente e para o flood de um único usuário em vários canais.</p>
 <p><strong>Por que o golpe sumiu de vários canais, não só do que eu vi?</strong>
-Porque, ao pegar o golpista, o bot também varre os canais e apaga tudo que ele postou nos últimos 10 minutos — removendo o que ele já tinha espalhado antes de ser pego.</p>
+Ao pegar o golpista, o bot varre os canais e apaga tudo que ele postou nos últimos 10 minutos, removendo o que já tinha espalhado antes de ser pego.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Aponte o <strong>Canal de Alerta</strong> para um canal exclusivo da moderação e fique de olho nele. É por ali que cada bloqueio e alerta chega — o que te deixa confirmar ataques, revisar rápido e reverter na mão caso um membro legítimo seja afetado.</p>
+<p>Aponte o <strong>Canal de Alerta</strong> para um canal exclusivo da moderação e fique de olho nele. É por ali que cada bloqueio e alerta chega, o que te deixa confirmar ataques, revisar rápido e reverter na mão caso um membro legítimo seja afetado.</p>
 </div>
 
 
@@ -1956,7 +1956,7 @@ Porque, ao pegar o golpista, o bot também varre os canais e apaga tudo que ele 
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     

@@ -1316,10 +1316,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#os-avisinhos-temporarios" class="md-nav__link">
+  <a href="#os-avisos-temporarios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Os avisinhos temporários
+        Os avisos temporários
       
     </span>
   </a>
@@ -1725,10 +1725,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#os-avisinhos-temporarios" class="md-nav__link">
+  <a href="#os-avisos-temporarios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Os avisinhos temporários
+        Os avisos temporários
       
     </span>
   </a>
@@ -1813,59 +1813,58 @@
 
 
 <h1 id="automacoes-de-canal">Automações de canal<a class="headerlink" href="#automacoes-de-canal" title="Permanent link">¶</a></h1>
-<p>Sabe aquele canal que vive saindo dos trilhos? Onde era pra ter só prints, mas todo mundo fica de bate-papo? As automações de canal resolvem isso pra você.</p>
-<p>Você define a regra uma vez — "aqui só entra imagem", "aqui é só comando" — e o Delfus cuida do resto, em tempo real, sem precisar de moderador online. Ele também sabe abrir um tópico de discussão pra cada post ou publicar seus anúncios automaticamente. E tudo fica registrado pra você acompanhar pelo painel.</p>
+<p>Trave cada canal numa regra ("aqui só entra imagem", "aqui é só comando") e o Delfus aplica em tempo real, sem moderador online. Ele também abre um tópico de discussão por post e publica seus anúncios sozinho. Tudo fica registrado pra você acompanhar pelo painel.</p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>Cada canal pode ter uma ou mais automações. Toda vez que alguém manda uma mensagem ali, o Delfus confere as regras e age na hora. Canal sem automação? Nada muda — as regras só valem onde você liga.</p>
-<p>Algumas coisas o bot <strong>sempre ignora</strong>, não importa a configuração: mensagens de sistema do Discord, mensagens de webhooks e as próprias mensagens dele (assim ele nunca se autoapaga).</p>
-<p>E você ainda escolhe quem passa livre:</p>
+<p>Cada canal pode ter uma ou mais automações. A cada mensagem, o Delfus confere as regras e age na hora. Canal sem automação não muda nada: as regras só valem onde você liga.</p>
+<p>Algumas coisas o bot sempre ignora, não importa a configuração: mensagens de sistema do Discord, mensagens de webhooks e as próprias mensagens (assim ele nunca se autoapaga).</p>
+<p>Você também escolhe quem passa livre:</p>
 <ul>
-<li><strong>Ignorar bots</strong> — outros bots não são afetados pela regra (vem ligado por padrão).</li>
-<li><strong>Cargos liberados</strong> — quem tiver um dos cargos da lista passa batido. Perfeito pra sua equipe postar à vontade.</li>
+<li><strong>Ignorar bots</strong>: outros bots não são afetados pela regra (ligado por padrão).</li>
+<li><strong>Cargos liberados</strong>: quem tiver um dos cargos da lista passa batido. Bom pra equipe postar à vontade.</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Você cria a regra "só imagens" no canal de memes. Alguém manda um textão sem nenhuma foto — o Delfus apaga na hora, deixa um avisinho rápido e ainda já reage com 👍 e 👎 no próximo print pra abrir a votação.</p>
+<p>Você cria a regra "só imagens" no canal de memes. Alguém manda um textão sem foto. O Delfus apaga na hora, deixa um aviso rápido e já reage com 👍 e 👎 no próximo print pra abrir a votação.</p>
 </div>
 <h3 id="quando-o-canal-tem-varias-regras">Quando o canal tem várias regras<a class="headerlink" href="#quando-o-canal-tem-varias-regras" title="Permanent link">¶</a></h3>
-<p>Se você empilhar mais de uma automação no mesmo canal, o Delfus roda por <strong>ordem de prioridade</strong> — número menor primeiro. E assim que uma regra <strong>apaga</strong> a mensagem, as seguintes nem chegam a rodar (afinal, a mensagem já não existe). Regras que não apagam — reagir, criar tópico, publicar — não interrompem a fila. Com uma regra só, esquece a prioridade: deixa em 0.</p>
-<h3 id="os-avisinhos-temporarios">Os avisinhos temporários<a class="headerlink" href="#os-avisinhos-temporarios" title="Permanent link">¶</a></h3>
-<p>Quando o bot apaga uma mensagem, ele manda um aviso curto explicando o porquê e <strong>some com ele sozinho uns 8 segundos depois</strong>, pra não poluir o canal. Dois cuidados importantes:</p>
+<p>Empilhou mais de uma automação no mesmo canal? O Delfus roda por ordem de prioridade, número menor primeiro. Assim que uma regra apaga a mensagem, as seguintes nem rodam (a mensagem já não existe). Regras que não apagam (reagir, criar tópico, publicar) não interrompem a fila. Com uma regra só, deixa a prioridade em 0.</p>
+<h3 id="os-avisos-temporarios">Os avisos temporários<a class="headerlink" href="#os-avisos-temporarios" title="Permanent link">¶</a></h3>
+<p>Ao apagar uma mensagem, o bot manda um aviso curto com o motivo e some com ele sozinho uns 8 segundos depois, pra não poluir o canal. Dois cuidados:</p>
 <ul>
-<li>Esses avisos <strong>nunca dão ping</strong> em @everyone, @here, cargos ou pessoas — mesmo que seu texto tenha menções, elas são neutralizadas.</li>
-<li>Se o mesmo membro manda mensagem atrás de mensagem, os avisos são limitados a um a cada 10 segundos por pessoa (pro bot não virar spam). Mas calma: <strong>a remoção acontece em todas as vezes</strong> — só o textinho de aviso é segurado.</li>
+<li>Os avisos nunca dão ping em @everyone, @here, cargos ou pessoas. Mesmo que o texto tenha menções, elas são neutralizadas.</li>
+<li>Se o mesmo membro manda mensagem atrás de mensagem, os avisos ficam limitados a um a cada 10 segundos por pessoa (pro bot não virar spam). A remoção acontece em todas as vezes; só o aviso é segurado.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">E a privacidade?</p>
-<p>Cada ação do bot fica registrada (apagou, avisou, criou tópico, publicou) — mas o registro guarda só identificadores e o motivo, <strong>nunca o conteúdo da mensagem</strong>. É isso que alimenta as estatísticas do painel.</p>
+<p>Cada ação do bot fica registrada (apagou, avisou, criou tópico, publicou), mas o registro guarda só identificadores e o motivo, nunca o conteúdo da mensagem. É isso que alimenta as estatísticas do painel.</p>
 </div>
 <h3 id="os-cinco-tipos-de-automacao">Os cinco tipos de automação<a class="headerlink" href="#os-cinco-tipos-de-automacao" title="Permanent link">¶</a></h3>
-<p>Pensa neles como cinco "modos" de canal:</p>
+<p>São cinco "modos" de canal:</p>
 <ul>
-<li><strong>Somente mídia</strong> — o canal aceita só imagens, GIFs, vídeos e/ou figurinhas (você escolhe quais). Pode exigir um tamanho mínimo de imagem pra barrar emojizinho salvo, bloquear legendas e ainda reagir automaticamente com emojis. O resto é apagado.</li>
-<li><strong>Somente comandos</strong> — passa só comando de barra (slash) ou mensagem que começa com os prefixos que você definir (<code>/</code>, <code>!</code>, <code>?</code>...). Conversa solta é removida, com um aviso que pode até linkar o canal de bate-papo certo.</li>
-<li><strong>Somente arquivos</strong> — só entram anexos válidos: extensão permitida (ex.: <code>.pdf</code>, <code>.zip</code>) e tamanho dentro do intervalo que você definir. Sem arquivo válido, é apagado.</li>
-<li><strong>Tópico automático</strong> — pra cada post novo, o bot abre um tópico atrelado a ele. O nome sai de um modelo seu, com as etiquetas <code>{author}</code> (quem postou) e <code>{date}</code> (data de hoje). Você escolhe quando ele arquiva sozinho.</li>
-<li><strong>Publicação automática</strong> — em canais de anúncio, o bot publica suas mensagens automaticamente pra todo mundo que segue o canal, sem ninguém clicar em "Publicar". Antes, passa pelos filtros que você definir (cargo, conteúdo rico, tamanho mínimo de texto).</li>
+<li><strong>Somente mídia</strong>: aceita só imagens, GIFs, vídeos e/ou figurinhas (você escolhe quais). Pode exigir tamanho mínimo de imagem pra barrar emoji salvo, bloquear legendas e reagir automaticamente com emojis. O resto é apagado.</li>
+<li><strong>Somente comandos</strong>: passa só comando de barra (slash) ou mensagem que começa com os prefixos que você definir (<code>/</code>, <code>!</code>, <code>?</code>...). Conversa solta é removida, com um aviso que pode linkar o canal de bate-papo certo.</li>
+<li><strong>Somente arquivos</strong>: só entram anexos válidos, com extensão permitida (ex.: <code>.pdf</code>, <code>.zip</code>) e tamanho dentro do intervalo que você definir. Sem arquivo válido, é apagado.</li>
+<li><strong>Tópico automático</strong>: a cada post novo, o bot abre um tópico atrelado a ele. O nome sai de um modelo seu, com as etiquetas <code>{author}</code> (quem postou) e <code>{date}</code> (data de hoje). Você escolhe quando ele arquiva sozinho.</li>
+<li><strong>Publicação automática</strong>: em canais de anúncio, o bot publica suas mensagens pra todo mundo que segue o canal, sem ninguém clicar em "Publicar". Antes, passa pelos filtros que você definir (cargo, conteúdo rico, tamanho mínimo de texto).</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">A publicação automática só vale em canais de anúncio</p>
-<p>Em canal de texto normal, esse tipo é simplesmente ignorado. Se quiser usá-lo, o canal precisa ser do tipo anúncio.</p>
+<p>Em canal de texto normal, esse tipo é ignorado. Pra usá-lo, o canal precisa ser do tipo anúncio.</p>
 </div>
 <h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<p>Esta funcionalidade é configurada só pelo painel — não tem comando no Discord.</p>
+<p>Esta funcionalidade é configurada só pelo painel. Não tem comando no Discord.</p>
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
 <p>Tudo acontece no Dashboard, em <a href="https://admin.delfus.app">admin.delfus.app</a>, na seção <strong>Automações de canal</strong>. Cada automação tem campos comuns e campos do tipo escolhido.</p>
-<p><strong>Em toda automação você define:</strong></p>
+<p>Em toda automação você define:</p>
 <ul>
-<li><strong>Canal</strong> — onde a regra vale.</li>
-<li><strong>Tipo</strong> — mídia, comandos, arquivos, tópico ou publicação.</li>
-<li><strong>Ativado</strong> — liga e desliga sem precisar apagar.</li>
-<li><strong>Ignorar bots</strong> — não aplica a regra a bots (padrão: ligado).</li>
-<li><strong>Cargos que ignoram a regra</strong> — até 50 cargos livres da automação.</li>
-<li><strong>Prioridade</strong> — de 0 a 100; menor roda primeiro. Só importa com mais de uma regra no mesmo canal.</li>
+<li><strong>Canal</strong>: onde a regra vale.</li>
+<li><strong>Tipo</strong>: mídia, comandos, arquivos, tópico ou publicação.</li>
+<li><strong>Ativado</strong>: liga e desliga sem precisar apagar.</li>
+<li><strong>Ignorar bots</strong>: não aplica a regra a bots (padrão: ligado).</li>
+<li><strong>Cargos que ignoram a regra</strong>: até 50 cargos livres da automação.</li>
+<li><strong>Prioridade</strong>: de 0 a 100, menor roda primeiro. Só importa com mais de uma regra no mesmo canal.</li>
 </ul>
-<p><strong>E os campos de cada tipo:</strong></p>
+<p>E os campos de cada tipo:</p>
 <table>
 <thead>
 <tr>
@@ -1900,15 +1899,15 @@
 <p class="admonition-title">Permissões</p>
 <p>Pro Delfus agir, ele precisa das permissões certas no canal: <strong>Gerenciar mensagens</strong> pra apagar, <strong>Enviar mensagens</strong> pros avisos, <strong>Adicionar reações</strong> pras reações automáticas, <strong>Criar tópicos públicos</strong> pro tópico automático e <strong>publicar em canal de anúncio</strong> pra publicação. Pra reagir com emojis personalizados, o bot também precisa ter acesso a eles.</p>
 </div>
-<p>A página ainda tem uma aba de <strong>estatísticas</strong>, com os totais de mensagens apagadas, tópicos criados, publicações e avisos do servidor.</p>
+<p>A página tem ainda uma aba de <strong>estatísticas</strong>, com os totais de mensagens apagadas, tópicos criados, publicações e avisos do servidor.</p>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Canal de memes só com imagem e votação automática</p>
-<p>Crie uma automação <strong>Somente mídia</strong>, deixe ligados Imagens, GIFs e Vídeos, ponha um tamanho mínimo (uns 100px) pra cortar miniatura e adicione as reações 👍 e 👎. Cada print já abre a votação sozinho — e textão solto some na hora.</p>
+<p>Crie uma automação <strong>Somente mídia</strong>, deixe ligados Imagens, GIFs e Vídeos, ponha um tamanho mínimo (uns 100px) pra cortar miniatura e adicione as reações 👍 e 👎. Cada print já abre a votação sozinho, e textão solto some na hora.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Canal de comandos do bot, sem bate-papo</p>
-<p>Configure <strong>Somente comandos</strong> com o prefixo <code>/</code>, aponte o <code>#bate-papo</code> como redirecionamento e escreva um aviso simpático. Quem mandar conversa ali é gentilmente mandado pro canal certo. Quer que a staff escreva livre? Adicione o cargo dela às exceções.</p>
+<p>Configure <strong>Somente comandos</strong> com o prefixo <code>/</code>, aponte o <code>#bate-papo</code> como redirecionamento e escreva um aviso simpático. Quem mandar conversa ali é mandado pro canal certo. Quer a staff escrevendo livre? Adicione o cargo dela às exceções.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Canal de sugestões onde cada post vira discussão</p>
@@ -1922,14 +1921,14 @@
 <p><strong>A regra apaga as mensagens da minha equipe também?</strong>
 Não, se você adicionar os cargos dela à lista de "cargos que ignoram a regra". Quem tiver um desses cargos passa livre. Bots já são ignorados por padrão.</p>
 <p><strong>Posso ter mais de uma automação no mesmo canal?</strong>
-Pode. Elas rodam por prioridade (menor primeiro). Só lembre: quando uma regra apaga a mensagem, as seguintes não rodam. Então ajuste a ordem das regras de remoção com carinho.</p>
+Pode. Elas rodam por prioridade (menor primeiro). Lembre: quando uma regra apaga a mensagem, as seguintes não rodam. Ajuste a ordem das regras de remoção com cuidado.</p>
 <p><strong>Por que meu aviso não menciona o cargo que coloquei nele?</strong>
 Por segurança. Os avisos automáticos nunca dão ping em @everyone, cargos ou pessoas, mesmo com a menção escrita no texto. Assim ninguém leva ping a cada mensagem removida.</p>
 <p><strong>A publicação automática não funciona no meu canal. Por quê?</strong>
-Ela só vale em <strong>canais de anúncio</strong>. Confira também se a mensagem passou nos filtros (cargo, conteúdo rico, tamanho mínimo de texto) e se o bot tem permissão pra publicar ali.</p>
+Ela só vale em canais de anúncio. Confira também se a mensagem passou nos filtros (cargo, conteúdo rico, tamanho mínimo de texto) e se o bot tem permissão pra publicar ali.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Em canal de mídia bem movimentado, ligue o <strong>tamanho mínimo de imagem</strong> (uns 64–100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula — que tecnicamente são "imagens" — e deixa o canal só com print e foto de verdade.</p>
+<p>Em canal de mídia movimentado, ligue o <strong>tamanho mínimo de imagem</strong> (uns 64–100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula, que tecnicamente são "imagens", e deixa o canal só com print e foto de verdade.</p>
 </div>
 
 
@@ -1951,7 +1950,7 @@ Ela só vale em <strong>canais de anúncio</strong>. Confira também se a mensag
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 06:31:23 UTC"><span class="timeago" datetime="2026-06-18T06:31:23+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 06:31:23 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 15:18:55 UTC"><span class="timeago" datetime="2026-06-18T15:18:55+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 15:18:55 UTC">2026-06-18</span>
   </span>
 
     
