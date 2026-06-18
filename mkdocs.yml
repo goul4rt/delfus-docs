@@ -9,9 +9,8 @@ repo_name: goul4rt/delfus-docs
 
 theme:
   name: material
-  custom_dir: overrides
   language: pt-BR
-  logo: assets/logo.png
+  logo: assets/logo-mascot.png
   favicon: assets/favicon.ico
   font:
     text: Inter

@@ -6,14 +6,12 @@ hide:
 
 <div class="dx-hero" markdown>
 
-![](assets/mascote.png){ .dx-hero__mascot }
-
-![Delfus](assets/logo.png){ .dx-hero__logo }
+<span class="dx-hero__eyebrow">Bot de Discord</span>
 
 # Delfus
 
 Análise avançada, moderação e gestão para comunidades Discord — tudo em um bot,
-configurável por um painel web. De graça.
+configurável por um painel web.
 
 [Adicionar ao servidor](comecar/adicionar.md){ .md-button .md-button--primary }
 [Abrir o Dashboard](https://admin.delfus.app){ .md-button }
