@@ -72,6 +72,18 @@ Alguns detalhes úteis das opções:
 !!! example "Faxina nos emojis"
     Rode `/emoji-stats sem-uso` pra descobrir quais emojis ninguém usa e `/emoji-stats nomes-estranhos` pra achar os de nome ruim. Cruze com `/emoji-stats top` pra confirmar quais valem a pena manter antes de remover.
 
+## Veja na prática
+
+Tudo no [Dashboard](https://admin.delfus.app), atualizado continuamente:
+
+![Visão avançada com gráficos no painel do Delfus](../assets/dashboard/analise-avancada.png){ .dx-shot loading=lazy }
+
+*Visão avançada — mensagens, atividade por canal e presença ao longo do tempo (dados de demonstração).*
+
+![Lista de membros no painel do Delfus](../assets/dashboard/analise-membros.png){ .dx-shot loading=lazy }
+
+*Lista de membros com pontuação e atividade — dados de demonstração.*
+
 ## Perguntas frequentes
 
 **Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?**

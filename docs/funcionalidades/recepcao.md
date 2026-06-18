@@ -115,6 +115,14 @@ Tudo é feito no **Dashboard** em [admin.delfus.app](https://admin.delfus.app), 
 !!! example "Anunciar saídas só pra staff"
     Quer registrar quem sai sem alarde? Ative a **despedida** em texto simples, num canal de logs da staff, com `{{user}} deixou o servidor. Agora somos {{memberCount}} membros.` Ligue **ignorar bots** pra não anunciar entrada e saída de robôs.
 
+## Veja na prática
+
+O estilo **Cartão de Imagem** monta uma arte de boas-vindas na hora, com o avatar do membro e presets de cor prontos:
+
+![Cartão de boas-vindas no painel do Delfus](../assets/dashboard/recepcao-cartao.png){ .dx-shot loading=lazy }
+
+*Estilo "Cartão de Imagem" com preview ao vivo e presets de cor — dados de demonstração.*
+
 ## Perguntas frequentes
 
 **Posso ter cartão de imagem na despedida ou na DM?**
