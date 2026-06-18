@@ -320,8 +320,8 @@
 
 /* HERO */
 .dxh-hero {
-  position: relative; overflow: hidden; border-radius: 1rem;
-  margin: -1rem -.8rem 2.8rem; padding: 3.6rem 2rem 3.2rem;
+  position: relative; overflow: hidden; border-radius: 1.2rem;
+  margin: 0 0 3rem; padding: clamp(2.6rem, 5vw, 4rem) clamp(1.6rem, 4vw, 3rem);
   background-color: #0f0d1c;
   background-image:
     radial-gradient(circle at 12% 0%, rgba(124, 58, 237, .38), transparent 55%),
@@ -359,13 +359,18 @@
 }
 .dxh-pop a:hover { background: rgba(139, 92, 246, .14); }
 .dxh-hero__art {
-  flex: none; width: 20rem; height: 16rem; border-radius: 1.1rem; overflow: hidden;
-  border: 1px solid var(--dx-card-border);
-  background: url("../assets/banner.jpg") center/cover;
-  box-shadow: 0 24px 60px -24px rgba(124, 58, 237, .6);
-  animation: dxhFloat 7s ease-in-out infinite;
+  flex: none; width: 22rem; height: 13.5rem; border-radius: 1rem; overflow: hidden;
+  position: relative;
+  background: url("../assets/banner.jpg") 30% 38% / cover;
+  box-shadow: 0 34px 80px -34px rgba(124, 58, 237, .85), inset 0 0 0 1px rgba(167, 139, 250, .25);
 }
-@keyframes dxhFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+/* vinheta sutil + leve fade na borda esquerda p/ a arte "derreter" no hero */
+.dxh-hero__art::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(to top, rgba(10, 8, 16, .5), transparent 50%),
+    linear-gradient(to right, rgba(15, 13, 28, .35), transparent 30%);
+}
 
 /* seções */
 .dxh-section { margin-bottom: 3rem; }
@@ -444,12 +449,15 @@
 .dxh-support .dxh-btn { margin-top: auto; }
 .dxh-btn:hover { transform: translateY(-1px); }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 860px) {
   .dxh-hero { flex-direction: column; align-items: stretch; }
-  .dxh-hero__art { width: 100%; height: 11rem; }
+  .dxh-hero__art { width: 100%; height: 12rem; }
   .dxh-steps { grid-template-columns: repeat(2, 1fr); }
-  .dxh-cats { grid-template-columns: 1fr; }
+  .dxh-cats { grid-template-columns: repeat(2, 1fr); }
   .dxh-bottom { grid-template-columns: 1fr; }
+}
+@media screen and (max-width: 520px) {
+  .dxh-steps, .dxh-cats { grid-template-columns: 1fr; }
 }
 
 /* Home: legibilidade no tema claro (hero e card de suporte seguem escuros de propósito) */

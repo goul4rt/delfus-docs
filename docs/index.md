@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-<div class="dx-home" markdown>
+<div class="dx-home">
 
 <section class="dxh-hero">
   <div class="dxh-hero__text">
