@@ -1,5 +1,5 @@
 site_name: Delfus
-site_url: https://docs.delfus.app
+site_url: https://goul4rt.github.io/delfus-docs/
 site_description: Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.
 site_author: Delfus
 copyright: © Delfus
@@ -59,6 +59,10 @@ extra_css:
 
 plugins:
   - search
+  - social:
+      cards_layout_options:
+        background_color: "#15132b"
+        color: "#ECE9F1"
   - glightbox:
       touchNavigation: true
       loop: false
