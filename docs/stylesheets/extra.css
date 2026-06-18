@@ -229,6 +229,37 @@
   border-color: var(--dx-violet);
 }
 
+/* Faixa de comunidade com banner (home) */
+.dx-band {
+  position: relative;
+  margin: 3.5rem -.8rem 0;
+  padding: 3.8rem 1.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--dx-card-border);
+  background-image:
+    linear-gradient(rgba(21, 19, 43, 0.55), rgba(21, 19, 43, 0.82)),
+    url("../assets/banner.jpg");
+  background-size: cover;
+  background-position: center 30%;
+}
+.dx-band .md-typeset h2,
+.dx-band h2 {
+  border: 0;
+  margin: 0 0 .4rem;
+  padding: 0;
+  color: #fff;
+}
+.dx-band p {
+  max-width: 34rem;
+  margin: 0 auto 1.4rem;
+  color: #e7e3f7;
+}
+.dx-band .md-button {
+  margin: .3rem;
+}
+
 /* Screenshots do painel */
 .md-typeset img.dx-shot {
   border-radius: .6rem;
