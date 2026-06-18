@@ -98,6 +98,14 @@ O caminho mais tranquilo:
 !!! example "Família com cargo próprio"
     Inclua um benefício de família num nível. Os assinantes montam a própria família com `/familia criar`, com cargo e tudo. Se o VIP expirar, a família é congelada automaticamente.
 
+## Veja na prática
+
+Criar um plano é direto pelo painel:
+
+![Dialog de criar plano VIP no painel](../assets/dashboard/modal-vip.png){ .dx-shot loading=lazy }
+
+*Dialog de criar plano VIP no painel — dados de demonstração.*
+
 ## Perguntas frequentes
 
 **Um membro pode usar o mesmo código duas vezes?**

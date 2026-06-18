@@ -2,6 +2,10 @@
 
 Republique automaticamente as melhores mensagens do servidor num canal de destaques. Quando uma mensagem junta estrelas suficientes (ou o emoji que você escolher), o Delfus copia ela pra lá. Bom pra premiar memes, arte, prints e momentos marcantes.
 
+![Ranking do Starboard no painel do Delfus](../assets/dashboard/starboard.png){ .dx-shot loading=lazy }
+
+*Ranking do Starboard no [Dashboard](https://admin.delfus.app) — dados de demonstração.*
+
 ## Como funciona
 
 A galera reage numa mensagem. Se ela bater o mínimo de estrelas, o Delfus copia ela pro canal de destaques num cartão. Conforme mais gente vota, o cartão atualiza a contagem.

@@ -113,10 +113,14 @@ nav:
           - Recompensas de boost: funcionalidades/boost.md
       - Engajamento:
           - Starboard: funcionalidades/starboard.md
+          - Mensagens e embeds: funcionalidades/mensagens.md
+          - Emojis: funcionalidades/emojis.md
           - Aniversários: funcionalidades/aniversarios.md
           - Famílias: funcionalidades/familia.md
           - Correio: funcionalidades/correio.md
           - Automações de canal: funcionalidades/automacoes.md
+      - Operação:
+          - Gestão de equipe: funcionalidades/equipe.md
       - Análise:
           - Análise e insights: funcionalidades/analise.md
       - Utilidades:
