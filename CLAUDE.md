@@ -43,10 +43,35 @@ Telas em `docs/assets/dashboard/*.png` vêm do `../front-end` em demo mode:
    (`REDIS_PASSWORD` não-vazio). O `.env.local` aponta p/ PRODUÇÃO — sempre neutralizar.
 3. Playwright: `localStorage['theme']='dark'`, cookie `active_theme=blue`,
    `localStorage['dashboard-storage']={state:{selectedGuildId:'demo-guild',isDemoModeActive:true,hasSeenWelcome:true}}`.
-4. **Modais de criação ficam `disabled` no demo** — só dá pra capturar navegação/abas, não dialogs.
+4. Esconder overlay do Next antes do screenshot: inserir `<style>nextjs-portal,[data-nextjs-toast]{display:none!important}</style>`.
+5. **Modais de criar/editar ABREM no demo** (desde a branch `demo-completeness` em `delfus-v2`): mutações viram no-op (`src/lib/demo-noop.ts`), nada persiste. Clicar "Novo Plano"/"Criar" e printar o dialog.
+
+Classificar OK/vazio: olhar o texto do `<main>` (NÃO o body inteiro — o seletor de guild renderiza "Nenhum servidor" e dá falso-positivo). Procurar `Erro ao carregar` / a mensagem de vazio própria da feature.
 
 ## Conteúdo
 
-19 páginas de feature geradas/revisadas por workflow (lê o código do bot em `../discord-bot`).
+Páginas de feature geradas/revisadas por workflow (lê o código do bot em `../discord-bot` + front-end).
 Escrita: direta, enxuta, sem cacoetes de IA. Re-inserir screenshots após reescrever (script anexa o
 print antes de `## Como funciona`).
+
+## Expandir cobertura (demo + docs) — fluxo repetível
+
+Spec/plan da rodada original: `specs/2026-06-18-docs-completeness-*`. Estado: ver memória `project_demo_completeness`.
+
+Para cobrir uma feature nova do dashboard:
+
+1. **Auditar de verdade** (não estático): subir o front em demo, abrir a rota, ler o `<main>`.
+   "Tem `isDemoMode` check?" NÃO garante que renderiza — a análise estática super-estima gaps.
+   Só é gap se a tela der erro ou mostrar o vazio próprio dela.
+2. **Demo data** (se vazio): criar `src/features/<feat>/utils/demo-<feat>-generator.ts` tipado
+   aos tipos reais (espelhar `demo-vip-generator.ts`), e ramificar a read em
+   `if (isDemoMode()) { const {gen}=await import(...); return gen(); }` (ver `starboard/api.ts`).
+   `bun run tsc --noEmit` limpo. Commit na branch `demo-completeness` (NUNCA na main do front; é prod).
+3. **Polish**: nomes BR variados + @handles, avatares Discord (`cdn.discordapp.com/embed/avatars/0..5.png`),
+   números não-redondos, embeds com título+emoji, descrição com `{{user}}/{{server}}/{{memberCount}}`, cor da marca.
+4. **Screenshot** (seção acima) em dark+azul.
+5. **Doc**: workflow gera a página (fundamentada no código), embed do print, adicionar à `nav` do mkdocs.yml.
+6. **Push**: front via gh helper (`https://github.com/goul4rt/delfus-v2.git demo-completeness`); docs na main.
+   Branch do front fica em PR — repo de produção, merge é decisão do usuário.
+
+Telas sem doc de propósito (internas/triviais): `changelog`, `getting-started`, `product`, `bot-config`.
