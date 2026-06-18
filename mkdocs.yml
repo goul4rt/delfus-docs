@@ -4,9 +4,6 @@ site_description: Documentação do Delfus — análise avançada, moderação e
 site_author: Delfus
 copyright: © Delfus
 
-repo_url: https://github.com/goul4rt/delfus-docs
-repo_name: goul4rt/delfus-docs
-
 theme:
   name: material
   language: pt-BR
