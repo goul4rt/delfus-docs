@@ -1,13 +1,8 @@
 # Configuração inicial
 
-O Delfus é configurado principalmente pelo **Dashboard** — o painel web onde você
-ativa módulos, escolhe canais e cargos, e ajusta tudo visualmente.
+Você configura o Delfus pelo **Dashboard**, o painel web onde ativa módulos, escolhe canais e cargos.
 
 [Abrir o Dashboard](https://admin.delfus.app){ .md-button .md-button--primary }
-
-![Visão geral do Dashboard do Delfus](../assets/dashboard/overview.png){ .dx-shot loading=lazy }
-
-*Visão geral do [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
 
 ## Como funciona
 
@@ -19,10 +14,8 @@ As mudanças feitas no painel são aplicadas no bot automaticamente.
 
 ## Comandos no Discord
 
-Além do painel, você pode usar comandos de barra diretamente no servidor. Digite `/`
-no campo de mensagem para ver todos os comandos disponíveis, ou use `/help` para uma
-visão geral.
+Você também pode usar comandos de barra no servidor. Digite `/` no campo de mensagem para ver todos os comandos, ou use `/help` para uma visão geral.
 
 !!! info "Painel ou comandos?"
-    Use o **Dashboard** para configurar (ativar módulos, definir canais e cargos) e os
-    **comandos** para o dia a dia (aplicar punições, consultar dados, etc).
+    Use o **Dashboard** para configurar (ativar módulos, definir canais e cargos) e os **comandos** para o dia a dia (aplicar punições, consultar dados, etc).
+
