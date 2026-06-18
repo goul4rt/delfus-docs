@@ -87,14 +87,3 @@ configurável por um painel web.
     de canais.
 
 </div>
-
-<div class="dx-band" markdown>
-
-## Junte-se à comunidade
-
-Precisa de ajuda, quer sugerir uma ideia ou só trocar uma ideia com a gente?
-Estamos no Discord — chega mais.
-
-[:fontawesome-brands-discord: Entrar no servidor de suporte](https://discord.gg/mTjZg95UJV){ .md-button .md-button--primary }
-
-</div>
