@@ -358,19 +358,23 @@
   border: 1px solid var(--dx-card-border); padding: .2rem .65rem; border-radius: 99px;
 }
 .dxh-pop a:hover { background: rgba(139, 92, 246, .14); }
+/* mascote recortada flutuando, com glow (spotlight) atrás */
 .dxh-hero__art {
-  flex: none; width: 22rem; height: 13.5rem; border-radius: 1rem; overflow: hidden;
-  position: relative;
-  background: url("../assets/banner.jpg") 30% 38% / cover;
-  box-shadow: 0 34px 80px -34px rgba(124, 58, 237, .85), inset 0 0 0 1px rgba(167, 139, 250, .25);
+  flex: none; width: 17rem; height: 17rem; position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+  animation: dxhFloat 6s ease-in-out infinite;
 }
-/* vinheta sutil + leve fade na borda esquerda p/ a arte "derreter" no hero */
-.dxh-hero__art::after {
-  content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(to top, rgba(10, 8, 16, .5), transparent 50%),
-    linear-gradient(to right, rgba(15, 13, 28, .35), transparent 30%);
+.dxh-hero__art::before {
+  content: ""; position: absolute; inset: -8% 0 -2%;
+  background: radial-gradient(closest-side at 50% 45%, rgba(124, 58, 237, .55), rgba(124, 58, 237, .12) 58%, transparent 75%);
+  filter: blur(4px);
 }
+.dxh-hero__art img {
+  position: relative; width: 100%; height: 100%; object-fit: contain;
+  transform: scaleX(-1); /* aponta para o conteúdo */
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, .5));
+}
+@keyframes dxhFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 
 /* seções */
 .dxh-section { margin-bottom: 3rem; }
