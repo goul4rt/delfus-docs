@@ -1,6 +1,6 @@
 # Cargos por reação
 
-Permite que os membros peguem (e devolvam) cargos sozinhos, clicando em botões de um painel que você publica em um canal. É ideal para cargos de notificação, cores, regiões, pronomes, jogos, interesses e acesso a áreas do servidor — tudo sem precisar de moderador e sem que ninguém saia da conversa para abrir um menu. Para o dono do servidor, isso reduz pedidos manuais de cargo, organiza a comunidade em grupos auto-selecionados e mantém os canais de notificação cheios apenas de quem realmente quer estar neles.
+Deixe seus membros pegarem (e largarem) cargos sozinhos, num clique. Você publica um painel com botões num canal, e cada um se serve do que quiser: cargos de notificação, cores, pronomes, jogos, regiões, acesso a áreas do servidor. Zero pedido manual de cargo, zero moderador envolvido — e seus canais de aviso ficam cheios só de quem realmente quer estar lá.
 
 ![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.png){ .dx-shot loading=lazy }
 
@@ -8,123 +8,81 @@ Permite que os membros peguem (e devolvam) cargos sozinhos, clicando em botões 
 
 ## Como funciona
 
-O sistema é baseado em **painéis**. Cada painel é uma mensagem que o bot publica em um canal do seu servidor — com um texto opcional, um embed (título, descrição, cor, imagem) e um ou mais **botões**, onde cada botão está ligado a um cargo. O membro interage clicando nos botões; o bot cuida do resto.
+A ideia é simples: você cria um **painel**, que nada mais é do que uma mensagem que o bot publica num canal. Essa mensagem pode ter um texto, um embed bonitinho (título, descrição, cor, imagem) e, o mais importante, os **botões** — cada botão amarrado a um cargo.
 
-### Montando e publicando o painel
+O membro clica, o bot resolve o resto. E cada botão funciona como um interruptor: o mesmo botão **dá e tira** o cargo. Se você ainda não tem aquele cargo, clicar adiciona. Se já tem, clicar remove. Pronto.
 
-1. Você monta o painel pelo [Dashboard](https://admin.delfus.app): dá um nome (só para você reconhecer na lista), escolhe o canal de destino, escreve o conteúdo (texto e/ou embed) e adiciona a lista de botões, cada um amarrado a um cargo.
-2. Ao salvar, o bot publica a mensagem no canal escolhido com todos os botões. Apenas canais de **texto** e de **anúncios** são aceitos como destino.
-3. Se você **editar o painel depois** e salvar de novo, o bot **atualiza a mesma mensagem** já publicada (não cria uma nova). Se essa mensagem tiver sido apagada do canal nesse meio-tempo, o bot detecta isso e **publica uma mensagem nova** automaticamente.
-4. O Dashboard registra a data e hora do último envio, então você sempre sabe se o painel já foi ao Discord ou se ainda está só salvo como rascunho.
+Na hora do clique, o membro recebe uma confirmação privada (só ele vê, e ela some sozinha) dizendo o que rolou. A confirmação é instantânea; o cargo em si entra logo em seguida, em segundo plano — em geral, em poucos segundos.
 
-### O clique do membro: o liga/desliga
+!!! example "Exemplo"
+    Imagine que você abre um painel novo de notificações e 200 pessoas clicam ao mesmo tempo. Cada uma vê na hora a mensagem "Você recebeu o cargo **Eventos**!", e o bot vai aplicando os cargos com calma, em fila, sem travar nem apanhar do Discord. Ninguém fica esperando uma tela de carregamento.
 
-Cada botão funciona como um interruptor (toggle): o mesmo botão dá e tira o cargo.
+!!! note "Por baixo dos panos"
+    O bot processa os cliques com controle de ritmo e tenta de novo sozinho se der uma instabilidade momentânea. Cliques duplicados em sequência rápida são ignorados, pra não ficar dando e tirando o cargo várias vezes seguidas. Você não precisa fazer nada disso — é automático.
 
-1. O membro clica em um botão do painel.
-2. O bot verifica na hora se aquele membro já tem o cargo ligado àquele botão:
-   - **Não tem** → o cargo é **adicionado**.
-   - **Já tem** → o cargo é **removido**.
-3. O membro recebe **imediatamente** uma resposta privada e efêmera (só ele vê, e ela some depois) confirmando se recebeu ou perdeu o cargo. Essas mensagens de confirmação são **personalizáveis por painel** (veja a seção "Configuração"). Quando não personalizadas, o bot usa textos padrão: "Você recebeu o cargo **{nome}**!" e "O cargo **{nome}** foi removido."
-4. A confirmação ao membro é instantânea, mas a aplicação do cargo em si acontece **logo em seguida, em segundo plano**. O bot enfileira cada clique e processa com **controle de ritmo**, para aguentar muita gente clicando ao mesmo tempo (por exemplo, logo após você publicar um painel novo) sem travar nem ser bloqueado pelo Discord. Na prática, o cargo aparece no membro em geral em poucos instantes.
-5. Se um clique falhar por um problema momentâneo (instabilidade da API do Discord, por exemplo), o bot **tenta novamente sozinho** algumas vezes antes de desistir. Falhas definitivas (cargo configurado errado, membro que saiu, etc.) não ficam tentando para sempre.
-6. Cliques repetidos no mesmo botão em sequência muito rápida são tratados com segurança: o bot ignora a duplicata para não aplicar e remover o cargo várias vezes seguidas.
+### Escolha única (modo exclusivo)
 
-### Modo exclusivo (escolha única)
+Todo painel tem o botão **"Permitir múltiplos cargos"**:
 
-Cada painel tem a opção **"Permitir múltiplos cargos"**:
+- **Ligado** (padrão) — o membro pode acumular vários cargos do painel ao mesmo tempo. Ótimo pra listas onde faz sentido marcar várias opções (notificações, jogos, pronomes).
+- **Desligado** — vira escolha única. Ao pegar um cargo daquele painel, o bot **tira sozinho os outros** do mesmo painel. Perfeito pra cor do nome, região, plataforma — coisas em que só pode existir uma.
 
-- **Ativada** (padrão): o membro pode acumular vários cargos daquele painel ao mesmo tempo. Bom para listas onde faz sentido marcar várias opções (notificações, jogos, pronomes).
-- **Desativada** (escolha única): ao pegar um cargo daquele painel, o bot **remove automaticamente os outros cargos do mesmo painel** que o membro tivesse. Perfeito para opções mutuamente exclusivas — escolher uma única cor, uma única região, uma única plataforma. O membro não precisa desmarcar a opção anterior; o bot troca sozinho.
-
-Importante: o modo exclusivo só age sobre os cargos **daquele painel específico**. Cargos que o membro tenha de outros painéis ou de outras fontes não são tocados.
-
-### Verificações de segurança a cada clique
-
-Antes de mexer em qualquer cargo, o bot valida tudo, e nada é alterado se algo não bater:
-
-- **Sistema desativado** → se o módulo estiver desligado no Dashboard, o membro vê um aviso de que o sistema está desativado e nenhum cargo muda.
-- **Painel ou botão removido** → se o painel ou o botão tiver sido apagado da configuração depois de publicado, o membro recebe um aviso de que aquela opção não está mais disponível.
-- **Botão sem cargo** → se um botão ficou sem cargo associado, o membro é avisado de que ele não está configurado.
-- **Hierarquia de cargos** → o bot só consegue entregar ou tirar um cargo que esteja **abaixo** do cargo dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, a ação é ignorada (o Discord não permite). Veja "Requisitos".
+!!! note
+    O modo exclusivo só mexe nos cargos **daquele painel**. Cargos de outros painéis (ou que o membro ganhou de outras formas) ficam intocados.
 
 ## Comandos
 
-Esta feature é configurada apenas pelo painel. Não há comandos de barra: todo o gerenciamento (criar painéis, botões, cargos, mensagens, publicar) acontece no [Dashboard](https://admin.delfus.app).
+Essa feature não tem comando de barra. Tudo — criar painéis, botões, cargos, mensagens e publicar — acontece no [Dashboard](https://admin.delfus.app), na seção **Cargos por Reação**.
 
 ## Configuração
 
-Toda a configuração é feita pelo Dashboard em [admin.delfus.app](https://admin.delfus.app), na seção **Cargos por Reação**.
+Toda a montagem é pelo [Dashboard](https://admin.delfus.app). O caminho é rápido:
 
-### Ativar o sistema
+1. **Ligue o sistema** no interruptor geral no topo da página. Ele liga/desliga todos os painéis de uma vez. (Com tudo desligado, os botões param de entregar cargos e o membro vê um aviso ao clicar.)
+2. **Crie um painel** — do zero, em "Novo Painel", ou a partir de um **template** pronto: **Notificações**, **Cores** (já em escolha única), **Jogos** ou **Pronomes**. Se o template usar cargos que ainda não existem, o bot **cria eles pra você** ao salvar, já com nome e cor sugeridos.
+3. **Configure o painel**: dê um nome (só pra você achar na lista), escolha o canal de destino (texto ou anúncios), escreva o conteúdo e monte a lista de botões.
+4. **Salve** — e o bot publica a mensagem no canal. Editou depois? Ele **atualiza a mesma mensagem**, não cria outra. (Se alguém apagou a mensagem do canal nesse meio-tempo, ele percebe e publica uma nova.)
 
-No topo da página há um interruptor geral **Ativado / Desativado**. Ele liga ou desliga todos os painéis de uma vez. Com o sistema desativado, os botões publicados deixam de entregar cargos e os membros veem um aviso ao clicar.
+Cada botão tem **emoji** (opcional), **rótulo**, **cargo** e **cor** (azul, cinza, verde ou vermelho).
 
-### Criar um painel
+E dá pra personalizar as **mensagens de confirmação** que o membro recebe ao ganhar e ao perder um cargo. Use `{cargo}` pra inserir o nome automaticamente:
 
-Você pode começar de duas formas:
+!!! example "Exemplo"
+    Em vez do texto padrão "Você recebeu o cargo **Lives**!", você escreve `Pronto! Agora você é avisado toda vez que rolar uma {cargo}. 🎉`
 
-- **Do zero**, clicando em "Novo Painel".
-- **A partir de um template** pronto, que já vem com botões e cargos sugeridos. Os templates disponíveis são: **Notificações**, **Cores** (já em modo escolha única), **Jogos** e **Pronomes**. Quando um template usa cargos que ainda não existem no servidor, o bot **cria esses cargos automaticamente** ao salvar (com o nome e a cor sugeridos), e já liga cada botão ao cargo criado.
+!!! tip "Organizar painéis"
+    Na lista você ativa/desativa cada painel individualmente, **duplica** um (sai uma cópia "(copia)" pronta pra ajustar) e **exclui** o que não usa mais.
 
-### Opções de cada painel
+!!! note "Limites"
+    Até **25 botões** por painel (5 linhas de 5). Texto acima do embed: 2000 caracteres. Mensagens de confirmação: 500 cada. Nome do painel: 100.
 
-Ao editar um painel, você configura:
+## Exemplos
 
-- **Nome do painel** — rótulo interno para você reconhecer o painel na lista (até 100 caracteres). Não aparece para os membros.
-- **Canal** — onde a mensagem será publicada (canal de texto ou de anúncios).
-- **Texto acima do embed** (opcional, até 2000 caracteres) — texto simples que aparece antes do embed.
-- **Mensagem embed** — título, descrição, cor, imagem, miniatura, rodapé, autor e campos, montados num editor visual com pré-visualização dos botões.
-- **Botões & cargos** — a lista de botões. Cada botão tem:
-  - **Emoji** (opcional)
-  - **Rótulo** (o texto do botão)
-  - **Cargo** associado (escolhido entre os cargos do servidor)
-  - **Estilo/cor** do botão: azul (primary), cinza (secondary), verde (success) ou vermelho (danger).
-- **Permitir múltiplos cargos** — interruptor que define se o painel acumula vários cargos ou funciona como escolha única (ver "Modo exclusivo" acima).
-- **Mensagens automáticas** — os textos efêmeros enviados ao membro **ao receber** e **ao perder** um cargo (até 500 caracteres cada). Use o marcador `{cargo}` para inserir o nome do cargo automaticamente. Ex.: `Você agora segue {cargo}!`.
+!!! example "Central de notificações (acúmulo livre)"
+    Crie um painel "Central de Notificações" com os botões **Anúncios**, **Eventos**, **Transmissões** e **Votações**, cada um num cargo de menção. Deixe **"Permitir múltiplos cargos" ligado** — afinal, dá pra querer ser avisado de várias coisas ao mesmo tempo. Quem quer ser marcado em anúncios, clica e pronto.
 
-### Ligar/desligar e organizar painéis
+!!! example "Cor do nome (escolha única)"
+    Use o template **Cores** ou monte um painel com um botão por cor, e **desligue "Permitir múltiplos cargos"**. Aí escolher uma cor nova remove a anterior sozinha — ninguém fica com duas cores brigando. Só lembre de arrastar esses cargos de cor pra cima dos demais na lista de cargos, pra cor aparecer no nome.
 
-Na lista de painéis você pode ativar/desativar cada painel individualmente, **duplicar** um painel (cria uma cópia "(copia)" pronta para ajustar) e **excluir** painéis.
-
-### Publicar
-
-Ao salvar um painel, o bot publica (ou republica) a mensagem no canal escolhido. Edições posteriores atualizam a mesma mensagem; se ela tiver sido apagada, uma nova é enviada.
-
-### Limites
-
-- Cada painel suporta até **25 botões**, organizados em até **5 linhas de 5 botões**.
-- Texto acima do embed: até 2000 caracteres. Mensagens de confirmação: até 500 caracteres cada. Nome do painel: até 100 caracteres.
-
-## Exemplos de uso
-
-- **Cargos de notificação (acúmulo livre):** crie um painel "Central de Notificações" com botões "Anúncios", "Eventos", "Transmissões" e "Votações", cada um ligado a um cargo de menção. Deixe **"Permitir múltiplos cargos" ativado**, já que faz sentido o membro seguir vários tipos de aviso ao mesmo tempo. Quem quiser ser marcado em anúncios só clica no botão.
-
-- **Cores do nome (escolha única):** use o template **Cores** ou monte um painel com um botão por cor. **Desative "Permitir múltiplos cargos"** para que escolher uma cor remova a anterior sozinha — assim o membro nunca fica com duas cores brigando. Posicione esses cargos de cor acima dos demais na lista para que a cor apareça no nome.
-
-- **Pronomes ou plataforma:** publique um painel "Pronomes" (Ele/Dele, Ela/Dela, Elu/Delu) com emojis, deixando o acúmulo livre se quiser permitir combinações, ou em escolha única se preferir uma seleção só. Os membros se identificam sozinhos, sem abrir ticket nem pedir a um moderador.
-
-## Requisitos
-
-- O bot precisa da permissão **Gerenciar Cargos**.
-- O cargo do bot precisa estar **acima**, na lista de cargos do servidor, de qualquer cargo que ele vá entregar. O bot **nunca** consegue dar ou tirar um cargo que esteja igual ou acima do cargo dele — nesses casos a ação é simplesmente ignorada.
-- Para publicar o painel, o bot precisa conseguir **enviar mensagens** no canal escolhido (e o destino deve ser um canal de **texto** ou de **anúncios**).
-- Para a criação automática de cargos a partir de templates, o bot também usa a permissão **Gerenciar Cargos**.
+!!! example "Pronomes, sem pedir a ninguém"
+    Publique um painel "Pronomes" (Ele/Dele, Ela/Dela, Elu/Delu) com emojis. Deixe acúmulo livre se quiser permitir combinações, ou escolha única se preferir uma seleção só. Cada um se identifica sozinho — sem abrir ticket, sem chamar moderador.
 
 ## Perguntas frequentes
 
 **O mesmo botão dá e tira o cargo?**
-Sim. É um liga/desliga: se o membro não tem o cargo, clicar adiciona; se já tem, clicar remove. A mensagem de confirmação avisa o que aconteceu.
+Sim, é um liga/desliga. Não tem o cargo, clicar adiciona; já tem, clicar remove. A confirmação avisa o que aconteceu.
 
-**Por que o cargo demora alguns instantes para aparecer depois do clique?**
-A confirmação ao membro é instantânea, mas a aplicação do cargo é feita em segundo plano, com controle de ritmo, para o servidor aguentar muita gente clicando ao mesmo tempo sem travar. Em geral o cargo aparece em poucos segundos.
+**Por que o cargo demora alguns instantes pra aparecer?**
+A confirmação é na hora, mas o cargo é aplicado em segundo plano, em fila, pro servidor aguentar muita gente clicando junto sem travar. Costuma entrar em poucos segundos.
 
-**Como faço um menu onde só dá para escolher uma opção (uma cor só)?**
-Desative o interruptor "Permitir múltiplos cargos" do painel. Aí, ao escolher uma opção, o bot remove sozinho as outras opções daquele painel.
+**Como faço um menu de uma opção só (uma cor só)?**
+Desligue o "Permitir múltiplos cargos" do painel. Escolher uma opção passa a remover as outras automaticamente.
 
 **Editei o painel — preciso apagar a mensagem antiga e publicar de novo?**
-Não. Ao salvar, o bot atualiza a mensagem já publicada. Só se ela tiver sido apagada do canal é que ele publica uma nova no lugar.
+Não. Ao salvar, o bot atualiza a mensagem que já está lá. Só publica uma nova se a antiga tiver sido apagada do canal.
+
+**O bot não está entregando um cargo. Por quê?**
+Quase sempre é hierarquia: o bot só mexe em cargos que estão **abaixo** dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, o Discord não deixa e a ação é ignorada. Confira também se o bot tem a permissão **Gerenciar Cargos** e consegue **enviar mensagens** no canal do painel.
 
 !!! tip "Dica"
-    Quer cargos de cor sem criar nada à mão? Use o template **Cores**: ele já vem em modo escolha única e o bot cria os cargos coloridos automaticamente ao salvar. Depois é só arrastar esses cargos para acima dos demais na lista de cargos do servidor para que a cor apareça no nome dos membros.
-
+    Quer cargos de cor sem criar nada na mão? Use o template **Cores**: ele já vem em modo escolha única e o bot cria os cargos coloridos sozinho ao salvar. Depois é só arrastar esses cargos pra cima dos demais na lista, e a cor aparece no nome dos membros.

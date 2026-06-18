@@ -1,101 +1,99 @@
 # Correio Elegante
 
-O Correio Elegante transforma seu servidor em uma "agência de cartas" temática: durante um evento com data marcada, qualquer membro pode mandar um recado **anônimo** para outro membro. Cada recado passa pela aprovação da equipe antes de aparecer num canal público com um visual personalizado (cor, banner, moldura), mantendo o remetente sempre em segredo. É ideal para datas como Dia dos Namorados, festas juninas, aniversário do servidor ou qualquer ocasião em que você queira incentivar interação carinhosa entre a comunidade.
+Quer dar um toque especial ao seu servidor numa data comemorativa? O Correio Elegante deixa qualquer membro mandar um recado **anônimo** para outro membro durante um evento que você marca na agenda. A equipe dá um ok rápido, o recado aparece num canal público com um visual caprichado e quem enviou continua em segredo.
+
+Perfeito para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer ocasião em que você queira espalhar carinho na comunidade.
 
 ## Como funciona
 
-O Correio Elegante é um **evento com janela de tempo**: você define uma data/hora de início e uma de fim. O comando `/correio` só funciona enquanto o relógio do bot estiver **dentro** dessa janela e o evento estiver marcado como ativado no painel. Fora disso, o membro recebe a mensagem de "evento inativo" que você configurou.
+O Correio Elegante é um **evento com hora marcada**. Você define quando começa e quando termina, e o comando `/correio` só responde dentro dessa janela (e com o evento ligado no painel). Fora disso, o membro vê a mensagem de "evento inativo" que você escreveu.
 
-Todo recado segue este fluxo, do envio até a publicação:
+Quando um recado é enviado, o caminho é simples:
 
-1. **Envio pelo membro** — O membro usa `/correio`, escolhe o destinatário (`usuario`) e escreve o recado (`mensagem`, até **500 caracteres**). A resposta do comando é sempre **privada** (só o próprio remetente vê), então ninguém ao redor descobre quem enviou.
-2. **Verificação de evento ativo** — O bot confere se o evento está habilitado **e** se o momento atual está entre o início e o fim configurados. Se não estiver, mostra a mensagem de evento inativo e encerra ali.
-3. **Validações automáticas do destinatário** — O recado é recusado na hora se:
-   - O destinatário for um **bot** ("Você não pode enviar um correio para um bot.").
-   - O destinatário for o **próprio remetente** ("Você não pode enviar um correio para si mesmo.").
-4. **Intervalo mínimo entre envios (cooldown)** — Há um tempo de espera configurável entre um envio e o próximo, contado por membro. Se o membro tentar enviar rápido demais, recebe um aviso do tipo "Calma! Espere Ns antes de enviar outro correio." O cooldown só "trava" depois que o correio é **efetivamente enfileirado** — tentativas barradas por validação não consomem nem reiniciam o cronômetro.
+1. **O membro envia** com `/correio`, escolhendo o destinatário e escrevendo o recado (até 500 caracteres). A resposta é sempre privada — ninguém ao lado descobre quem mandou.
+2. **A equipe avalia** num canal interno, só para a staff. Lá aparece o recado, quem enviou, para quem é, e dois botões: **Aprovar** e **Rejeitar**.
+3. **Se aprovado, vira post anônimo** no canal público, com a cara do tema que você escolheu (cor, banner, ícone, moldura). Mostra para quem é — mas nunca quem enviou.
 
-   !!! note "Detalhe do cooldown"
-       O cronômetro do cooldown é mantido na memória do bot. Se o bot reiniciar, os cooldowns em andamento são zerados. Definir o cooldown como `0` desliga essa espera.
+!!! example "Na prática"
+    Ana usa `/correio` e manda um recado fofo pro Bruno. Só a Ana vê a confirmação. O recado cai no canal da moderação, alguém clica em **Aprovar**, e ele aparece bonito no `#correio-publico` marcando o Bruno. O Bruno fica todo feliz — e nunca vai saber que foi a Ana.
 
-5. **Fila de aprovação (canal interno)** — Se tudo passou, o recado é postado no **canal de aprovação** (visível só para a equipe) como um embed que mostra: o conteúdo cru do recado, **quem enviou** (Remetente), **para quem é** (Destinatário) e dois botões — **Aprovar** (verde) e **Rejeitar** (vermelho). O membro recebe a confirmação privada "Seu correio foi enviado para aprovação!".
-6. **Decisão da equipe** — Apenas membros que possuem um dos **cargos de aprovação** configurados podem usar os botões. Quem não tem o cargo e clica recebe "Você não tem permissão para aprovar correios." (resposta privada, nada acontece com o recado).
-   - **Rejeitar** → o recado é descartado: a mensagem some do canal de aprovação e nada é publicado. Não há reciclagem nem histórico.
-   - **Aprovar** → o recado é publicado no canal público (próximo passo).
-7. **Publicação anônima** — Ao aprovar, o recado é postado no **canal público** com o visual do **tema ativo**: cor, título, banner (imagem grande), ícone (miniatura), rodapé e a **moldura de texto**. A publicação mostra para quem é o recado, mas **nunca revela o remetente**. Depois de publicado, a mensagem da fila de aprovação é apagada para manter o canal interno limpo.
+Alguns cuidados que o bot toma sozinho:
 
-   ### Moldura de texto (frameText)
-   Cada tema pode ter uma moldura: um texto fixo com o marcador `{{mensagem}}`, que é substituído pelo recado do membro. Por exemplo, uma moldura `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"` envolve o recado com a decoração definida por você. Se o tema não tiver moldura, o recado aparece sozinho. O embch público começa com "Para @destinatário" antes do corpo.
+- Não dá pra mandar correio para **bots** nem **para si mesmo** — o recado é recusado na hora.
+- Existe um **intervalo entre envios** (cooldown) por membro, pra ninguém inundar a fila. Tentativas barradas por validação não reiniciam esse cronômetro.
+- **Rejeitar** descarta o recado de vez: some da fila e nada é publicado. Sem histórico, sem aviso ao remetente.
 
-8. **Notificação do destinatário (opcional)** — Se a opção "mencionar destinatário" estiver ligada, o destinatário recebe uma menção real (ping) na publicação. Se estiver desligada, o nome dele ainda aparece escrito, mas sem notificação.
-9. **Recompensa opcional ao remetente** — Se você configurou um **cargo de recompensa**, o membro que enviou o correio **aprovado** ganha esse cargo automaticamente. É aplicado em "melhor esforço": se o bot não tiver permissão ou hierarquia para dar o cargo, a publicação acontece mesmo assim, só a recompensa falha silenciosamente.
+!!! note "Detalhes que valem saber"
+    O cooldown vive na memória do bot — se ele reiniciar, os contadores zeram. Definir o cooldown como `0` desliga a espera. E só quem tem um dos cargos de aprovação consegue usar os botões; qualquer outra pessoa que clicar recebe um aviso privado e nada acontece.
 
-### Sobre o tema ativo
+### A moldura de texto
 
-O servidor pode cadastrar **vários temas** e escolher qual fica ativo durante o evento. O bot usa o tema marcado como ativo; se por algum motivo o tema ativo não for encontrado, ele cai para o **primeiro tema** da lista. Se não houver nenhum tema cadastrado ou o canal de aprovação não estiver definido, o comando avisa o membro que "o Correio Elegante não está configurado corretamente".
+Cada tema pode ter uma **moldura**: um texto fixo que envolve o recado do membro. Você usa o marcador `{{mensagem}}` no lugar onde o recado deve entrar.
+
+!!! example "Moldura em ação"
+    Se a moldura for `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"`, um recado simples como "você é incrível" sai assim, todo decorado, com saudação e assinatura. Sem moldura, o recado aparece sozinho.
+
+E se você ligar a opção **mencionar destinatário**, ele recebe um ping de verdade na publicação. Se ligar um **cargo de recompensa**, todo mundo que tem um correio aprovado ganha esse cargo automaticamente — um mimo pra quem participa.
 
 ## Comandos
 
 | Comando | O que faz |
 | --- | --- |
-| `/correio usuario:<membro> mensagem:<texto>` | Envia um correio elegante anônimo para outro membro. O recado (até 500 caracteres) vai para a fila de aprovação da equipe; após aprovado, é publicado no canal público sem revelar quem enviou. Só funciona durante o evento ativo. |
+| `/correio usuario:<membro> mensagem:<texto>` | Manda um correio anônimo para outro membro. O recado (até 500 caracteres) vai para a fila da equipe e, se aprovado, é publicado sem revelar quem enviou. Só funciona durante o evento ativo. |
 
-Toda a **configuração** do Correio Elegante é feita pelo painel — não há comandos de barra de administração para esta feature.
+!!! note
+    Toda a configuração do Correio Elegante é feita pelo painel — não há comandos de administração para essa função.
 
 ## Configuração
 
-A configuração é feita pelo Dashboard em [https://admin.delfus.app](https://admin.delfus.app), na seção de **Eventos → Correio Elegante**. Os campos disponíveis são:
+A configuração fica no Dashboard, em [admin.delfus.app](https://admin.delfus.app), na seção **Eventos → Correio Elegante**. Com o evento ligado, você precisa preencher:
 
-1. **Ativar o evento** — Um toggle liga/desliga o Correio Elegante. Quando ligado, os campos de canais, cargos e temas passam a ser obrigatórios.
-2. **Período do evento** — Data/hora de **início** e **fim**. O comando `/correio` só responde dentro dessa janela. O fim precisa ser depois do início.
-3. **Canais**:
-   - **Canal de aprovação** — onde a equipe avalia os recados (deve ficar visível só para a staff).
-   - **Canal público** — onde os correios aprovados são publicados.
-4. **Cargos de aprovação** — um ou mais cargos cujos membros podem aprovar/rejeitar. É obrigatório definir **ao menos um** quando o evento está ativo.
-5. **Temas** — você cria um ou mais temas (é obrigatório **ao menos um**) e escolhe qual fica **ativo**. Cada tema tem:
-   - **Nome do tema** (até 80 caracteres) — uso interno/identificação (ex.: "Dia dos Namorados").
-   - **Título do embed** (até 256 caracteres) — o título mostrado na publicação pública.
-   - **Cor** — em formato hexadecimal `#rrggbb`.
-   - **Banner** (URL de imagem, opcional) — imagem grande no embed.
-   - **Ícone** (URL de imagem, opcional) — miniatura no canto do embed.
-   - **Rodapé** (até 2048 caracteres, opcional).
-   - **Texto-moldura** (até 2000 caracteres, opcional) — texto decorativo com o marcador `{{mensagem}}`, que é substituído pelo recado do membro.
-6. **Intervalo entre envios (cooldown)** — em segundos, de `0` (sem espera) até `86400` (24 horas). O padrão sugerido é 300 segundos (5 minutos).
-7. **Mencionar destinatário** — toggle que define se o destinatário recebe uma menção (ping) na publicação.
-8. **Cargo de recompensa** (opcional) — cargo dado automaticamente ao remetente quando o correio é aprovado.
-9. **Mensagem de evento inativo** — texto mostrado quando alguém usa `/correio` fora do período do evento.
+- **Período do evento** — data/hora de início e fim (o fim tem que ser depois do início).
+- **Canal de aprovação** — onde a equipe avalia (deixe visível só para a staff).
+- **Canal público** — onde os correios aprovados aparecem.
+- **Cargos de aprovação** — um ou mais cargos que podem aprovar/rejeitar (pelo menos um).
+- **Temas** — pelo menos um, com um marcado como **ativo**. Cada tema tem nome, título, cor (`#rrggbb`) e, opcionalmente, banner, ícone, rodapé e a moldura de texto.
 
-!!! note "Validações do painel"
-    Com o evento ativado, o painel exige: canal de aprovação, canal público, ao menos um cargo de aprovação, ao menos um tema, um tema ativo válido e datas de início/fim coerentes. Sem isso, o painel não salva.
+E os ajustes opcionais:
 
-## Exemplos de uso
+- **Intervalo entre envios** — de `0` a `86400` segundos. O sugerido é 300 (5 minutos).
+- **Mencionar destinatário** — liga/desliga o ping na publicação.
+- **Cargo de recompensa** — dado automaticamente a quem tem correio aprovado.
+- **Mensagem de evento inativo** — o texto que aparece fora do período.
 
-- **Evento de Dia dos Namorados** — Você cria um tema "Dia dos Namorados" com cor rosa, um banner romântico e a moldura `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"`. Define o período de 12 a 14 de junho, escolhe o canal `#correio-publico` para publicação e `#staff-correio` para aprovação, e dá o cargo de aprovação para a moderação. Durante esses dias, os membros mandam recados anônimos e a equipe vai liberando.
+!!! warning "O painel é exigente (de propósito)"
+    Com o evento ativado, ele só salva se houver canal de aprovação, canal público, ao menos um cargo de aprovação, ao menos um tema, um tema ativo válido e datas coerentes. Faltou algo, não passa.
 
-- **Recompensar quem participa** — Você configura um **cargo de recompensa** ("Cupido 2026"). Cada membro que tem um correio aprovado ganha o cargo automaticamente, criando um incentivo divertido para participar — sem que ninguém saiba quantos ou quais recados a pessoa mandou.
+Vale também conferir as permissões do bot:
 
-- **Controlar spam** — Para evitar que uma pessoa inunde a fila, você define o **cooldown** em 600 segundos (10 minutos). Assim cada membro só consegue enviar um novo correio a cada 10 minutos, dando tempo para a equipe aprovar com calma.
+- **Enviar Mensagens** e **Inserir Links/Embeds** nos dois canais, e acesso para enxergar esses canais.
+- Se usar cargo de recompensa: **Gerenciar Cargos**, com o cargo de recompensa **abaixo** do cargo mais alto do bot. Se não, a recompensa falha em silêncio — mas a publicação acontece normalmente.
 
-## Requisitos
+## Exemplos
 
-- O bot precisa das permissões de **Enviar Mensagens** e **Inserir Links/Embeds** nos canais de aprovação e público (o comando `/correio` exige `SendMessages` e `EmbedLinks`).
-- O bot precisa **enxergar e acessar** o canal de aprovação e o canal público (se não conseguir buscar o canal, avisa o membro que não encontrou o canal).
-- Se você usar o **cargo de recompensa**, o bot precisa da permissão **Gerenciar Cargos** e o cargo de recompensa deve estar **abaixo** do cargo mais alto do bot na hierarquia — caso contrário a recompensa não é aplicada (mas a publicação acontece normalmente).
-- O comando só funciona **dentro de um servidor** (não funciona em DM).
+!!! example "Dia dos Namorados"
+    Você cria o tema "Dia dos Namorados" com cor rosa, um banner romântico e a moldura `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"`. Marca o período de 12 a 14 de junho, aponta `#correio-publico` pra publicação e `#staff-correio` pra aprovação, e dá o cargo de aprovação à moderação. Nesses dias, os recados anônimos pipocam e a equipe vai liberando.
+
+!!! example "Recompensar quem participa"
+    Você cria o cargo "Cupido 2026" como recompensa. Quem tem um correio aprovado ganha o cargo na hora — um incentivo divertido pra mandar recados, sem ninguém saber quantos ou quais a pessoa enviou.
+
+!!! example "Segurar o spam"
+    Pra evitar que alguém entupa a fila, você põe o cooldown em 600 segundos (10 minutos). Cada membro só manda um novo correio a cada 10 minutos, e a equipe aprova com calma.
 
 ## Perguntas frequentes
 
-**O destinatário ou outras pessoas conseguem descobrir quem enviou o recado?**
-Não. No canal público o envio é sempre anônimo — só aparece o destinatário. O remetente real só é visível na **fila de aprovação**, que deve ser restrita à equipe. Por isso, mantenha o canal de aprovação fechado para membros comuns.
+**Dá pra descobrir quem enviou o recado?**
+No canal público, nunca — só aparece o destinatário. O remetente real só é visível na fila de aprovação, que deve ser restrita à equipe. Por isso, mantenha esse canal fechado para membros comuns.
 
-**O que acontece se a equipe rejeitar um correio?**
-O recado é descartado de imediato: a mensagem some do canal de aprovação e nada é publicado. Não há reaproveitamento nem aviso ao remetente — para ele, fica apenas a confirmação de que o correio foi "enviado para aprovação".
+**O que acontece se a equipe rejeitar?**
+O recado é descartado na hora: some da fila e nada é publicado. Não há reaproveitamento nem aviso ao remetente — pra ele, fica só a confirmação de que o correio "foi enviado para aprovação".
 
-**Por que o comando `/correio` diz que não há evento ativo?**
-Isso acontece quando o evento está desligado no painel ou quando a data/hora atual está fora do período configurado (antes do início ou depois do fim). Verifique no painel se o toggle está ativado e se as datas de início e fim cobrem o momento atual.
+**Por que o `/correio` diz que não há evento ativo?**
+Ou o evento está desligado no painel, ou o momento atual está fora do período (antes do início ou depois do fim). Confira o toggle e as datas no painel.
 
 **Por que o remetente não ganhou o cargo de recompensa?**
-A recompensa é aplicada em "melhor esforço". Confira se o cargo de recompensa está configurado, se o bot tem a permissão **Gerenciar Cargos** e se o cargo de recompensa está **abaixo** do cargo mais alto do bot na hierarquia. Se algum desses pontos falhar, o correio é publicado mesmo assim, mas o cargo não é dado.
+A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot tem **Gerenciar Cargos** e se o cargo de recompensa está **abaixo** do cargo mais alto do bot. Se algo falhar, o correio é publicado mesmo assim, só sem o cargo.
 
 !!! tip "Dica"
-    Use o **texto-moldura** de cada tema para criar uma "carta" pré-formatada — coloque uma saudação, o marcador `{{mensagem}}` no meio e uma assinatura no fim. Assim, mesmo recados curtos dos membros saem com um visual caprichado e coerente com o tema do evento.
+    Use a moldura de cada tema como uma "carta" pré-pronta: uma saudação no começo, o `{{mensagem}}` no meio e uma assinatura no fim. Assim, até os recados mais curtos saem caprichados e com a cara do evento.
+

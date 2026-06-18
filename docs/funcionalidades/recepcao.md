@@ -1,6 +1,8 @@
 # Boas-vindas e despedida
 
-O Delfus dá boas-vindas automáticas a quem entra no servidor e anuncia quando alguém sai, com mensagens personalizadas em **texto**, **embed** (cartão estruturado do Discord) ou **cartão de imagem** gerado na hora com o avatar do membro. Também pode enviar uma **mensagem privada (DM)** de boas-vindas. É a forma mais simples de fazer cada novo membro se sentir recebido — e de manter um registro visível de quem chega e quem sai — sem que você precise digitar nada manualmente.
+Sabe aquela sensação boa de chegar num lugar e ser recebido pelo nome? O Delfus faz isso por você, no automático. Toda vez que alguém entra no servidor, ele dá as boas-vindas. E quando alguém sai, ele avisa. Você configura uma vez e nunca mais precisa digitar nada à mão.
+
+As mensagens podem ser um texto simples, um cartão organizado do Discord (embed) ou até uma **imagem feita na hora com o avatar da pessoa**. Dá pra mandar boas-vindas no canal, no privado (DM) da pessoa, ou os dois.
 
 ![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.png){ .dx-shot loading=lazy }
 
@@ -8,36 +10,22 @@ O Delfus dá boas-vindas automáticas a quem entra no servidor e anuncia quando 
 
 ## Como funciona
 
-Tudo acontece de forma automática, disparado por eventos do Discord, com base no que você configurar pelo painel. São **três tipos de mensagem independentes**, cada um ligado/desligado por conta própria:
+São **três tipos de mensagem**, e cada um liga ou desliga por conta própria:
 
-- **Boas-vindas no canal** — postada em um canal à sua escolha quando alguém entra.
-- **DM de boas-vindas** — enviada no privado do novo membro quando ele entra.
-- **Despedida no canal** — postada em um canal à sua escolha quando alguém sai.
+- **Boas-vindas no canal** — aparece num canal que você escolhe quando alguém entra.
+- **DM de boas-vindas** — chega no privado do novo membro assim que ele entra.
+- **Despedida no canal** — aparece num canal quando alguém sai.
 
-### Quando um novo membro entra
+Você pode usar um, dois, os três, ou nenhum. Eles são independentes.
 
-1. O bot detecta a entrada e, antes de tudo, registra o evento de entrada e atualiza a contagem de membros do servidor (isso alimenta o `{{memberCount}}` e as estatísticas).
-2. Em seguida, verifica se as **boas-vindas de canal** estão ativas. Se estiverem:
-   - Se a opção **ignorar bots** estiver ligada e quem entrou for um bot, nada é enviado.
-   - O bot busca o canal configurado. Se o canal não existir mais ou não for um canal de texto, ele apenas registra um aviso e não envia nada (não dá erro visível).
-   - Caso contrário, monta a mensagem no formato escolhido (texto, embed ou cartão), substitui os atalhos de texto pelos valores reais do membro/servidor, anexa os botões de link (se houver) e publica no canal.
-3. Em paralelo, se a **DM de boas-vindas** estiver ativa, o bot envia a mensagem no privado do novo membro (texto ou embed). A opção "ignorar bots" **não** se aplica à DM.
+Quando alguém entra, o Delfus já atualiza a contagem de membros do servidor e dispara as boas-vindas que estiverem ativas — a do canal e a DM. Quando alguém sai, ele faz o mesmo e posta a despedida, se você tiver ligado.
 
-As boas-vindas de canal e a DM são independentes: você pode ter só uma, as duas, ou nenhuma.
+!!! example "Exemplo"
+    Imagine que a Ana acabou de entrar no seu servidor. Em segundos, aparece no canal de boas-vindas: *"Bem-vinda, Ana! Você é o membro nº 1.240 do nosso servidor."* — com o avatar dela num cartão bonito. E no privado dela chega uma mensagem com os primeiros passos. Tudo sem você levantar um dedo.
 
-### Quando alguém sai do servidor
+### Os três formatos
 
-1. O bot detecta a saída, registra o evento e atualiza a contagem de membros. (Se você usar o recurso de snapshot de cargos na saída, ele também é enfileirado aqui — isso é uma funcionalidade à parte.)
-2. Verifica se a **despedida** está ativa. Se estiver:
-   - Se "ignorar bots" estiver ligada e quem saiu for um bot, nada é enviado.
-   - O bot busca o canal configurado; se ele não existir ou não for de texto, registra um aviso e para.
-   - Caso contrário, publica a despedida no formato escolhido (texto ou embed).
-
-A despedida **não** tem DM (faz sentido: a pessoa já saiu) nem cartão de imagem — apenas texto ou embed.
-
-### Formatos de mensagem
-
-Cada tipo aceita formatos diferentes:
+Cada tipo de mensagem aceita formatos diferentes:
 
 | Tipo | Texto | Embed | Cartão de imagem |
 | --- | :---: | :---: | :---: |
@@ -45,119 +33,105 @@ Cada tipo aceita formatos diferentes:
 | DM de boas-vindas | sim | sim | não |
 | Despedida no canal | sim | sim | não |
 
-- **Texto** — uma mensagem simples de uma linha ou várias.
-- **Embed** — um cartão estruturado do Discord, com título, descrição, cor, imagem, miniatura, autor, rodapé (com ícone), data/hora e campos (que podem ficar lado a lado). Os atalhos de texto funcionam em todos esses campos.
-- **Cartão (imagem)** — exclusivo das boas-vindas de canal: uma imagem 960×540 gerada na hora, descrita em detalhe abaixo.
+- **Texto** — uma mensagem simples, de uma ou várias linhas.
+- **Embed** — aquele cartão organizado do Discord, com título, cor, imagem, rodapé e tudo mais.
+- **Cartão de imagem** — uma imagem gerada na hora com o avatar do membro. É exclusivo das boas-vindas no canal.
 
-### Atalhos de texto (placeholders)
+!!! note "Por que a despedida não tem DM nem cartão?"
+    Porque a pessoa já saiu — não dá pra mandar DM pra quem foi embora. Despedida é só texto ou embed.
 
-Em qualquer formato e em qualquer campo de texto, o bot substitui automaticamente os atalhos abaixo no momento do envio:
+### Atalhos que se preenchem sozinhos
 
-- `{{@user}}` — **menciona** o membro (ex.: @Fulano, com notificação). No **cartão de imagem**, vira apenas o nome de exibição (imagem não menciona ninguém).
-- `{{user}}` — nome de exibição do membro (apelido no servidor, ou nome de usuário).
-- `{{server}}` — nome do servidor.
-- `{{memberCount}}` — total de membros do servidor **no momento do envio** (já contando quem acabou de entrar ou descontando quem saiu).
+Você escreve a mensagem usando alguns atalhos, e o Delfus troca pelos dados reais na hora de enviar:
 
-### O cartão de imagem em detalhe
+- `{{@user}}` — **menciona** a pessoa (com notificação). No cartão de imagem, vira só o nome.
+- `{{user}}` — o nome da pessoa (apelido ou usuário).
+- `{{server}}` — o nome do seu servidor.
+- `{{memberCount}}` — quantos membros o servidor tem naquele momento.
 
-O cartão é uma imagem PNG de 960×540 pixels com o avatar circular do membro (128 px). Você escolhe um entre **três estilos de layout**:
+### O cartão de imagem
 
-- **Centralizado** (`centered`) — avatar no centro, título e subtítulo logo abaixo, centralizados. Tem uma barra de destaque colorida na base.
-- **Alinhado à esquerda** (`left`) — avatar à esquerda, título e subtítulo alinhados à direita dele. Também tem a barra de destaque na base.
-- **Minimalista** (`minimalist`) — **sem avatar**, só o título grande, uma linha divisória colorida e o subtítulo, tudo centralizado. Não tem a barra de destaque na base.
+O cartão é uma imagem de 960×540 px com o avatar do membro num círculo. Você escolhe um de **três layouts**:
 
-O que você pode ajustar no cartão:
+- **Centralizado** — avatar no meio, título e subtítulo embaixo.
+- **À esquerda** — avatar à esquerda, textos ao lado.
+- **Minimalista** — sem avatar, só o título grande, uma linha colorida e o subtítulo.
 
-- **Título** e **subtítulo** (ambos aceitam os atalhos de texto).
-- **Cor de fundo** e **cor do texto**.
-- **Papel de parede (wallpaper)** — uma imagem de fundo por URL. Por cima dela é aplicada uma camada da cor de fundo com **opacidade do overlay** ajustável (deixa o texto legível). Se a URL falhar, o bot usa só a cor de fundo.
-- **Fonte** — uma entre: Inter, Roboto, Poppins, Montserrat, Open Sans, Lato. Se a fonte escolhida não estiver disponível, o bot usa Inter como padrão.
-- **Sombra do texto** (liga/desliga) — melhora a leitura sobre fundos claros.
-- **Cor da borda do avatar** e **cor de destaque (accent)** — a cor de destaque colore o brilho ao redor do avatar, a barra da base e a linha divisória do minimalista.
+E dá pra ajustar título, subtítulo, cores, fonte (Inter, Roboto, Poppins, Montserrat, Open Sans ou Lato), uma imagem de fundo por URL, sombra no texto e a cor de destaque do avatar. Se travar nas cores, há **predefinições prontas** (Blurple, Oceano, Pôr do Sol, Floresta, Escuro, Rosa Neon, Ouro, Ártico, Lavanda, Vermelho) pra aplicar com um clique.
 
-O painel ainda traz **predefinições de cores** prontas (Blurple, Oceano, Pôr do Sol, Floresta, Escuro, Rosa Neon, Ouro, Ártico, Lavanda, Vermelho) para você aplicar um esquema de cores com um clique e ajustar depois.
+!!! tip "Texto difícil de ler sobre a imagem de fundo?"
+    Aumente a opacidade do overlay (a camada de cor por cima do fundo) ou ligue a sombra do texto. Resolve na hora.
 
 ### Botões de link
 
-Você pode adicionar **até 3 botões de link** à mensagem de **boas-vindas do canal** (apenas a ela — não à DM nem à despedida). Cada botão tem um rótulo e uma URL e abre o link ao ser clicado (por exemplo, um botão "Regras" ou "Site oficial"). Botões sem rótulo ou sem URL são ignorados.
+Nas boas-vindas do canal você pode adicionar **até 3 botões** com link — tipo "Leia as regras" ou "Site oficial". Cada botão tem um nome e uma URL. Isso só existe nas boas-vindas do canal, não na DM nem na despedida.
 
 ## Comandos
 
 | Comando | O que faz |
 | --- | --- |
-| `/welcome teste tipo:<Welcome \| Farewell \| DM>` | Gera uma **prévia** de um dos três tipos de mensagem, usando você mesmo como exemplo, sem esperar alguém entrar ou sair. A prévia só é visível para você e vem com um rodapé avisando que é um preview. |
+| `/welcome teste tipo:<Welcome \| Farewell \| DM>` | Mostra uma **prévia** de uma das três mensagens, usando você como exemplo, sem precisar esperar ninguém entrar ou sair. Só você vê. |
 
-Detalhes do comando:
-
-- A opção **tipo** é obrigatória e tem três escolhas: **Welcome (entrada)**, **Farewell (saída)** e **DM (mensagem privada)**.
-- A prévia respeita exatamente o formato configurado: gera o cartão de imagem real se o tipo "welcome" estiver no formato cartão, monta o embed real, etc., trocando os atalhos pelos seus dados.
-- Se o sistema de boas-vindas ainda não foi configurado, ou se o tipo escolhido não está habilitado, o bot avisa para configurá-lo primeiro pelo painel.
+A prévia respeita exatamente o que você configurou: gera o cartão de imagem de verdade, monta o embed real, troca os atalhos pelos seus dados. Se o tipo escolhido ainda não estiver configurado, o bot avisa pra você configurar pelo painel primeiro.
 
 ## Configuração
 
-A configuração é feita pelo **Dashboard** em [admin.delfus.app](https://admin.delfus.app), na seção de boas-vindas/despedida. Cada um dos três tipos é configurado separadamente.
+Tudo é feito no **Dashboard** em [admin.delfus.app](https://admin.delfus.app), na seção de boas-vindas e despedida. Cada tipo se configura separado.
 
-Para **boas-vindas no canal**:
+**Boas-vindas no canal:**
 
-1. Ative o tipo (toggle **ativado/desativado**).
-2. Escolha o **canal** onde a mensagem será postada.
-3. Escolha o **formato**: texto, embed ou cartão.
-4. Preencha o **conteúdo** (texto/embed) ou configure o **cartão** (layout, título, subtítulo, cores, fonte, papel de parede, opacidade do overlay, sombra do texto, cor da borda do avatar e cor de destaque). Use os atalhos `{{@user}}`, `{{user}}`, `{{server}}` e `{{memberCount}}` à vontade.
-5. Opcionalmente, adicione **até 3 botões de link** (rótulo + URL).
-6. Ligue ou não a opção **ignorar bots**.
+1. Ative o toggle.
+2. Escolha o canal.
+3. Escolha o formato (texto, embed ou cartão).
+4. Escreva o conteúdo ou monte o cartão. Use os atalhos à vontade.
+5. (Opcional) Adicione até 3 botões de link.
+6. Decida se quer **ignorar bots**.
 
-Para a **DM de boas-vindas**:
+**DM de boas-vindas:**
 
-1. Ative o tipo.
-2. Escolha o **formato**: texto ou embed (sem cartão).
-3. Preencha o **conteúdo**. (A DM não tem botões nem a opção "ignorar bots".)
+1. Ative o toggle.
+2. Escolha o formato (texto ou embed).
+3. Escreva o conteúdo. (Aqui não tem botões nem a opção de ignorar bots.)
 
-Para a **despedida no canal**:
+**Despedida no canal:**
 
-1. Ative o tipo.
-2. Escolha o **canal**.
-3. Escolha o **formato**: texto ou embed (sem cartão).
-4. Preencha o **conteúdo**.
-5. Ligue ou não a opção **ignorar bots**.
+1. Ative o toggle.
+2. Escolha o canal.
+3. Escolha o formato (texto ou embed).
+4. Escreva o conteúdo.
+5. Decida se quer **ignorar bots**.
 
-Limites e padrões reais do código:
+!!! warning "Antes de soltar pra geral"
+    Rode `/welcome teste` dentro do servidor pra conferir como ficou. A prévia já mostra o resultado real, com o seu avatar.
 
-- **Máximo de 3 botões de link** na mensagem de boas-vindas.
-- **6 fontes** para o cartão (Inter, Roboto, Poppins, Montserrat, Open Sans, Lato) — padrão Inter.
-- Tamanho do cartão fixo em **960×540 px**, avatar **128 px**.
-- **3 layouts** de cartão: centralizado, alinhado à esquerda, minimalista.
+## Exemplos
 
-Depois de configurar, use `/welcome teste` dentro do servidor para conferir o resultado antes de deixar tudo no ar.
+!!! example "Receber com um cartão visual"
+    Ative as boas-vindas no canal, escolha o formato **cartão**, defina o título `Bem-vindo, {{user}}!` e o subtítulo `Você é o membro nº {{memberCount}} do {{server}}`. Pegue o layout centralizado, aplique uma predefinição de cores e adicione um botão "Leia as regras" apontando pro canal de regras. Rode `/welcome teste tipo:Welcome` e veja o cartão pronto.
 
-## Exemplos de uso
+!!! example "Mandar um guia no privado"
+    Imagine que você quer orientar quem chega sem poluir os canais. Ative a **DM de boas-vindas** em formato embed, com uma descrição tipo `Olá {{user}}, seja bem-vindo ao {{server}}!` e os primeiros passos do servidor. Cada novo membro recebe isso direto no privado.
 
-- **Receber novos membros com cartão visual**: ative as boas-vindas de canal, escolha o formato **cartão**, defina o título `Bem-vindo, {{user}}!` e o subtítulo `Você é o membro nº {{memberCount}} do {{server}}`, escolha o layout centralizado e uma predefinição de cores, e adicione um botão "Leia as regras" apontando para o canal de regras. Rode `/welcome teste tipo:Welcome` para ver o cartão.
-
-- **Mandar um guia no privado**: ative a **DM de boas-vindas** no formato embed, com um título de boas-vindas e uma descrição explicando os primeiros passos no servidor (`Olá {{user}}, seja bem-vindo ao {{server}}!`). Quem entrar recebe isso direto no privado, sem poluir os canais.
-
-- **Anunciar saídas discretamente**: ative a **despedida** no formato texto simples, em um canal de logs só para staff, com `{{user}} deixou o servidor. Agora somos {{memberCount}} membros.` e a opção **ignorar bots** ligada para não anunciar entrada/saída de bots.
-
-## Requisitos
-
-- O bot precisa ter acesso ao canal escolhido e **permissão para enviar mensagens** nele (e para enviar imagens/embeds, no caso de cartão e embed). Se o canal for apagado ou ficar inacessível, a mensagem é silenciosamente pulada.
-- O comando `/welcome teste` exige a permissão de **Administrador** de quem o executa, e o bot precisa da permissão **Gerenciar Servidor** (Manage Guild) para o comando funcionar.
-- A **DM** só chega se o membro permitir mensagens privadas de pessoas do servidor. Se ele bloquear DMs, o bot apenas registra um aviso interno e segue sem erro visível.
-- O papel de parede do cartão precisa estar acessível por **URL pública**; se a imagem não carregar, o cartão usa só a cor de fundo.
+!!! example "Anunciar saídas só pra staff"
+    Quer registrar quem sai sem alarde? Ative a **despedida** em texto simples, num canal de logs da staff, com `{{user}} deixou o servidor. Agora somos {{memberCount}} membros.` Ligue **ignorar bots** pra não anunciar entrada e saída de robôs.
 
 ## Perguntas frequentes
 
-**Posso ter um cartão de imagem na despedida ou na DM?**
-Não. O cartão de imagem é exclusivo das boas-vindas de canal. Despedida e DM aceitam apenas texto ou embed.
+**Posso ter cartão de imagem na despedida ou na DM?**
+Não. O cartão é exclusivo das boas-vindas no canal. Despedida e DM aceitam só texto ou embed.
 
-**Por que alguns membros não recebem a DM de boas-vindas?**
-Porque eles bloqueiam mensagens privadas de membros do servidor. O bot tenta enviar e, se não conseguir, ignora silenciosamente — ninguém recebe erro.
+**Por que alguns membros não recebem a DM?**
+Porque eles bloqueiam mensagens privadas de gente do servidor. O bot tenta enviar e, se não der, ignora sem erro nenhum.
 
-**A opção "ignorar bots" vale para a DM também?**
-Não. "Ignorar bots" se aplica às boas-vindas de canal e à despedida. A DM não tem essa opção (mas, na prática, bots não costumam aceitar DMs).
+**A opção "ignorar bots" vale pra DM também?**
+Não. Ela vale pras boas-vindas do canal e pra despedida. A DM não tem essa opção (mas, na prática, bots quase nunca aceitam DM).
 
-**Quantos botões de link posso colocar nas boas-vindas?**
-Até 3. Botões só existem na mensagem de boas-vindas do canal — não na DM nem na despedida.
+**Quantos botões de link posso colocar?**
+Até 3 — e só nas boas-vindas do canal.
+
+**E se o canal escolhido for apagado?**
+O Delfus só pula a mensagem em silêncio, sem dar erro visível. Vale lembrar que ele precisa ter permissão pra enviar mensagens (e imagens/embeds) no canal. Pro comando `/welcome teste`, quem roda precisa ser Administrador e o bot precisa da permissão Gerenciar Servidor.
 
 !!! tip "Dica"
-    Monte o cartão de imagem e rode `/welcome teste tipo:Welcome` antes de ativar para todos: a prévia gera o cartão real com o seu avatar, então você vê exatamente como vai aparecer — incluindo se o texto está legível sobre o papel de parede (ajuste a opacidade do overlay ou ligue a sombra do texto se ficar difícil de ler).
+    Monte o cartão e rode `/welcome teste tipo:Welcome` antes de ativar pra todos. A prévia gera o cartão real com o seu avatar, então você vê exatamente como vai ficar — inclusive se o texto está legível sobre a imagem de fundo.
 
