@@ -23,7 +23,7 @@ hide:
       <a href="funcionalidades/vip/">Programa VIP</a>
     </div>
   </div>
-  <div class="dxh-hero__art"></div>
+  <div class="dxh-hero__art"><img src="assets/mascote-hero.png" alt="Mascote do Delfus"></div>
 </section>
 
 <section class="dxh-section">
