@@ -273,6 +273,9 @@
   padding: 0;
   color: #fff;
 }
+.dx-band .headerlink {
+  display: none !important;
+}
 .dx-band p {
   max-width: 34rem;
   margin: 0 auto 1.4rem;
