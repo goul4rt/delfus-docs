@@ -122,7 +122,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Delfus" class="md-header__button md-logo" aria-label="Delfus" data-md-component="logo">
       
-  <img src="../../assets/logo-mascot.png" alt="logo">
+  <img src="../../assets/mascote-feliz.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -338,7 +338,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Delfus" class="md-nav__button md-logo" aria-label="Delfus" data-md-component="logo">
       
-  <img src="../../assets/logo-mascot.png" alt="logo">
+  <img src="../../assets/mascote-feliz.png" alt="logo">
 
     </a>
     Delfus
@@ -1997,13 +1997,13 @@
 <h1 id="gestao-de-equipe-staff">Gestão de Equipe (Staff)<a class="headerlink" href="#gestao-de-equipe-staff" title="Permanent link">¶</a></h1>
 <p>Você vê quem da sua equipe está ativo, quanto cada um produz e quem está abaixo do esperado. O painel cruza mensagens, tempo em voz e ações de moderação de cada membro de staff, agrupa por setor e dispara alertas quando alguém cai de produção. Tudo em <code>/dashboard/staff</code>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/equipe.png" data-desc-position="bottom"><img alt="Painel de gestão de equipe no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/equipe.png"></a></p>
-<p><em>Painel de gestão de equipe no <a href="https://admin.delfus.app">Dashboard</a> — dados de demonstração.</em></p>
+<p><em>Painel de gestão de equipe no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>O sistema parte de uma definição simples: <strong>quem é staff são os donos dos cargos que você marcou</strong> na configuração. A partir daí, para cada membro com um desses cargos, o bot já coleta três fontes de dados no dia a dia:</p>
 <ul>
-<li><strong>Mensagens</strong> — contagem por hora, por canal (agregada, sem registrar mensagem por mensagem).</li>
-<li><strong>Voz</strong> — sessões em canais de voz, com duração de cada uma.</li>
-<li><strong>Moderação</strong> — cada <code>warn</code>, <code>ban</code>, <code>mute</code> e <code>kick</code> aplicado, vinculado a quem aplicou.</li>
+<li><strong>Mensagens:</strong> contagem por hora, por canal (agregada, sem registrar mensagem por mensagem).</li>
+<li><strong>Voz:</strong> sessões em canais de voz, com duração de cada uma.</li>
+<li><strong>Moderação:</strong> cada <code>warn</code>, <code>ban</code>, <code>mute</code> e <code>kick</code> aplicado, vinculado a quem aplicou.</li>
 </ul>
 <p>O painel lê esses dados sobre um período (7d, 30d, etc.) e calcula as métricas. As cinco rotas atendem perguntas diferentes:</p>
 <table>
@@ -2045,34 +2045,34 @@
 <p><strong>Mensagens</strong></p>
 <ul>
 <li><strong>Total</strong> e <strong>média por dia</strong>.</li>
-<li><strong>Canais únicos</strong> — em quantos canais diferentes participou.</li>
-<li><strong>Dias ativos</strong> e <strong>cobertura</strong> — percentual de dias do período com pelo menos uma mensagem. Cobertura de 100% significa atividade todo dia.</li>
-<li><strong>Consistência</strong> — mesmo cálculo da cobertura, usado como nota de regularidade (0–100).</li>
+<li><strong>Canais únicos:</strong> em quantos canais diferentes participou.</li>
+<li><strong>Dias ativos</strong> e <strong>cobertura</strong>: percentual de dias do período com pelo menos uma mensagem. Cobertura de 100% significa atividade todo dia.</li>
+<li><strong>Consistência:</strong> mesmo cálculo da cobertura, usado como nota de regularidade (0 a 100).</li>
 </ul>
 <p><strong>Moderação</strong></p>
 <ul>
 <li>Contagem separada de <strong>warns, bans, mutes e kicks</strong>, mais o <strong>total</strong>.</li>
-<li><strong>Dias com ação</strong> — em quantos dias do período aplicou ao menos uma punição.</li>
+<li><strong>Dias com ação:</strong> em quantos dias do período aplicou ao menos uma punição.</li>
 </ul>
 <p><strong>Voz</strong></p>
 <ul>
 <li><strong>Minutos totais</strong>, <strong>número de sessões</strong> e <strong>duração média por sessão</strong>.</li>
 </ul>
-<p><strong>Tendências</strong> — cada bloco compara o período atual com o período imediatamente anterior de mesmo tamanho. Uma queda de 40% nas mensagens dos últimos 7 dias é medida contra os 7 dias anteriores. Aparece como variação percentual.</p>
+<p><strong>Tendências:</strong> cada bloco compara o período atual com o período imediatamente anterior de mesmo tamanho. Uma queda de 40% nas mensagens dos últimos 7 dias é medida contra os 7 dias anteriores. Aparece como variação percentual.</p>
 <h3 id="medias-e-comparacao">Médias e comparação<a class="headerlink" href="#medias-e-comparacao" title="Permanent link">¶</a></h3>
 <p>A visão geral calcula a <strong>média de mensagens por staff</strong> e a <strong>média de ações de moderação por staff</strong>. Cada membro é comparado contra essas médias, então você enxerga rápido quem puxa para cima e quem fica abaixo do time.</p>
 <p>O <strong>heatmap</strong> mostra atividade por dia da semana × hora do dia (grade de 7×24). O valor de cada célula soma mensagens e metade dos minutos de voz, revelando os horários de cobertura da equipe.</p>
 <h3 id="divisao-por-setor">Divisão por setor<a class="headerlink" href="#divisao-por-setor" title="Permanent link">¶</a></h3>
 <p>Setores vêm das <strong>categorias</strong> atribuídas aos cargos na configuração. Um membro entra no setor de cada categoria dos cargos que possui. Quem tem cargo sem categoria cai em <strong>Sem Setor</strong>.</p>
-<p>A visão por setor mostra, para cada grupo: número de membros, total de mensagens, total de ações de moderação e tempo em voz somados. Expandindo o setor, você vê a grade de métricas individuais daquele grupo. Serve para comparar áreas — por exemplo, atividade da Segurança contra a da Liderança.</p>
+<p>A visão por setor mostra, para cada grupo: número de membros, total de mensagens, total de ações de moderação e tempo em voz somados. Expandindo o setor, você vê a grade de métricas individuais daquele grupo. Serve para comparar áreas, por exemplo a atividade da Segurança contra a da Liderança.</p>
 <h3 id="metricas-individuais">Métricas individuais<a class="headerlink" href="#metricas-individuais" title="Permanent link">¶</a></h3>
 <p>O perfil de um membro (<code>/members/[userId]</code>) traz tudo do membro mais detalhes que só existem no nível individual:</p>
 <ul>
 <li><strong>Top canais de mensagens</strong> e <strong>top canais de voz</strong> (5 de cada).</li>
 <li><strong>Atividade por hora</strong> (24 pontos) e <strong>por dia da semana</strong> (7 pontos, com mensagens e minutos de voz).</li>
 <li><strong>Heatmap pessoal</strong> (7×24).</li>
-<li><strong>Últimas 10 ações de moderação</strong> — tipo, alvo, motivo e data.</li>
-<li><strong>Radar de competências</strong> — quatro eixos de 0 a 100: Comunicação, Presença, Moderação e Consistência.</li>
+<li><strong>Últimas 10 ações de moderação:</strong> tipo, alvo, motivo e data.</li>
+<li><strong>Radar de competências:</strong> quatro eixos de 0 a 100: Comunicação, Presença, Moderação e Consistência.</li>
 </ul>
 <h3 id="alertas-de-baixa-atividade">Alertas de baixa atividade<a class="headerlink" href="#alertas-de-baixa-atividade" title="Permanent link">¶</a></h3>
 <p>A página de alertas varre todos os membros e marca quem fica abaixo dos limites. Os limites são definidos <strong>por semana</strong> e ajustados ao tamanho do período (um período de 14 dias dobra o mínimo).</p>
@@ -2105,11 +2105,11 @@
 </table>
 <p>Tipos de alerta gerados:</p>
 <ul>
-<li><strong>Inativo</strong> — zero mensagens, zero voz e zero moderação no período. Sempre <strong>crítico</strong>.</li>
-<li><strong>Mensagens insuficientes</strong> — abaixo do mínimo, ou cobertura abaixo de 50%. Vira <strong>crítico</strong> se ficar abaixo de metade do mínimo.</li>
-<li><strong>Moderação insuficiente</strong> — só conta para membros do setor <strong>Segurança</strong> (cargos categorizados como <code>Segurança</code>) que têm mensagens mas pouca moderação.</li>
-<li><strong>Voz insuficiente</strong> — minutos em voz abaixo do mínimo.</li>
-<li><strong>Queda de tendência</strong> — queda acima de 40% nas mensagens (ou moderações) versus o período anterior. Acima de 70% vira <strong>crítico</strong>.</li>
+<li><strong>Inativo:</strong> zero mensagens, zero voz e zero moderação no período. Sempre <strong>crítico</strong>.</li>
+<li><strong>Mensagens insuficientes:</strong> abaixo do mínimo, ou cobertura abaixo de 50%. Vira <strong>crítico</strong> se ficar abaixo de metade do mínimo.</li>
+<li><strong>Moderação insuficiente:</strong> só conta para membros do setor <strong>Segurança</strong> (cargos categorizados como <code>Segurança</code>) que têm mensagens mas pouca moderação.</li>
+<li><strong>Voz insuficiente:</strong> minutos em voz abaixo do mínimo.</li>
+<li><strong>Queda de tendência:</strong> queda acima de 40% nas mensagens (ou moderações) versus o período anterior. Acima de 70% vira <strong>crítico</strong>.</li>
 </ul>
 <p>Cada alerta é <strong>Aviso</strong> ou <strong>Crítico</strong>, agrupado por tipo e ordenado do pior para o melhor. Você pode filtrar por setor para focar numa área. Clicar num alerta abre o perfil do membro.</p>
 <div class="admonition note">
@@ -2119,19 +2119,19 @@
 <h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
 <p>Toda a configuração fica em <code>/dashboard/staff/config</code>. Sem nenhum cargo marcado, o painel não tem como saber quem é staff e as outras telas ficam vazias.</p>
 <ol>
-<li><strong>Selecione os cargos de staff</strong> — escolha os cargos do servidor que representam sua equipe (moderação, admin, suporte).</li>
-<li><strong>Atribua categorias (opcional)</strong> — agrupe cada cargo num setor. Vêm prontos <code>Segurança</code> e <code>Liderança</code>; você pode criar outros. A categoria habilita a análise por setor e o alerta de moderação.</li>
-<li><strong>Salve</strong> — a partir daí as métricas e relatórios passam a considerar esses cargos.</li>
+<li><strong>Selecione os cargos de staff:</strong> escolha os cargos do servidor que representam sua equipe (moderação, admin, suporte).</li>
+<li><strong>Atribua categorias (opcional):</strong> agrupe cada cargo num setor. Vêm prontos <code>Segurança</code> e <code>Liderança</code>; você pode criar outros. A categoria habilita a análise por setor e o alerta de moderação.</li>
+<li><strong>Salve:</strong> a partir daí as métricas e relatórios passam a considerar esses cargos.</li>
 </ol>
 <p>Os cargos ficam salvos por servidor. Remover um cargo que tinha categoria pede confirmação, porque a categorização daquele cargo é perdida.</p>
-<p>Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de staff, ele registra o vínculo usuário–cargo. Um mesmo membro pode ter vários cargos de staff e aparece em todos os setores correspondentes.</p>
+<p>Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de staff, ele registra o vínculo usuário-cargo. Um mesmo membro pode ter vários cargos de staff e aparece em todos os setores correspondentes.</p>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
 <p class="admonition-title">Encontrar quem sumiu na última semana</p>
 <ol>
 <li>Abra <code>/dashboard/staff/alertas</code>.</li>
 <li>Deixe o período em <strong>7d</strong>.</li>
-<li>Olhe o grupo <strong>Inativos</strong> (crítico) — são membros sem nenhuma mensagem, voz ou moderação na semana.</li>
+<li>Olhe o grupo <strong>Inativos</strong> (crítico): são membros sem nenhuma mensagem, voz ou moderação na semana.</li>
 <li>Em seguida veja <strong>Queda de tendência</strong> para quem ainda aparece, mas despencou versus a semana anterior.</li>
 </ol>
 </div>
@@ -2187,7 +2187,7 @@ As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças mui
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="18 de junho de 2026 20:24:54 UTC"><span class="timeago" datetime="2026-06-18T20:24:54+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="18 de junho de 2026 20:24:54 UTC">2026-06-18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
   </span>
 
     
@@ -2267,11 +2267,6 @@ As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças mui
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -2324,6 +2319,8 @@ As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças mui
         <script src="../../js/timeago.min.js"></script>
       
         <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../javascripts/home-search.js"></script>
       
     
   
