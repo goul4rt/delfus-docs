@@ -4,7 +4,7 @@ Seus membros pegam e largam cargos sozinhos, num clique, sem pedir nada a um mod
 
 ![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.png){ .dx-shot loading=lazy }
 
-*Cargos por reação no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Cargos por reação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 

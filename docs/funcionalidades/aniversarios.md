@@ -4,7 +4,7 @@ Cada membro registra a própria data e o Delfus manda os parabéns sozinho, no d
 
 ![Configuração de aniversários no painel do Delfus](../assets/dashboard/aniversarios.png){ .dx-shot loading=lazy }
 
-*Configuração de aniversários no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração de aniversários no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -41,31 +41,31 @@ Detalhes que vale saber:
 Configure pelo **[Dashboard](https://admin.delfus.app)**, em **Eventos → Aniversários**:
 
 1. **Ative a funcionalidade** no botão de liga/desliga (vem desligada por padrão).
-2. **Canal de Anúncios** — onde os parabéns são postados. Sem canal, nada sai.
-3. **Fuso Horário** — o fuso do seu público (padrão: horário de Brasília). É ele que define quando "é o dia".
-4. **Horário de Envio** — a hora cheia em que os parabéns saem (padrão: **09:00**).
-5. **Cargo de Aniversariante** *(opcional)* — um cargo que o bot dá no dia e tira no dia seguinte. Deixe em "Nenhum" se não quiser usar.
-6. **Ano de Nascimento** — escolha a política: **Opcional**, **Obrigatório** ou **Desativado**.
-7. **Personalize as mensagens** — monte a embed de parabéns e o template do `/aniversario proximos` nos editores visuais.
+2. **Canal de Anúncios:** onde os parabéns são postados. Sem canal, nada sai.
+3. **Fuso Horário:** o fuso do seu público (padrão: horário de Brasília). É ele que define quando "é o dia".
+4. **Horário de Envio:** a hora cheia em que os parabéns saem (padrão: **09:00**).
+5. **Cargo de Aniversariante** *(opcional)*: um cargo que o bot dá no dia e tira no dia seguinte. Deixe em "Nenhum" se não quiser usar.
+6. **Ano de Nascimento:** escolha a política: **Opcional**, **Obrigatório** ou **Desativado**.
+7. **Personalize as mensagens:** monte a embed de parabéns e o template do `/aniversario proximos` nos editores visuais.
 8. Clique em **Salvar**.
 
 ### A política do "ano de nascimento"
 
 Esse campo decide se a idade aparece:
 
-- **Opcional** *(padrão)* — a pessoa escolhe se informa o ano. Quem informa tem a idade mostrada; quem não informa, só a data.
-- **Obrigatório** — sem ano, sem registro.
-- **Desativado** — o ano é ignorado e nunca guardado. A idade nunca aparece.
+- **Opcional** *(padrão)*: a pessoa escolhe se informa o ano. Quem informa tem a idade mostrada; quem não informa, só a data.
+- **Obrigatório:** sem ano, sem registro.
+- **Desativado:** o ano é ignorado e nunca guardado. A idade nunca aparece.
 
 ### Personalizando a mensagem
 
 Na embed de parabéns você pode usar estes marcadores, que o bot preenche sozinho:
 
-- `{@user}` — menção do aniversariante
-- `{user}` — nome dele
-- `{user.tag}` — tag completa
-- `{age}` — idade que está completando (só aparece se tiver ano registrado)
-- `{guild}` — nome do servidor
+- `{@user}`: menção do aniversariante
+- `{user}`: nome dele
+- `{user.tag}`: tag completa
+- `{age}`: idade que está completando (só aparece se tiver ano registrado)
+- `{guild}`: nome do servidor
 
 Não montou nada? O Delfus usa um modelo padrão festivo automaticamente.
 

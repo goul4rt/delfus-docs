@@ -4,7 +4,7 @@ Defina os benefícios uma vez e o Delfus cuida do resto: ativa o VIP, controla o
 
 ![Planos VIP no painel do Delfus](../assets/dashboard/vip.png){ .dx-shot loading=lazy }
 
-*Planos VIP no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Planos VIP no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -104,7 +104,7 @@ Criar um plano é direto pelo painel:
 
 ![Dialog de criar plano VIP no painel](../assets/dashboard/modal-vip.png){ .dx-shot loading=lazy }
 
-*Dialog de criar plano VIP no painel — dados de demonstração.*
+*Dialog de criar plano VIP no painel (dados de demonstração).*
 
 ## Perguntas frequentes
 

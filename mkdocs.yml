@@ -7,7 +7,7 @@ copyright: © Delfus
 theme:
   name: material
   language: pt-BR
-  logo: assets/logo-mascot.png
+  logo: assets/mascote-feliz.png
   favicon: assets/favicon.ico
   font:
     text: Inter
@@ -43,6 +43,7 @@ theme:
     - toc.follow
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/mTjZg95UJV
@@ -56,6 +57,9 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/home-search.js
 
 plugins:
   - search

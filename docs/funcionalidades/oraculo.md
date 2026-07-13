@@ -58,10 +58,10 @@ Rode `/oraculo` e escolha o canal. Liga se estava desligado, desliga se estava l
 
 Todo o registro alimenta os painéis do Dashboard:
 
-- **Insights** — análise automática da atividade do servidor.
-- **Scoring de membros** — pontuação baseada na participação.
-- **Análise de conteúdo** — métricas e tendências por canal.
-- **Status do Oráculo** — quantos e quais canais estão sendo monitorados.
+- **Insights:** análise automática da atividade do servidor.
+- **Scoring de membros:** pontuação baseada na participação.
+- **Análise de conteúdo:** métricas e tendências por canal.
+- **Status do Oráculo:** quantos e quais canais estão sendo monitorados.
 
 ## Requisitos
 

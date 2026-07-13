@@ -4,7 +4,7 @@ Warns, mutes, kicks e bans num fluxo único, com checagens de segurança automá
 
 ![Configuração de moderação no painel do Delfus](../assets/dashboard/moderacao.png){ .dx-shot loading=lazy }
 
-*Configuração de moderação no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração de moderação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -55,12 +55,12 @@ As punições rodam pelos comandos no Discord. O **comportamento** delas você a
 
 O essencial para deixar pronto:
 
-1. **Avisos por DM** — ligue ou desligue a DM por tipo de punição. Por padrão, warn e unwarn avisam; mute, kick e ban vêm desligados.
-2. **Canal de logs** — escolha onde caem as notificações da staff e o reconhecimento de bom comportamento.
-3. **Link de apelação** — uma URL incluída nas DMs para a pessoa contestar.
-4. **Gatilhos automáticos** — cadastre regras "ao atingir X warns → ação" (silenciar, expulsar, banir, dar ou tirar cargo).
-5. **Expiração de warns** — ative e defina o prazo em dias, semanas ou meses.
-6. **Action log** — ative o registro, escolha um canal (ou um por tipo de evento) e use os filtros para ignorar bots, canais e cargos.
+1. **Avisos por DM:** ligue ou desligue a DM por tipo de punição. Por padrão, warn e unwarn avisam; mute, kick e ban vêm desligados.
+2. **Canal de logs:** escolha onde caem as notificações da staff e o reconhecimento de bom comportamento.
+3. **Link de apelação:** uma URL incluída nas DMs para a pessoa contestar.
+4. **Gatilhos automáticos:** cadastre regras "ao atingir X warns → ação" (silenciar, expulsar, banir, dar ou tirar cargo).
+5. **Expiração de warns:** ative e defina o prazo em dias, semanas ou meses.
+6. **Action log:** ative o registro, escolha um canal (ou um por tipo de evento) e use os filtros para ignorar bots, canais e cargos.
 
 !!! tip "Personalização"
     Dá pra customizar o embed de cada tipo de punição (título, cor, imagem, campos) usando variáveis como `{user}`, `{staff}`, `{reason}`, `{duration}` e `{guild}`.

@@ -6,7 +6,7 @@ A rota fica em `/dashboard/messages` no painel.
 
 ![Editor de mensagens e embeds no painel do Delfus](../assets/dashboard/mensagens.png){ .dx-shot loading=lazy }
 
-*Editor de mensagens e embeds no [Dashboard](https://admin.delfus.app) — dados de demonstração.*
+*Editor de mensagens e embeds no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
 ## Como funciona
 
@@ -18,7 +18,7 @@ O fluxo tem três etapas: você edita, salva e envia.
 
 **Enviar.** Ao enviar, você escolhe o canal de destino e o modo (Bot ou Webhook). O painel chama o bot, que entrega a mensagem no canal e devolve o link do Discord. Cada envio vira um registro na lista "Envios" da mensagem, com canal, modo e data. A partir desse registro você consegue reenviar para atualizar a mensagem publicada.
 
-Não há agendamento. O envio é imediato — você clica em Enviar e a mensagem aparece no canal.
+Não há agendamento. O envio é imediato: você clica em Enviar e a mensagem aparece no canal.
 
 ### Modos de envio
 
@@ -27,7 +27,7 @@ Não há agendamento. O envio é imediato — você clica em Enviar e a mensagem
 | **Bot** | O próprio bot Delfus (nome e avatar do bot) | Anúncios oficiais, mensagens do servidor |
 | **Webhook** | Nome e avatar que você definir na seção Remetente | Personalizar a identidade do remetente |
 
-No modo Webhook você pode definir um **Nome** (até 80 caracteres) e uma **URL de avatar**. O nome não pode conter "clyde" nem "discord", nem ser "everyone" ou "here" — são restrições do Discord. No modo Bot esses campos ficam indisponíveis.
+No modo Webhook você pode definir um **Nome** (até 80 caracteres) e uma **URL de avatar**. O nome não pode conter "clyde" nem "discord", nem ser "everyone" ou "here" (restrições do Discord). No modo Bot esses campos ficam indisponíveis.
 
 ### Como o bot entrega
 
@@ -61,7 +61,7 @@ A soma de todos os textos dos embeds (títulos, descrições, rodapés, nomes de
 
 ### Botões
 
-Botões de link, organizados em até 5 linhas com até 5 botões cada. Cada botão tem um rótulo (até 80 caracteres), uma URL de destino e, opcionalmente, um emoji. São botões de link — levam a uma URL externa, não disparam ações no bot.
+Botões de link, organizados em até 5 linhas com até 5 botões cada. Cada botão tem um rótulo (até 80 caracteres), uma URL de destino e, opcionalmente, um emoji. São botões de link: levam a uma URL externa, não disparam ações no bot.
 
 ### Variáveis
 
@@ -73,7 +73,7 @@ Use variáveis no texto e nos embeds. O bot as substitui pelos valores reais no 
 | `{{memberCount}}` | Quantidade de membros | 1234 |
 | `{{serverIcon}}` | URL do ícone do servidor | (link do ícone) |
 
-O botão **Variáveis** na barra do editor lista todas e copia o token com um clique. As variáveis funcionam em qualquer campo de texto — conteúdo, título, descrição, campos, rodapé.
+O botão **Variáveis** na barra do editor lista todas e copia o token com um clique. As variáveis funcionam em qualquer campo de texto: conteúdo, título, descrição, campos, rodapé.
 
 ### Importar/Exportar JSON
 

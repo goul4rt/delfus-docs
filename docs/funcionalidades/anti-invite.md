@@ -6,7 +6,7 @@ Ele distingue os seus convites dos de fora. Links criados dentro do seu servidor
 
 ![Configuração do anti-invite no painel do Delfus](../assets/dashboard/anti-invite.png){ .dx-shot loading=lazy }
 
-*Configuração do anti-invite no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração do anti-invite no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -39,16 +39,16 @@ Não há comando de barra. O Anti-invite roda 100% automático e todos os ajuste
 
 Configure pelo painel em [admin.delfus.app](https://admin.delfus.app), na seção **Anti-invite**. As opções principais:
 
-- **Ativar/desativar** — liga ou desliga o módulo. Vem desligado por padrão.
-- **Permitir convites do próprio servidor** — ligado por padrão, libera seus links e a URL personalizada. Desligue pra bloquear **qualquer** convite, inclusive os seus.
-- **Canais liberados** — canais onde o módulo nunca atua. Útil pra áreas de divulgação ou parcerias.
-- **Cargos liberados** — membros com qualquer um desses cargos ficam isentos. Bom pra equipe e parceiros oficiais.
-- **Ação na violação** — o que fazer com quem manda convite proibido: `none` (só apaga), `warn`, `mute`, `kick` ou `ban`.
-- **Duração do silêncio** — em segundos, quando a ação é `mute`. De 1 segundo até 28 dias (limite do Discord). Sem definir, o padrão é 10 minutos.
-- **Motivo** — texto livre (até 500 caracteres) usado na punição e no aviso.
-- **Avisar no canal** — liga/desliga o aviso público ao autor. Ligado por padrão.
-- **Texto do aviso** — mensagem personalizada (até 2.000 caracteres). Em branco, usa um texto padrão.
-- **Canal de logs** — onde cada remoção fica registrada. Opcional.
+- **Ativar/desativar:** liga ou desliga o módulo. Vem desligado por padrão.
+- **Permitir convites do próprio servidor:** ligado por padrão, libera seus links e a URL personalizada. Desligue pra bloquear **qualquer** convite, inclusive os seus.
+- **Canais liberados:** canais onde o módulo nunca atua. Útil pra áreas de divulgação ou parcerias.
+- **Cargos liberados:** membros com qualquer um desses cargos ficam isentos. Bom pra equipe e parceiros oficiais.
+- **Ação na violação:** o que fazer com quem manda convite proibido: `none` (só apaga), `warn`, `mute`, `kick` ou `ban`.
+- **Duração do silêncio:** em segundos, quando a ação é `mute`. De 1 segundo até 28 dias (limite do Discord). Sem definir, o padrão é 10 minutos.
+- **Motivo:** texto livre (até 500 caracteres) usado na punição e no aviso.
+- **Avisar no canal:** liga/desliga o aviso público ao autor. Ligado por padrão.
+- **Texto do aviso:** mensagem personalizada (até 2.000 caracteres). Em branco, usa um texto padrão.
+- **Canal de logs:** onde cada remoção fica registrada. Opcional.
 
 !!! note "Aplica na hora"
     Depois de salvar, a configuração vai pro bot automaticamente. Não precisa reiniciar nada.

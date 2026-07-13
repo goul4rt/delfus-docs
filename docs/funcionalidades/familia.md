@@ -26,10 +26,10 @@ O painel mostra na hora as famílias que você possui, as que participa e quanto
 
 A família faz parte do sistema **VIP** e é configurada no [Dashboard](https://admin.delfus.app), na seção de VIP, no painel **Famílias**. Lá você ajusta:
 
-- **Máximo de membros por família** — de 1 a 50 (padrão 10). Vale o menor número entre esse teto e o limite da recompensa do plano.
-- **Prefixo do cargo** — texto na frente do nome de cada cargo (padrão 🏠). Deixe vazio para não usar.
-- **Expiração de convites** — em horas, de 1 a 720 (padrão 48).
-- **Cargo de referência (âncora)** — opcional. Posiciona os cargos de família num ponto fixo da hierarquia e mantém a lista organizada.
+- **Máximo de membros por família:** de 1 a 50 (padrão 10). Vale o menor número entre esse teto e o limite da recompensa do plano.
+- **Prefixo do cargo:** texto na frente do nome de cada cargo (padrão 🏠). Deixe vazio para não usar.
+- **Expiração de convites:** em horas, de 1 a 720 (padrão 48).
+- **Cargo de referência (âncora):** opcional. Posiciona os cargos de família num ponto fixo da hierarquia e mantém a lista organizada.
 
 !!! warning "Antes de tudo"
     Para os membros criarem famílias, você precisa de pelo menos um **plano VIP com a recompensa de família**. É nele que se define o limite de membros e se ele libera **gradiente** e **cor holográfica**.
@@ -40,9 +40,9 @@ A família faz parte do sistema **VIP** e é configurada no [Dashboard](https://
 
 Depois de criada, o dono comanda tudo pelo painel:
 
-- **Personalizar** — nome (até 80 caracteres), descrição (até 255) e a cor do cargo: **sólida**, **gradiente** (duas cores em degradê) ou **holográfica** (efeito especial do Discord). Antes de aplicar a cor, o bot mostra uma prévia pra confirmar.
-- **Ícone do cargo** — por URL ou imagem enviada, em PNG, JPEG, GIF ou WEBP. O Discord limita a 256 KB. Imagens estáticas grandes são comprimidas sozinhas, mas GIFs animados acima disso precisam ser reduzidos antes.
-- **Convidar e gerenciar** — convide membros do servidor, remova quem quiser. Qualquer membro comum pode sair quando quiser. O dono não sai (precisa excluir a família) nem se remove.
+- **Personalizar:** nome (até 80 caracteres), descrição (até 255) e a cor do cargo: **sólida**, **gradiente** (duas cores em degradê) ou **holográfica** (efeito especial do Discord). Antes de aplicar a cor, o bot mostra uma prévia pra confirmar.
+- **Ícone do cargo:** por URL ou imagem enviada, em PNG, JPEG, GIF ou WEBP. O Discord limita a 256 KB. Imagens estáticas grandes são comprimidas sozinhas, mas GIFs animados acima disso precisam ser reduzidos antes.
+- **Convidar e gerenciar:** convide membros do servidor, remova quem quiser. Qualquer membro comum pode sair quando quiser. O dono não sai (precisa excluir a família) nem se remove.
 
 Só o dono edita, e só enquanto a família está ativa.
 

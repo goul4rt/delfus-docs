@@ -4,7 +4,7 @@ Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais t�
 
 ![Estatísticas de emojis no painel do Delfus](../assets/dashboard/emojis.png){ .dx-shot loading=lazy }
 
-*Estatísticas de emojis no [Dashboard](https://admin.delfus.app) — dados de demonstração.*
+*Estatísticas de emojis no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
 ## Como funciona
 

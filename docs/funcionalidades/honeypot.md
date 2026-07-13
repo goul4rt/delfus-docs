@@ -4,7 +4,7 @@ Pegue spammers no flagrante. Você cria um canal onde ninguém deveria escrever,
 
 ![Configuração do honeypot no painel do Delfus](../assets/dashboard/honeypot.png){ .dx-shot loading=lazy }
 
-*Configuração do honeypot no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração do honeypot no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 

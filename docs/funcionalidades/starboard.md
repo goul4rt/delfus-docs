@@ -4,7 +4,7 @@ Republique automaticamente as melhores mensagens do servidor num canal de destaq
 
 ![Ranking do Starboard no painel do Delfus](../assets/dashboard/starboard.png){ .dx-shot loading=lazy }
 
-*Ranking do Starboard no [Dashboard](https://admin.delfus.app) — dados de demonstração.*
+*Ranking do Starboard no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
 ## Como funciona
 

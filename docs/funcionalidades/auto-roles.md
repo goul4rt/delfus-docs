@@ -4,7 +4,7 @@ Toda conta nova que entra no servidor já recebe os cargos certos, sem ninguém 
 
 ![Cargos automáticos no painel do Delfus](../assets/dashboard/auto-roles.png){ .dx-shot loading=lazy }
 
-*Cargos automáticos no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Cargos automáticos no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 

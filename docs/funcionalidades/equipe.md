@@ -4,15 +4,15 @@ Você vê quem da sua equipe está ativo, quanto cada um produz e quem está aba
 
 ![Painel de gestão de equipe no painel do Delfus](../assets/dashboard/equipe.png){ .dx-shot loading=lazy }
 
-*Painel de gestão de equipe no [Dashboard](https://admin.delfus.app) — dados de demonstração.*
+*Painel de gestão de equipe no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
 O sistema parte de uma definição simples: **quem é staff são os donos dos cargos que você marcou** na configuração. A partir daí, para cada membro com um desses cargos, o bot já coleta três fontes de dados no dia a dia:
 
-- **Mensagens** — contagem por hora, por canal (agregada, sem registrar mensagem por mensagem).
-- **Voz** — sessões em canais de voz, com duração de cada uma.
-- **Moderação** — cada `warn`, `ban`, `mute` e `kick` aplicado, vinculado a quem aplicou.
+- **Mensagens:** contagem por hora, por canal (agregada, sem registrar mensagem por mensagem).
+- **Voz:** sessões em canais de voz, com duração de cada uma.
+- **Moderação:** cada `warn`, `ban`, `mute` e `kick` aplicado, vinculado a quem aplicou.
 
 O painel lê esses dados sobre um período (7d, 30d, etc.) e calcula as métricas. As cinco rotas atendem perguntas diferentes:
 
@@ -32,20 +32,20 @@ Cada membro tem três blocos de métricas no período selecionado.
 **Mensagens**
 
 - **Total** e **média por dia**.
-- **Canais únicos** — em quantos canais diferentes participou.
-- **Dias ativos** e **cobertura** — percentual de dias do período com pelo menos uma mensagem. Cobertura de 100% significa atividade todo dia.
-- **Consistência** — mesmo cálculo da cobertura, usado como nota de regularidade (0–100).
+- **Canais únicos:** em quantos canais diferentes participou.
+- **Dias ativos** e **cobertura**: percentual de dias do período com pelo menos uma mensagem. Cobertura de 100% significa atividade todo dia.
+- **Consistência:** mesmo cálculo da cobertura, usado como nota de regularidade (0 a 100).
 
 **Moderação**
 
 - Contagem separada de **warns, bans, mutes e kicks**, mais o **total**.
-- **Dias com ação** — em quantos dias do período aplicou ao menos uma punição.
+- **Dias com ação:** em quantos dias do período aplicou ao menos uma punição.
 
 **Voz**
 
 - **Minutos totais**, **número de sessões** e **duração média por sessão**.
 
-**Tendências** — cada bloco compara o período atual com o período imediatamente anterior de mesmo tamanho. Uma queda de 40% nas mensagens dos últimos 7 dias é medida contra os 7 dias anteriores. Aparece como variação percentual.
+**Tendências:** cada bloco compara o período atual com o período imediatamente anterior de mesmo tamanho. Uma queda de 40% nas mensagens dos últimos 7 dias é medida contra os 7 dias anteriores. Aparece como variação percentual.
 
 ### Médias e comparação
 
@@ -57,7 +57,7 @@ O **heatmap** mostra atividade por dia da semana × hora do dia (grade de 7×24)
 
 Setores vêm das **categorias** atribuídas aos cargos na configuração. Um membro entra no setor de cada categoria dos cargos que possui. Quem tem cargo sem categoria cai em **Sem Setor**.
 
-A visão por setor mostra, para cada grupo: número de membros, total de mensagens, total de ações de moderação e tempo em voz somados. Expandindo o setor, você vê a grade de métricas individuais daquele grupo. Serve para comparar áreas — por exemplo, atividade da Segurança contra a da Liderança.
+A visão por setor mostra, para cada grupo: número de membros, total de mensagens, total de ações de moderação e tempo em voz somados. Expandindo o setor, você vê a grade de métricas individuais daquele grupo. Serve para comparar áreas, por exemplo a atividade da Segurança contra a da Liderança.
 
 ### Métricas individuais
 
@@ -66,8 +66,8 @@ O perfil de um membro (`/members/[userId]`) traz tudo do membro mais detalhes qu
 - **Top canais de mensagens** e **top canais de voz** (5 de cada).
 - **Atividade por hora** (24 pontos) e **por dia da semana** (7 pontos, com mensagens e minutos de voz).
 - **Heatmap pessoal** (7×24).
-- **Últimas 10 ações de moderação** — tipo, alvo, motivo e data.
-- **Radar de competências** — quatro eixos de 0 a 100: Comunicação, Presença, Moderação e Consistência.
+- **Últimas 10 ações de moderação:** tipo, alvo, motivo e data.
+- **Radar de competências:** quatro eixos de 0 a 100: Comunicação, Presença, Moderação e Consistência.
 
 ### Alertas de baixa atividade
 
@@ -84,11 +84,11 @@ Limites padrão por semana:
 
 Tipos de alerta gerados:
 
-- **Inativo** — zero mensagens, zero voz e zero moderação no período. Sempre **crítico**.
-- **Mensagens insuficientes** — abaixo do mínimo, ou cobertura abaixo de 50%. Vira **crítico** se ficar abaixo de metade do mínimo.
-- **Moderação insuficiente** — só conta para membros do setor **Segurança** (cargos categorizados como `Segurança`) que têm mensagens mas pouca moderação.
-- **Voz insuficiente** — minutos em voz abaixo do mínimo.
-- **Queda de tendência** — queda acima de 40% nas mensagens (ou moderações) versus o período anterior. Acima de 70% vira **crítico**.
+- **Inativo:** zero mensagens, zero voz e zero moderação no período. Sempre **crítico**.
+- **Mensagens insuficientes:** abaixo do mínimo, ou cobertura abaixo de 50%. Vira **crítico** se ficar abaixo de metade do mínimo.
+- **Moderação insuficiente:** só conta para membros do setor **Segurança** (cargos categorizados como `Segurança`) que têm mensagens mas pouca moderação.
+- **Voz insuficiente:** minutos em voz abaixo do mínimo.
+- **Queda de tendência:** queda acima de 40% nas mensagens (ou moderações) versus o período anterior. Acima de 70% vira **crítico**.
 
 Cada alerta é **Aviso** ou **Crítico**, agrupado por tipo e ordenado do pior para o melhor. Você pode filtrar por setor para focar numa área. Clicar num alerta abre o perfil do membro.
 
@@ -99,20 +99,20 @@ Cada alerta é **Aviso** ou **Crítico**, agrupado por tipo e ordenado do pior p
 
 Toda a configuração fica em `/dashboard/staff/config`. Sem nenhum cargo marcado, o painel não tem como saber quem é staff e as outras telas ficam vazias.
 
-1. **Selecione os cargos de staff** — escolha os cargos do servidor que representam sua equipe (moderação, admin, suporte).
-2. **Atribua categorias (opcional)** — agrupe cada cargo num setor. Vêm prontos `Segurança` e `Liderança`; você pode criar outros. A categoria habilita a análise por setor e o alerta de moderação.
-3. **Salve** — a partir daí as métricas e relatórios passam a considerar esses cargos.
+1. **Selecione os cargos de staff:** escolha os cargos do servidor que representam sua equipe (moderação, admin, suporte).
+2. **Atribua categorias (opcional):** agrupe cada cargo num setor. Vêm prontos `Segurança` e `Liderança`; você pode criar outros. A categoria habilita a análise por setor e o alerta de moderação.
+3. **Salve:** a partir daí as métricas e relatórios passam a considerar esses cargos.
 
 Os cargos ficam salvos por servidor. Remover um cargo que tinha categoria pede confirmação, porque a categorização daquele cargo é perdida.
 
-Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de staff, ele registra o vínculo usuário–cargo. Um mesmo membro pode ter vários cargos de staff e aparece em todos os setores correspondentes.
+Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de staff, ele registra o vínculo usuário-cargo. Um mesmo membro pode ter vários cargos de staff e aparece em todos os setores correspondentes.
 
 ## Exemplos
 
 !!! example "Encontrar quem sumiu na última semana"
     1. Abra `/dashboard/staff/alertas`.
     2. Deixe o período em **7d**.
-    3. Olhe o grupo **Inativos** (crítico) — são membros sem nenhuma mensagem, voz ou moderação na semana.
+    3. Olhe o grupo **Inativos** (crítico): são membros sem nenhuma mensagem, voz ou moderação na semana.
     4. Em seguida veja **Queda de tendência** para quem ainda aparece, mas despencou versus a semana anterior.
 
 !!! example "Comparar dois setores"

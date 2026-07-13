@@ -64,11 +64,11 @@ E os campos de cada tipo:
 
 | Tipo | Você ajusta |
 | --- | --- |
-| **Somente mídia** | Quais mídias entram, permitir legenda, tamanho mínimo de imagem (0–4096px), mensagem de aviso (até 500 caracteres) e até 10 emojis de reação (inclui os personalizados). |
+| **Somente mídia** | Quais mídias entram, permitir legenda, tamanho mínimo de imagem (0 a 4096px), mensagem de aviso (até 500 caracteres) e até 10 emojis de reação (inclui os personalizados). |
 | **Somente comandos** | Prefixos (1 a 10, padrão `/`), mensagem de redirecionamento e um canal de conversa opcional pra virar link no aviso. |
 | **Somente arquivos** | Extensões permitidas (até 50; vazio = todas), tamanho mínimo e máximo em KB (máximo 0 = sem limite) e mensagem de aviso. |
 | **Tópico automático** | Modelo do nome com `{author}` e `{date}` (padrão `{author} — {date}`) e quando arquivar: 1 hora, 1 dia, 3 dias ou 1 semana. |
-| **Publicação automática** | Atraso antes de publicar (0–1440 min; 0 = na hora), filtro de cargos, exigir imagem/conteúdo rico e tamanho mínimo de texto. |
+| **Publicação automática** | Atraso antes de publicar (0 a 1440 min; 0 = na hora), filtro de cargos, exigir imagem/conteúdo rico e tamanho mínimo de texto. |
 
 !!! note "Permissões"
     Pro Delfus agir, ele precisa das permissões certas no canal: **Gerenciar mensagens** pra apagar, **Enviar mensagens** pros avisos, **Adicionar reações** pras reações automáticas, **Criar tópicos públicos** pro tópico automático e **publicar em canal de anúncio** pra publicação. Pra reagir com emojis personalizados, o bot também precisa ter acesso a eles.
@@ -104,5 +104,5 @@ Por segurança. Os avisos automáticos nunca dão ping em @everyone, cargos ou p
 Ela só vale em canais de anúncio. Confira também se a mensagem passou nos filtros (cargo, conteúdo rico, tamanho mínimo de texto) e se o bot tem permissão pra publicar ali.
 
 !!! tip "Dica"
-    Em canal de mídia movimentado, ligue o **tamanho mínimo de imagem** (uns 64–100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula, que tecnicamente são "imagens", e deixa o canal só com print e foto de verdade.
+    Em canal de mídia movimentado, ligue o **tamanho mínimo de imagem** (uns 64 a 100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula, que tecnicamente são "imagens", e deixa o canal só com print e foto de verdade.
 

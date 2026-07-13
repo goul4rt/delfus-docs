@@ -6,7 +6,7 @@ As mensagens podem ser texto simples, um cartão do Discord (embed) ou uma image
 
 ![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.png){ .dx-shot loading=lazy }
 
-*Configuração de boas-vindas no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração de boas-vindas no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -121,7 +121,7 @@ O estilo **Cartão de Imagem** monta uma arte de boas-vindas na hora, com o avat
 
 ![Cartão de boas-vindas no painel do Delfus](../assets/dashboard/recepcao-cartao.png){ .dx-shot loading=lazy }
 
-*Estilo "Cartão de Imagem" com preview ao vivo e presets de cor — dados de demonstração.*
+*Estilo "Cartão de Imagem" com preview ao vivo e presets de cor (dados de demonstração).*
 
 ## Perguntas frequentes
 

@@ -4,7 +4,7 @@ Transforme uma URL longa num link curto tipo `link.delfus.app/s/CODIGO` e veja q
 
 ![Encurtador de links no painel do Delfus](../assets/dashboard/links.png){ .dx-shot loading=lazy }
 
-*Encurtador de links no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Encurtador de links no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 

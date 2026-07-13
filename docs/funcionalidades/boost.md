@@ -4,7 +4,7 @@ Quando alguém impulsiona o servidor, o Delfus agradece sozinho e ainda pode dar
 
 ![Recompensas de boost no painel do Delfus](../assets/dashboard/boost.png){ .dx-shot loading=lazy }
 
-*Recompensas de boost no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Recompensas de boost no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 

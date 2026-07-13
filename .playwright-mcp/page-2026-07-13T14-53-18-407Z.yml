@@ -1,0 +1,223 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Cabeçalho" [ref=e3]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: Delfus
+        - generic: Suporte
+      - generic [ref=e11]:
+        - radio "Mudar para tema claro"
+        - radio "Mudar para tema escuro"
+        - generic "Mudar para tema escuro" [ref=e12] [cursor=pointer]
+      - dialog [ref=e15]:
+        - search [ref=e16]:
+          - generic [ref=e17]:
+            - textbox "Buscar" [ref=e18]
+            - navigation "Pesquisar":
+              - button "Limpar"
+          - generic: Inicializando busca
+  - generic [ref=e22]:
+    - main [ref=e23]:
+      - generic [ref=e24]:
+        - navigation "Navegação" [ref=e27]:
+          - generic [ref=e28] [cursor=pointer]:
+            - link "Delfus" [ref=e29]:
+              - /url: http://127.0.0.1:8001/
+              - img "logo" [ref=e30]
+            - text: Delfus
+          - list [ref=e31]:
+            - listitem [ref=e32]:
+              - link "Início" [ref=e33] [cursor=pointer]:
+                - /url: http://127.0.0.1:8001/
+            - listitem [ref=e35]:
+              - generic [ref=e36]: Primeiros passos
+              - navigation "Primeiros passos" [ref=e39]:
+                - list [ref=e42]:
+                  - listitem [ref=e43]:
+                    - link "Adicionar o bot" [ref=e44] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8001/comecar/adicionar/
+                  - listitem [ref=e46]:
+                    - link "Configuração inicial" [ref=e47] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8001/comecar/configuracao/
+                  - listitem [ref=e49]:
+                    - link "Idioma" [ref=e50] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8001/comecar/idioma/
+            - listitem [ref=e52]:
+              - generic [ref=e53]: Funcionalidades
+              - navigation "Funcionalidades" [ref=e56]:
+                - list [ref=e59]:
+                  - listitem [ref=e60]:
+                    - link "Visão geral" [ref=e61] [cursor=pointer]:
+                      - /url: http://127.0.0.1:8001/funcionalidades/
+                  - listitem [ref=e63]:
+                    - generic [ref=e64]: Segurança
+                    - navigation "Segurança" [ref=e67]:
+                      - list [ref=e70]:
+                        - listitem [ref=e71]:
+                          - link "Moderação e punições" [ref=e72] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/moderacao/
+                        - listitem [ref=e74]:
+                          - link "Anti-raid" [ref=e75] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/anti-raid/
+                        - listitem [ref=e77]:
+                          - link "Anti-invite" [ref=e78] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/anti-invite/
+                        - listitem [ref=e80]:
+                          - link "Honeypot" [ref=e81] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/honeypot/
+                        - listitem [ref=e83]:
+                          - link "Backups" [ref=e84] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/backup/
+                  - listitem [ref=e86]:
+                    - generic [ref=e87]: Recepção e cargos
+                    - navigation "Recepção e cargos" [ref=e90]:
+                      - list [ref=e93]:
+                        - listitem [ref=e94]:
+                          - link "Boas-vindas e despedida" [ref=e95] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/recepcao/
+                        - listitem [ref=e97]:
+                          - link "Cargos automáticos" [ref=e98] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/auto-roles/
+                        - listitem [ref=e100]:
+                          - link "Cargos por reação" [ref=e101] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/reaction-roles/
+                  - listitem [ref=e103]:
+                    - generic [ref=e104]: Monetização
+                    - navigation "Monetização" [ref=e107]:
+                      - list [ref=e110]:
+                        - listitem [ref=e111]:
+                          - link "VIP, assinaturas e recompensas" [ref=e112] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/vip/
+                        - listitem [ref=e114]:
+                          - link "Recompensas de boost" [ref=e115] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/boost/
+                  - listitem [ref=e117]:
+                    - generic [ref=e118]: Engajamento
+                    - navigation "Engajamento" [ref=e121]:
+                      - list [ref=e124]:
+                        - listitem [ref=e125]:
+                          - link "Starboard" [ref=e126] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/starboard/
+                        - listitem [ref=e128]:
+                          - link "Mensagens e embeds" [ref=e129] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/mensagens/
+                        - listitem [ref=e131]:
+                          - link "Emojis" [ref=e132] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/emojis/
+                        - listitem [ref=e134]:
+                          - link "Aniversários" [ref=e135] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/aniversarios/
+                        - listitem [ref=e137]:
+                          - link "Famílias" [ref=e138] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/familia/
+                        - listitem [ref=e140]:
+                          - link "Correio" [ref=e141] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/correio/
+                        - listitem [ref=e143]:
+                          - link "Automações de canal" [ref=e144] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/automacoes/
+                  - listitem [ref=e146]:
+                    - generic [ref=e147]: Operação
+                    - navigation "Operação" [ref=e150]:
+                      - list [ref=e153]:
+                        - listitem [ref=e154]:
+                          - link "Gestão de equipe" [ref=e155] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/equipe/
+                  - listitem [ref=e157]:
+                    - generic [ref=e158]: Análise
+                    - navigation "Análise" [ref=e161]:
+                      - list [ref=e164]:
+                        - listitem [ref=e165]:
+                          - link "Análise e insights" [ref=e166] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/analise/
+                  - listitem [ref=e168]:
+                    - generic [ref=e169]: Utilidades
+                    - navigation "Utilidades" [ref=e172]:
+                      - list [ref=e175]:
+                        - listitem [ref=e176]:
+                          - link "Encurtador de links" [ref=e177] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/links/
+                        - listitem [ref=e179]:
+                          - link "Download de vídeos" [ref=e180] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/video/
+                        - listitem [ref=e182]:
+                          - link "Oráculo" [ref=e183] [cursor=pointer]:
+                            - /url: http://127.0.0.1:8001/funcionalidades/oraculo/
+            - listitem [ref=e185]:
+              - link "Suporte" [ref=e186] [cursor=pointer]:
+                - /url: http://127.0.0.1:8001/suporte/
+        - article [ref=e189]:
+          - generic [ref=e190]:
+            - generic [ref=e191]: Suporte
+            - heading "Precisa de uma mão?" [level=1] [ref=e192]
+            - paragraph [ref=e193]: Fala com a gente pelo canal que preferir. A equipe e a comunidade respondem, e a maioria das dúvidas se resolve no servidor de suporte.
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - generic [ref=e196]: Equipe ativa
+                - heading "Servidor de Suporte" [level=2] [ref=e198]
+                - paragraph [ref=e199]: O jeito mais rápido. Abra um ticket, tire dúvidas e acompanhe as novidades junto da comunidade.
+                - link "Entrar no servidor" [ref=e200] [cursor=pointer]:
+                  - /url: https://discord.gg/mTjZg95UJV
+              - link [ref=e204] [cursor=pointer]:
+                - /url: http://127.0.0.1:8001/assets/mascote-suporte.jpg
+                - img "Mascote do Delfus acenando" [ref=e205]
+            - generic [ref=e206]:
+              - link "Dashboard Configure o bot visualmente, sem comandos. Abrir painel →" [ref=e207] [cursor=pointer]:
+                - /url: https://admin.delfus.app
+                - heading "Dashboard" [level=3] [ref=e212]
+                - paragraph [ref=e213]: Configure o bot visualmente, sem comandos.
+                - generic [ref=e214]:
+                  - text: Abrir painel
+                  - generic [ref=e215]: →
+              - link "Site Conheça o Delfus e todos os módulos. Visitar →" [ref=e216] [cursor=pointer]:
+                - /url: https://delfus.app
+                - heading "Site" [level=3] [ref=e221]
+                - paragraph [ref=e222]: Conheça o Delfus e todos os módulos.
+                - generic [ref=e223]:
+                  - text: Visitar
+                  - generic [ref=e224]: →
+              - link "E-mail Contato direto para assuntos formais. delfus.app@proton.me →" [ref=e225] [cursor=pointer]:
+                - /url: mailto:delfus.app@proton.me
+                - heading "E-mail" [level=3] [ref=e230]
+                - paragraph [ref=e231]: Contato direto para assuntos formais.
+                - generic [ref=e232]:
+                  - text: delfus.app@proton.me
+                  - generic [ref=e233]: →
+            - generic [ref=e234]:
+              - generic [ref=e235]: Antes de perguntar
+              - heading "Perguntas frequentes" [level=2] [ref=e236]
+              - group [ref=e237]:
+                - generic "O Delfus é gratuito?" [ref=e238] [cursor=pointer]
+                - generic [ref=e242]: Sim. Todos os módulos essenciais são gratuitos. O programa VIP e alguns recursos avançados são opcionais e configuráveis por você.
+              - group [ref=e243]:
+                - generic "Um módulo parou de funcionar. E agora?" [ref=e244] [cursor=pointer]
+              - group [ref=e248]:
+                - generic "Como troco o idioma do bot?" [ref=e249] [cursor=pointer]
+              - group [ref=e253]:
+                - generic "Vocês guardam dados do meu servidor?" [ref=e254] [cursor=pointer]
+            - generic [ref=e258]:
+              - generic [ref=e259]: "Links úteis:"
+              - link "Política de Privacidade" [ref=e260] [cursor=pointer]:
+                - /url: https://admin.delfus.app/privacy
+              - link "Termos de Serviço" [ref=e261] [cursor=pointer]:
+                - /url: https://admin.delfus.app/terms
+          - complementary [ref=e262]:
+            - generic [ref=e263]:
+              - generic "Última atualização" [ref=e264]
+              - generic "17 de junho de 2026 22:21:27 UTC" [ref=e267]: há 3 semanas
+      - button "Voltar para o topo"
+    - contentinfo [ref=e268]:
+      - navigation "Rodapé" [ref=e269]:
+        - 'link "Anterior: Oráculo" [ref=e270] [cursor=pointer]':
+          - /url: http://127.0.0.1:8001/funcionalidades/oraculo/
+          - generic [ref=e274]:
+            - text: Anterior
+            - generic [ref=e275]: Oráculo
+      - generic [ref=e277]:
+        - generic [ref=e278]: © Delfus
+        - generic [ref=e280]:
+          - link "Servidor de Suporte" [ref=e281] [cursor=pointer]:
+            - /url: https://discord.gg/mTjZg95UJV
+          - link "Site" [ref=e284] [cursor=pointer]:
+            - /url: https://delfus.app
+          - link "Dashboard" [ref=e287] [cursor=pointer]:
+            - /url: https://admin.delfus.app

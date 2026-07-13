@@ -4,7 +4,7 @@ O Anti-raid bloqueia ataques de golpe em massa: dezenas de contas despejando a m
 
 ![Configuração do anti-raid no painel do Delfus](../assets/dashboard/anti-raid.png){ .dx-shot loading=lazy }
 
-*Configuração do anti-raid no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Configuração do anti-raid no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
@@ -17,7 +17,7 @@ São três:
 - **Imagem conhecida.** A camada principal. O bot calcula uma impressão digital visual da imagem e compara com uma base de golpes conhecidos. Se bater, é ataque.
 
 !!! example "Exemplo"
-    Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast — resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor, antes que mais alguém clique no link.
+    Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast: resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor, antes que mais alguém clique no link.
 
 ### Velocidade: flood e enxame
 
@@ -63,16 +63,16 @@ Tudo pelo Dashboard, em [admin.delfus.app](https://admin.delfus.app), na seção
 
 **Configuração global**
 
-- **Canal de Alerta** — onde a moderação recebe os avisos. Obrigatório: sem ele, o Anti-raid não funciona. Use um canal só da staff.
+- **Canal de Alerta:** onde a moderação recebe os avisos. Obrigatório: sem ele, o Anti-raid não funciona. Use um canal só da staff.
 
 **Módulo "MrsBeast Hack" (reconhecimento de imagem)**
 
 Um interruptor liga ou desliga o módulo. Com ele ativo, você define:
 
-- **Ação** — o que fazer com o golpista: **Advertência**, **Mute** (duração de 60s a 28 dias; padrão 10 min), **Kick** ou **Ban** (padrão).
-- **Sensibilidade** — de 5 a 30 (padrão 12). Quanto menor, mais sensível (pega variações, mas pode dar falso-positivo). Quanto maior, mais tolerante. O recomendado fica entre 10 e 15.
-- **Mínimo de imagens** — de 1 a 10 (padrão 1). Quantas imagens a mensagem precisa ter para o bot analisar. Em 1, qualquer imagem é checada.
-- **Motivo (opcional)** — texto que aparece na punição e no alerta. Vazio, o bot usa um padrão.
+- **Ação:** o que fazer com o golpista: **Advertência**, **Mute** (duração de 60s a 28 dias; padrão 10 min), **Kick** ou **Ban** (padrão).
+- **Sensibilidade:** de 5 a 30 (padrão 12). Quanto menor, mais sensível (pega variações, mas pode dar falso-positivo). Quanto maior, mais tolerante. O recomendado fica entre 10 e 15.
+- **Mínimo de imagens:** de 1 a 10 (padrão 1). Quantas imagens a mensagem precisa ter para o bot analisar. Em 1, qualquer imagem é checada.
+- **Motivo (opcional):** texto que aparece na punição e no alerta. Vazio, o bot usa um padrão.
 
 !!! note "Limites finos"
     As regras de velocidade (flood e enxame) fazem parte do Anti-raid, mas seus números exatos são ajustados pela equipe Delfus por servidor. Os padrões: 3 canais em 10s para flood de um usuário; 5 contas com menos de 24h para enxame; slowmode de 30s no bloqueio brando.
@@ -92,10 +92,10 @@ Um interruptor liga ou desliga o módulo. Com ele ativo, você define:
 
 Para agir, o bot precisa das permissões certas:
 
-- **Gerenciar mensagens** — para apagar o golpe e limpar o rastro.
-- **Banir** e/ou **Expulsar membros** — conforme a ação escolhida (o flood sempre bane).
-- **Moderar membros (timeout)** — se a ação for silenciar.
-- **Gerenciar canais** — para ligar o slowmode num enxame.
+- **Gerenciar mensagens:** para apagar o golpe e limpar o rastro.
+- **Banir** e/ou **Expulsar membros:** conforme a ação escolhida (o flood sempre bane).
+- **Moderar membros (timeout):** se a ação for silenciar.
+- **Gerenciar canais:** para ligar o slowmode num enxame.
 
 Além disso, o cargo do bot precisa estar acima dos membros que ele vai punir, e o **Canal de Alerta** precisa estar configurado. Sem ele, o módulo nem roda.
 

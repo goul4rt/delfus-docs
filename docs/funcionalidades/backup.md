@@ -4,7 +4,7 @@ Recrie cargos, canais, categorias, permissões e configurações do servidor com
 
 ![Backups do servidor no painel do Delfus](../assets/dashboard/backup.png){ .dx-shot loading=lazy }
 
-*Backups do servidor no [Dashboard](https://admin.delfus.app) — exemplo com dados de demonstração.*
+*Backups do servidor no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
 ## Como funciona
 
