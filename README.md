@@ -1,7 +1,17 @@
 # delfus-docs
 
-Documentação oficial do [Delfus](https://delfus.app) — construída com
+Documentação oficial do [Delfus](https://delfus.app), bot para Discord com moderação,
+anti-raid, cargos automáticos, VIP, starboard e análise de comunidade — construída com
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
+
+**📖 Leia em: https://docs.delfus.app**
+
+Seções principais: [Primeiros passos](https://docs.delfus.app/comecar/adicionar/) ·
+[Funcionalidades](https://docs.delfus.app/funcionalidades/) ·
+[Moderação](https://docs.delfus.app/funcionalidades/moderacao/) ·
+[Anti-raid](https://docs.delfus.app/funcionalidades/anti-raid/) ·
+[VIP](https://docs.delfus.app/funcionalidades/vip/) ·
+[Suporte](https://docs.delfus.app/suporte/)
 
 ## Rodar localmente
 
