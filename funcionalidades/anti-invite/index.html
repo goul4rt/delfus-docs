@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+        <meta name="description" content="Como o anti-invite do Delfus apaga convites de outros servidores Discord na hora: exceções por cargo e canal, avisos, logs e punições automáticas.">
       
       
         <meta name="author" content="Delfus">
@@ -43,6 +43,8 @@
       
     
     
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
       
         
         
@@ -51,6 +53,7 @@
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -63,9 +66,38 @@
     
     
   
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      ,{ "@type": "ListItem", "position": 2, "name": "Funcionalidades" }
+      ,{ "@type": "ListItem", "position": 3, "name": "Seguran\u00e7a" }
+      ,{ "@type": "ListItem", "position": 4, "name": "Anti-invite", "item": "https://docs.delfus.app/funcionalidades/anti-invite/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Anti-invite",
+    "description": "Como o anti-invite do Delfus apaga convites de outros servidores Discord na hora: exce\u00e7\u00f5es por cargo e canal, avisos, logs e puni\u00e7\u00f5es autom\u00e1ticas.",
+    "url": "https://docs.delfus.app/funcionalidades/anti-invite/",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  
+
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="Anti-invite - Delfus">
-<meta property="og:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="og:description" content="Como o anti-invite do Delfus apaga convites de outros servidores Discord na hora: exceções por cargo e canal, avisos, logs e punições automáticas.">
 <meta property="og:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/anti-invite.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -73,7 +105,7 @@
 <meta property="og:url" content="https://docs.delfus.app/funcionalidades/anti-invite/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Anti-invite - Delfus">
-<meta property="twitter:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="twitter:description" content="Como o anti-invite do Delfus apaga convites de outros servidores Discord na hora: exceções por cargo e canal, avisos, logs e punições automáticas.">
 <meta property="twitter:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/anti-invite.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -832,6 +864,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-convites-do-meu-proprio-servidor-sao-apagados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Os convites do meu próprio servidor são apagados?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-equipe-de-moderacao-tambem-e-afetada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A equipe de moderação também é afetada?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-o-aviso-no-canal-some-sozinho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que o aviso no canal some sozinho?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-bot-pega-convites-com-https-www-ou-em-maiusculas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O bot pega convites com https://, www ou em maiúsculas?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1875,6 +1957,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#os-convites-do-meu-proprio-servidor-sao-apagados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Os convites do meu próprio servidor são apagados?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-equipe-de-moderacao-tambem-e-afetada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A equipe de moderação também é afetada?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-o-aviso-no-canal-some-sozinho" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que o aviso no canal some sozinho?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-bot-pega-convites-com-https-www-ou-em-maiusculas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O bot pega convites com https://, www ou em maiúsculas?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1895,9 +2027,9 @@
 
 
 <h1 id="anti-invite">Anti-invite<a class="headerlink" href="#anti-invite" title="Permanent link">¶</a></h1>
-<p>Bloqueia quem entra no servidor só pra postar <code>discord.gg</code> e roubar seus membros. O Anti-invite apaga a mensagem na hora e pune o autor, sem você precisar vigiar o chat.</p>
+<p>Bloqueia quem entra no seu servidor Discord só pra postar <code>discord.gg</code> e roubar seus membros. O Anti-invite do Delfus apaga a mensagem na hora e pune o autor, sem você precisar vigiar o chat.</p>
 <p>Ele distingue os seus convites dos de fora. Links criados dentro do seu servidor e sua URL personalizada passam normalmente. Qualquer link apontando pra outro lugar é barrado.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/anti-invite.png" data-desc-position="bottom"><img alt="Configuração do anti-invite no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/anti-invite.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/anti-invite.webp" data-desc-position="bottom"><img alt="Configuração do anti-invite no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/anti-invite.webp" width="1200"></a></p>
 <p><em>Configuração do anti-invite no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>O bot monitora as mensagens dos membros (ignora as de outros bots). A cada envio, faz uma checagem rápida: tem link de convite? É do seu servidor ou de fora?</p>
@@ -1961,14 +2093,14 @@
 <p>O bot apaga os convites externos, avisa o autor de forma amigável e guarda o histórico pra equipe, sem punir ninguém.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>Os convites do meu próprio servidor são apagados?</strong>
-Não, desde que "permitir convites do próprio servidor" esteja ligado (o padrão). O bot reconhece seus links e sua URL personalizada como internos. Se desligar, tudo é removido, inclusive os seus.</p>
-<p><strong>A equipe de moderação também é afetada?</strong>
-Não, se você colocar os cargos da equipe nos <strong>cargos liberados</strong>. Quem tem um cargo liberado é ignorado pelo Anti-invite. O mesmo vale pra canais inteiros, via <strong>canais liberados</strong>.</p>
-<p><strong>Por que o aviso no canal some sozinho?</strong>
-É de propósito. O aviso marcando o autor some em ~8 segundos pra não acumular mensagens de moderação no chat. Pra registro permanente, use um <strong>canal de logs</strong>.</p>
-<p><strong>O bot pega convites com <code>https://</code>, <code>www</code> ou em maiúsculas?</strong>
-Pega tudo. Reconhece <code>discord.gg</code>, <code>discord.com/invite</code> e <code>discordapp.com/invite</code>, com ou sem <code>https://</code> e <code>www.</code>, sem ligar pra maiúsculas ou minúsculas.</p>
+<h3 id="os-convites-do-meu-proprio-servidor-sao-apagados">Os convites do meu próprio servidor são apagados?<a class="headerlink" href="#os-convites-do-meu-proprio-servidor-sao-apagados" title="Permanent link">¶</a></h3>
+<p>Não, desde que "permitir convites do próprio servidor" esteja ligado (o padrão). O bot reconhece seus links e sua URL personalizada como internos. Se desligar, tudo é removido, inclusive os seus.</p>
+<h3 id="a-equipe-de-moderacao-tambem-e-afetada">A equipe de moderação também é afetada?<a class="headerlink" href="#a-equipe-de-moderacao-tambem-e-afetada" title="Permanent link">¶</a></h3>
+<p>Não, se você colocar os cargos da equipe nos <strong>cargos liberados</strong>. Quem tem um cargo liberado é ignorado pelo Anti-invite. O mesmo vale pra canais inteiros, via <strong>canais liberados</strong>.</p>
+<h3 id="por-que-o-aviso-no-canal-some-sozinho">Por que o aviso no canal some sozinho?<a class="headerlink" href="#por-que-o-aviso-no-canal-some-sozinho" title="Permanent link">¶</a></h3>
+<p>É de propósito. O aviso marcando o autor some em ~8 segundos pra não acumular mensagens de moderação no chat. Pra registro permanente, use um <strong>canal de logs</strong>.</p>
+<h3 id="o-bot-pega-convites-com-https-www-ou-em-maiusculas">O bot pega convites com <code>https://</code>, <code>www</code> ou em maiúsculas?<a class="headerlink" href="#o-bot-pega-convites-com-https-www-ou-em-maiusculas" title="Permanent link">¶</a></h3>
+<p>Pega tudo. Reconhece <code>discord.gg</code>, <code>discord.com/invite</code> e <code>discordapp.com/invite</code>, com ou sem <code>https://</code> e <code>www.</code>, sem ligar pra maiúsculas ou minúsculas.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Combine as duas listas: <strong>cargos liberados</strong> pra equipe e parceiros oficiais, <strong>canais liberados</strong> pra áreas de divulgação. Você bloqueia convites externos no servidor inteiro sem atrapalhar quem precisa compartilhar links.</p>
@@ -1993,7 +2125,7 @@ Pega tudo. Reconhece <code>discord.gg</code>, <code>discord.com/invite</code> e 
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
   </span>
 
     

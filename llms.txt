@@ -1,0 +1,67 @@
+# Delfus
+
+> Delfus é um bot para Discord (SaaS) com moderação automática, segurança
+> (anti-raid, anti-invite, honeypot), recepção e cargos, monetização (VIP,
+> boost), engajamento (starboard, aniversários, famílias, correio,
+> automações) e análise de comunidade. Documentação oficial em português.
+
+Painel web: https://admin.delfus.app
+Site: https://delfus.app
+Suporte (Discord): https://discord.gg/mTjZg95UJV
+
+## Primeiros passos
+
+- [Adicionar o bot](https://docs.delfus.app/comecar/adicionar/): como convidar o Delfus e conceder permissões
+- [Configuração inicial](https://docs.delfus.app/comecar/configuracao/): canais, cargos e ativação de módulos no painel
+- [Idioma](https://docs.delfus.app/comecar/idioma/): alternar o bot entre português e inglês
+
+## Funcionalidades
+
+- [Visão geral das funcionalidades](https://docs.delfus.app/funcionalidades/): mapa de todos os módulos do Delfus
+
+### Segurança
+
+- [Moderação e punições](https://docs.delfus.app/funcionalidades/moderacao/): warns, mutes, kicks e bans com escalonamento automático
+- [Anti-raid](https://docs.delfus.app/funcionalidades/anti-raid/): detecção de entrada em massa e ataques coordenados
+- [Anti-invite](https://docs.delfus.app/funcionalidades/anti-invite/): bloqueio automático de links de convite de outros servidores
+- [Honeypot (canal isca)](https://docs.delfus.app/funcionalidades/honeypot/): canal armadilha para banir bots e invasores automaticamente
+- [Backups](https://docs.delfus.app/funcionalidades/backup/): backup e restauração automática da estrutura do servidor
+
+### Recepção e cargos
+
+- [Boas-vindas e despedida](https://docs.delfus.app/funcionalidades/recepcao/): cartões de boas-vindas e mensagens de saída personalizáveis
+- [Cargos automáticos](https://docs.delfus.app/funcionalidades/auto-roles/): atribuição automática de cargo ao entrar
+- [Cargos por reação](https://docs.delfus.app/funcionalidades/reaction-roles/): cargos concedidos por reação em mensagem
+
+### Monetização
+
+- [VIP, assinaturas e recompensas](https://docs.delfus.app/funcionalidades/vip/): níveis, benefícios, códigos de resgate e expiração automática
+- [Recompensas de boost](https://docs.delfus.app/funcionalidades/boost/): benefícios automáticos para quem impulsiona o servidor
+
+### Engajamento
+
+- [Starboard](https://docs.delfus.app/funcionalidades/starboard/): mural de mensagens em destaque por reação
+- [Mensagens e embeds](https://docs.delfus.app/funcionalidades/mensagens/): embeds e mensagens customizadas com variáveis
+- [Emojis](https://docs.delfus.app/funcionalidades/emojis/): gestão e estatísticas de emojis do servidor
+- [Aniversários](https://docs.delfus.app/funcionalidades/aniversarios/): celebração automática de aniversário dos membros
+- [Famílias](https://docs.delfus.app/funcionalidades/familia/): sistema de famílias com cargo próprio (benefício VIP)
+- [Correio Elegante](https://docs.delfus.app/funcionalidades/correio/): envio de mensagens anônimas entre membros
+- [Automações de canal](https://docs.delfus.app/funcionalidades/automacoes/): regras automáticas de canal (limpeza, slowmode, etc.)
+
+### Operação
+
+- [Gestão de equipe (staff)](https://docs.delfus.app/funcionalidades/equipe/): papéis, permissões e controle da equipe de moderação
+
+### Análise
+
+- [Análise e insights](https://docs.delfus.app/funcionalidades/analise/): métricas de mensagens, membros, voz e emojis em tempo real
+
+### Utilidades
+
+- [Encurtador de links](https://docs.delfus.app/funcionalidades/links/): encurtamento de URLs com estatísticas de clique
+- [Download de vídeos](https://docs.delfus.app/funcionalidades/video/): download de vídeos de redes sociais direto no Discord
+- [Oráculo](https://docs.delfus.app/funcionalidades/oraculo/): respostas via IA dentro do servidor
+
+## Suporte
+
+- [Central de suporte](https://docs.delfus.app/suporte/): FAQ, contato e servidor de suporte no Discord

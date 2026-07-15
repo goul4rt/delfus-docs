@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+        <meta name="description" content="Estatísticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel.">
       
       
         <meta name="author" content="Delfus">
@@ -43,6 +43,8 @@
       
     
     
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
       
         
         
@@ -51,6 +53,7 @@
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -63,9 +66,38 @@
     
     
   
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      ,{ "@type": "ListItem", "position": 2, "name": "Funcionalidades" }
+      ,{ "@type": "ListItem", "position": 3, "name": "Engajamento" }
+      ,{ "@type": "ListItem", "position": 4, "name": "Emojis", "item": "https://docs.delfus.app/funcionalidades/emojis/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Emojis",
+    "description": "Estat\u00edsticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel.",
+    "url": "https://docs.delfus.app/funcionalidades/emojis/",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  
+
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="Emojis - Delfus">
-<meta property="og:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="og:description" content="Estatísticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel.">
 <meta property="og:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/emojis.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -73,7 +105,7 @@
 <meta property="og:url" content="https://docs.delfus.app/funcionalidades/emojis/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Emojis - Delfus">
-<meta property="twitter:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="twitter:description" content="Estatísticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel.">
 <meta property="twitter:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/emojis.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -1341,6 +1373,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-meu-uso-de-emoji-ainda-nao-apareceu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que meu uso de emoji ainda não apareceu?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mensagens-e-reacoes-antigas-contam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mensagens e reações antigas contam?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-aba-sem-uso-some-com-emojis-que-eu-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A aba Sem Uso some com emojis que eu uso?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-significa-o-selo-externo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que significa o selo Externo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-nao-consigo-renomear-nem-excluir-um-emoji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que não consigo renomear nem excluir um emoji?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posso-clonar-um-emoji-padrao-unicode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso clonar um emoji padrão (Unicode)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1953,6 +2057,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-meu-uso-de-emoji-ainda-nao-apareceu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que meu uso de emoji ainda não apareceu?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mensagens-e-reacoes-antigas-contam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mensagens e reações antigas contam?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-aba-sem-uso-some-com-emojis-que-eu-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A aba Sem Uso some com emojis que eu uso?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-significa-o-selo-externo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que significa o selo Externo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-nao-consigo-renomear-nem-excluir-um-emoji" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que não consigo renomear nem excluir um emoji?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posso-clonar-um-emoji-padrao-unicode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso clonar um emoji padrão (Unicode)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1973,8 +2149,8 @@
 
 
 <h1 id="emojis">Emojis<a class="headerlink" href="#emojis" title="Permanent link">¶</a></h1>
-<p>Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais têm nomes mal escolhidos. A partir do painel você ainda renomeia, exclui e clona emojis sem abrir o Discord. A página fica em <code>/dashboard/emojis</code>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/emojis.png" data-desc-position="bottom"><img alt="Estatísticas de emojis no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/emojis.png"></a></p>
+<p>Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais têm nomes mal escolhidos. A partir do painel do Delfus você ainda renomeia, exclui e clona emojis sem abrir o Discord. A página fica em <code>/dashboard/emojis</code>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/emojis.webp" data-desc-position="bottom"><img alt="Estatísticas de emojis no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/emojis.webp" width="1200"></a></p>
 <p><em>Estatísticas de emojis no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>O bot conta cada uso de emoji em tempo real, por servidor. Há duas fontes de contagem:</p>
@@ -2057,18 +2233,18 @@
 <p>Abra <strong>Nomes Estranhos</strong>. O painel já filtrou os emojis com nomes genéricos, só números ou sem vogais. Renomeie um a um para algo pesquisável.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>Por que meu uso de emoji ainda não apareceu?</strong>
-A contagem é gravada em lote a cada minuto. Espere um pouco e atualize.</p>
-<p><strong>Mensagens e reações antigas contam?</strong>
-Não. O bot só conta a partir do momento em que passou a rastrear. Histórico anterior não é importado.</p>
-<p><strong>A aba Sem Uso some com emojis que eu uso?</strong>
-Sim. Assim que um emoji recebe pelo menos um uso (mensagem ou reação), ele sai de Sem Uso e passa a aparecer em Top Usados.</p>
-<p><strong>O que significa o selo Externo?</strong>
-É um emoji customizado de outro servidor que apareceu nas suas mensagens ou reações. Você pode cloná-lo para o seu servidor pela aba Top Usados.</p>
-<p><strong>Por que não consigo renomear nem excluir um emoji?</strong>
-Verifique se o bot tem a permissão <strong>Gerenciar Emojis e Figurinhas</strong> no servidor. Essas ações também ficam indisponíveis no modo demonstração.</p>
-<p><strong>Posso clonar um emoji padrão (Unicode)?</strong>
-Não. Clonar só vale para emojis customizados externos.</p>
+<h3 id="por-que-meu-uso-de-emoji-ainda-nao-apareceu">Por que meu uso de emoji ainda não apareceu?<a class="headerlink" href="#por-que-meu-uso-de-emoji-ainda-nao-apareceu" title="Permanent link">¶</a></h3>
+<p>A contagem é gravada em lote a cada minuto. Espere um pouco e atualize.</p>
+<h3 id="mensagens-e-reacoes-antigas-contam">Mensagens e reações antigas contam?<a class="headerlink" href="#mensagens-e-reacoes-antigas-contam" title="Permanent link">¶</a></h3>
+<p>Não. O bot só conta a partir do momento em que passou a rastrear. Histórico anterior não é importado.</p>
+<h3 id="a-aba-sem-uso-some-com-emojis-que-eu-uso">A aba Sem Uso some com emojis que eu uso?<a class="headerlink" href="#a-aba-sem-uso-some-com-emojis-que-eu-uso" title="Permanent link">¶</a></h3>
+<p>Sim. Assim que um emoji recebe pelo menos um uso (mensagem ou reação), ele sai de Sem Uso e passa a aparecer em Top Usados.</p>
+<h3 id="o-que-significa-o-selo-externo">O que significa o selo Externo?<a class="headerlink" href="#o-que-significa-o-selo-externo" title="Permanent link">¶</a></h3>
+<p>É um emoji customizado de outro servidor que apareceu nas suas mensagens ou reações. Você pode cloná-lo para o seu servidor pela aba Top Usados.</p>
+<h3 id="por-que-nao-consigo-renomear-nem-excluir-um-emoji">Por que não consigo renomear nem excluir um emoji?<a class="headerlink" href="#por-que-nao-consigo-renomear-nem-excluir-um-emoji" title="Permanent link">¶</a></h3>
+<p>Verifique se o bot tem a permissão <strong>Gerenciar Emojis e Figurinhas</strong> no servidor. Essas ações também ficam indisponíveis no modo demonstração.</p>
+<h3 id="posso-clonar-um-emoji-padrao-unicode">Posso clonar um emoji padrão (Unicode)?<a class="headerlink" href="#posso-clonar-um-emoji-padrao-unicode" title="Permanent link">¶</a></h3>
+<p>Não. Clonar só vale para emojis customizados externos.</p>
 
 
 
@@ -2089,7 +2265,7 @@ Não. Clonar só vale para emojis customizados externos.</p>
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
   </span>
 
     

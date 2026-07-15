@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+        <meta name="description" content="Moderação do Delfus no Discord: warns, mutes, kicks e bans com punições automáticas em escada, expiração de advertências e histórico completo.">
       
       
         <meta name="author" content="Delfus">
@@ -43,6 +43,8 @@
       
     
     
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
       
         
         
@@ -51,6 +53,7 @@
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -63,9 +66,38 @@
     
     
   
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      ,{ "@type": "ListItem", "position": 2, "name": "Funcionalidades" }
+      ,{ "@type": "ListItem", "position": 3, "name": "Seguran\u00e7a" }
+      ,{ "@type": "ListItem", "position": 4, "name": "Modera\u00e7\u00e3o e puni\u00e7\u00f5es", "item": "https://docs.delfus.app/funcionalidades/moderacao/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Modera\u00e7\u00e3o e puni\u00e7\u00f5es",
+    "description": "Modera\u00e7\u00e3o do Delfus no Discord: warns, mutes, kicks e bans com puni\u00e7\u00f5es autom\u00e1ticas em escada, expira\u00e7\u00e3o de advert\u00eancias e hist\u00f3rico completo.",
+    "url": "https://docs.delfus.app/funcionalidades/moderacao/",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  
+
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="Moderação e punições - Delfus">
-<meta property="og:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="og:description" content="Moderação do Delfus no Discord: warns, mutes, kicks e bans com punições automáticas em escada, expiração de advertências e histórico completo.">
 <meta property="og:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/moderacao.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -73,7 +105,7 @@
 <meta property="og:url" content="https://docs.delfus.app/funcionalidades/moderacao/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Moderação e punições - Delfus">
-<meta property="twitter:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="twitter:description" content="Moderação do Delfus no Discord: warns, mutes, kicks e bans com punições automáticas em escada, expiração de advertências e histórico completo.">
 <meta property="twitter:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/moderacao.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -815,6 +847,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-o-silencio-permanente-some-depois-de-um-tempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que o silêncio "permanente" some depois de um tempo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posso-usar-2d-ou-1w-na-duracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso usar 2d ou 1w na duração?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dm-diz-dms-fechadas-a-punicao-valeu-mesmo-assim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A DM diz "DMs fechadas". A punição valeu mesmo assim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-unwarn-remove-qual-advertencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O /unwarn remove qual advertência?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1953,6 +2035,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-o-silencio-permanente-some-depois-de-um-tempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por que o silêncio "permanente" some depois de um tempo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posso-usar-2d-ou-1w-na-duracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso usar 2d ou 1w na duração?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-dm-diz-dms-fechadas-a-punicao-valeu-mesmo-assim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A DM diz "DMs fechadas". A punição valeu mesmo assim?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-unwarn-remove-qual-advertencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O /unwarn remove qual advertência?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1973,8 +2105,8 @@
 
 
 <h1 id="moderacao-e-punicoes">Moderação e punições<a class="headerlink" href="#moderacao-e-punicoes" title="Permanent link">¶</a></h1>
-<p>Warns, mutes, kicks e bans num fluxo único, com checagens de segurança automáticas e histórico permanente. Você decide a punição; o bot avisa o usuário, registra e escala.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/moderacao.png" data-desc-position="bottom"><img alt="Configuração de moderação no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/moderacao.png"></a></p>
+<p>Warns, mutes, kicks e bans no servidor Discord num fluxo único, com checagens de segurança automáticas e histórico permanente. Você decide a punição; o Delfus avisa o usuário, registra e escala.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/moderacao.webp" data-desc-position="bottom"><img alt="Configuração de moderação no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/moderacao.webp" width="1200"></a></p>
 <p><em>Configuração de moderação no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>Toda punição começa com um comando da staff e passa pelas mesmas checagens antes de agir.</p>
@@ -2067,14 +2199,14 @@
 <p>Rode <code>/ban usuario:@Fulano duracao:2h motivo:flood</code> e confirme. Antes de sair do servidor, a pessoa recebe a DM com o motivo e o link de apelação, as mensagens das últimas 24h dela somem, e você vê no resultado se a DM foi entregue.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>Por que o silêncio "permanente" some depois de um tempo?</strong>
-O <code>/mute</code> usa o timeout do Discord, com teto de 28 dias. Um mute sem duração vira 28 dias. Para algo realmente permanente, use um cargo de "mutado" via gatilho de cargo, ou um ban.</p>
-<p><strong>Posso usar <code>2d</code> ou <code>1w</code> na duração?</strong>
-Não. O campo aceita só segundos (<code>s</code>), minutos (<code>m</code>/<code>min</code>) e horas (<code>h</code>), tipo <code>30s</code>, <code>5min</code>, <code>2h</code>. Número sem unidade é lido como segundos.</p>
-<p><strong>A DM diz "DMs fechadas". A punição valeu mesmo assim?</strong>
-Valeu. A DM é independente da punição. Se a pessoa bloqueia DMs, o bot só registra isso e segue com o kick ou ban normalmente.</p>
-<p><strong>O <code>/unwarn</code> remove qual advertência?</strong>
-Com o <code>id_advertencia</code> (visto no <code>/warnlist</code>), remove aquela específica; sem ID, remove a mais recente. Nos dois casos a contagem é atualizada e fica tudo registrado.</p>
+<h3 id="por-que-o-silencio-permanente-some-depois-de-um-tempo">Por que o silêncio "permanente" some depois de um tempo?<a class="headerlink" href="#por-que-o-silencio-permanente-some-depois-de-um-tempo" title="Permanent link">¶</a></h3>
+<p>O <code>/mute</code> usa o timeout do Discord, com teto de 28 dias. Um mute sem duração vira 28 dias. Para algo realmente permanente, use um cargo de "mutado" via gatilho de cargo, ou um ban.</p>
+<h3 id="posso-usar-2d-ou-1w-na-duracao">Posso usar <code>2d</code> ou <code>1w</code> na duração?<a class="headerlink" href="#posso-usar-2d-ou-1w-na-duracao" title="Permanent link">¶</a></h3>
+<p>Não. O campo aceita só segundos (<code>s</code>), minutos (<code>m</code>/<code>min</code>) e horas (<code>h</code>), tipo <code>30s</code>, <code>5min</code>, <code>2h</code>. Número sem unidade é lido como segundos.</p>
+<h3 id="a-dm-diz-dms-fechadas-a-punicao-valeu-mesmo-assim">A DM diz "DMs fechadas". A punição valeu mesmo assim?<a class="headerlink" href="#a-dm-diz-dms-fechadas-a-punicao-valeu-mesmo-assim" title="Permanent link">¶</a></h3>
+<p>Valeu. A DM é independente da punição. Se a pessoa bloqueia DMs, o bot só registra isso e segue com o kick ou ban normalmente.</p>
+<h3 id="o-unwarn-remove-qual-advertencia">O <code>/unwarn</code> remove qual advertência?<a class="headerlink" href="#o-unwarn-remove-qual-advertencia" title="Permanent link">¶</a></h3>
+<p>Com o <code>id_advertencia</code> (visto no <code>/warnlist</code>), remove aquela específica; sem ID, remove a mais recente. Nos dois casos a contagem é atualizada e fica tudo registrado.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Combine <strong>gatilhos</strong> com <strong>expiração de warns</strong>: monte a escada (3 → mute, 5 → ban) e ative a expiração em 30 dias. A staff só precisa advertir, a punição fica consistente e quem se comporta ganha histórico limpo, incluindo a remoção automática de cargos de "observação" quando a contagem cai.</p>
@@ -2099,7 +2231,7 @@ Com o <code>id_advertencia</code> (visto no <code>/warnlist</code>), remove aque
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
   </span>
 
     

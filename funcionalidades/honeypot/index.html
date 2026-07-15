@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+        <meta name="description" content="Honeypot do Delfus no Discord: canal isca que pune spammers automaticamente, apaga a mensagem e avisa a equipe com ação e alerta configuráveis.">
       
       
         <meta name="author" content="Delfus">
@@ -43,6 +43,8 @@
       
     
     
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
       
         
         
@@ -51,6 +53,7 @@
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -63,9 +66,38 @@
     
     
   
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      ,{ "@type": "ListItem", "position": 2, "name": "Funcionalidades" }
+      ,{ "@type": "ListItem", "position": 3, "name": "Seguran\u00e7a" }
+      ,{ "@type": "ListItem", "position": 4, "name": "Honeypot", "item": "https://docs.delfus.app/funcionalidades/honeypot/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Honeypot",
+    "description": "Honeypot do Delfus no Discord: canal isca que pune spammers automaticamente, apaga a mensagem e avisa a equipe com a\u00e7\u00e3o e alerta configur\u00e1veis.",
+    "url": "https://docs.delfus.app/funcionalidades/honeypot/",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  
+
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="Honeypot - Delfus">
-<meta property="og:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="og:description" content="Honeypot do Delfus no Discord: canal isca que pune spammers automaticamente, apaga a mensagem e avisa a equipe com ação e alerta configuráveis.">
 <meta property="og:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/honeypot.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -73,7 +105,7 @@
 <meta property="og:url" content="https://docs.delfus.app/funcionalidades/honeypot/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Honeypot - Delfus">
-<meta property="twitter:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="twitter:description" content="Honeypot do Delfus no Discord: canal isca que pune spammers automaticamente, apaga a mensagem e avisa a equipe com ação e alerta configuráveis.">
 <meta property="twitter:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/honeypot.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -860,6 +892,67 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-honeypot-pune-bots-ou-o-proprio-delfus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Honeypot pune bots ou o próprio Delfus?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preciso-reconfigurar-quando-o-bot-reinicia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preciso reconfigurar quando o bot reinicia?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-desativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como desativo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-membro-punido-descobre-que-era-uma-armadilha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O membro punido descobre que era uma armadilha?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quais-permissoes-o-bot-precisa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quais permissões o bot precisa?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1875,6 +1968,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-honeypot-pune-bots-ou-o-proprio-delfus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Honeypot pune bots ou o próprio Delfus?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preciso-reconfigurar-quando-o-bot-reinicia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preciso reconfigurar quando o bot reinicia?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-desativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como desativo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-membro-punido-descobre-que-era-uma-armadilha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O membro punido descobre que era uma armadilha?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quais-permissoes-o-bot-precisa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quais permissões o bot precisa?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1895,8 +2049,8 @@
 
 
 <h1 id="honeypot-canal-isca">Honeypot (Canal Isca)<a class="headerlink" href="#honeypot-canal-isca" title="Permanent link">¶</a></h1>
-<p>Pegue spammers no flagrante. Você cria um canal onde ninguém deveria escrever, e quem escreve ali é punido na hora, com a mensagem apagada e a equipe avisada.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/honeypot.png" data-desc-position="bottom"><img alt="Configuração do honeypot no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/honeypot.png"></a></p>
+<p>Pegue spammers no flagrante. Você cria um canal no Discord onde ninguém deveria escrever, e quem escreve ali é punido pelo Delfus na hora, com a mensagem apagada e a equipe avisada.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/honeypot.webp" data-desc-position="bottom"><img alt="Configuração do honeypot no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/honeypot.webp" width="1200"></a></p>
 <p><em>Configuração do honeypot no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>Deixe um canal visível mas onde nenhum membro legítimo deveria postar, tipo um "nao-escreva-aqui" no topo da lista. Membros reais leem o aviso e passam direto. Bots de spam e contas-laranja escrevem em tudo que veem e caem na isca.</p>
@@ -1978,16 +2132,16 @@
 <p>Rode <code>/honeypot mensagem</code> com tipo embed, título "⚠️ Honeypot acionado" e descrição "O usuário {user} caiu na isca {channel} e foi punido." O aviso chega formatado e já com as menções certas.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>O Honeypot pune bots ou o próprio Delfus?</strong>
-Não. Bots e mensagens de sistema são sempre ignorados. Só pessoas reais caem.</p>
-<p><strong>Preciso reconfigurar quando o bot reinicia?</strong>
-Não. A config fica salva e volta sozinha. Ativou uma vez, vale até você desligar.</p>
-<p><strong>Como desativo?</strong>
-Pelo Dashboard, remova a configuração na página. Por comando, rode <code>/honeypot ativar</code> de novo com os mesmos dois canais (isca e alertas) que usou pra ativar.</p>
-<p><strong>O membro punido descobre que era uma armadilha?</strong>
-A mensagem dele some e a punição é aplicada como qualquer outra moderação. O alerta detalhado vai só pro canal da equipe, nunca pro usuário.</p>
-<p><strong>Quais permissões o bot precisa?</strong>
-Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Moderar membros (pra silenciar). Pra expulsar ou banir, ele também precisa das permissões de Expulsar / Banir membros. E lembre: o cargo do bot precisa estar acima de quem você quer punir.</p>
+<h3 id="o-honeypot-pune-bots-ou-o-proprio-delfus">O Honeypot pune bots ou o próprio Delfus?<a class="headerlink" href="#o-honeypot-pune-bots-ou-o-proprio-delfus" title="Permanent link">¶</a></h3>
+<p>Não. Bots e mensagens de sistema são sempre ignorados. Só pessoas reais caem.</p>
+<h3 id="preciso-reconfigurar-quando-o-bot-reinicia">Preciso reconfigurar quando o bot reinicia?<a class="headerlink" href="#preciso-reconfigurar-quando-o-bot-reinicia" title="Permanent link">¶</a></h3>
+<p>Não. A config fica salva e volta sozinha. Ativou uma vez, vale até você desligar.</p>
+<h3 id="como-desativo">Como desativo?<a class="headerlink" href="#como-desativo" title="Permanent link">¶</a></h3>
+<p>Pelo Dashboard, remova a configuração na página. Por comando, rode <code>/honeypot ativar</code> de novo com os mesmos dois canais (isca e alertas) que usou pra ativar.</p>
+<h3 id="o-membro-punido-descobre-que-era-uma-armadilha">O membro punido descobre que era uma armadilha?<a class="headerlink" href="#o-membro-punido-descobre-que-era-uma-armadilha" title="Permanent link">¶</a></h3>
+<p>A mensagem dele some e a punição é aplicada como qualquer outra moderação. O alerta detalhado vai só pro canal da equipe, nunca pro usuário.</p>
+<h3 id="quais-permissoes-o-bot-precisa">Quais permissões o bot precisa?<a class="headerlink" href="#quais-permissoes-o-bot-precisa" title="Permanent link">¶</a></h3>
+<p>Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Moderar membros (pra silenciar). Pra expulsar ou banir, ele também precisa das permissões de Expulsar / Banir membros. E lembre: o cargo do bot precisa estar acima de quem você quer punir.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Coloque o canal isca no topo da lista, com um nome claro de "não escreva aqui". Spammers escrevem nos primeiros canais que veem; membros reais leem o aviso e seguem em frente. Combine com a ação Banir e deixe as contas maliciosas saírem sozinhas, sem depender de moderador online.</p>
@@ -2012,7 +2166,7 @@ Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Mode
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
   </span>
 
     

@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+        <meta name="description" content="Encurtador de links do Delfus: crie links curtos com estatísticas de cliques, senha, expiração e UTMs para divulgar no Discord e redes sociais.">
       
       
         <meta name="author" content="Delfus">
@@ -43,6 +43,8 @@
       
     
     
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
       
         
         
@@ -51,6 +53,7 @@
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -63,9 +66,38 @@
     
     
   
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      ,{ "@type": "ListItem", "position": 2, "name": "Funcionalidades" }
+      ,{ "@type": "ListItem", "position": 3, "name": "Utilidades" }
+      ,{ "@type": "ListItem", "position": 4, "name": "Encurtador de links", "item": "https://docs.delfus.app/funcionalidades/links/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Encurtador de links",
+    "description": "Encurtador de links do Delfus: crie links curtos com estat\u00edsticas de cliques, senha, expira\u00e7\u00e3o e UTMs para divulgar no Discord e redes sociais.",
+    "url": "https://docs.delfus.app/funcionalidades/links/",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  
+
+  
 <meta property="og:type" content="website">
 <meta property="og:title" content="Encurtador de links - Delfus">
-<meta property="og:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="og:description" content="Encurtador de links do Delfus: crie links curtos com estatísticas de cliques, senha, expiração e UTMs para divulgar no Discord e redes sociais.">
 <meta property="og:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/links.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -73,7 +105,7 @@
 <meta property="og:url" content="https://docs.delfus.app/funcionalidades/links/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Encurtador de links - Delfus">
-<meta property="twitter:description" content="Documentação do Delfus — análise avançada, moderação e gestão para comunidades Discord.">
+<meta property="twitter:description" content="Encurtador de links do Delfus: crie links curtos com estatísticas de cliques, senha, expiração e UTMs para divulgar no Discord e redes sociais.">
 <meta property="twitter:image" content="https://docs.delfus.app/assets/images/social/funcionalidades/links.png">
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
@@ -1687,6 +1719,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posso-escolher-o-final-do-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso escolher o final do link?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-senha-do-link-e-segura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A senha do link é segura?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-acontece-quando-o-link-expira-ou-bate-o-limite-de-cliques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que acontece quando o link expira ou bate o limite de cliques?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-sei-de-onde-veio-cada-clique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como sei de onde veio cada clique?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-bot-precisa-de-alguma-permissao-pra-isso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O bot precisa de alguma permissão pra isso?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1875,6 +1968,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#posso-escolher-o-final-do-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Posso escolher o final do link?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-senha-do-link-e-segura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A senha do link é segura?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-acontece-quando-o-link-expira-ou-bate-o-limite-de-cliques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que acontece quando o link expira ou bate o limite de cliques?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-sei-de-onde-veio-cada-clique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como sei de onde veio cada clique?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-bot-precisa-de-alguma-permissao-pra-isso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O bot precisa de alguma permissão pra isso?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1895,8 +2049,8 @@
 
 
 <h1 id="encurtador-de-links">Encurtador de links<a class="headerlink" href="#encurtador-de-links" title="Permanent link">¶</a></h1>
-<p>Transforme uma URL longa num link curto tipo <code>link.delfus.app/s/CODIGO</code> e veja quem clicou: país, dispositivo e de onde veio (Twitter, Discord e outros). Bom pra divulgar votações, campanhas e anúncios e medir o que funcionou.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/links.png" data-desc-position="bottom"><img alt="Encurtador de links no painel do Delfus" class="dx-shot" loading="lazy" src="../../assets/dashboard/links.png"></a></p>
+<p>Transforme uma URL longa num link curto do Delfus tipo <code>link.delfus.app/s/CODIGO</code> e veja quem clicou: país, dispositivo e de onde veio (Twitter, Discord e outros). Bom pra divulgar votações, campanhas e anúncios e medir o que funcionou.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/links.webp" data-desc-position="bottom"><img alt="Encurtador de links no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/links.webp" width="1200"></a></p>
 <p><em>Encurtador de links no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>Você cria o link pelo painel e escolhe o destino. A cada clique, o Delfus registra de onde veio. Não precisa de comando no Discord.</p>
@@ -1951,16 +2105,16 @@
 <p>Um sorteio que fecha sexta. Você cria o link com data de expiração na sexta à noite. Passou da hora? Quem clicar vê uma página avisando que o link não está mais disponível. Sem gente entrando atrasada.</p>
 </div>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<p><strong>Posso escolher o final do link?</strong>
-Pode. Use um código de 3 a 12 caracteres (letras, números, <code>_</code> e <code>-</code>, sem os confusos <code>0</code>, <code>O</code>, <code>I</code>, <code>l</code>). Se já estiver em uso, escolha outro. Em branco, o Delfus gera um automaticamente.</p>
-<p><strong>A senha do link é segura?</strong>
-É. Ela nunca é guardada em texto puro, só um "hash" dela. O visitante precisa digitar a senha certa numa página de desbloqueio antes de chegar ao destino.</p>
-<p><strong>O que acontece quando o link expira ou bate o limite de cliques?</strong>
-Ele para de redirecionar e o visitante passa a ver uma página de "link indisponível". Vale o mesmo pra links desativados na mão. Você pode reativar ou ajustar o prazo/limite quando quiser pelo painel.</p>
-<p><strong>Como sei de onde veio cada clique?</strong>
-Pelas estatísticas. O Delfus classifica a origem sozinho: rede social, busca, e-mail ou direto. Pra separar campanhas específicas (post no Twitter vs. mensagem no Discord), use os UTMs.</p>
-<p><strong>O bot precisa de alguma permissão pra isso?</strong>
-Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra configurar no Discord, só estar logado no painel (e, pra gerenciar os links de um servidor, ter acesso ao dashboard dele).</p>
+<h3 id="posso-escolher-o-final-do-link">Posso escolher o final do link?<a class="headerlink" href="#posso-escolher-o-final-do-link" title="Permanent link">¶</a></h3>
+<p>Pode. Use um código de 3 a 12 caracteres (letras, números, <code>_</code> e <code>-</code>, sem os confusos <code>0</code>, <code>O</code>, <code>I</code>, <code>l</code>). Se já estiver em uso, escolha outro. Em branco, o Delfus gera um automaticamente.</p>
+<h3 id="a-senha-do-link-e-segura">A senha do link é segura?<a class="headerlink" href="#a-senha-do-link-e-segura" title="Permanent link">¶</a></h3>
+<p>É. Ela nunca é guardada em texto puro, só um "hash" dela. O visitante precisa digitar a senha certa numa página de desbloqueio antes de chegar ao destino.</p>
+<h3 id="o-que-acontece-quando-o-link-expira-ou-bate-o-limite-de-cliques">O que acontece quando o link expira ou bate o limite de cliques?<a class="headerlink" href="#o-que-acontece-quando-o-link-expira-ou-bate-o-limite-de-cliques" title="Permanent link">¶</a></h3>
+<p>Ele para de redirecionar e o visitante passa a ver uma página de "link indisponível". Vale o mesmo pra links desativados na mão. Você pode reativar ou ajustar o prazo/limite quando quiser pelo painel.</p>
+<h3 id="como-sei-de-onde-veio-cada-clique">Como sei de onde veio cada clique?<a class="headerlink" href="#como-sei-de-onde-veio-cada-clique" title="Permanent link">¶</a></h3>
+<p>Pelas estatísticas. O Delfus classifica a origem sozinho: rede social, busca, e-mail ou direto. Pra separar campanhas específicas (post no Twitter vs. mensagem no Discord), use os UTMs.</p>
+<h3 id="o-bot-precisa-de-alguma-permissao-pra-isso">O bot precisa de alguma permissão pra isso?<a class="headerlink" href="#o-bot-precisa-de-alguma-permissao-pra-isso" title="Permanent link">¶</a></h3>
+<p>Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra configurar no Discord, só estar logado no painel (e, pra gerenciar os links de um servidor, ter acesso ao dashboard dele).</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Use UTMs sempre que divulgar o mesmo link em canais diferentes: o painel mostra qual divulgação trouxe mais gente. Lembre que "cliques únicos" contam cada pessoa uma vez a cada 24 horas (bom pra medir alcance real), enquanto o "total de cliques" mede engajamento.</p>
@@ -1985,7 +2139,7 @@ Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra config
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="13 de julho de 2026 14:56:50 UTC"><span class="timeago" datetime="2026-07-13T14:56:50+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="13 de julho de 2026 14:56:50 UTC">2026-07-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
   </span>
 
     
