@@ -1,8 +1,12 @@
+---
+description: "Recompensas de boost no Delfus: mensagem de agradecimento e VIP automático para quem impulsiona seu servidor Discord, com renovação enquanto o boost durar."
+---
+
 # Recompensas de boost
 
-Quando alguém impulsiona o servidor, o Delfus agradece sozinho e ainda pode dar um VIP de presente pra quem apoiou. Sem a moderação precisar mexer um dedo.
+Quando alguém impulsiona o seu servidor Discord, o Delfus agradece sozinho e ainda pode dar um VIP de presente pra quem apoiou. Sem a moderação precisar mexer um dedo.
 
-![Recompensas de boost no painel do Delfus](../assets/dashboard/boost.png){ .dx-shot loading=lazy }
+![Recompensas de boost no painel do Delfus](../assets/dashboard/boost.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Recompensas de boost no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -83,16 +87,16 @@ Ao terminar, clique em **Salvar**. O botão **Deletar** remove a configuração 
 
 ## Perguntas frequentes
 
-**O membro perde o VIP assim que ele vence, mesmo continuando a impulsionar?**
+### O membro perde o VIP assim que ele vence, mesmo continuando a impulsionar?
 Não. A cada 6 horas o bot revisa quem ainda está com boost ativo e renova o VIP de quem continua impulsionando, mesmo que a concessão anterior já tenha vencido. O benefício só acaba quando o VIP vence e o boost some.
 
-**Posso usar texto e embed ao mesmo tempo?**
+### Posso usar texto e embed ao mesmo tempo?
 Você escolhe um estilo por mensagem. No estilo embed, se você também preencher o campo de texto, o bot manda o texto junto com o embed. No estilo texto, vai só o texto (com a imagem como anexo, se houver).
 
-**Recebi uma reclamação de que a pessoa foi notificada sem querer. Por quê?**
+### Recebi uma reclamação de que a pessoa foi notificada sem querer. Por quê?
 A variável `{{@user}}` cria uma menção de verdade e notifica a pessoa. Para mostrar só o nome sem incomodar ninguém, use `{{user}}`.
 
-**Existe comando de barra pra configurar isso?**
+### Existe comando de barra pra configurar isso?
 Não. Mensagens e VIP são configurados só pelo Dashboard.
 
 !!! tip "Dica"

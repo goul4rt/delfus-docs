@@ -1,10 +1,14 @@
+---
+description: "Como o anti-invite do Delfus apaga convites de outros servidores Discord na hora: exceções por cargo e canal, avisos, logs e punições automáticas."
+---
+
 # Anti-invite
 
-Bloqueia quem entra no servidor só pra postar `discord.gg` e roubar seus membros. O Anti-invite apaga a mensagem na hora e pune o autor, sem você precisar vigiar o chat.
+Bloqueia quem entra no seu servidor Discord só pra postar `discord.gg` e roubar seus membros. O Anti-invite do Delfus apaga a mensagem na hora e pune o autor, sem você precisar vigiar o chat.
 
 Ele distingue os seus convites dos de fora. Links criados dentro do seu servidor e sua URL personalizada passam normalmente. Qualquer link apontando pra outro lugar é barrado.
 
-![Configuração do anti-invite no painel do Delfus](../assets/dashboard/anti-invite.png){ .dx-shot loading=lazy }
+![Configuração do anti-invite no painel do Delfus](../assets/dashboard/anti-invite.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Configuração do anti-invite no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -77,16 +81,16 @@ Configure pelo painel em [admin.delfus.app](https://admin.delfus.app), na seçã
 
 ## Perguntas frequentes
 
-**Os convites do meu próprio servidor são apagados?**
+### Os convites do meu próprio servidor são apagados?
 Não, desde que "permitir convites do próprio servidor" esteja ligado (o padrão). O bot reconhece seus links e sua URL personalizada como internos. Se desligar, tudo é removido, inclusive os seus.
 
-**A equipe de moderação também é afetada?**
+### A equipe de moderação também é afetada?
 Não, se você colocar os cargos da equipe nos **cargos liberados**. Quem tem um cargo liberado é ignorado pelo Anti-invite. O mesmo vale pra canais inteiros, via **canais liberados**.
 
-**Por que o aviso no canal some sozinho?**
+### Por que o aviso no canal some sozinho?
 É de propósito. O aviso marcando o autor some em ~8 segundos pra não acumular mensagens de moderação no chat. Pra registro permanente, use um **canal de logs**.
 
-**O bot pega convites com `https://`, `www` ou em maiúsculas?**
+### O bot pega convites com `https://`, `www` ou em maiúsculas?
 Pega tudo. Reconhece `discord.gg`, `discord.com/invite` e `discordapp.com/invite`, com ou sem `https://` e `www.`, sem ligar pra maiúsculas ou minúsculas.
 
 !!! tip "Dica"

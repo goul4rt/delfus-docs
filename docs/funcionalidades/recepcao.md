@@ -1,10 +1,14 @@
+---
+description: "Boas-vindas e despedida do Delfus no Discord: mensagens automáticas em texto, embed ou cartão de imagem com avatar, no canal ou na DM do membro."
+---
+
 # Boas-vindas e despedida
 
-Receba cada novo membro pelo nome e avise quando alguém sai, no automático. Você configura uma vez e o Delfus cuida do resto.
+Receba cada novo membro do seu servidor Discord pelo nome e avise quando alguém sai, no automático. Você configura uma vez e o Delfus cuida do resto.
 
 As mensagens podem ser texto simples, um cartão do Discord (embed) ou uma imagem gerada na hora com o avatar da pessoa. Dá pra mandar boas-vindas no canal, no privado (DM), ou nos dois.
 
-![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.png){ .dx-shot loading=lazy }
+![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
 
 *Configuração de boas-vindas no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -119,25 +123,25 @@ Tudo é feito no Dashboard em [admin.delfus.app](https://admin.delfus.app), na s
 
 O estilo **Cartão de Imagem** monta uma arte de boas-vindas na hora, com o avatar do membro e presets de cor prontos:
 
-![Cartão de boas-vindas no painel do Delfus](../assets/dashboard/recepcao-cartao.png){ .dx-shot loading=lazy }
+![Cartão de boas-vindas no painel do Delfus](../assets/dashboard/recepcao-cartao.webp){ .dx-shot width="1200" height="1227" loading=lazy }
 
 *Estilo "Cartão de Imagem" com preview ao vivo e presets de cor (dados de demonstração).*
 
 ## Perguntas frequentes
 
-**Posso ter cartão de imagem na despedida ou na DM?**
+### Posso ter cartão de imagem na despedida ou na DM?
 Não. O cartão é exclusivo das boas-vindas no canal. Despedida e DM aceitam só texto ou embed.
 
-**Por que alguns membros não recebem a DM?**
+### Por que alguns membros não recebem a DM?
 Porque bloqueiam mensagens privadas de gente do servidor. O bot tenta enviar e, se não der, ignora sem erro.
 
-**A opção "ignorar bots" vale pra DM também?**
+### A opção "ignorar bots" vale pra DM também?
 Não. Vale pras boas-vindas do canal e pra despedida. A DM não tem essa opção (mas, na prática, bots quase nunca aceitam DM).
 
-**Quantos botões de link posso colocar?**
+### Quantos botões de link posso colocar?
 Até 3, e só nas boas-vindas do canal.
 
-**E se o canal escolhido for apagado?**
+### E se o canal escolhido for apagado?
 O Delfus pula a mensagem em silêncio, sem erro visível. Ele precisa ter permissão pra enviar mensagens (e imagens/embeds) no canal. Pro comando `/welcome teste`, quem roda precisa ser Administrador e o bot precisa da permissão Gerenciar Servidor.
 
 !!! tip "Dica"

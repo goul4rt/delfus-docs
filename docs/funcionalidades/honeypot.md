@@ -1,8 +1,12 @@
+---
+description: "Honeypot do Delfus no Discord: canal isca que pune spammers automaticamente, apaga a mensagem e avisa a equipe com ação e alerta configuráveis."
+---
+
 # Honeypot (Canal Isca)
 
-Pegue spammers no flagrante. Você cria um canal onde ninguém deveria escrever, e quem escreve ali é punido na hora, com a mensagem apagada e a equipe avisada.
+Pegue spammers no flagrante. Você cria um canal no Discord onde ninguém deveria escrever, e quem escreve ali é punido pelo Delfus na hora, com a mensagem apagada e a equipe avisada.
 
-![Configuração do honeypot no painel do Delfus](../assets/dashboard/honeypot.png){ .dx-shot loading=lazy }
+![Configuração do honeypot no painel do Delfus](../assets/dashboard/honeypot.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Configuração do honeypot no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -68,19 +72,19 @@ Para desligar: pelo Dashboard, remova a configuração na página. Por comando, 
 
 ## Perguntas frequentes
 
-**O Honeypot pune bots ou o próprio Delfus?**
+### O Honeypot pune bots ou o próprio Delfus?
 Não. Bots e mensagens de sistema são sempre ignorados. Só pessoas reais caem.
 
-**Preciso reconfigurar quando o bot reinicia?**
+### Preciso reconfigurar quando o bot reinicia?
 Não. A config fica salva e volta sozinha. Ativou uma vez, vale até você desligar.
 
-**Como desativo?**
+### Como desativo?
 Pelo Dashboard, remova a configuração na página. Por comando, rode `/honeypot ativar` de novo com os mesmos dois canais (isca e alertas) que usou pra ativar.
 
-**O membro punido descobre que era uma armadilha?**
+### O membro punido descobre que era uma armadilha?
 A mensagem dele some e a punição é aplicada como qualquer outra moderação. O alerta detalhado vai só pro canal da equipe, nunca pro usuário.
 
-**Quais permissões o bot precisa?**
+### Quais permissões o bot precisa?
 Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Moderar membros (pra silenciar). Pra expulsar ou banir, ele também precisa das permissões de Expulsar / Banir membros. E lembre: o cargo do bot precisa estar acima de quem você quer punir.
 
 !!! tip "Dica"

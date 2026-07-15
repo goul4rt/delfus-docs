@@ -6,6 +6,7 @@ copyright: © Delfus
 
 theme:
   name: material
+  custom_dir: overrides
   language: pt-BR
   logo: assets/mascote-feliz.png
   favicon: assets/favicon.ico

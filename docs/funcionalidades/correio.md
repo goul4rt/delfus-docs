@@ -1,6 +1,10 @@
+---
+description: "Correio Elegante do Delfus: recados anônimos entre membros do servidor Discord em eventos com data marcada, aprovação da staff e temas visuais."
+---
+
 # Correio Elegante
 
-Deixe qualquer membro mandar um recado anônimo para outro durante um evento que você marca na agenda. A staff aprova, o recado vira post público com visual temático e quem enviou continua em segredo. Serve para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer data comemorativa.
+Deixe qualquer membro do seu servidor Discord mandar um recado anônimo para outro durante um evento que você marca na agenda. A staff aprova, o Delfus transforma o recado em post público com visual temático e quem enviou continua em segredo. Serve para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer data comemorativa.
 
 ## Como funciona
 
@@ -80,16 +84,16 @@ Confira também as permissões do bot:
 
 ## Perguntas frequentes
 
-**Dá pra descobrir quem enviou o recado?**
+### Dá pra descobrir quem enviou o recado?
 No canal público, nunca: só aparece o destinatário. O remetente real só é visível na fila de aprovação, que deve ser restrita à staff. Mantenha esse canal fechado para membros comuns.
 
-**O que acontece se a staff rejeitar?**
+### O que acontece se a staff rejeitar?
 O recado é descartado na hora: some da fila e nada é publicado. Não há reaproveitamento nem aviso ao remetente. Pra ele, fica só a confirmação de que o correio "foi enviado para aprovação".
 
-**Por que o `/correio` diz que não há evento ativo?**
+### Por que o `/correio` diz que não há evento ativo?
 Ou o evento está desligado no painel, ou o momento atual está fora do período (antes do início ou depois do fim). Confira o toggle e as datas.
 
-**Por que o remetente não ganhou o cargo de recompensa?**
+### Por que o remetente não ganhou o cargo de recompensa?
 A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot tem **Gerenciar Cargos** e se o cargo de recompensa está **abaixo** do cargo mais alto do bot. Se algo falhar, o correio é publicado mesmo assim, só sem o cargo.
 
 !!! tip "Dica"

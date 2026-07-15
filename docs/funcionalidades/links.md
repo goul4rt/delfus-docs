@@ -1,8 +1,12 @@
+---
+description: "Encurtador de links do Delfus: crie links curtos com estatísticas de cliques, senha, expiração e UTMs para divulgar no Discord e redes sociais."
+---
+
 # Encurtador de links
 
-Transforme uma URL longa num link curto tipo `link.delfus.app/s/CODIGO` e veja quem clicou: país, dispositivo e de onde veio (Twitter, Discord e outros). Bom pra divulgar votações, campanhas e anúncios e medir o que funcionou.
+Transforme uma URL longa num link curto do Delfus tipo `link.delfus.app/s/CODIGO` e veja quem clicou: país, dispositivo e de onde veio (Twitter, Discord e outros). Bom pra divulgar votações, campanhas e anúncios e medir o que funcionou.
 
-![Encurtador de links no painel do Delfus](../assets/dashboard/links.png){ .dx-shot loading=lazy }
+![Encurtador de links no painel do Delfus](../assets/dashboard/links.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Encurtador de links no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -63,19 +67,19 @@ Tudo acontece no Dashboard, em **[https://admin.delfus.app](https://admin.delfus
 
 ## Perguntas frequentes
 
-**Posso escolher o final do link?**
+### Posso escolher o final do link?
 Pode. Use um código de 3 a 12 caracteres (letras, números, `_` e `-`, sem os confusos `0`, `O`, `I`, `l`). Se já estiver em uso, escolha outro. Em branco, o Delfus gera um automaticamente.
 
-**A senha do link é segura?**
+### A senha do link é segura?
 É. Ela nunca é guardada em texto puro, só um "hash" dela. O visitante precisa digitar a senha certa numa página de desbloqueio antes de chegar ao destino.
 
-**O que acontece quando o link expira ou bate o limite de cliques?**
+### O que acontece quando o link expira ou bate o limite de cliques?
 Ele para de redirecionar e o visitante passa a ver uma página de "link indisponível". Vale o mesmo pra links desativados na mão. Você pode reativar ou ajustar o prazo/limite quando quiser pelo painel.
 
-**Como sei de onde veio cada clique?**
+### Como sei de onde veio cada clique?
 Pelas estatísticas. O Delfus classifica a origem sozinho: rede social, busca, e-mail ou direto. Pra separar campanhas específicas (post no Twitter vs. mensagem no Discord), use os UTMs.
 
-**O bot precisa de alguma permissão pra isso?**
+### O bot precisa de alguma permissão pra isso?
 Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra configurar no Discord, só estar logado no painel (e, pra gerenciar os links de um servidor, ter acesso ao dashboard dele).
 
 !!! tip "Dica"

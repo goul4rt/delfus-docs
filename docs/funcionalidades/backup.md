@@ -1,8 +1,12 @@
+---
+description: "Backups do Delfus para servidores Discord: salve cargos, canais e permissões, restaure após ataques e automatize fotos diárias da estrutura."
+---
+
 # Backups
 
-Recrie cargos, canais, categorias, permissões e configurações do servidor com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. O Delfus tira uma "foto" da estrutura do servidor e guarda pra você restaurar quando precisar.
+Recrie cargos, canais, categorias, permissões e configurações do seu servidor Discord com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. O Delfus tira uma "foto" da estrutura do servidor e guarda pra você restaurar quando precisar.
 
-![Backups do servidor no painel do Delfus](../assets/dashboard/backup.png){ .dx-shot loading=lazy }
+![Backups do servidor no painel do Delfus](../assets/dashboard/backup.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Backups do servidor no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -90,19 +94,19 @@ O bot mostra um preview do que vai acontecer: quais cargos serão adicionados, q
 
 ## Perguntas frequentes
 
-**O backup salva as mensagens dos canais?**
+### O backup salva as mensagens dos canais?
 Não. Ele guarda só a estrutura: cargos, canais, categorias, permissões e configurações. Nunca o conteúdo das mensagens nem a lista de membros.
 
-**Posso restaurar sem apagar o que já existe?**
+### Posso restaurar sem apagar o que já existe?
 Sim, é o modo **Aditivo**: ele recria os itens ao lado dos atuais, sem deletar nada. O modo **Destrutivo** (que apaga antes) só roda depois de uma confirmação extra.
 
-**Por que alguns cargos não foram restaurados?**
+### Por que alguns cargos não foram restaurados?
 Cargos acima do cargo do bot, cargos já deletados ou cargos de integrações não podem ser recriados. Eles aparecem no resumo como ignorados. Suba o cargo do bot ao topo e tente de novo.
 
-**Quantos backups o servidor guarda?**
+### Quantos backups o servidor guarda?
 De 1 a 10 (padrão 5), definido no Dashboard. Ao passar do limite, o mais antigo é apagado. Os snapshots de cargos por membro têm o próprio limite (padrão 2 por pessoa).
 
-**Preciso de alguma permissão pro bot?**
+### Preciso de alguma permissão pro bot?
 Sim. Ele precisa de **Gerenciar Cargos** e **Gerenciar Canais** pra criar e restaurar a estrutura. Pra restaurar configurações do servidor, também precisa de **Gerenciar Servidor**; pra restaurar bans, de **Banir Membros**.
 
 !!! tip "Dica"

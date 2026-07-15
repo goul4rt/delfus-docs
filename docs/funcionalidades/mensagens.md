@@ -1,10 +1,14 @@
+---
+description: "Editor de mensagens e embeds do Delfus: monte, salve e publique mensagens no Discord via bot ou webhook, com variáveis e edição após o envio."
+---
+
 # Mensagens e Embeds
 
-Monte mensagens e embeds completos num editor visual, salve como modelos reutilizáveis e publique no canal que quiser. O bot envia como ele mesmo ou através de um webhook com nome e avatar personalizados. Depois de publicar, dá para editar a mensagem já enviada sem apagar e repostar.
+Monte mensagens e embeds completos num editor visual, salve como modelos reutilizáveis e publique no canal do Discord que quiser. O Delfus envia como ele mesmo ou através de um webhook com nome e avatar personalizados. Depois de publicar, dá para editar a mensagem já enviada sem apagar e repostar.
 
 A rota fica em `/dashboard/messages` no painel.
 
-![Editor de mensagens e embeds no painel do Delfus](../assets/dashboard/mensagens.png){ .dx-shot loading=lazy }
+![Editor de mensagens e embeds no painel do Delfus](../assets/dashboard/mensagens.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
 
 *Editor de mensagens e embeds no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
@@ -120,24 +124,24 @@ O editor tem um diálogo de JSON para colar ou copiar a estrutura completa da me
 
 ## Perguntas frequentes
 
-**Consigo agendar o envio?**
+### Consigo agendar o envio?
 Não. O envio é imediato. O fluxo é salvar o modelo e enviar quando quiser.
 
-**A mensagem publicada some se eu editar o modelo no painel?**
+### A mensagem publicada some se eu editar o modelo no painel?
 Não. Editar o modelo salvo não toca na mensagem já publicada. Para refletir as mudanças no Discord, use **Atualizar publicação** no card Envios.
 
-**Posso enviar a mesma mensagem para vários canais?**
+### Posso enviar a mesma mensagem para vários canais?
 Sim. Cada envio cria um registro próprio. Envie de novo escolhendo outro canal e cada publicação fica listada separadamente em Envios.
 
-**Por que o envio falhou por permissão?**
+### Por que o envio falhou por permissão?
 O bot precisa de Ver Canal, Enviar Mensagens (ou Enviar Mensagens em Threads) e Inserir Links no canal de destino. No modo Webhook, também Gerenciar Webhooks. A mensagem de erro indica o que falta.
 
-**Posso editar uma mensagem que foi apagada no Discord?**
+### Posso editar uma mensagem que foi apagada no Discord?
 Não. Se a mensagem original foi removida, o bot avisa que ela não existe mais. Envie uma nova.
 
-**Qual a diferença entre Bot e Webhook?**
+### Qual a diferença entre Bot e Webhook?
 No modo Bot a mensagem aparece como o bot Delfus. No modo Webhook ela aparece com o nome e avatar que você definir. O conteúdo é o mesmo; muda só a identidade do remetente.
 
-**As variáveis funcionam dentro dos embeds e botões?**
+### As variáveis funcionam dentro dos embeds e botões?
 Sim. O bot resolve as variáveis em qualquer campo de texto da mensagem no momento do envio.
 

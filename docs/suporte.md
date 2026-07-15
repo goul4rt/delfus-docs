@@ -1,8 +1,50 @@
 ---
+description: Suporte do Delfus, bot para Discord — servidor de suporte, contato por e-mail, dashboard e respostas para as dúvidas mais comuns.
 hide:
   - navigation
   - toc
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O Delfus é gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Todos os módulos essenciais são gratuitos. O programa VIP e alguns recursos avançados são opcionais e configuráveis por você."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Um módulo parou de funcionar. E agora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase sempre é permissão. Confira se o cargo do Delfus está acima dos cargos que ele gerencia e se as permissões sugeridas no convite foram mantidas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como troco o idioma do bot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No painel, em Configuração inicial, escolha entre português e inglês. A mudança vale para mensagens automáticas e respostas de comando."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês guardam dados do meu servidor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Guardamos apenas o necessário para os módulos funcionarem (configurações, histórico de moderação e métricas). Veja a Política de Privacidade para os detalhes."
+      }
+    }
+  ]
+}
+</script>
 
 <div class="dxs-wrap">
 
@@ -21,7 +63,7 @@ hide:
     </a>
   </div>
   <div class="dxs-hero__art">
-    <img src="../assets/mascote-suporte.jpg" alt="Mascote do Delfus acenando">
+    <img src="../assets/mascote-suporte.jpg" alt="Mascote do Delfus acenando" width="900" height="450">
   </div>
 </section>
 

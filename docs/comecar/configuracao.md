@@ -1,6 +1,10 @@
+---
+description: Configuração inicial do Delfus no Discord — como usar o Dashboard para ativar módulos, definir canais e cargos, e quando usar comandos de barra.
+---
+
 # Configuração inicial
 
-Você configura o Delfus pelo **Dashboard**, o painel web onde ativa módulos, escolhe canais e cargos.
+Você configura o Delfus pelo **Dashboard**, o painel web onde ativa módulos e escolhe canais e cargos do seu servidor Discord.
 
 [Abrir o Dashboard](https://admin.delfus.app){ .md-button .md-button--primary }
 

@@ -1,8 +1,12 @@
+---
+description: "Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando."
+---
+
 # Análise e insights
 
 Saiba quem mais participa, quais canais bombam e em que horário a galera aparece. O Delfus observa mensagens, entradas e saídas de membros, tempo em call e uso de emojis, e transforma tudo em gráficos, rankings e estatísticas que você consulta pelo Discord ou pelo painel web.
 
-![Insights do servidor no painel do Delfus](../assets/dashboard/analise.png){ .dx-shot loading=lazy }
+![Insights do servidor no painel do Delfus](../assets/dashboard/analise.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Insights do servidor no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -78,16 +82,16 @@ Tudo no [Dashboard](https://admin.delfus.app), atualizado continuamente.
 
 ## Perguntas frequentes
 
-**Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?**
+### Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?
 Sim. O bot consolida a atividade mais ou menos uma vez por minuto, e o ranking de emojis pode levar mais alguns instantes. Espere um pouco e clique em **Reload**, ou rode o comando de novo.
 
-**O gráfico de membros diz "sem dados". O que houve?**
+### O gráfico de membros diz "sem dados". O que houve?
 Ainda não há entradas ou saídas registradas na janela escolhida. É comum em servidor novo ou em períodos curtos e parados. Troque para 30 dias no botão **Período** ou aguarde mais movimento.
 
-**O que significa o marcador 🔗 no `/emoji-stats top`?**
+### O que significa o marcador 🔗 no `/emoji-stats top`?
 É um emoji personalizado de outro servidor que foi usado aqui (por alguém com Nitro, por exemplo). Ele entra no ranking de uso, mas não faz parte da lista do seu servidor, por isso nunca aparece em `sem-uso` nem em `nomes-estranhos`.
 
-**O `/emoji-stats top` não respondeu de primeira. Por quê?**
+### O `/emoji-stats top` não respondeu de primeira. Por quê?
 Esse comando tem um limite de uso (uma chamada a cada poucos segundos) para evitar spam. Espere uns segundos e tente de novo.
 
 !!! tip "Dica"

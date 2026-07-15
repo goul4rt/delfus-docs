@@ -1,8 +1,12 @@
+---
+description: "Starboard do Delfus no Discord: republique as mensagens mais votadas num canal de destaques, com murais, emojis, pesos e cargos de recompensa."
+---
+
 # Starboard
 
-Republique automaticamente as melhores mensagens do servidor num canal de destaques. Quando uma mensagem junta estrelas suficientes (ou o emoji que você escolher), o Delfus copia ela pra lá. Bom pra premiar memes, arte, prints e momentos marcantes.
+Republique automaticamente as melhores mensagens do seu servidor Discord num canal de destaques. Quando uma mensagem junta estrelas suficientes (ou o emoji que você escolher), o Delfus copia ela pra lá. Bom pra premiar memes, arte, prints e momentos marcantes.
 
-![Ranking do Starboard no painel do Delfus](../assets/dashboard/starboard.png){ .dx-shot loading=lazy }
+![Ranking do Starboard no painel do Delfus](../assets/dashboard/starboard.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
 
 *Ranking do Starboard no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
@@ -89,16 +93,16 @@ A partir daí, refine o quanto quiser:
 
 ## Perguntas frequentes
 
-**Posso ter mais de um mural no mesmo servidor?**
+### Posso ter mais de um mural no mesmo servidor?
 Sim, quantos quiser, cada um com seu emoji, canal e limites. Se quiser que uma mensagem apareça em só um mural de um grupo, use **grupos exclusivos** (o de maior prioridade vence).
 
-**Dá pra destacar uma mensagem antiga na mão?**
+### Dá pra destacar uma mensagem antiga na mão?
 Dá. Um moderador clica com o botão direito → **Apps** → **Forçar no Starboard**, e ela vai pro destaque mesmo sem os votos.
 
-**E se as estrelas caírem depois que a mensagem já entrou?**
+### E se as estrelas caírem depois que a mensagem já entrou?
 O cartão se atualiza a cada mudança. Se a pontuação cair até o **limite de saída**, o destaque é retirado. Por isso vale deixar esse limite abaixo do de entrada.
 
-**Por que minha reação não contou?**
+### Por que minha reação não contou?
 Pode ser auto-voto (com auto-voto desligado), uma reação de bot, voto acima do limite anti-spam, alguém numa lista de bloqueio, ou a mensagem não passou nos filtros (muito nova, muito antiga ou texto curto). Em murais com "remover reações inválidas", a reação é tirada nesses casos.
 
 !!! tip "Dica"

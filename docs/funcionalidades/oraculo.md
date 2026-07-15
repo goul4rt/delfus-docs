@@ -1,6 +1,10 @@
+---
+description: "Oráculo do Delfus: monitore canais do Discord e registre mensagens para alimentar insights, scoring de membros e análise de conteúdo no painel."
+---
+
 # Oráculo
 
-Saiba quem movimenta cada canal e em que horários ele bomba. O Oráculo grava as mensagens dos canais que você escolher, e esse registro alimenta os painéis do Dashboard: atividade, scoring de membros e análise de conteúdo.
+Saiba quem movimenta cada canal e em que horários ele bomba. O Oráculo do Delfus grava as mensagens dos canais do Discord que você escolher, e esse registro alimenta os painéis do Dashboard: atividade, scoring de membros e análise de conteúdo.
 
 ## Como funciona
 
@@ -71,13 +75,13 @@ Todo o registro alimenta os painéis do Dashboard:
 
 ## Perguntas frequentes
 
-**O Oráculo registra mensagens antigas?**
+### O Oráculo registra mensagens antigas?
 Não. Só as novas, enviadas depois que você ligou o canal. O histórico anterior não é importado.
 
-**Configurei pelo painel e usei o comando, qual vale?**
+### Configurei pelo painel e usei o comando, qual vale?
 Os dois escrevem na mesma lista e ficam sincronizados. Vale a última ação.
 
-**Preciso reiniciar o bot depois de mudar a configuração?**
+### Preciso reiniciar o bot depois de mudar a configuração?
 Não. A mudança vale na hora, tanto pelo Dashboard quanto pelo comando.
 
 !!! tip "Dica"

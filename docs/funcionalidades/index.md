@@ -1,6 +1,10 @@
+---
+description: Todos os módulos do Delfus, bot para Discord — moderação, anti-raid, boas-vindas, cargos, VIP, starboard, análise e mais, configurados pelo painel.
+---
+
 # Visão geral das funcionalidades
 
-O Delfus reúne moderação, engajamento, monetização e análise num só bot. Abaixo, os
+O Delfus reúne moderação, engajamento, monetização e análise num só bot para Discord. Abaixo, os
 principais módulos. Cada um é ativado e configurado pelo [Dashboard](https://admin.delfus.app).
 
 <div class="grid cards" markdown>

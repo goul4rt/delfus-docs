@@ -1,8 +1,12 @@
-# Cargos por reação
+---
+description: "Cargos por reação (reaction roles) no Delfus: painéis de botões no Discord para membros pegarem cargos sozinhos, com modo de escolha única."
+---
 
-Seus membros pegam e largam cargos sozinhos, num clique, sem pedir nada a um moderador. Você publica um painel de botões num canal e cada um se serve: cargos de notificação, cores, pronomes, jogos, regiões, acesso a áreas do servidor. Seus canais de aviso ficam só com quem quer estar lá.
+# Cargos por reação (reaction roles)
 
-![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.png){ .dx-shot loading=lazy }
+Seus membros pegam e largam cargos sozinhos, num clique, sem pedir nada a um moderador. Você publica um painel de botões do Delfus num canal do Discord e cada um se serve: cargos de notificação, cores, pronomes, jogos, regiões, acesso a áreas do servidor. Seus canais de aviso ficam só com quem quer estar lá.
+
+![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Cargos por reação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -69,19 +73,19 @@ Você também personaliza as **mensagens de confirmação** que o membro recebe 
 
 ## Perguntas frequentes
 
-**O mesmo botão dá e tira o cargo?**
+### O mesmo botão dá e tira o cargo?
 Sim, é um liga/desliga. Não tem o cargo, clicar adiciona; já tem, clicar remove. A confirmação avisa o que aconteceu.
 
-**Por que o cargo demora alguns instantes pra aparecer?**
+### Por que o cargo demora alguns instantes pra aparecer?
 A confirmação é na hora, mas o cargo é aplicado em segundo plano, em fila, pro servidor aguentar muita gente clicando junto. Costuma entrar em poucos segundos.
 
-**Como faço um menu de uma opção só (uma cor só)?**
+### Como faço um menu de uma opção só (uma cor só)?
 Desligue o "Permitir múltiplos cargos" do painel. Escolher uma opção passa a remover as outras automaticamente.
 
-**Editei o painel, preciso apagar a mensagem antiga e publicar de novo?**
+### Editei o painel, preciso apagar a mensagem antiga e publicar de novo?
 Não. Ao salvar, o bot atualiza a mensagem que já está lá. Só publica uma nova se a antiga tiver sido apagada do canal.
 
-**O bot não está entregando um cargo. Por quê?**
+### O bot não está entregando um cargo. Por quê?
 Quase sempre é hierarquia: o bot só mexe em cargos que estão **abaixo** dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, o Discord não deixa e a ação é ignorada. Confira também se o bot tem a permissão **Gerenciar Cargos** e consegue **enviar mensagens** no canal do painel.
 
 !!! tip "Dica"

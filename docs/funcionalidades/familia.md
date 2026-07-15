@@ -1,6 +1,10 @@
+---
+description: "Famílias VIP do Delfus no Discord: assinantes criam grupos com cargo colorido próprio, convites por DM e congelamento automático ao expirar."
+---
+
 # Famílias VIP
 
-Cada assinante VIP cria seu próprio grupo no servidor, com um cargo colorido e personalizado para ele e os amigos que convidar. Enquanto o VIP está ativo, a família existe. Quando expira, ela é congelada sozinha, sem trabalho de moderação.
+Cada assinante VIP cria seu próprio grupo no servidor Discord, com um cargo colorido e personalizado para ele e os amigos que convidar. Enquanto o VIP está ativo, a família existe. Quando expira, o Delfus a congela sozinho, sem trabalho de moderação.
 
 ## Como funciona
 
@@ -59,16 +63,16 @@ Só o dono edita, e só enquanto a família está ativa.
 
 ## Perguntas frequentes
 
-**O convite que enviei não chegou. Por quê?**
+### O convite que enviei não chegou. Por quê?
 Quase sempre é DM fechada. Os convites só saem por mensagem privada. Se a pessoa bloqueia DMs do servidor, o bot cancela o convite e te avisa. Peça pra ela abrir as DMs e convide de novo.
 
-**O que acontece com a família se meu VIP expirar?**
+### O que acontece com a família se meu VIP expirar?
 Ela é congelada, não apagada. O cargo sai de todo mundo e a família fica trancada, mas nome, cor, ícone e membros ficam guardados. Ao renovar o VIP, abra `/familia`, clique em **Descongelar** e está tudo de volta.
 
-**Posso ter mais de uma família?**
+### Posso ter mais de uma família?
 Pode, desde que tenha mais de um slot livre, seja porque seu plano inclui várias recompensas de família, seja porque você mantém mais de uma assinatura VIP ativa. Cada slot dá direito a uma família, e você não pode usar a mesma recompensa em duas.
 
-**Por que meu GIF foi recusado como ícone?**
+### Por que meu GIF foi recusado como ícone?
 Por causa do limite de 256 KB do Discord. Imagens estáticas grandes são comprimidas automaticamente, mas GIFs animados não, pois perderiam a animação. Reduza o tamanho do GIF ou use uma imagem estática.
 
 !!! tip "Dica"

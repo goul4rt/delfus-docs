@@ -1,8 +1,12 @@
+---
+description: "Sistema VIP do Delfus para Discord: crie níveis com cargos, XP em dobro e bônus, distribua por códigos e deixe a expiração automática com o bot."
+---
+
 # VIP, assinaturas e recompensas
 
-Defina os benefícios uma vez e o Delfus cuida do resto: ativa o VIP, controla o prazo, avisa o membro antes de acabar e remove tudo na hora certa, sem trabalho manual.
+Defina os benefícios uma vez e o Delfus cuida do resto no seu servidor Discord: ativa o VIP, controla o prazo, avisa o membro antes de acabar e remove tudo na hora certa, sem trabalho manual.
 
-![Planos VIP no painel do Delfus](../assets/dashboard/vip.png){ .dx-shot loading=lazy }
+![Planos VIP no painel do Delfus](../assets/dashboard/vip.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
 
 *Planos VIP no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -102,22 +106,22 @@ O caminho mais tranquilo:
 
 Criar um plano é direto pelo painel:
 
-![Dialog de criar plano VIP no painel](../assets/dashboard/modal-vip.png){ .dx-shot loading=lazy }
+![Dialog de criar plano VIP no painel](../assets/dashboard/modal-vip.webp){ .dx-shot width="1200" height="934" loading=lazy }
 
 *Dialog de criar plano VIP no painel (dados de demonstração).*
 
 ## Perguntas frequentes
 
-**Um membro pode usar o mesmo código duas vezes?**
+### Um membro pode usar o mesmo código duas vezes?
 Não. Cada pessoa resgata um código só uma vez. Mas o mesmo código pode ser usado por vários membros, até bater o limite de usos que você definiu.
 
-**E se o membro já tem VIP e resgata outro código?**
+### E se o membro já tem VIP e resgata outro código?
 Se for de um nível mais alto, vira upgrade. Se for do mesmo nível ou menor, o bot soma os dias ao VIP atual (com a extensão habilitada, que é o padrão).
 
-**Tirei o cargo VIP de alguém na mão. O bot devolve?**
+### Tirei o cargo VIP de alguém na mão. O bot devolve?
 Devolve. A cada 6 horas ele confere e restaura cargos VIP que sumiram. É só esperar o próximo ciclo.
 
-**Posso apagar um nível que ainda tem assinantes?**
+### Posso apagar um nível que ainda tem assinantes?
 Não. O bot bloqueia enquanto houver VIP ativo naquele nível. Espere os VIPs expirarem ou remova-os antes.
 
 !!! tip "Dica"

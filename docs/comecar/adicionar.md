@@ -1,6 +1,10 @@
+---
+description: Como adicionar o bot Delfus ao seu servidor Discord — link de convite, permissões necessárias e o que acontece logo após a instalação.
+---
+
 # Adicionar o bot
 
-Convide o Delfus para o seu servidor e dê as permissões certas. Em poucos minutos ele já está rodando.
+Convide o Delfus para o seu servidor Discord e dê as permissões certas. Em poucos minutos ele já está rodando.
 
 ## 1. Convidar o Delfus
 

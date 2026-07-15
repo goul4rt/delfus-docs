@@ -1,8 +1,12 @@
+---
+description: "Gestão de equipe (staff) no Delfus: métricas de mensagens, voz e moderação de cada staff do seu servidor Discord, com setores e alertas de queda."
+---
+
 # Gestão de Equipe (Staff)
 
-Você vê quem da sua equipe está ativo, quanto cada um produz e quem está abaixo do esperado. O painel cruza mensagens, tempo em voz e ações de moderação de cada membro de staff, agrupa por setor e dispara alertas quando alguém cai de produção. Tudo em `/dashboard/staff`.
+Você vê quem da sua equipe está ativo, quanto cada um produz e quem está abaixo do esperado. O painel do Delfus cruza mensagens, tempo em voz e ações de moderação de cada membro de staff do seu servidor Discord, agrupa por setor e dispara alertas quando alguém cai de produção. Tudo em `/dashboard/staff`.
 
-![Painel de gestão de equipe no painel do Delfus](../assets/dashboard/equipe.png){ .dx-shot loading=lazy }
+![Painel de gestão de equipe no painel do Delfus](../assets/dashboard/equipe.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Painel de gestão de equipe no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -128,24 +132,24 @@ Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de 
 
 ## Perguntas frequentes
 
-**O painel está vazio. Por quê?**
+### O painel está vazio. Por quê?
 Provavelmente nenhum cargo de staff foi configurado. Vá em `/dashboard/staff/config` e selecione ao menos um cargo.
 
-**Por que um membro aparece em "Sem Setor"?**
+### Por que um membro aparece em "Sem Setor"?
 Ele tem um cargo de staff, mas esse cargo não recebeu categoria. Atribua uma categoria ao cargo na configuração.
 
-**O alerta de moderação não aparece para alguns membros.**
+### O alerta de moderação não aparece para alguns membros.
 É o comportamento esperado. Esse alerta só vale para membros no setor `Segurança`. Cargos de outras categorias não são cobrados por moderação.
 
-**Os limites de alerta são fixos?**
+### Os limites de alerta são fixos?
 Os padrões são 50 mensagens, 5 ações, 30 minutos de voz e 50% de cobertura por semana, ajustados proporcionalmente ao período escolhido.
 
-**As tendências comparam com o quê?**
+### As tendências comparam com o quê?
 Com o período anterior de mesmo tamanho. 7d compara com os 7 dias anteriores; 30d com os 30 anteriores.
 
-**As mensagens são lidas individualmente?**
+### As mensagens são lidas individualmente?
 Não. O bot conta mensagens de forma agregada por hora e por canal. O painel não armazena nem mostra conteúdo de mensagens.
 
-**Por que os números podem demorar para atualizar?**
+### Por que os números podem demorar para atualizar?
 As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças muito recentes podem levar alguns minutos para refletir.
 

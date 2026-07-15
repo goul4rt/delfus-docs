@@ -1,8 +1,12 @@
+---
+description: "Moderação do Delfus no Discord: warns, mutes, kicks e bans com punições automáticas em escada, expiração de advertências e histórico completo."
+---
+
 # Moderação e punições
 
-Warns, mutes, kicks e bans num fluxo único, com checagens de segurança automáticas e histórico permanente. Você decide a punição; o bot avisa o usuário, registra e escala.
+Warns, mutes, kicks e bans no servidor Discord num fluxo único, com checagens de segurança automáticas e histórico permanente. Você decide a punição; o Delfus avisa o usuário, registra e escala.
 
-![Configuração de moderação no painel do Delfus](../assets/dashboard/moderacao.png){ .dx-shot loading=lazy }
+![Configuração de moderação no painel do Delfus](../assets/dashboard/moderacao.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Configuração de moderação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -78,16 +82,16 @@ O essencial para deixar pronto:
 
 ## Perguntas frequentes
 
-**Por que o silêncio "permanente" some depois de um tempo?**
+### Por que o silêncio "permanente" some depois de um tempo?
 O `/mute` usa o timeout do Discord, com teto de 28 dias. Um mute sem duração vira 28 dias. Para algo realmente permanente, use um cargo de "mutado" via gatilho de cargo, ou um ban.
 
-**Posso usar `2d` ou `1w` na duração?**
+### Posso usar `2d` ou `1w` na duração?
 Não. O campo aceita só segundos (`s`), minutos (`m`/`min`) e horas (`h`), tipo `30s`, `5min`, `2h`. Número sem unidade é lido como segundos.
 
-**A DM diz "DMs fechadas". A punição valeu mesmo assim?**
+### A DM diz "DMs fechadas". A punição valeu mesmo assim?
 Valeu. A DM é independente da punição. Se a pessoa bloqueia DMs, o bot só registra isso e segue com o kick ou ban normalmente.
 
-**O `/unwarn` remove qual advertência?**
+### O `/unwarn` remove qual advertência?
 Com o `id_advertencia` (visto no `/warnlist`), remove aquela específica; sem ID, remove a mais recente. Nos dois casos a contagem é atualizada e fica tudo registrado.
 
 !!! tip "Dica"

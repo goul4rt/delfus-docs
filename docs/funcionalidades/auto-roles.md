@@ -1,8 +1,12 @@
-# Cargos automáticos
+---
+description: "Cargos automáticos (auto-role) no Delfus: toda conta que entra no servidor Discord recebe os cargos certos na hora, com listas separadas para bots."
+---
 
-Toda conta nova que entra no servidor já recebe os cargos certos, sem ninguém da equipe atribuir na mão. Pessoas ganham uma lista de cargos; bots ganham outra, separada.
+# Cargos automáticos (auto-role)
 
-![Cargos automáticos no painel do Delfus](../assets/dashboard/auto-roles.png){ .dx-shot loading=lazy }
+Toda conta nova que entra no seu servidor Discord já recebe do Delfus os cargos certos, sem ninguém da equipe atribuir na mão. Pessoas ganham uma lista de cargos; bots ganham outra, separada.
+
+![Cargos automáticos no painel do Delfus](../assets/dashboard/auto-roles.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Cargos automáticos no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -58,16 +62,16 @@ Os seletores só mostram cargos que o Delfus consegue dar. Cargos gerenciados po
 
 ## Perguntas frequentes
 
-**Um dos cargos não foi dado. Por quê?**
+### Um dos cargos não foi dado. Por quê?
 Quase sempre é hierarquia: o cargo está acima do Delfus na lista. Mova o cargo do Delfus para cima dele. Também pode ser cargo apagado, falta da permissão "Gerenciar cargos", ou o membro já ter aquele cargo.
 
-**Demora para aplicar?**
+### Demora para aplicar?
 Tem um atraso de propósito (cerca de 1,5 segundo), além do tempo normal do Discord. Na prática, o membro recebe tudo em poucos segundos.
 
-**Mudei a config, preciso reiniciar o bot?**
+### Mudei a config, preciso reiniciar o bot?
 Não. O Delfus lê a configuração a cada entrada. O que você salvar já vale para a próxima pessoa.
 
-**E se o membro entrar e sair num piscar de olhos?**
+### E se o membro entrar e sair num piscar de olhos?
 O Delfus tenta de novo automaticamente e lembra o que já entregou, sem duplicar. Se o membro saiu antes de receber, ele encerra a tentativa.
 
 !!! tip "Dica"

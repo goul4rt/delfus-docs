@@ -1,8 +1,12 @@
+---
+description: "Estatísticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel."
+---
+
 # Emojis
 
-Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais têm nomes mal escolhidos. A partir do painel você ainda renomeia, exclui e clona emojis sem abrir o Discord. A página fica em `/dashboard/emojis`.
+Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais têm nomes mal escolhidos. A partir do painel do Delfus você ainda renomeia, exclui e clona emojis sem abrir o Discord. A página fica em `/dashboard/emojis`.
 
-![Estatísticas de emojis no painel do Delfus](../assets/dashboard/emojis.png){ .dx-shot loading=lazy }
+![Estatísticas de emojis no painel do Delfus](../assets/dashboard/emojis.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Estatísticas de emojis no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
 
@@ -82,20 +86,20 @@ Para renomear, excluir ou clonar, o bot precisa da permissão **Gerenciar Emojis
 
 ## Perguntas frequentes
 
-**Por que meu uso de emoji ainda não apareceu?**
+### Por que meu uso de emoji ainda não apareceu?
 A contagem é gravada em lote a cada minuto. Espere um pouco e atualize.
 
-**Mensagens e reações antigas contam?**
+### Mensagens e reações antigas contam?
 Não. O bot só conta a partir do momento em que passou a rastrear. Histórico anterior não é importado.
 
-**A aba Sem Uso some com emojis que eu uso?**
+### A aba Sem Uso some com emojis que eu uso?
 Sim. Assim que um emoji recebe pelo menos um uso (mensagem ou reação), ele sai de Sem Uso e passa a aparecer em Top Usados.
 
-**O que significa o selo Externo?**
+### O que significa o selo Externo?
 É um emoji customizado de outro servidor que apareceu nas suas mensagens ou reações. Você pode cloná-lo para o seu servidor pela aba Top Usados.
 
-**Por que não consigo renomear nem excluir um emoji?**
+### Por que não consigo renomear nem excluir um emoji?
 Verifique se o bot tem a permissão **Gerenciar Emojis e Figurinhas** no servidor. Essas ações também ficam indisponíveis no modo demonstração.
 
-**Posso clonar um emoji padrão (Unicode)?**
+### Posso clonar um emoji padrão (Unicode)?
 Não. Clonar só vale para emojis customizados externos.

@@ -1,6 +1,10 @@
+---
+description: Como trocar o idioma do bot Delfus no Discord com o comando /idioma — português (pt-BR) por padrão, com suporte a inglês (en-US).
+---
+
 # Idioma
 
-O Delfus fala português (pt-BR) por padrão e também suporta inglês (en-US).
+O Delfus fala português (pt-BR) por padrão no seu servidor Discord e também suporta inglês (en-US).
 
 ## Trocar o idioma
 

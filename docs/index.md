@@ -1,4 +1,5 @@
 ---
+description: Documentação oficial do Delfus, bot para Discord com moderação, anti-raid, cargos automáticos, VIP, starboard e análise. Guias de configuração em português.
 hide:
   - navigation
   - toc
@@ -7,10 +8,10 @@ hide:
 <div class="dx-home">
 
 <section class="dxh-hero">
-  <img class="dxh-hero__mascot" src="assets/mascote-oculos.png" alt="Mascote do Delfus">
+  <img class="dxh-hero__mascot" src="assets/mascote-oculos.png" alt="Mascote do Delfus" width="166" height="166" fetchpriority="high">
   <span class="dxh-badge">Central de documentação</span>
   <h1 class="dxh-title">O que você quer <span class="dxh-gold">configurar?</span></h1>
-  <p class="dxh-sub">Digite abaixo e a documentação encontra o guia certo enquanto você escreve.</p>
+  <p class="dxh-sub">O Delfus é um bot para Discord com moderação, segurança, cargos, VIP e análise. Digite abaixo e a documentação encontra o guia certo.</p>
 
   <div class="dxh-searchbox" id="dxh-search">
     <div class="dxh-searchbox__field">
@@ -118,7 +119,7 @@ hide:
 
 <section class="dxh-cta">
   <div class="dxh-cta__left">
-    <img src="assets/mascote-feliz.png" alt="">
+    <img src="assets/mascote-feliz.png" alt="" width="180" height="192" loading="lazy">
     <div>
       <h3>Não achou o que precisa?</h3>
       <p>Tire dúvidas, sugira ideias ou fale com a equipe no nosso servidor de suporte.</p>

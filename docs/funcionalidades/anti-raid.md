@@ -1,8 +1,12 @@
+---
+description: "Como o anti-raid do Delfus detecta golpes em massa no seu servidor Discord: reconhecimento de imagem, flood, sensibilidade e punições automáticas."
+---
+
 # Anti-raid
 
-O Anti-raid bloqueia ataques de golpe em massa: dezenas de contas despejando a mesma arte ("sorteio do MrBeast", "código promocional de crypto", "resgate seu prêmio em USDT") em vários canais. Ele detecta, apaga a mensagem, pune o autor, limpa o rastro e avisa a moderação. Automático, em segundos.
+O Anti-raid do Delfus bloqueia ataques de golpe em massa: dezenas de contas despejando a mesma arte ("sorteio do MrBeast", "código promocional de crypto", "resgate seu prêmio em USDT") em vários canais do seu servidor Discord. Ele detecta, apaga a mensagem, pune o autor, limpa o rastro e avisa a moderação. Automático, em segundos.
 
-![Configuração do anti-raid no painel do Delfus](../assets/dashboard/anti-raid.png){ .dx-shot loading=lazy }
+![Configuração do anti-raid no painel do Delfus](../assets/dashboard/anti-raid.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Configuração do anti-raid no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -101,16 +105,16 @@ Além disso, o cargo do bot precisa estar acima dos membros que ele vai punir, e
 
 ## Perguntas frequentes
 
-**Funciona com qualquer imagem ou só com golpes conhecidos?**
+### Funciona com qualquer imagem ou só com golpes conhecidos?
 Ele já vem com uma base de golpes de referência e barra qualquer imagem parecida. Artes totalmente novas podem passar na primeira vez, mas o bot lê o texto delas em segundo plano e, ao reconhecer o padrão, memoriza a arte para barrar na hora depois.
 
-**O bot pode banir um membro de boa-fé por engano?**
+### O bot pode banir um membro de boa-fé por engano?
 É raro: na dúvida, ele deixa passar. Todo bloqueio fica registrado no Canal de Alerta, então dá para revisar e reverter manualmente. Se aparecerem muitos falsos positivos, aumente a Sensibilidade.
 
-**Ele bane todo mundo numa invasão de contas novas?**
+### Ele bane todo mundo numa invasão de contas novas?
 Não. Enxame de contas novas gera só um bloqueio brando: modo lento no canal e aviso à moderação. Banimento automático rola para golpes reconhecidos individualmente e para o flood de um único usuário em vários canais.
 
-**Por que o golpe sumiu de vários canais, não só do que eu vi?**
+### Por que o golpe sumiu de vários canais, não só do que eu vi?
 Ao pegar o golpista, o bot varre os canais e apaga tudo que ele postou nos últimos 10 minutos, removendo o que já tinha espalhado antes de ser pego.
 
 !!! tip "Dica"

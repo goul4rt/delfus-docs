@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block fonts %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  {{ super() }}
+{% endblock %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://docs.delfus.app/#organization",
+        "name": "Delfus",
+        "url": "https://delfus.app",
+        "logo": "https://docs.delfus.app/assets/mascote-feliz.png",
+        "sameAs": [
+          "https://delfus.app",
+          "https://admin.delfus.app",
+          "https://discord.gg/mTjZg95UJV"
+        ],
+        "email": "delfus.app@proton.me"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://docs.delfus.app/#website",
+        "url": "https://docs.delfus.app/",
+        "name": "Documentação do Delfus",
+        "description": {{ config.site_description | tojson }},
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://docs.delfus.app/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://delfus.app/#app",
+        "name": "Delfus",
+        "operatingSystem": "Discord",
+        "applicationCategory": "CommunicationApplication",
+        "applicationSubCategory": "Discord Bot",
+        "url": "https://delfus.app",
+        "description": "Delfus é um bot para Discord com moderação automática, anti-raid, cargos automáticos, boas-vindas, programa VIP, starboard e análise de comunidade.",
+        "inLanguage": "pt-BR",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+        "publisher": { "@id": "https://docs.delfus.app/#organization" }
+      }
+    ]
+  }
+  </script>
+  {% elif page and page.title and page.canonical_url %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+      {%- for doc in page.ancestors | reverse %}
+      {%- if doc.title %}
+      ,{ "@type": "ListItem", "position": {{ loop.index + 1 }}, "name": {{ doc.title | tojson }}{% if doc.url %}, "item": {{ (config.site_url ~ doc.url) | tojson }}{% endif %} }
+      {%- endif %}
+      {%- endfor %}
+      ,{ "@type": "ListItem", "position": {{ (page.ancestors | length) + 2 }}, "name": {{ page.title | tojson }}, "item": {{ page.canonical_url | tojson }} }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": {{ page.title | tojson }},
+    "description": {{ (page.meta.description or config.site_description) | tojson }},
+    "url": {{ page.canonical_url | tojson }},
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
+    "author": { "@id": "https://docs.delfus.app/#organization" },
+    "publisher": { "@id": "https://docs.delfus.app/#organization" }
+  }
+  </script>
+  {% endif %}
+{% endblock %}

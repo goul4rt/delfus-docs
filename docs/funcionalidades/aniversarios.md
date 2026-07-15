@@ -1,8 +1,12 @@
+---
+description: "Sistema de aniversários do Delfus para Discord: membros registram a data e o bot parabeniza no dia, no canal e horário certos, com cargo especial."
+---
+
 # Aniversários
 
-Cada membro registra a própria data e o Delfus manda os parabéns sozinho, no dia certo e no canal que você escolher. Sem trabalho manual.
+Cada membro registra a própria data e o Delfus manda os parabéns sozinho, no dia certo e no canal do Discord que você escolher. Sem trabalho manual.
 
-![Configuração de aniversários no painel do Delfus](../assets/dashboard/aniversarios.png){ .dx-shot loading=lazy }
+![Configuração de aniversários no painel do Delfus](../assets/dashboard/aniversarios.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
 
 *Configuração de aniversários no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
 
@@ -85,16 +89,16 @@ Não montou nada? O Delfus usa um modelo padrão festivo automaticamente.
 
 ## Perguntas frequentes
 
-**Por que os parabéns não saíram?**
+### Por que os parabéns não saíram?
 Confira três coisas: a funcionalidade está ativada? Tem um canal definido? O bot consegue enviar mensagens nele? O anúncio também respeita o **fuso** e o **horário** que você configurou, então só dispara quando a hora local bate.
 
-**Registrei a data errada, e agora?**
+### Registrei a data errada, e agora?
 Você não muda sozinho depois de gravar. Peça a um admin para usar `/aniversario-admin definir-usuario` (corrige) ou `/aniversario-admin remover-usuario` (apaga, e aí você registra de novo).
 
-**A idade vai aparecer nos parabéns?**
+### A idade vai aparecer nos parabéns?
 Só se o ano estiver registrado. Com a política **Desativado**, o ano nunca é guardado e a idade nunca aparece. Com **Opcional**, aparece só para quem informou.
 
-**Posso ter aniversários diferentes em servidores diferentes?**
+### Posso ter aniversários diferentes em servidores diferentes?
 Pode. O registro é por servidor, então cada comunidade tem a própria lista, independente das outras.
 
 !!! tip "Dica"

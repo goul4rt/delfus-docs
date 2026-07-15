@@ -1,6 +1,10 @@
+---
+description: "Download de vídeos do Delfus no Discord: cole links de TikTok, YouTube, Instagram e mais e o bot reenvia o mp4 no canal, com compressão automática."
+---
+
 # Download de vídeos
 
-Cola um link de TikTok, Reels ou YouTube no chat e o Delfus baixa o vídeo, reenviando o `.mp4` direto no canal. Funciona com YouTube, TikTok, Instagram, Twitter/X, Reddit e Twitch. Vídeo grande, ele comprime.
+Cola um link de TikTok, Reels ou YouTube no chat e o Delfus baixa o vídeo, reenviando o `.mp4` direto no canal do Discord. Funciona com YouTube, TikTok, Instagram, Twitter/X, Reddit e Twitch. Vídeo grande, ele comprime.
 
 ## Como funciona
 
@@ -61,16 +65,16 @@ O Discord limita o tamanho dos anexos, então o Delfus trabalha com teto de 8 MB
 
 ## Perguntas frequentes
 
-**O bot baixa qualquer vídeo da internet?**
+### O bot baixa qualquer vídeo da internet?
 Não. Só YouTube, TikTok, Instagram, Twitter/X, Reddit e clipes da Twitch, nos formatos de vídeo direto de cada plataforma. O resto ele ignora.
 
-**Postei um link e o bot não respondeu. O que houve?**
+### Postei um link e o bot não respondeu. O que houve?
 Provavelmente o vídeo é privado, foi removido, exige login, tem restrição de idade, está bloqueado por direitos autorais, é longo demais pra caber no limite, ou você postou outro link nos últimos 10 segundos. Em todos esses casos ele ignora em silêncio, sem mensagem de erro.
 
-**A qualidade é a original?**
+### A qualidade é a original?
 Se o vídeo já cabe em 8 MB, vai como veio. Se é maior, o Delfus comprime pra caber (até 720p), então pode haver alguma perda em vídeos grandes ou longos.
 
-**Posso ativar em mais de um canal?**
+### Posso ativar em mais de um canal?
 Pode. Rode `/video-download` uma vez pra cada canal. Cada um funciona de forma independente e a configuração sobrevive a reinícios do bot.
 
 !!! tip "Dica"

@@ -1,6 +1,10 @@
+---
+description: "Automações de canal do Delfus para Discord: regras de só mídia, só comandos ou só arquivos, tópicos automáticos e publicação de anúncios sozinha."
+---
+
 # Automações de canal
 
-Trave cada canal numa regra ("aqui só entra imagem", "aqui é só comando") e o Delfus aplica em tempo real, sem moderador online. Ele também abre um tópico de discussão por post e publica seus anúncios sozinho. Tudo fica registrado pra você acompanhar pelo painel.
+Trave cada canal do seu servidor Discord numa regra ("aqui só entra imagem", "aqui é só comando") e o Delfus aplica em tempo real, sem moderador online. Ele também abre um tópico de discussão por post e publica seus anúncios sozinho. Tudo fica registrado pra você acompanhar pelo painel.
 
 ## Como funciona
 
@@ -91,16 +95,16 @@ A página tem ainda uma aba de **estatísticas**, com os totais de mensagens apa
 
 ## Perguntas frequentes
 
-**A regra apaga as mensagens da minha equipe também?**
+### A regra apaga as mensagens da minha equipe também?
 Não, se você adicionar os cargos dela à lista de "cargos que ignoram a regra". Quem tiver um desses cargos passa livre. Bots já são ignorados por padrão.
 
-**Posso ter mais de uma automação no mesmo canal?**
+### Posso ter mais de uma automação no mesmo canal?
 Pode. Elas rodam por prioridade (menor primeiro). Lembre: quando uma regra apaga a mensagem, as seguintes não rodam. Ajuste a ordem das regras de remoção com cuidado.
 
-**Por que meu aviso não menciona o cargo que coloquei nele?**
+### Por que meu aviso não menciona o cargo que coloquei nele?
 Por segurança. Os avisos automáticos nunca dão ping em @everyone, cargos ou pessoas, mesmo com a menção escrita no texto. Assim ninguém leva ping a cada mensagem removida.
 
-**A publicação automática não funciona no meu canal. Por quê?**
+### A publicação automática não funciona no meu canal. Por quê?
 Ela só vale em canais de anúncio. Confira também se a mensagem passou nos filtros (cargo, conteúdo rico, tamanho mínimo de texto) e se o bot tem permissão pra publicar ali.
 
 !!! tip "Dica"
