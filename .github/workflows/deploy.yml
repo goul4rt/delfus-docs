@@ -21,3 +21,19 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev libpango-1.0-0 libpangocairo-1.0-0
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
+      - name: Ping IndexNow (Bing/Yandex) com as URLs do sitemap
+        run: |
+          sleep 60
+          curl -s https://docs.delfus.app/sitemap.xml \
+            | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' \
+            | python3 -c '
+          import json, sys
+          urls = [l.strip() for l in sys.stdin if l.strip()]
+          print(json.dumps({
+              "host": "docs.delfus.app",
+              "key": "c042961f37f549239f9d664536773706",
+              "keyLocation": "https://docs.delfus.app/c042961f37f549239f9d664536773706.txt",
+              "urlList": urls,
+          }))' > /tmp/indexnow.json
+          curl -s -o /dev/null -w "IndexNow: %{http_code}\n" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" --data @/tmp/indexnow.json || true
