@@ -11,14 +11,15 @@ mkdocs serve -a 127.0.0.1:8001       # preview local
 mkdocs build --strict                # build (zero links quebrados)
 ```
 
-Plugins: search, social (og-images), glightbox (zoom em imagem), git-revision-date.
+Plugins: search, glightbox (zoom em imagem), git-revision-date.
 
 ## Gotchas (não-óbvios)
 
-- **Build local quebra sem libs de imagem.** O social plugin usa Cairo/Pango. Prefixe:
-  `DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib mkdocs build`. No CI o workflow instala via apt.
-- **og-image: `background_color: transparent`** é obrigatório no `cards_layout_options` — senão
-  o plugin pinta a cor opaca POR CIMA do `background_image` (fundo da marca em `docs/assets/og-bg.png`).
+- **og-images NÃO usam o plugin social** (removido). São estáticas: `tools/og/generate.py`
+  renderiza `tools/og/template.html` via Playwright → `docs/assets/og/<slug>.jpg` (slug =
+  caminho do .md com `/`→`-`). Meta og/twitter emitidas em `overrides/main.html`. Ao criar
+  página nova ou mudar `description:`/H1, rode
+  `.venv/bin/python tools/og/generate.py [--only slug]` e commite o jpg.
 - **`git push` falha** (identidade SSH errada). Pushe via:
   `git -c credential.helper='!gh auth git-credential' push https://github.com/goul4rt/delfus-docs.git main`.
   Nunca force-push.

@@ -7,6 +7,25 @@
 
 {% block extrahead %}
   {{ super() }}
+  {% if page and page.canonical_url %}
+    {% set og_title = "Delfus" if page.is_homepage else page.title ~ " - Delfus" %}
+    {% set og_description = page.meta.description | default(config.site_description, true) %}
+    {% set og_image = config.site_url ~ "assets/og/" ~ page.file.src_uri | replace("/", "-") | replace(".md", ".jpg") %}
+    <meta property="og:type" content="{{ 'website' if page.is_homepage else 'article' }}">
+    <meta property="og:site_name" content="Delfus">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_description }}">
+    <meta property="og:url" content="{{ page.canonical_url }}">
+    <meta property="og:image" content="{{ og_image }}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ og_title }}">
+    <meta name="twitter:description" content="{{ og_description }}">
+    <meta name="twitter:image" content="{{ og_image }}">
+  {% endif %}
   {% if page.is_homepage %}
   <script type="application/ld+json">
   {

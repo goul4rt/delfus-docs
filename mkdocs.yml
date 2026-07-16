@@ -64,11 +64,7 @@ extra_javascript:
 
 plugins:
   - search
-  - social:
-      cards_layout_options:
-        background_image: docs/assets/og-bg.png
-        background_color: transparent
-        color: "#ECE9F1"
+  # og-images: geradas por tools/og/generate.py em docs/assets/og/ (meta tags no overrides/main.html)
   - glightbox:
       touchNavigation: true
       loop: false

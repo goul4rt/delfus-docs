@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #0C0718; }
+</style>
+</head>
+<body>
+
+<div style="position: relative; width: 1200px; height: 630px; overflow: hidden; font-family: 'Instrument Sans', system-ui, sans-serif; background: radial-gradient(115% 90% at 90% -12%, rgba(140,107,232,0.42), transparent 54%), radial-gradient(80% 80% at -6% 8%, rgba(242,180,65,0.10), transparent 46%), linear-gradient(160deg, #191033 0%, #130D26 46%, #0C0718 100%);">
+
+  <!-- grid texture, fading toward center -->
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(169,143,242,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(169,143,242,0.055) 1px, transparent 1px); background-size: 56px 56px; -webkit-mask-image: radial-gradient(80% 80% at 22% 42%, #000, transparent 82%); mask-image: radial-gradient(80% 80% at 22% 42%, #000, transparent 82%);"></div>
+
+  <!-- gold accent rail on the far left -->
+  <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: linear-gradient(180deg, #F2B441, #8C6BE8);"></div>
+
+  <!-- mascot on the right + glow -->
+  <div style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); width: 380px; height: 380px;">
+    <div style="position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(140,107,232,0.6), transparent 66%); filter: blur(38px);"></div>
+    <img src="mascot.png" alt="" style="position: relative; width: 380px; height: 380px; object-fit: contain; filter: drop-shadow(0 26px 52px rgba(0,0,0,0.55));">
+  </div>
+  <!-- soft scrim so long titles stay readable over the mascot -->
+  <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,7,24,0.55) 0%, rgba(12,7,24,0.28) 40%, rgba(12,7,24,0) 66%);"></div>
+
+  <!-- content -->
+  <div style="position: absolute; left: 76px; right: 300px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px;">
+
+    <!-- brand + section badge -->
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span style="font-family: Sora, sans-serif; font-weight: 800; font-size: 27px; letter-spacing: -0.01em; color: #F1EBFF;">Delfus</span>
+      <span style="width: 5px; height: 5px; border-radius: 50%; background: #6A5A8E;"></span>
+      <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(242,180,65,0.14); border: 1px solid rgba(242,180,65,0.34); color: #F5D18A; font-size: 13px; font-weight: 700; letter-spacing: 0.13em; padding: 6px 14px; border-radius: 999px; text-transform: uppercase;">__EYEBROW__</span>
+    </div>
+
+    <!-- title -->
+    <h1 style="margin: 0; font-family: Sora, sans-serif; font-weight: 800; font-size: __TITLE_SIZE__; line-height: 1.03; letter-spacing: -0.03em; color: #F7F3FF; text-wrap: balance; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">__TITLE__</h1>
+
+    <!-- description -->
+    <p style="margin: 0; font-size: 23px; line-height: 1.5; color: #C2B4E2; max-width: 620px; text-wrap: pretty; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">__DESCRIPTION__</p>
+
+    <!-- footer url -->
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A7BAB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></svg>
+      <span style="font-size: 17px; color: #9385B4; font-family: ui-monospace, monospace;">__URL__</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
