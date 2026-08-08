@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando.">
+        <meta name="description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, pontuação de membros, mapa social, saúde de canais e insights no painel ou por comando.">
       
       
         <meta name="author" content="Delfus">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -74,7 +74,7 @@
     <meta property="og:site_name" content="Delfus">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:title" content="Análise e insights - Delfus">
-    <meta property="og:description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando.">
+    <meta property="og:description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, pontuação de membros, mapa social, saúde de canais e insights no painel ou por comando.">
     <meta property="og:url" content="https://docs.delfus.app/funcionalidades/analise/">
     <meta property="og:image" content="https://docs.delfus.app/assets/og/funcionalidades-analise.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -82,7 +82,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Análise e insights - Delfus">
-    <meta name="twitter:description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando.">
+    <meta name="twitter:description" content="Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, pontuação de membros, mapa social, saúde de canais e insights no painel ou por comando.">
     <meta name="twitter:image" content="https://docs.delfus.app/assets/og/funcionalidades-analise.jpg">
   
   
@@ -103,7 +103,7 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "An\u00e1lise e insights",
-    "description": "Estat\u00edsticas do seu servidor Discord com o Delfus: gr\u00e1ficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando.",
+    "description": "Estat\u00edsticas do seu servidor Discord com o Delfus: gr\u00e1ficos de mensagens, membros e voz, pontua\u00e7\u00e3o de membros, mapa social, sa\u00fade de canais e insights no painel ou por comando.",
     "url": "https://docs.delfus.app/funcionalidades/analise/",
     "inLanguage": "pt-BR",
     "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
@@ -1626,13 +1626,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#veja-na-pratica" class="md-nav__link">
+  <a href="#analises-no-painel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Veja na prática
+        Análises no painel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Análises no painel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pontuacao-de-membros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pontuação de membros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-de-membros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de membros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapa-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa social
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inteligencia-de-canais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inteligência de canais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conteudo-engajamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conteúdo &amp; engajamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visao-avancada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão avançada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1647,6 +1719,17 @@
   
     <nav class="md-nav" aria-label="Perguntas frequentes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-mapa-social-ou-canaisconteudo-diz-que-o-oraculo-nao-esta-configurado-e-agora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#minha-ultima-mensagem-ou-emoji-ainda-nao-apareceu-no-ranking-normal" class="md-nav__link">
@@ -1966,13 +2049,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#veja-na-pratica" class="md-nav__link">
+  <a href="#analises-no-painel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Veja na prática
+        Análises no painel
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Análises no painel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pontuacao-de-membros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pontuação de membros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-de-membros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo de membros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapa-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapa social
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inteligencia-de-canais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inteligência de canais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conteudo-engajamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conteúdo &amp; engajamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visao-avancada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão avançada
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1987,6 +2142,17 @@
   
     <nav class="md-nav" aria-label="Perguntas frequentes">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-mapa-social-ou-canaisconteudo-diz-que-o-oraculo-nao-esta-configurado-e-agora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#minha-ultima-mensagem-ou-emoji-ainda-nao-apareceu-no-ranking-normal" class="md-nav__link">
@@ -2151,9 +2317,40 @@
 <p class="admonition-title">Faxina nos emojis</p>
 <p>Rode <code>/emoji-stats sem-uso</code> para descobrir quais emojis ninguém usa e <code>/emoji-stats nomes-estranhos</code> para achar os de nome ruim. Cruze com <code>/emoji-stats top</code> para confirmar quais valem a pena manter antes de remover.</p>
 </div>
-<h2 id="veja-na-pratica">Veja na prática<a class="headerlink" href="#veja-na-pratica" title="Permanent link">¶</a></h2>
-<p>Tudo no <a href="https://admin.delfus.app">Dashboard</a>, atualizado continuamente.</p>
+<h2 id="analises-no-painel">Análises no painel<a class="headerlink" href="#analises-no-painel" title="Permanent link">¶</a></h2>
+<p>Os comandos respondem rápido no Discord; o <a href="https://admin.delfus.app">Dashboard</a> vai mais fundo. As telas de análise ficam em dois lugares:</p>
+<ul>
+<li><strong>Hub de análises</strong> (entre pelo <em>Resumo</em>): abas <strong>Dashboard</strong>, <strong>Visão Avançada</strong>, <strong>Insights</strong>, <strong>Fluxo de Membros</strong>, <strong>Retenção</strong> e <strong>Pontuação</strong>.</li>
+<li><strong>Oráculo</strong> (grupo <em>Operação</em> na barra lateral): abas <strong>Mapa Social</strong>, <strong>Canais</strong> e <strong>Conteúdo</strong>.</li>
+</ul>
+<p>As análises do Oráculo dependem de você escolher quais canais ele monitora — pelo comando <code>/oráculo &lt;canal&gt;</code> no Discord ou pelo botão <strong>Configurar</strong> na própria tela. Sem isso, essas três abas mostram um aviso de configuração pendente.</p>
+<h3 id="pontuacao-de-membros">Pontuação de membros<a class="headerlink" href="#pontuacao-de-membros" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-membros.webp" data-desc-position="bottom"><img alt="Pontuação de membros no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-membros.webp" width="1200"></a></p>
+<p><em>Pontuação de membros no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
+<p>Cada membro recebe uma nota de 0 a 100 que resume o quanto ele participa. A conta soma quatro fatores: mensagens enviadas (até 40 pontos), tempo em call (até 30), respostas a outros membros (até 15) e um bônus de tendência (15) para quem acelerou em relação ao período anterior.</p>
+<p>A nota classifica cada um em categorias que você usa como filtro: <strong>Power Users</strong>, <strong>Rising Stars</strong>, <strong>Em Declínio</strong>, <strong>Regulares</strong>, <strong>Em Risco</strong> (era ativo e parou de repente), <strong>Novatos</strong> (menos de 14 dias de servidor) e <strong>Inativos</strong>. Os destaques no topo da tela avisam quando algo pede atenção — membros em risco de saída, novatos que já chegaram participando.</p>
+<p>Dá para trocar o período (de 24 horas a 90 dias, ou um intervalo personalizado), ordenar por score, mensagens, voz, replies ou tendência, e copiar o top 10 já no formato de menção pra colar num anúncio no Discord. Clicar num membro abre o perfil individual dele: score, top canais, horários em que costuma aparecer, punições e parceiros de conversa. A aba <strong>Retenção</strong> complementa: mostra quantos novatos de cada leva participaram e quantos ficaram após 1, 7 e 30 dias.</p>
+<h3 id="fluxo-de-membros">Fluxo de membros<a class="headerlink" href="#fluxo-de-membros" title="Permanent link">¶</a></h3>
+<p>A aba <strong>Fluxo de Membros</strong> responde se o servidor está crescendo ou encolhendo no período escolhido: entradas, saídas, saldo e churn (a proporção de saídas sobre entradas). A timeline mostra as três curvas por dia ou por hora e marca os picos — útil pra ligar uma onda de entradas a uma divulgação, ou uma fuga a algum incidente.</p>
+<p>A mesma tela acompanha a <strong>presença</strong>: quantos membros ficam online, ausentes ou em não perturbe ao longo do período, com a taxa de atividade e o horário de pico.</p>
+<h3 id="mapa-social">Mapa social<a class="headerlink" href="#mapa-social" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-mapa.webp" data-desc-position="bottom"><img alt="Mapa social da comunidade no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-mapa.webp" width="1200"></a></p>
+<p><em>Mapa social no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
+<p>O mapa social enxerga o servidor como uma rede: quem responde quem. Ele conta as conexões formadas por respostas entre membros e mostra quantos estão conectados, quantos estão isolados e quais pares conversam mais.</p>
+<p>Os <strong>Top Conectores</strong> são as pessoas que ligam a comunidade — se elas saírem, grupos inteiros se desligam; vale cuidar delas. A distribuição da rede separa os membros em <strong>Conectores</strong>, <strong>Ativos</strong>, <strong>Periféricos</strong> e <strong>Isolados</strong>, e a lista de conexões mais fortes revela as duplas que sustentam o papo.</p>
+<h3 id="inteligencia-de-canais">Inteligência de canais<a class="headerlink" href="#inteligencia-de-canais" title="Permanent link">¶</a></h3>
+<p>A aba <strong>Canais</strong> dá uma nota de saúde de 0 a 100 pra cada canal monitorado, combinando volume de mensagens, quantidade de pessoas diferentes participando e tendência. Os rótulos vão de <strong>Muito Ativo</strong> a <strong>Inativo</strong>, e o ranking ordena do mais saudável ao mais parado.</p>
+<p>Quando há canais definhando, a tela sugere ação: arquivar ou mesclar os de baixíssima atividade, revisar o conteúdo dos que estão em declínio.</p>
+<h3 id="conteudo-engajamento">Conteúdo &amp; engajamento<a class="headerlink" href="#conteudo-engajamento" title="Permanent link">¶</a></h3>
+<p>A aba <strong>Conteúdo</strong> mostra do que as conversas são feitas: proporção de texto puro, anexos, embeds, stickers e respostas, além da taxa de resposta por canal (quanto do papo gera conversa de verdade, não só mensagens soltas), os top contribuidores do período e o engajamento hora a hora.</p>
+<h3 id="visao-avancada">Visão avançada<a class="headerlink" href="#visao-avancada" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-avancada.webp" data-desc-position="bottom"><img alt="Visão avançada com painel de correlação no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-avancada.webp" width="1200"></a></p>
+<p><em>Visão avançada no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
+<p>A <strong>Visão Avançada</strong> cruza quatro gráficos na mesma linha do tempo — mensagens por hora, atividade por canal, presença e fluxo de membros — pra responder de uma vez: o que aconteceu, onde, quem estava lá e quem entrou ou saiu. Passe o mouse num horário e os quatro se alinham.</p>
+<p>No fim da tela, os <strong>insights estratégicos</strong> transformam esse histórico em sugestão prática: os melhores horários pra aquecer o chat, publicar um anúncio ou rodar um evento, os melhores dias da semana e o pico de voz do servidor.</p>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
+<h3 id="o-mapa-social-ou-canaisconteudo-diz-que-o-oraculo-nao-esta-configurado-e-agora">O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?<a class="headerlink" href="#o-mapa-social-ou-canaisconteudo-diz-que-o-oraculo-nao-esta-configurado-e-agora" title="Permanent link">¶</a></h3>
+<p>Essas análises só olham os canais que você mandou o Oráculo monitorar. Configure com <code>/oráculo &lt;canal&gt;</code> no Discord ou pelo botão <strong>Configurar</strong> na tela — a partir daí os dados começam a acumular.</p>
 <h3 id="minha-ultima-mensagem-ou-emoji-ainda-nao-apareceu-no-ranking-normal">Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?<a class="headerlink" href="#minha-ultima-mensagem-ou-emoji-ainda-nao-apareceu-no-ranking-normal" title="Permanent link">¶</a></h3>
 <p>Sim. O bot consolida a atividade mais ou menos uma vez por minuto, e o ranking de emojis pode levar mais alguns instantes. Espere um pouco e clique em <strong>Reload</strong>, ou rode o comando de novo.</p>
 <h3 id="o-grafico-de-membros-diz-sem-dados-o-que-houve">O gráfico de membros diz "sem dados". O que houve?<a class="headerlink" href="#o-grafico-de-membros-diz-sem-dados-o-que-houve" title="Permanent link">¶</a></h3>
@@ -2186,7 +2383,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 02:25:22 UTC"><span class="timeago" datetime="2026-08-08T02:25:22+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 02:25:22 UTC">2026-08-08</span>
   </span>
 
     
@@ -2313,7 +2510,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
