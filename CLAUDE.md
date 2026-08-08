@@ -39,7 +39,13 @@ Plugins: search, glightbox (zoom em imagem), git-revision-date.
 Telas em `docs/assets/dashboard/*.png` vêm do `../front-end` em demo mode:
 
 1. Patchar `../front-end/src/middleware.ts` (comentar redirect de `/dashboard`) — **REVERTER depois**
-   com `git checkout`.
+   com `git checkout`. Desde o fix de auth (#156) são necessários **mais 2 patches temporários** em
+   `src/components/layout/dashboard-layout-client.tsx` (reverter junto): (a) no effect do
+   `signOutAndRedirect`, retornar cedo se `isDemoModeActive` (senão expulsa pro sign-in sem sessão);
+   (b) o gate `isInitialLoading` fica preso em loading sem sessão (a query de guilds tem
+   `enabled: !!session`) — trocar por `isInitialLoading && !isDemoModeActive` e, no `showSidebar`,
+   `(!isInitialLoading || isDemoModeActive)`. Cookie-consent: setar o cookie `delfus-consent`
+   direto (JSON urlencoded, `version:1`) em vez de clicar "Aceitar" (evita POST no consent-log).
 2. Subir `bun run dev` com `DATABASE_URL`/`REDIS_HOST`/`BOT_API_URL` neutralizados p/ localhost
    (`REDIS_PASSWORD` não-vazio). O `.env.local` aponta p/ PRODUÇÃO — sempre neutralizar.
 3. Playwright: `localStorage['theme']='dark'`, cookie `active_theme=blue`,
