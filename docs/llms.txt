@@ -5,6 +5,7 @@
 > boost), engajamento (starboard, aniversários, famílias, correio,
 > automações) e análise de comunidade. Documentação oficial em português.
 
+Conteúdo completo em um arquivo: https://docs.delfus.app/llms-full.txt
 Painel web: https://admin.delfus.app
 Site: https://delfus.app
 Suporte (Discord): https://discord.gg/mTjZg95UJV

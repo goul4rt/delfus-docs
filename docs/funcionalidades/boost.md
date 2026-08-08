@@ -102,3 +102,4 @@ Não. Mensagens e VIP são configurados só pelo Dashboard.
 !!! tip "Dica"
     Deixe o VIP ativo com duração perto de 30 dias. Como o bot renova a cada 6 horas enquanto o boost estiver de pé, a pessoa só perde o benefício quando para de impulsionar de verdade. O VIP vira um incentivo contínuo pra manter o boost.
 
+Veja também: [VIP e assinaturas](vip.md), [Cargos automáticos](auto-roles.md).

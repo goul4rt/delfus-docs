@@ -97,3 +97,4 @@ Com o `id_advertencia` (visto no `/warnlist`), remove aquela específica; sem ID
 !!! tip "Dica"
     Combine **gatilhos** com **expiração de warns**: monte a escada (3 → mute, 5 → ban) e ative a expiração em 30 dias. A staff só precisa advertir, a punição fica consistente e quem se comporta ganha histórico limpo, incluindo a remoção automática de cargos de "observação" quando a contagem cai.
 
+Veja também: [Anti-raid](anti-raid.md), [Honeypot](honeypot.md), [Gestão de equipe](equipe.md).

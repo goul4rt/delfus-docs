@@ -99,3 +99,4 @@ A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot t
 !!! tip "Dica"
     Use a moldura de cada tema como uma carta pré-pronta: saudação no começo, `{{mensagem}}` no meio, assinatura no fim. Assim até os recados mais curtos saem com a cara do evento.
 
+Veja também: [Famílias](familia.md), [Aniversários](aniversarios.md), [VIP e assinaturas](vip.md).

@@ -76,3 +76,5 @@ O Delfus tenta de novo automaticamente e lembra o que já entregou, sem duplicar
 
 !!! tip "Dica"
     Deixe o cargo "Bots" **abaixo** dos cargos humanos e com permissões restritas. Os bots entram agrupados e isolados, e as cores e acessos ficam reservados para as pessoas. E lembre: o cargo do Delfus precisa ficar **acima** de tudo que ele vai entregar.
+
+Veja também: [Boas-vindas e despedida](recepcao.md), [Cargos por reação](reaction-roles.md), [Recompensas de boost](boost.md).

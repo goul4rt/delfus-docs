@@ -126,3 +126,5 @@ Não. O bot bloqueia enquanto houver VIP ativo naquele nível. Espere os VIPs ex
 
 !!! tip "Dica"
     Códigos podem ter validade própria, separada da duração do VIP. Use isso em promoções: `duracao:30d expira:7d` cria um código que dá 30 dias de VIP, mas só pode ser resgatado nos próximos 7 dias. Se você não escolher um código, o bot gera um automático no formato `VIP-XXXXXX`.
+
+Veja também: [Recompensas de boost](boost.md), [Famílias](familia.md), [Correio elegante](correio.md).

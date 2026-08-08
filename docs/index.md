@@ -8,7 +8,7 @@ hide:
 <div class="dx-home">
 
 <section class="dxh-hero">
-  <img class="dxh-hero__mascot" src="assets/mascote-oculos.png" alt="Mascote do Delfus" width="166" height="166" fetchpriority="high">
+  <img class="dxh-hero__mascot" src="assets/mascote-oculos.webp" alt="Mascote do Delfus" width="166" height="166" fetchpriority="high">
   <span class="dxh-badge">Central de documentação</span>
   <h1 class="dxh-title">O que você quer <span class="dxh-gold">configurar?</span></h1>
   <p class="dxh-sub">O Delfus é um bot para Discord com moderação, segurança, cargos, VIP e análise. Digite abaixo e a documentação encontra o guia certo.</p>

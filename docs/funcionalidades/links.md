@@ -84,3 +84,5 @@ Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra config
 
 !!! tip "Dica"
     Use UTMs sempre que divulgar o mesmo link em canais diferentes: o painel mostra qual divulgação trouxe mais gente. Lembre que "cliques únicos" contam cada pessoa uma vez a cada 24 horas (bom pra medir alcance real), enquanto o "total de cliques" mede engajamento.
+
+Veja também: [Anti-invite](anti-invite.md), [Automações de canal](automacoes.md), [Download de vídeos](video.md).

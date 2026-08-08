@@ -19,6 +19,13 @@ Abra o link de convite e escolha o servidor. Você precisa ter a permissão **Ge
 
 Quando o Delfus entra, ele manda uma mensagem no servidor e uma DM para o dono, com um resumo dos próximos passos. Tudo já vem em **português** por padrão. Para mudar, veja [Idioma](idioma.md).
 
+## Deu algo errado?
+
+Os dois tropeços mais comuns na instalação:
+
+- **"Você precisa de permissão" ao abrir o convite** — só quem tem **Gerenciar Servidor** no servidor de destino consegue adicionar bots. Se o servidor não aparece na lista do convite, é isso.
+- **O bot entrou mas não age (não dá cargo, não apaga mensagem)** — quase sempre é hierarquia: o Discord só deixa o bot mexer em cargos **abaixo** do cargo dele. Abra **Configurações do servidor → Cargos** e arraste o cargo do Delfus para cima dos cargos que ele vai gerenciar. Confira também se as permissões do convite não foram desmarcadas.
+
 ## 3. Próximos passos
 
 <div class="grid cards" markdown>

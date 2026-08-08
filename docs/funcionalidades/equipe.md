@@ -153,3 +153,4 @@ Não. O bot conta mensagens de forma agregada por hora e por canal. O painel nã
 ### Por que os números podem demorar para atualizar?
 As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças muito recentes podem levar alguns minutos para refletir.
 
+Veja também: [Moderação e punições](moderacao.md), [Análise e insights](analise.md).

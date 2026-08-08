@@ -13,11 +13,6 @@
   {% endif %}
 {% endblock %}
 
-{% block fonts %}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  {{ super() }}
-{% endblock %}
-
 {% block extrahead %}
   {{ super() }}
   {% if page and page.canonical_url %}
@@ -133,5 +128,8 @@
     ]
   }
   </script>
+  {% if page.meta.faq_jsonld %}
+  <script type="application/ld+json">{{ page.meta.faq_jsonld }}</script>
+  {% endif %}
   {% endif %}
 {% endblock %}

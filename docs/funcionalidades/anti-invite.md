@@ -95,3 +95,5 @@ Pega tudo. Reconhece `discord.gg`, `discord.com/invite` e `discordapp.com/invite
 
 !!! tip "Dica"
     Combine as duas listas: **cargos liberados** pra equipe e parceiros oficiais, **canais liberados** pra áreas de divulgação. Você bloqueia convites externos no servidor inteiro sem atrapalhar quem precisa compartilhar links.
+
+Veja também: [Anti-raid](anti-raid.md), [Honeypot](honeypot.md), [Encurtador de links](links.md).

@@ -112,3 +112,4 @@ Sim. Ele precisa de **Gerenciar Cargos** e **Gerenciar Canais** pra criar e rest
 !!! tip "Dica"
     Antes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo **Aditivo**, que não apaga nada e é fácil de desfazer. Deixe o **Destrutivo** só pra quando você realmente quer recomeçar do zero.
 
+Veja também: [Anti-raid](anti-raid.md), [Moderação e punições](moderacao.md).

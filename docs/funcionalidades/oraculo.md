@@ -88,3 +88,4 @@ Não. A mudança vale na hora, tanto pelo Dashboard quanto pelo comando.
 !!! tip "Dica"
     Monitore só os canais que você vai analisar. Cada canal ligado gera registro contínuo de tudo que é postado. Focar nos mais relevantes (geral, anúncios, suporte) deixa os painéis mais precisos e enxutos.
 
+Veja também: [Análise e insights](analise.md), [Moderação e punições](moderacao.md).

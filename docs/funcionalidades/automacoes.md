@@ -110,3 +110,4 @@ Ela só vale em canais de anúncio. Confira também se a mensagem passou nos fil
 !!! tip "Dica"
     Em canal de mídia movimentado, ligue o **tamanho mínimo de imagem** (uns 64 a 100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula, que tecnicamente são "imagens", e deixa o canal só com print e foto de verdade.
 
+Veja também: [Mensagens e embeds](mensagens.md), [Encurtador de links](links.md), [Aniversários](aniversarios.md).

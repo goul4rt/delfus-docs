@@ -120,3 +120,4 @@ Ao pegar o golpista, o bot varre os canais e apaga tudo que ele postou nos últi
 !!! tip "Dica"
     Aponte o **Canal de Alerta** para um canal exclusivo da moderação e fique de olho nele. É por ali que cada bloqueio e alerta chega, o que te deixa confirmar ataques, revisar rápido e reverter na mão caso um membro legítimo seja afetado.
 
+Veja também: [Anti-invite](anti-invite.md), [Honeypot](honeypot.md), [Backups](backup.md).

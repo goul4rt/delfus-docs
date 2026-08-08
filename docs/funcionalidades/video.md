@@ -80,3 +80,4 @@ Pode. Rode `/video-download` uma vez pra cada canal. Cada um funciona de forma i
 !!! tip "Dica"
     Dedique um canal só pra colar links de vídeo e ative o recurso apenas nele. Assim os membros sabem onde os links viram vídeos, e os outros canais não enchem de anexos. Se um deles sair de controle, rode `/video-download` de novo no mesmo canal pra desligar na hora.
 
+Veja também: [Encurtador de links](links.md), [Automações de canal](automacoes.md).

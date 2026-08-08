@@ -104,3 +104,5 @@ Verifique se o bot tem a permissão **Gerenciar Emojis e Figurinhas** no servido
 
 ### Posso clonar um emoji padrão (Unicode)?
 Não. Clonar só vale para emojis customizados externos.
+
+Veja também: [Starboard](starboard.md), [Análise e insights](analise.md).

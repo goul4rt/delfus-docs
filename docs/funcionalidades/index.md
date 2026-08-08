@@ -43,8 +43,14 @@ principais módulos. Cada um é ativado e configurado pelo [Dashboard](https://a
 
 ## E mais
 
-Eventos, encurtador de links, gestão de emojis, automações de canal, aniversários,
-recompensas de boost e gestão de equipe. Tudo no painel.
+Todos os módulos, por área — tudo configurado no painel:
+
+- **Segurança**: [Anti-raid](anti-raid.md), [Anti-invite](anti-invite.md), [Honeypot](honeypot.md) e [Backups](backup.md)
+- **Recepção e cargos**: [Cargos automáticos](auto-roles.md) e [Cargos por reação](reaction-roles.md)
+- **Monetização**: [Recompensas de boost](boost.md) e [Famílias](familia.md)
+- **Engajamento**: [Mensagens e embeds](mensagens.md), [Emojis](emojis.md), [Aniversários](aniversarios.md), [Correio elegante](correio.md) e [Automações de canal](automacoes.md)
+- **Operação**: [Gestão de equipe](equipe.md) e [Oráculo](oraculo.md)
+- **Utilidades**: [Encurtador de links](links.md) e [Download de vídeos](video.md)
 
 <div class="dx-band" markdown>
 

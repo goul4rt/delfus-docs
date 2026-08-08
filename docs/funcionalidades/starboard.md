@@ -116,3 +116,4 @@ Pode ser auto-voto (com auto-voto desligado), uma reação de bot, voto acima do
 !!! tip "Dica"
     Deixe **estrelas para entrar** maior que **estrelas para sair** (ex.: entra com 5, sai abaixo de 3) pra criar uma zona de segurança e evitar o post piscando perto do limite. E combine **votos negativos** com **níveis visuais**: os destaques muito votados ganham um cartão mais chamativo, enquanto os negativos derrubam o que não merece ficar.
 
+Veja também: [Emojis](emojis.md), [Mensagens e embeds](mensagens.md), [Análise e insights](analise.md).

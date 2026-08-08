@@ -146,3 +146,5 @@ O Delfus pula a mensagem em silêncio, sem erro visível. Ele precisa ter permis
 
 !!! tip "Dica"
     Monte o cartão e rode `/welcome teste tipo:Welcome` antes de ativar pra todos. A prévia gera o cartão real com o seu avatar, então você vê como vai ficar, inclusive se o texto está legível sobre a imagem de fundo.
+
+Veja também: [Cargos automáticos](auto-roles.md), [Cargos por reação](reaction-roles.md), [Mensagens e embeds](mensagens.md).

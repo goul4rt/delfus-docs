@@ -78,3 +78,4 @@ Por causa do limite de 256 KB do Discord. Imagens estáticas grandes são compri
 !!! tip "Dica"
     Peça aos seus assinantes que mantenham as **DMs do servidor abertas**, senão o convite não chega. E reserve um **cargo-âncora** nas configurações para que todos os cargos de família nasçam no mesmo ponto da hierarquia, deixando a lista de cargos arrumada.
 
+Veja também: [VIP e assinaturas](vip.md), [Correio elegante](correio.md), [Aniversários](aniversarios.md).

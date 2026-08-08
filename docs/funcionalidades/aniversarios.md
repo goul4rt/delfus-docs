@@ -104,3 +104,5 @@ Pode. O registro é por servidor, então cada comunidade tem a própria lista, i
 
 !!! tip "Dica"
     Use a política **Opcional** ou **Obrigatório** para o ano e coloque o marcador `{age}` na embed. Assim os parabéns mostram quantos anos a pessoa está completando, e a mensagem fica mais pessoal.
+
+Veja também: [Mensagens e embeds](mensagens.md), [Automações de canal](automacoes.md), [Famílias](familia.md).

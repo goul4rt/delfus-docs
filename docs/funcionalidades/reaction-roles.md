@@ -98,3 +98,5 @@ Quase sempre é hierarquia: o bot só mexe em cargos que estão **abaixo** dele 
 
 !!! tip "Dica"
     Quer cargos de cor sem criar nada na mão? Use o template **Cores**: já vem em escolha única e o bot cria os cargos coloridos sozinho ao salvar. Depois é só arrastar esses cargos pra cima dos demais na lista, e a cor aparece no nome dos membros.
+
+Veja também: [Cargos automáticos](auto-roles.md), [Boas-vindas e despedida](recepcao.md), [Mensagens e embeds](mensagens.md).

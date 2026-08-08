@@ -153,3 +153,4 @@ Esse comando tem um limite de uso (uma chamada a cada poucos segundos) para evit
 !!! tip "Dica"
     Quer acompanhar um pico ao vivo, tipo uma divulgação ou evento? Deixe o `/grafico overview` aberto e clique em **Reload** a cada poucos minutos. Como o bot consolida os dados quase em tempo real, você vê mensagens e horas de voz subindo sem rodar o comando de novo.
 
+Veja também: [Oráculo](oraculo.md), [Emojis](emojis.md), [Gestão de equipe](equipe.md).

@@ -145,3 +145,4 @@ No modo Bot a mensagem aparece como o bot Delfus. No modo Webhook ela aparece co
 ### As variáveis funcionam dentro dos embeds e botões?
 Sim. O bot resolve as variáveis em qualquer campo de texto da mensagem no momento do envio.
 
+Veja também: [Boas-vindas e despedida](recepcao.md), [Cargos por reação](reaction-roles.md), [Automações de canal](automacoes.md).

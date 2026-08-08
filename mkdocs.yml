@@ -62,8 +62,12 @@ extra_css:
 extra_javascript:
   - javascripts/home-search.js
 
+hooks:
+  - tools/hooks/seo.py
+
 plugins:
   - search
+  - privacy # self-host das fontes Google (LCP + LGPD)
   # og-images: geradas por tools/og/generate.py em docs/assets/og/ (meta tags no overrides/main.html)
   - glightbox:
       touchNavigation: true

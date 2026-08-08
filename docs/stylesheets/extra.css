@@ -284,7 +284,7 @@
   border: 1px solid var(--dx-card-border);
   background-image:
     linear-gradient(rgba(21, 19, 43, 0.55), rgba(21, 19, 43, 0.82)),
-    url("../assets/banner.jpg");
+    url("../assets/banner.webp");
   background-size: cover;
   background-position: center 30%;
 }

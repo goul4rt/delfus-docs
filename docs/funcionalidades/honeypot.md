@@ -90,3 +90,4 @@ Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Mode
 !!! tip "Dica"
     Coloque o canal isca no topo da lista, com um nome claro de "não escreva aqui". Spammers escrevem nos primeiros canais que veem; membros reais leem o aviso e seguem em frente. Combine com a ação Banir e deixe as contas maliciosas saírem sozinhas, sem depender de moderador online.
 
+Veja também: [Anti-raid](anti-raid.md), [Anti-invite](anti-invite.md), [Moderação e punições](moderacao.md).
