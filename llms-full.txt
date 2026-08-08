@@ -1,0 +1,2908 @@
+<!-- comecar/adicionar.md -->
+
+# Adicionar o bot
+
+Convide o Delfus para o seu servidor Discord e dê as permissões certas. Em poucos minutos ele já está rodando.
+
+## 1. Convidar o Delfus
+
+Abra o link de convite e escolha o servidor. Você precisa ter a permissão **Gerenciar Servidor** nesse servidor.
+
+[Convidar o Delfus](https://admin.delfus.app){ .md-button .md-button--primary }
+
+!!! tip "Permissões"
+    Mantenha as permissões sugeridas no convite. Vários módulos dependem delas: moderação usa **Banir Membros**, cargos usa **Gerenciar Cargos**, boas-vindas usa **Gerenciar Mensagens**. Sem a permissão, o módulo não funciona.
+
+## 2. Mensagem de boas-vindas
+
+Quando o Delfus entra, ele manda uma mensagem no servidor e uma DM para o dono, com um resumo dos próximos passos. Tudo já vem em **português** por padrão. Para mudar, veja [Idioma](idioma.md).
+
+## Deu algo errado?
+
+Os dois tropeços mais comuns na instalação:
+
+- **"Você precisa de permissão" ao abrir o convite** — só quem tem **Gerenciar Servidor** no servidor de destino consegue adicionar bots. Se o servidor não aparece na lista do convite, é isso.
+- **O bot entrou mas não age (não dá cargo, não apaga mensagem)** — quase sempre é hierarquia: o Discord só deixa o bot mexer em cargos **abaixo** do cargo dele. Abra **Configurações do servidor → Cargos** e arraste o cargo do Delfus para cima dos cargos que ele vai gerenciar. Confira também se as permissões do convite não foram desmarcadas.
+
+## 3. Próximos passos
+
+<div class="grid cards" markdown>
+
+-   :material-cog: **Configuração inicial**
+
+    [:octicons-arrow-right-24: Configurar canais e módulos](configuracao.md)
+
+-   :material-translate: **Idioma**
+
+    [:octicons-arrow-right-24: Trocar o idioma do bot](idioma.md)
+
+</div>
+
+
+---
+
+<!-- comecar/configuracao.md -->
+
+# Configuração inicial
+
+Você configura o Delfus pelo **Dashboard**, o painel web onde ativa módulos e escolhe canais e cargos do seu servidor Discord.
+
+[Abrir o Dashboard](https://admin.delfus.app){ .md-button .md-button--primary }
+
+## Como funciona
+
+1. Acesse o [Dashboard](https://admin.delfus.app) e faça login com o Discord.
+2. Selecione o servidor onde o Delfus está.
+3. Ative e configure cada módulo na barra lateral.
+
+As mudanças feitas no painel são aplicadas no bot automaticamente.
+
+## O que dá pra configurar
+
+Os módulos vêm desligados — você liga só o que a sua comunidade usa:
+
+- **Segurança**: [moderação e punições](../funcionalidades/moderacao.md), [anti-raid](../funcionalidades/anti-raid.md), [anti-invite](../funcionalidades/anti-invite.md), [honeypot](../funcionalidades/honeypot.md) e [backups](../funcionalidades/backup.md).
+- **Recepção e cargos**: [boas-vindas e despedida](../funcionalidades/recepcao.md), [cargos automáticos](../funcionalidades/auto-roles.md) e [cargos por reação](../funcionalidades/reaction-roles.md).
+- **Monetização**: [VIP e assinaturas](../funcionalidades/vip.md) e [recompensas de boost](../funcionalidades/boost.md).
+- **Engajamento**: [starboard](../funcionalidades/starboard.md), [mensagens e embeds](../funcionalidades/mensagens.md), [aniversários](../funcionalidades/aniversarios.md), [famílias](../funcionalidades/familia.md), [correio elegante](../funcionalidades/correio.md) e [automações de canal](../funcionalidades/automacoes.md).
+- **Análise**: as [estatísticas e insights](../funcionalidades/analise.md) coletam sozinhas desde a entrada do bot; o [Oráculo](../funcionalidades/oraculo.md) (mapa social, saúde de canais) precisa que você escolha os canais monitorados.
+
+Uma ordem que funciona bem no primeiro dia: segurança primeiro (moderação + anti-raid), depois recepção (boas-vindas + cargos), e o resto conforme a necessidade aparecer.
+
+## Comandos no Discord
+
+Você também pode usar comandos de barra no servidor. Digite `/` no campo de mensagem para ver todos os comandos, ou use `/help` para uma visão geral.
+
+!!! info "Painel ou comandos?"
+    Use o **Dashboard** para configurar (ativar módulos, definir canais e cargos) e os **comandos** para o dia a dia (aplicar punições, consultar dados, etc).
+
+
+---
+
+<!-- comecar/idioma.md -->
+
+# Idioma
+
+O Delfus fala português (pt-BR) por padrão no seu servidor Discord e também suporta inglês (en-US).
+
+## Trocar o idioma
+
+Use o comando de idioma no servidor:
+
+```
+/idioma
+```
+
+A escolha vale para o servidor inteiro e o bot a lembra.
+
+!!! note "Por que pt-BR por padrão?"
+    O Discord só expõe um idioma confiável do servidor quando o Modo Comunidade está ativado. Fora disso o valor não é confiável, então o bot mantém o português. Se preferir inglês, use `/idioma`.
+
+## Pré-visualizar
+
+A mensagem de boas-vindas enviada quando o bot entra traz um menu 🌐 Ver em outros idiomas. Ele mostra o conteúdo em cada idioma disponível antes de você decidir.
+
+
+---
+
+<!-- funcionalidades/analise.md -->
+
+# Análise e insights
+
+Saiba quem mais participa, quais canais bombam e em que horário a galera aparece. O Delfus observa mensagens, entradas e saídas de membros, tempo em call e uso de emojis, e transforma tudo em gráficos, rankings e estatísticas que você consulta pelo Discord ou pelo painel web.
+
+![Insights do servidor no painel do Delfus](../assets/dashboard/analise.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Insights do servidor no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O bot acompanha a atividade do servidor o tempo todo e vai juntando os números em segundo plano. Quando você pede uma estatística, ele lê o que já está pronto e responde na hora. A resposta é quase instantânea, com poucos minutos de atraso em relação ao que acabou de acontecer.
+
+O que ele acompanha:
+
+- **Mensagens**: quem mandou, em qual canal e em que hora. Alimenta os tops de membros e canais.
+- **Entradas e saídas**: cada entrada ou saída vira ponto no gráfico de membros.
+- **Tempo em call**: quanto tempo cada pessoa passou em canais de voz, somado em horas.
+- **Emojis**: quantas vezes cada um aparece, separando os usados dentro de mensagens dos usados como reação. Reconhece os emojis do servidor (até animados) e os padrão do Discord, e marca quando um emoji veio de outro servidor.
+- **Perfis**: nome, apelido e foto dos membros, atualizados de tempos em tempos para os rankings mostrarem dados atuais.
+
+Para não pesar no banco, o bot acumula essas contagens na memória e grava tudo em lote mais ou menos uma vez por minuto. Os números refletem a atividade quase ao vivo. Só pode levar um instante até uma mensagem ou emoji recém-usado aparecer no ranking.
+
+!!! example "Exemplo"
+    Você divulgou o servidor e a galera começou a chegar. Rode `/grafico membros` e veja a linha de entradas subindo quase em tempo real. Um clique em **Reload** depois de uns minutos já mostra os novos membros.
+
+Os gráficos do `/grafico` saem como imagem com o nome e o ícone do seu servidor, e vêm com dois botões logo abaixo:
+
+- **Reload (🔄)**: refaz o gráfico com os dados mais recentes, na mesma mensagem.
+- **Período (🕐)**: alterna entre 1 dia, 7 dias e 30 dias. Em 1 dia o gráfico fica detalhado hora a hora; em 7 ou 30 dias, agrupa por dia.
+
+O `/grafico overview` é a exceção: fica sempre fixo nos últimos 30 dias, então só tem o botão **Reload**.
+
+!!! note "Servidor novo? Pouca coisa para mostrar"
+    As estatísticas dependem de atividade acumulada ao longo do tempo. Num servidor recém-adicionado (ou numa janela curta sem movimento), o bot pode avisar que não há dados para o período em vez de mostrar um gráfico vazio. Troque para 30 dias ou espere o servidor juntar mais atividade.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/grafico overview` | Visão geral dos últimos 30 dias: total de mensagens, horas de voz, top 3 membros e top 3 canais. Imagem com botão **Reload**. |
+| `/grafico membros` | Evolução de entradas, saídas e total de membros. Começa em 7 dias; trocável para 1 ou 30 dias. |
+| `/grafico canal` | Mensagens de um canal específico (escolhido por autocomplete). Começa em 7 dias; trocável para 1 ou 30 dias. |
+| `/guildstats` | Resumo do servidor: ID, data de criação, dono, membros, online, contagem de canais e banner. Resposta privada. |
+| `/emoji-stats top` | Ranking dos emojis mais usados, com quebra entre mensagens e reações e marca de emojis externos. Opção `limite` (1 a 50, padrão 25). |
+| `/emoji-stats sem-uso` | Lista os emojis do servidor que nunca foram usados. |
+| `/emoji-stats nomes-estranhos` | Lista emojis com nomes pouco descritivos (números, muito curtos, genéricos etc.). |
+
+!!! note "Privado vs. público"
+    As respostas de `/guildstats` e `/emoji-stats` são privadas: só você vê. Já os gráficos do `/grafico` ficam visíveis no canal para todo mundo.
+
+## Configuração
+
+Não tem nada para ativar. A coleta roda sozinha assim que o Delfus entra no servidor. Você só decide onde consultar:
+
+- **No Discord**, com `/grafico`, `/guildstats` e `/emoji-stats`.
+- **No [Dashboard](https://admin.delfus.app)**, nas telas de visão geral, insights e emojis. Os mesmos números, navegáveis sem abrir o Discord.
+
+Detalhes úteis das opções:
+
+- **`/grafico canal`** pede o canal a analisar. O bot autocompleta enquanto você digita.
+- **`/emoji-stats top`** aceita um limite de quantos emojis listar, de 1 a 50 (padrão 25).
+- `/grafico`, `/guildstats` e `/emoji-stats` só funcionam dentro de um servidor, não em DM. E o `/emoji-stats` exige a permissão **Gerenciar Servidor**.
+
+## Exemplos
+
+!!! example "Saúde do servidor de relance"
+    Rode `/grafico overview`. Numa imagem você vê mensagens e horas de voz dos últimos 30 dias, mais os pódios dos membros e canais mais ativos. Depois de um pico de atividade, clique em **Reload** para atualizar os números.
+
+!!! example "Cresceu ou perdeu membros?"
+    Use `/grafico membros`, comece nos 7 dias e clique em **Período → 30 dias** para ver a tendência do mês. Dá para identificar um pico de entradas depois de uma divulgação, ou uma onda de saídas que merece atenção.
+
+!!! example "Faxina nos emojis"
+    Rode `/emoji-stats sem-uso` para descobrir quais emojis ninguém usa e `/emoji-stats nomes-estranhos` para achar os de nome ruim. Cruze com `/emoji-stats top` para confirmar quais valem a pena manter antes de remover.
+
+## Análises no painel
+
+Os comandos respondem rápido no Discord; o [Dashboard](https://admin.delfus.app) vai mais fundo. As telas de análise ficam em dois lugares:
+
+- **Hub de análises** (entre pelo *Resumo*): abas **Dashboard**, **Visão Avançada**, **Insights**, **Fluxo de Membros**, **Retenção** e **Pontuação**.
+- **Oráculo** (grupo *Operação* na barra lateral): abas **Mapa Social**, **Canais** e **Conteúdo**.
+
+As análises do Oráculo dependem de você escolher quais canais ele monitora — pelo comando `/oráculo <canal>` no Discord ou pelo botão **Configurar** na própria tela. Sem isso, essas três abas mostram um aviso de configuração pendente.
+
+### Pontuação de membros
+
+![Pontuação de membros no painel do Delfus](../assets/dashboard/analise-membros.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Pontuação de membros no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+Cada membro recebe uma nota de 0 a 100 que resume o quanto ele participa. A conta soma quatro fatores: mensagens enviadas (até 40 pontos), tempo em call (até 30), respostas a outros membros (até 15) e um bônus de tendência (15) para quem acelerou em relação ao período anterior.
+
+A nota classifica cada um em categorias que você usa como filtro: **Power Users**, **Rising Stars**, **Em Declínio**, **Regulares**, **Em Risco** (era ativo e parou de repente), **Novatos** (menos de 14 dias de servidor) e **Inativos**. Os destaques no topo da tela avisam quando algo pede atenção — membros em risco de saída, novatos que já chegaram participando.
+
+Dá para trocar o período (de 24 horas a 90 dias, ou um intervalo personalizado), ordenar por score, mensagens, voz, replies ou tendência, e copiar o top 10 já no formato de menção pra colar num anúncio no Discord. Clicar num membro abre o perfil individual dele: score, top canais, horários em que costuma aparecer, punições e parceiros de conversa. A aba **Retenção** complementa: mostra quantos novatos de cada leva participaram e quantos ficaram após 1, 7 e 30 dias.
+
+### Fluxo de membros
+
+A aba **Fluxo de Membros** responde se o servidor está crescendo ou encolhendo no período escolhido: entradas, saídas, saldo e churn (a proporção de saídas sobre entradas). A timeline mostra as três curvas por dia ou por hora e marca os picos — útil pra ligar uma onda de entradas a uma divulgação, ou uma fuga a algum incidente.
+
+A mesma tela acompanha a **presença**: quantos membros ficam online, ausentes ou em não perturbe ao longo do período, com a taxa de atividade e o horário de pico.
+
+### Mapa social
+
+![Mapa social da comunidade no painel do Delfus](../assets/dashboard/analise-mapa.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Mapa social no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+O mapa social enxerga o servidor como uma rede: quem responde quem. Ele conta as conexões formadas por respostas entre membros e mostra quantos estão conectados, quantos estão isolados e quais pares conversam mais.
+
+Os **Top Conectores** são as pessoas que ligam a comunidade — se elas saírem, grupos inteiros se desligam; vale cuidar delas. A distribuição da rede separa os membros em **Conectores**, **Ativos**, **Periféricos** e **Isolados**, e a lista de conexões mais fortes revela as duplas que sustentam o papo.
+
+### Inteligência de canais
+
+A aba **Canais** dá uma nota de saúde de 0 a 100 pra cada canal monitorado, combinando volume de mensagens, quantidade de pessoas diferentes participando e tendência. Os rótulos vão de **Muito Ativo** a **Inativo**, e o ranking ordena do mais saudável ao mais parado.
+
+Quando há canais definhando, a tela sugere ação: arquivar ou mesclar os de baixíssima atividade, revisar o conteúdo dos que estão em declínio.
+
+### Conteúdo & engajamento
+
+A aba **Conteúdo** mostra do que as conversas são feitas: proporção de texto puro, anexos, embeds, stickers e respostas, além da taxa de resposta por canal (quanto do papo gera conversa de verdade, não só mensagens soltas), os top contribuidores do período e o engajamento hora a hora.
+
+### Visão avançada
+
+![Visão avançada com painel de correlação no painel do Delfus](../assets/dashboard/analise-avancada.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Visão avançada no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+A **Visão Avançada** cruza quatro gráficos na mesma linha do tempo — mensagens por hora, atividade por canal, presença e fluxo de membros — pra responder de uma vez: o que aconteceu, onde, quem estava lá e quem entrou ou saiu. Passe o mouse num horário e os quatro se alinham.
+
+No fim da tela, os **insights estratégicos** transformam esse histórico em sugestão prática: os melhores horários pra aquecer o chat, publicar um anúncio ou rodar um evento, os melhores dias da semana e o pico de voz do servidor.
+
+## Perguntas frequentes
+
+### O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?
+Essas análises só olham os canais que você mandou o Oráculo monitorar. Configure com `/oráculo <canal>` no Discord ou pelo botão **Configurar** na tela — a partir daí os dados começam a acumular.
+
+### Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?
+Sim. O bot consolida a atividade mais ou menos uma vez por minuto, e o ranking de emojis pode levar mais alguns instantes. Espere um pouco e clique em **Reload**, ou rode o comando de novo.
+
+### O gráfico de membros diz "sem dados". O que houve?
+Ainda não há entradas ou saídas registradas na janela escolhida. É comum em servidor novo ou em períodos curtos e parados. Troque para 30 dias no botão **Período** ou aguarde mais movimento.
+
+### O que significa o marcador 🔗 no `/emoji-stats top`?
+É um emoji personalizado de outro servidor que foi usado aqui (por alguém com Nitro, por exemplo). Ele entra no ranking de uso, mas não faz parte da lista do seu servidor, por isso nunca aparece em `sem-uso` nem em `nomes-estranhos`.
+
+### O `/emoji-stats top` não respondeu de primeira. Por quê?
+Esse comando tem um limite de uso (uma chamada a cada poucos segundos) para evitar spam. Espere uns segundos e tente de novo.
+
+!!! tip "Dica"
+    Quer acompanhar um pico ao vivo, tipo uma divulgação ou evento? Deixe o `/grafico overview` aberto e clique em **Reload** a cada poucos minutos. Como o bot consolida os dados quase em tempo real, você vê mensagens e horas de voz subindo sem rodar o comando de novo.
+
+Veja também: [Oráculo](oraculo.md), [Emojis](emojis.md), [Gestão de equipe](equipe.md).
+
+
+---
+
+<!-- funcionalidades/aniversarios.md -->
+
+# Aniversários
+
+Cada membro registra a própria data e o Delfus manda os parabéns sozinho, no dia certo e no canal do Discord que você escolher. Sem trabalho manual.
+
+![Configuração de aniversários no painel do Delfus](../assets/dashboard/aniversarios.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Configuração de aniversários no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O membro registra a data dele. O Delfus checa de hora em hora e posta os parabéns no momento certo.
+
+Cada pessoa usa `/aniversario registrar` informando dia e mês (e o ano, se você pedir). O bot guarda a data e, todo dia no horário que você definiu, posta uma mensagem para quem faz aniversário. Você ainda pode dar um cargo especial só para esse dia.
+
+Tudo respeita o fuso horário do seu público. O "feliz aniversário" sai às 9h de verdade, não às 9h de um fuso aleatório.
+
+!!! example "Exemplo"
+    A Ana registra que nasceu em **15 de março**. No dia 15, às 9h (horário de Brasília), o Delfus posta no canal de avisos: "🎂 Feliz Aniversário, @Ana!" e dá a ela o cargo "Aniversariante" pelo resto do dia. No dia 16, o cargo some sozinho. A moderação não precisou fazer nada.
+
+Detalhes que vale saber:
+
+- **A data é por servidor.** A mesma pessoa pode ter datas diferentes em comunidades diferentes.
+- **Cada um registra uma vez só.** Se tentar registrar de novo, o bot recusa. Isso evita que alguém troque a data para "ganhar" anúncio em outro dia. Para corrigir, um admin usa `/aniversario-admin definir-usuario`.
+- **Sem mensagens duplicadas.** Mesmo rodando de hora em hora, os parabéns de cada dia saem uma vez.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/aniversario registrar` | O membro registra o próprio aniversário (dia, mês e, se a política exigir, ano). Uma vez por servidor. |
+| `/aniversario ver` | Mostra o aniversário (e a idade, se houver ano) de você ou de outro membro. |
+| `/aniversario proximos` | Lista os 10 próximos aniversários do servidor, do mais perto ao mais longe. Quem faz hoje aparece como **"Hoje! 🎉"**. |
+| `/aniversario-admin definir-usuario` | **(Admin)** Define ou corrige o aniversário de alguém, mesmo se a pessoa já tinha registrado. |
+| `/aniversario-admin remover-usuario` | **(Admin)** Apaga o aniversário registrado de um membro. |
+
+!!! note "Permissão"
+    Os comandos `/aniversario-admin` só funcionam para quem tem **Administrador** no servidor.
+
+## Configuração
+
+Configure pelo **[Dashboard](https://admin.delfus.app)**, em **Eventos → Aniversários**:
+
+1. **Ative a funcionalidade** no botão de liga/desliga (vem desligada por padrão).
+2. **Canal de Anúncios:** onde os parabéns são postados. Sem canal, nada sai.
+3. **Fuso Horário:** o fuso do seu público (padrão: horário de Brasília). É ele que define quando "é o dia".
+4. **Horário de Envio:** a hora cheia em que os parabéns saem (padrão: **09:00**).
+5. **Cargo de Aniversariante** *(opcional)*: um cargo que o bot dá no dia e tira no dia seguinte. Deixe em "Nenhum" se não quiser usar.
+6. **Ano de Nascimento:** escolha a política: **Opcional**, **Obrigatório** ou **Desativado**.
+7. **Personalize as mensagens:** monte a embed de parabéns e o template do `/aniversario proximos` nos editores visuais.
+8. Clique em **Salvar**.
+
+### A política do "ano de nascimento"
+
+Esse campo decide se a idade aparece:
+
+- **Opcional** *(padrão)*: a pessoa escolhe se informa o ano. Quem informa tem a idade mostrada; quem não informa, só a data.
+- **Obrigatório:** sem ano, sem registro.
+- **Desativado:** o ano é ignorado e nunca guardado. A idade nunca aparece.
+
+### Personalizando a mensagem
+
+Na embed de parabéns você pode usar estes marcadores, que o bot preenche sozinho:
+
+- `{@user}`: menção do aniversariante
+- `{user}`: nome dele
+- `{user.tag}`: tag completa
+- `{age}`: idade que está completando (só aparece se tiver ano registrado)
+- `{guild}`: nome do servidor
+
+Não montou nada? O Delfus usa um modelo padrão festivo automaticamente.
+
+!!! warning "Permissões do bot"
+    Para postar os parabéns, o bot precisa poder **enviar mensagens** e **inserir links/embeds** no canal. Para usar o cargo de aniversariante, ele precisa de **Gerenciar Cargos**, e o cargo dele tem que estar **acima** do cargo de aniversariante na hierarquia. Sem isso, ele não consegue dar nem tirar o cargo.
+
+## Exemplos
+
+!!! example "Celebrar todo mundo, sem expor idade"
+    Defina o ano como **Desativado**, escolha um canal de avisos e o horário das 09:00. Os membros registram só dia e mês, e os parabéns saem sem mencionar idade. Bom para comunidades onde idade é assunto sensível.
+
+!!! example "Público internacional"
+    Tem gente de fora? Ajuste o **Fuso Horário** para o do seu público principal (ex.: `Europe/Lisbon`) e coloque o horário num momento de pico, tipo 18:00. Assim o "feliz aniversário" aparece quando a galera está online.
+
+!!! example "Destacar o aniversariante do dia"
+    Crie um cargo "🎉 Aniversariante", coloque ele no topo da lista de cargos para ganhar cor e destaque, e selecione em "Cargo de Aniversariante". No dia, o bot dá o cargo; no dia seguinte, tira. O cargo circula sozinho de um aniversariante para o próximo.
+
+## Perguntas frequentes
+
+### Por que os parabéns não saíram?
+Confira três coisas: a funcionalidade está ativada? Tem um canal definido? O bot consegue enviar mensagens nele? O anúncio também respeita o **fuso** e o **horário** que você configurou, então só dispara quando a hora local bate.
+
+### Registrei a data errada, e agora?
+Você não muda sozinho depois de gravar. Peça a um admin para usar `/aniversario-admin definir-usuario` (corrige) ou `/aniversario-admin remover-usuario` (apaga, e aí você registra de novo).
+
+### A idade vai aparecer nos parabéns?
+Só se o ano estiver registrado. Com a política **Desativado**, o ano nunca é guardado e a idade nunca aparece. Com **Opcional**, aparece só para quem informou.
+
+### Posso ter aniversários diferentes em servidores diferentes?
+Pode. O registro é por servidor, então cada comunidade tem a própria lista, independente das outras.
+
+!!! tip "Dica"
+    Use a política **Opcional** ou **Obrigatório** para o ano e coloque o marcador `{age}` na embed. Assim os parabéns mostram quantos anos a pessoa está completando, e a mensagem fica mais pessoal.
+
+Veja também: [Mensagens e embeds](mensagens.md), [Automações de canal](automacoes.md), [Famílias](familia.md).
+
+
+---
+
+<!-- funcionalidades/anti-invite.md -->
+
+# Anti-invite
+
+Bloqueia quem entra no seu servidor Discord só pra postar `discord.gg` e roubar seus membros. O Anti-invite do Delfus apaga a mensagem na hora e pune o autor, sem você precisar vigiar o chat.
+
+Ele distingue os seus convites dos de fora. Links criados dentro do seu servidor e sua URL personalizada passam normalmente. Qualquer link apontando pra outro lugar é barrado.
+
+![Configuração do anti-invite no painel do Delfus](../assets/dashboard/anti-invite.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Configuração do anti-invite no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O bot monitora as mensagens dos membros (ignora as de outros bots). A cada envio, faz uma checagem rápida: tem link de convite? É do seu servidor ou de fora?
+
+- Convite **do seu servidor**: passa (comportamento padrão).
+- Convite **de fora**: a mensagem some e a punição configurada entra em ação.
+
+Tudo em tempo real, no instante do envio. Sem fila nem espera.
+
+Você não precisa dizer ao bot quais convites são seus. Ele monta a lista sozinho na inicialização e atualiza sempre que um convite é criado ou expira. Um link recém-feito por um membro legítimo já vale como interno na hora.
+
+!!! example "Exemplo"
+    Um usuário entra e posta no chat geral: "vem pro meu server, melhor que esse aqui: discord.gg/outroserver".
+
+    O Delfus apaga a mensagem na hora, manda um aviso marcando o autor (que some em ~8 segundos pra não poluir o canal), registra no seu canal de logs e aplica a punição configurada, digamos 10 minutos de silêncio.
+
+Na violação, o bot faz quatro coisas independentes. Se uma falhar, as outras seguem:
+
+1. **Apaga a mensagem** com o convite.
+2. **Avisa no canal** (opcional, ligado por padrão) marcando o autor. O aviso some sozinho em ~8 segundos.
+3. **Registra um log** no canal que você escolher, com embed detalhado: quem foi, em qual canal, a ação aplicada e os códigos detectados.
+4. **Pune o membro** conforme você configurou: nada, advertência, silêncio temporário, expulsão ou banimento.
+
+## Comandos
+
+Não há comando de barra. O Anti-invite roda 100% automático e todos os ajustes ficam no painel.
+
+## Configuração
+
+Configure pelo painel em [admin.delfus.app](https://admin.delfus.app), na seção **Anti-invite**. As opções principais:
+
+- **Ativar/desativar:** liga ou desliga o módulo. Vem desligado por padrão.
+- **Permitir convites do próprio servidor:** ligado por padrão, libera seus links e a URL personalizada. Desligue pra bloquear **qualquer** convite, inclusive os seus.
+- **Canais liberados:** canais onde o módulo nunca atua. Útil pra áreas de divulgação ou parcerias.
+- **Cargos liberados:** membros com qualquer um desses cargos ficam isentos. Bom pra equipe e parceiros oficiais.
+- **Ação na violação:** o que fazer com quem manda convite proibido: `none` (só apaga), `warn`, `mute`, `kick` ou `ban`.
+- **Duração do silêncio:** em segundos, quando a ação é `mute`. De 1 segundo até 28 dias (limite do Discord). Sem definir, o padrão é 10 minutos.
+- **Motivo:** texto livre (até 500 caracteres) usado na punição e no aviso.
+- **Avisar no canal:** liga/desliga o aviso público ao autor. Ligado por padrão.
+- **Texto do aviso:** mensagem personalizada (até 2.000 caracteres). Em branco, usa um texto padrão.
+- **Canal de logs:** onde cada remoção fica registrada. Opcional.
+
+!!! note "Aplica na hora"
+    Depois de salvar, a configuração vai pro bot automaticamente. Não precisa reiniciar nada.
+
+!!! warning "Permissões"
+    O bot precisa de **Gerenciar Mensagens** (apagar), **Gerenciar Servidor** (reconhecer os convites internos), **Enviar Mensagens** (avisos e logs) e a permissão da punição escolhida (**Moderar Membros**, **Expulsar** ou **Banir**).
+
+    O cargo do bot precisa estar **acima** do cargo de quem ele vai punir. Senão o Discord recusa o mute/kick/ban.
+
+## Exemplos
+
+!!! example "Bloquear concorrentes, mas liberar seus próprios links"
+    Ative o módulo, mantenha "permitir convites do próprio servidor" **ligado** e escolha `mute` com 600 segundos.
+
+    Resultado: seus membros compartilham links do seu servidor à vontade, mas qualquer `discord.gg` de fora é apagado e o autor fica 10 minutos de castigo.
+
+!!! example "Tolerância zero, exceto num canal"
+    Ative o módulo, **desligue** "permitir convites do próprio servidor" e adicione o canal de parcerias aos canais liberados.
+
+    Agora nenhum convite passa em lugar nenhum, só naquele canal onde a equipe divulga.
+
+!!! example "Moderação suave, só pra acompanhar"
+    Use a ação `none`, mantenha o aviso ligado com um texto educado e configure um canal de logs.
+
+    O bot apaga os convites externos, avisa o autor de forma amigável e guarda o histórico pra equipe, sem punir ninguém.
+
+## Perguntas frequentes
+
+### Os convites do meu próprio servidor são apagados?
+Não, desde que "permitir convites do próprio servidor" esteja ligado (o padrão). O bot reconhece seus links e sua URL personalizada como internos. Se desligar, tudo é removido, inclusive os seus.
+
+### A equipe de moderação também é afetada?
+Não, se você colocar os cargos da equipe nos **cargos liberados**. Quem tem um cargo liberado é ignorado pelo Anti-invite. O mesmo vale pra canais inteiros, via **canais liberados**.
+
+### Por que o aviso no canal some sozinho?
+É de propósito. O aviso marcando o autor some em ~8 segundos pra não acumular mensagens de moderação no chat. Pra registro permanente, use um **canal de logs**.
+
+### O bot pega convites com `https://`, `www` ou em maiúsculas?
+Pega tudo. Reconhece `discord.gg`, `discord.com/invite` e `discordapp.com/invite`, com ou sem `https://` e `www.`, sem ligar pra maiúsculas ou minúsculas.
+
+!!! tip "Dica"
+    Combine as duas listas: **cargos liberados** pra equipe e parceiros oficiais, **canais liberados** pra áreas de divulgação. Você bloqueia convites externos no servidor inteiro sem atrapalhar quem precisa compartilhar links.
+
+Veja também: [Anti-raid](anti-raid.md), [Honeypot](honeypot.md), [Encurtador de links](links.md).
+
+
+---
+
+<!-- funcionalidades/anti-raid.md -->
+
+# Anti-raid
+
+O Anti-raid do Delfus bloqueia ataques de golpe em massa: dezenas de contas despejando a mesma arte ("sorteio do MrBeast", "código promocional de crypto", "resgate seu prêmio em USDT") em vários canais do seu servidor Discord. Ele detecta, apaga a mensagem, pune o autor, limpa o rastro e avisa a moderação. Automático, em segundos.
+
+![Configuração do anti-raid no painel do Delfus](../assets/dashboard/anti-raid.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Configuração do anti-raid no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Quando alguém posta uma mensagem com imagem num servidor com o Anti-raid ligado, o bot analisa a imagem. Ele roda checagens em ordem, das mais leves para as mais pesadas, e para na primeira que confirmar um golpe.
+
+São três:
+
+- **Reincidência.** Ao punir alguém, o bot marca a pessoa como golpista por 5 minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.
+- **Velocidade.** Se a mesma pessoa joga imagens em vários canais em poucos segundos, ou se um monte de contas novas posta junto, o bot trata como ataque (detalhes abaixo).
+- **Imagem conhecida.** A camada principal. O bot calcula uma impressão digital visual da imagem e compara com uma base de golpes conhecidos. Se bater, é ataque.
+
+!!! example "Exemplo"
+    Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast: resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor, antes que mais alguém clique no link.
+
+### Velocidade: flood e enxame
+
+Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta (padrão: 10 segundos) e reage a dois cenários:
+
+- **Uma pessoa floodando vários canais.** Se a mesma conta espalha imagens por vários canais distintos de uma vez (padrão: 3 canais em 10 segundos), é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.
+- **Enxame de contas novas.** Se várias contas recém-chegadas (padrão: 5 contas que entraram há menos de 24h) começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal (slowmode de 30s) e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.
+
+!!! note "Detalhe"
+    A idade da conta no caso do enxame conta a partir de quando o membro entrou no servidor, não da data de criação no Discord.
+
+### Aprendizado contínuo
+
+Quando aparece uma arte de golpe nova que o bot ainda não conhece, ele tenta aprender com ela sem travar a resposta ao usuário.
+
+Em segundo plano, o bot lê o texto da imagem (OCR) e procura palavras típicas de golpe: crypto, "claim", "airdrop", "promo code", "withdrawal success", "MrBeast", "Elon" e outras. Para não errar, ele só considera golpe quando o texto bate em pelo menos 2 categorias diferentes.
+
+Ao reconhecer o padrão, ele memoriza a arte para sempre. A primeira mensagem com uma arte nova pode escapar, mas na próxima vez o bot barra na hora.
+
+!!! note "Importante"
+    Essa leitura de texto serve só para aprender. Ela não pune a mensagem atual. Quem pune são as camadas rápidas de reconhecimento de imagem e de velocidade.
+
+### O que acontece quando um ataque é confirmado
+
+Assim que qualquer camada confirma o golpe, o bot, em sequência:
+
+1. **Apaga** a mensagem.
+2. **Marca o autor como golpista por 5 minutos**, para apagar tudo que ele postar nesse intervalo.
+3. **Aplica a punição** configurada: advertir, silenciar, expulsar ou banir.
+4. **Avisa o canal de moderação**: qual módulo disparou, quem foi punido, qual ação e o motivo.
+5. **Limpa o rastro**: varre os canais e apaga tudo que aquele usuário postou nos últimos 10 minutos.
+
+!!! tip "Erra pro lado seguro"
+    Se qualquer etapa falhar (download da imagem, leitura, cache indisponível), o bot prefere deixar passar a punir por engano. E ele só pune quem está abaixo do cargo dele na hierarquia. Alguém acima do bot não é tocado.
+
+## Comandos
+
+O Anti-raid não tem comandos de barra. Ele age sozinho sobre as mensagens dos canais. Toda a configuração é feita pelo painel.
+
+## Configuração
+
+Tudo pelo Dashboard, em [admin.delfus.app](https://admin.delfus.app), na seção **Anti-Raid**. Selecione o servidor, ajuste as opções e clique em **Salvar**. Para desligar tudo de uma vez, use **Remover Anti-Raid**.
+
+**Configuração global**
+
+- **Canal de Alerta:** onde a moderação recebe os avisos. Obrigatório: sem ele, o Anti-raid não funciona. Use um canal só da staff.
+
+**Módulo "MrsBeast Hack" (reconhecimento de imagem)**
+
+Um interruptor liga ou desliga o módulo. Com ele ativo, você define:
+
+- **Ação:** o que fazer com o golpista: **Advertência**, **Mute** (duração de 60s a 28 dias; padrão 10 min), **Kick** ou **Ban** (padrão).
+- **Sensibilidade:** de 5 a 30 (padrão 12). Quanto menor, mais sensível (pega variações, mas pode dar falso-positivo). Quanto maior, mais tolerante. O recomendado fica entre 10 e 15.
+- **Mínimo de imagens:** de 1 a 10 (padrão 1). Quantas imagens a mensagem precisa ter para o bot analisar. Em 1, qualquer imagem é checada.
+- **Motivo (opcional):** texto que aparece na punição e no alerta. Vazio, o bot usa um padrão.
+
+!!! note "Limites finos"
+    As regras de velocidade (flood e enxame) fazem parte do Anti-raid, mas seus números exatos são ajustados pela equipe Delfus por servidor. Os padrões: 3 canais em 10s para flood de um usuário; 5 contas com menos de 24h para enxame; slowmode de 30s no bloqueio brando.
+
+## Exemplos
+
+!!! example "Servidor grande, proteção firme"
+    Ative o **MrsBeast Hack**, deixe a ação em **Ban**, sensibilidade em torno de 12 e aponte o **Canal de Alerta** para a staff. Todo print do "sorteio do MrBeast" é apagado e o autor banido na hora, com o registro caindo no canal da moderação.
+
+!!! example "Modo cauteloso, sem banir na hora"
+    Prefere revisar antes? Escolha a ação **Mute** com 600 segundos. O golpe ainda é apagado e o autor fica calado por 10 minutos, tempo de a moderação conferir o alerta e decidir se bane manualmente.
+
+!!! example "Servidor de artes/memes"
+    Se membros legítimos postam imagens parecidas com golpes, suba a **Sensibilidade** para 15 e considere aumentar o **Mínimo de imagens**. O bot fica mais tolerante e foca só nos ataques óbvios.
+
+## Requisitos
+
+Para agir, o bot precisa das permissões certas:
+
+- **Gerenciar mensagens:** para apagar o golpe e limpar o rastro.
+- **Banir** e/ou **Expulsar membros:** conforme a ação escolhida (o flood sempre bane).
+- **Moderar membros (timeout):** se a ação for silenciar.
+- **Gerenciar canais:** para ligar o slowmode num enxame.
+
+Além disso, o cargo do bot precisa estar acima dos membros que ele vai punir, e o **Canal de Alerta** precisa estar configurado. Sem ele, o módulo nem roda.
+
+## Perguntas frequentes
+
+### Funciona com qualquer imagem ou só com golpes conhecidos?
+Ele já vem com uma base de golpes de referência e barra qualquer imagem parecida. Artes totalmente novas podem passar na primeira vez, mas o bot lê o texto delas em segundo plano e, ao reconhecer o padrão, memoriza a arte para barrar na hora depois.
+
+### O bot pode banir um membro de boa-fé por engano?
+É raro: na dúvida, ele deixa passar. Todo bloqueio fica registrado no Canal de Alerta, então dá para revisar e reverter manualmente. Se aparecerem muitos falsos positivos, aumente a Sensibilidade.
+
+### Ele bane todo mundo numa invasão de contas novas?
+Não. Enxame de contas novas gera só um bloqueio brando: modo lento no canal e aviso à moderação. Banimento automático rola para golpes reconhecidos individualmente e para o flood de um único usuário em vários canais.
+
+### Por que o golpe sumiu de vários canais, não só do que eu vi?
+Ao pegar o golpista, o bot varre os canais e apaga tudo que ele postou nos últimos 10 minutos, removendo o que já tinha espalhado antes de ser pego.
+
+!!! tip "Dica"
+    Aponte o **Canal de Alerta** para um canal exclusivo da moderação e fique de olho nele. É por ali que cada bloqueio e alerta chega, o que te deixa confirmar ataques, revisar rápido e reverter na mão caso um membro legítimo seja afetado.
+
+Veja também: [Anti-invite](anti-invite.md), [Honeypot](honeypot.md), [Backups](backup.md).
+
+
+---
+
+<!-- funcionalidades/auto-roles.md -->
+
+# Cargos automáticos (auto-role)
+
+Toda conta nova que entra no seu servidor Discord já recebe do Delfus os cargos certos, sem ninguém da equipe atribuir na mão. Pessoas ganham uma lista de cargos; bots ganham outra, separada.
+
+![Cargos automáticos no painel do Delfus](../assets/dashboard/auto-roles.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Cargos automáticos no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Alguém entra, o Delfus entrega os cargos. Tudo no momento da entrada.
+
+Antes de entregar, ele confere cada conta:
+
+- **É pessoa ou bot?** Humanos recebem a lista de cargos de membros. Bots recebem a lista de bots.
+- **Espera 1,5 segundo.** Esse atraso deixa o Discord assentar a entrada e segura a fila quando muita gente entra de uma vez. Nessa fila, pessoas têm prioridade sobre bots.
+- **Entrega os cargos** um por um, registrando "Auto-role" no log de auditoria do servidor.
+
+Alguns cargos são pulados de propósito: os que o membro já tem, os que foram apagados, e os que estão acima do Delfus na hierarquia (o Discord não deixa ele entregar cargo mais alto que o dele).
+
+!!! example "Exemplo"
+    Uma pessoa entra no servidor. Em poucos segundos ela aparece com o cargo de "Membro", a cor da comunidade e acesso aos canais de bate-papo. Logo depois entra um bot: esse ganha só o cargo "Bots", sem as cores e acessos pensados para gente.
+
+!!! note "E se o Discord engasgar?"
+    Se rolar instabilidade no meio da entrega, o Delfus lembra quais cargos já deu e tenta de novo de onde parou, até 5 vezes, sem duplicar nada. Se o membro entrou e saiu correndo, ele percebe e para de tentar.
+
+## Comandos
+
+Essa função não tem comando de barra. Tudo é configurado no painel: você define uma vez e o Delfus aplica a cada entrada.
+
+## Configuração
+
+No Dashboard em [admin.delfus.app](https://admin.delfus.app), seção **Cargos automáticos**:
+
+1. **Ligue a função** no botão no topo do cartão.
+2. **Escolha os cargos para Membros.** Pode colocar vários.
+3. **Escolha os cargos para Bots.** Também pode colocar vários.
+4. **Clique em Salvar.** Já vale para a próxima pessoa que entrar.
+
+!!! tip "Pode deixar uma lista vazia"
+    Quer cargo só para membros e nada para bots? Quando uma lista está vazia, o Delfus não faz nada para aquele tipo de conta.
+
+Os seletores só mostram cargos que o Delfus consegue dar. Cargos gerenciados por integração (cargo de outros bots, boosters do Nitro, etc.) não aparecem, porque o próprio Discord não deixa atribuir eles na mão.
+
+!!! warning "Hierarquia importa"
+    O Delfus precisa da permissão **Gerenciar cargos**, e o **cargo dele tem que estar acima** de tudo que ele vai entregar na lista de cargos do servidor. Esse é o motivo número 1 de "configurei e o cargo não vem".
+
+## Exemplos
+
+!!! example "Cargo de Membro automático"
+    Crie um cargo "Membro" com acesso aos canais públicos e coloque na lista de Membros. A partir daí, toda pessoa que entrar já enxerga e participa do servidor.
+
+!!! example "Bots agrupados e isolados"
+    Crie um cargo "Bots" com cor própria, posicionado abaixo dos cargos humanos, e use só na lista de Bots. Todo bot que entrar fica visualmente separado, sem as cores e acessos da galera.
+
+!!! example "Boas-vindas com cor"
+    Coloque um cargo de cor mais um cargo "Comunidade" na lista de Membros. Os novatos chegam com a cara do servidor e acesso ao bate-papo. Deixe os canais avançados para cargos que se conquistam depois.
+
+## Perguntas frequentes
+
+### Um dos cargos não foi dado. Por quê?
+Quase sempre é hierarquia: o cargo está acima do Delfus na lista. Mova o cargo do Delfus para cima dele. Também pode ser cargo apagado, falta da permissão "Gerenciar cargos", ou o membro já ter aquele cargo.
+
+### Demora para aplicar?
+Tem um atraso de propósito (cerca de 1,5 segundo), além do tempo normal do Discord. Na prática, o membro recebe tudo em poucos segundos.
+
+### Mudei a config, preciso reiniciar o bot?
+Não. O Delfus lê a configuração a cada entrada. O que você salvar já vale para a próxima pessoa.
+
+### E se o membro entrar e sair num piscar de olhos?
+O Delfus tenta de novo automaticamente e lembra o que já entregou, sem duplicar. Se o membro saiu antes de receber, ele encerra a tentativa.
+
+!!! tip "Dica"
+    Deixe o cargo "Bots" **abaixo** dos cargos humanos e com permissões restritas. Os bots entram agrupados e isolados, e as cores e acessos ficam reservados para as pessoas. E lembre: o cargo do Delfus precisa ficar **acima** de tudo que ele vai entregar.
+
+Veja também: [Boas-vindas e despedida](recepcao.md), [Cargos por reação](reaction-roles.md), [Recompensas de boost](boost.md).
+
+
+---
+
+<!-- funcionalidades/automacoes.md -->
+
+# Automações de canal
+
+Trave cada canal do seu servidor Discord numa regra ("aqui só entra imagem", "aqui é só comando") e o Delfus aplica em tempo real, sem moderador online. Ele também abre um tópico de discussão por post e publica seus anúncios sozinho. Tudo fica registrado pra você acompanhar pelo painel.
+
+## Como funciona
+
+Cada canal pode ter uma ou mais automações. A cada mensagem, o Delfus confere as regras e age na hora. Canal sem automação não muda nada: as regras só valem onde você liga.
+
+Algumas coisas o bot sempre ignora, não importa a configuração: mensagens de sistema do Discord, mensagens de webhooks e as próprias mensagens (assim ele nunca se autoapaga).
+
+Você também escolhe quem passa livre:
+
+- **Ignorar bots**: outros bots não são afetados pela regra (ligado por padrão).
+- **Cargos liberados**: quem tiver um dos cargos da lista passa batido. Bom pra equipe postar à vontade.
+
+!!! example "Exemplo"
+    Você cria a regra "só imagens" no canal de memes. Alguém manda um textão sem foto. O Delfus apaga na hora, deixa um aviso rápido e já reage com 👍 e 👎 no próximo print pra abrir a votação.
+
+### Quando o canal tem várias regras
+
+Empilhou mais de uma automação no mesmo canal? O Delfus roda por ordem de prioridade, número menor primeiro. Assim que uma regra apaga a mensagem, as seguintes nem rodam (a mensagem já não existe). Regras que não apagam (reagir, criar tópico, publicar) não interrompem a fila. Com uma regra só, deixa a prioridade em 0.
+
+### Os avisos temporários
+
+Ao apagar uma mensagem, o bot manda um aviso curto com o motivo e some com ele sozinho uns 8 segundos depois, pra não poluir o canal. Dois cuidados:
+
+- Os avisos nunca dão ping em @everyone, @here, cargos ou pessoas. Mesmo que o texto tenha menções, elas são neutralizadas.
+- Se o mesmo membro manda mensagem atrás de mensagem, os avisos ficam limitados a um a cada 10 segundos por pessoa (pro bot não virar spam). A remoção acontece em todas as vezes; só o aviso é segurado.
+
+!!! note "E a privacidade?"
+    Cada ação do bot fica registrada (apagou, avisou, criou tópico, publicou), mas o registro guarda só identificadores e o motivo, nunca o conteúdo da mensagem. É isso que alimenta as estatísticas do painel.
+
+### Os cinco tipos de automação
+
+São cinco "modos" de canal:
+
+- **Somente mídia**: aceita só imagens, GIFs, vídeos e/ou figurinhas (você escolhe quais). Pode exigir tamanho mínimo de imagem pra barrar emoji salvo, bloquear legendas e reagir automaticamente com emojis. O resto é apagado.
+- **Somente comandos**: passa só comando de barra (slash) ou mensagem que começa com os prefixos que você definir (`/`, `!`, `?`...). Conversa solta é removida, com um aviso que pode linkar o canal de bate-papo certo.
+- **Somente arquivos**: só entram anexos válidos, com extensão permitida (ex.: `.pdf`, `.zip`) e tamanho dentro do intervalo que você definir. Sem arquivo válido, é apagado.
+- **Tópico automático**: a cada post novo, o bot abre um tópico atrelado a ele. O nome sai de um modelo seu, com as etiquetas `{author}` (quem postou) e `{date}` (data de hoje). Você escolhe quando ele arquiva sozinho.
+- **Publicação automática**: em canais de anúncio, o bot publica suas mensagens pra todo mundo que segue o canal, sem ninguém clicar em "Publicar". Antes, passa pelos filtros que você definir (cargo, conteúdo rico, tamanho mínimo de texto).
+
+!!! warning "A publicação automática só vale em canais de anúncio"
+    Em canal de texto normal, esse tipo é ignorado. Pra usá-lo, o canal precisa ser do tipo anúncio.
+
+## Comandos
+
+Esta funcionalidade é configurada só pelo painel. Não tem comando no Discord.
+
+## Configuração
+
+Tudo acontece no Dashboard, em [admin.delfus.app](https://admin.delfus.app), na seção **Automações de canal**. Cada automação tem campos comuns e campos do tipo escolhido.
+
+Em toda automação você define:
+
+- **Canal**: onde a regra vale.
+- **Tipo**: mídia, comandos, arquivos, tópico ou publicação.
+- **Ativado**: liga e desliga sem precisar apagar.
+- **Ignorar bots**: não aplica a regra a bots (padrão: ligado).
+- **Cargos que ignoram a regra**: até 50 cargos livres da automação.
+- **Prioridade**: de 0 a 100, menor roda primeiro. Só importa com mais de uma regra no mesmo canal.
+
+E os campos de cada tipo:
+
+| Tipo | Você ajusta |
+| --- | --- |
+| **Somente mídia** | Quais mídias entram, permitir legenda, tamanho mínimo de imagem (0 a 4096px), mensagem de aviso (até 500 caracteres) e até 10 emojis de reação (inclui os personalizados). |
+| **Somente comandos** | Prefixos (1 a 10, padrão `/`), mensagem de redirecionamento e um canal de conversa opcional pra virar link no aviso. |
+| **Somente arquivos** | Extensões permitidas (até 50; vazio = todas), tamanho mínimo e máximo em KB (máximo 0 = sem limite) e mensagem de aviso. |
+| **Tópico automático** | Modelo do nome com `{author}` e `{date}` (padrão `{author} — {date}`) e quando arquivar: 1 hora, 1 dia, 3 dias ou 1 semana. |
+| **Publicação automática** | Atraso antes de publicar (0 a 1440 min; 0 = na hora), filtro de cargos, exigir imagem/conteúdo rico e tamanho mínimo de texto. |
+
+!!! note "Permissões"
+    Pro Delfus agir, ele precisa das permissões certas no canal: **Gerenciar mensagens** pra apagar, **Enviar mensagens** pros avisos, **Adicionar reações** pras reações automáticas, **Criar tópicos públicos** pro tópico automático e **publicar em canal de anúncio** pra publicação. Pra reagir com emojis personalizados, o bot também precisa ter acesso a eles.
+
+A página tem ainda uma aba de **estatísticas**, com os totais de mensagens apagadas, tópicos criados, publicações e avisos do servidor.
+
+## Exemplos
+
+!!! example "Canal de memes só com imagem e votação automática"
+    Crie uma automação **Somente mídia**, deixe ligados Imagens, GIFs e Vídeos, ponha um tamanho mínimo (uns 100px) pra cortar miniatura e adicione as reações 👍 e 👎. Cada print já abre a votação sozinho, e textão solto some na hora.
+
+!!! example "Canal de comandos do bot, sem bate-papo"
+    Configure **Somente comandos** com o prefixo `/`, aponte o `#bate-papo` como redirecionamento e escreva um aviso simpático. Quem mandar conversa ali é mandado pro canal certo. Quer a staff escrevendo livre? Adicione o cargo dela às exceções.
+
+!!! example "Canal de sugestões onde cada post vira discussão"
+    Use **Tópico automático** com o modelo `{author} — {date}` e arquivamento de 3 dias. Toda sugestão ganha o próprio tópico, e a comunidade discute sem bagunçar o canal principal.
+
+!!! example "Canal de anúncios que se espalha sozinho"
+    Num canal de anúncio seguido por outros servidores, ligue **Publicação automática** exigindo conteúdo rico e limitando aos cargos da equipe. Cada anúncio oficial vai automaticamente pra todos os seguidores.
+
+## Perguntas frequentes
+
+### A regra apaga as mensagens da minha equipe também?
+Não, se você adicionar os cargos dela à lista de "cargos que ignoram a regra". Quem tiver um desses cargos passa livre. Bots já são ignorados por padrão.
+
+### Posso ter mais de uma automação no mesmo canal?
+Pode. Elas rodam por prioridade (menor primeiro). Lembre: quando uma regra apaga a mensagem, as seguintes não rodam. Ajuste a ordem das regras de remoção com cuidado.
+
+### Por que meu aviso não menciona o cargo que coloquei nele?
+Por segurança. Os avisos automáticos nunca dão ping em @everyone, cargos ou pessoas, mesmo com a menção escrita no texto. Assim ninguém leva ping a cada mensagem removida.
+
+### A publicação automática não funciona no meu canal. Por quê?
+Ela só vale em canais de anúncio. Confira também se a mensagem passou nos filtros (cargo, conteúdo rico, tamanho mínimo de texto) e se o bot tem permissão pra publicar ali.
+
+!!! tip "Dica"
+    Em canal de mídia movimentado, ligue o **tamanho mínimo de imagem** (uns 64 a 100px) no "Somente mídia". Isso barra emoji salvo e miniatura minúscula, que tecnicamente são "imagens", e deixa o canal só com print e foto de verdade.
+
+Veja também: [Mensagens e embeds](mensagens.md), [Encurtador de links](links.md), [Aniversários](aniversarios.md).
+
+
+---
+
+<!-- funcionalidades/backup.md -->
+
+# Backups
+
+Recrie cargos, canais, categorias, permissões e configurações do seu servidor Discord com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. O Delfus tira uma "foto" da estrutura do servidor e guarda pra você restaurar quando precisar.
+
+![Backups do servidor no painel do Delfus](../assets/dashboard/backup.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Backups do servidor no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O Delfus salva uma foto da estrutura do servidor: cargos, canais, categorias, permissões e configurações. Mensagens e a lista de membros não entram. Só o esqueleto.
+
+Essa foto é compactada pra ocupar pouco espaço. Você gerencia tudo pelo painel que abre com `/backup`.
+
+São três peças que trabalham juntas:
+
+- **Backup de estrutura**: a foto principal, criada e restaurada pelo painel `/backup`.
+- **Backups automáticos**: o bot tira a foto sozinho, na frequência e horário que você definir.
+- **Snapshot de cargos por membro**: quando alguém sai, o Delfus guarda os cargos da pessoa pra você devolver depois com `/restaurar-cargos`.
+
+!!! example "Exemplo"
+    Você vai reorganizar todos os canais. Antes de mexer, roda `/backup`, clica em **Criar** e dá o nome "antes da reforma". Se a bagunça piorar, restaura essa foto e volta tudo ao lugar, sem reconfigurar nada na mão.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/backup` | Abre o painel de backups (só o dono do servidor). Por ali você cria, lista, restaura e deleta backups. |
+| `/restaurar-cargos` (`/restore-roles`) | Devolve a um membro os cargos guardados no snapshot mais recente. |
+
+## Configuração
+
+O dia a dia (criar, restaurar e deletar) acontece no painel `/backup`, dentro do Discord. Só o dono do servidor consegue abrir. A automação e os limites ficam no [Dashboard](https://admin.delfus.app).
+
+No painel `/backup` você tem quatro botões:
+
+- **Criar**: abre uma janela pedindo um nome (opcional). Em segundos o bot tira a foto e mostra um resumo: quantos cargos, canais e categorias foram salvos.
+- **Listar**: mostra todos os backups, com nome, data e contagens.
+- **Restaurar**: recria a estrutura a partir de um backup (mais sobre isso abaixo).
+- **Deletar**: remove um backup, com confirmação antes.
+
+!!! note "Limite de backups"
+    Cada servidor guarda um número máximo de backups (5 por padrão, de 1 a 10 no Dashboard). Quando você cria um novo acima do limite, o mais antigo some pra abrir espaço.
+
+No Dashboard, na página "Backups do Servidor", você liga o **Auto-Backup** e escolhe:
+
+- **Frequência**: *Diário* ou *Semanal (domingos)*.
+- **Horário**: a hora do dia em que ele roda. O horário é em UTC, então some 3 horas do horário de Brasília (06:00 UTC = 03:00 no Brasil).
+- **Backup de bans**: incluir ou não a lista de banimentos (vem ligado).
+- **Máximo de backups**: de 1 a 10.
+
+Na página "Backup de Usuários" você controla os snapshots de cargos por membro: liga a captura automática quando alguém sai e define quantas fotos guardar por pessoa (2 por padrão).
+
+### Restaurando um backup
+
+No botão **Restaurar**, escolha a foto e o modo:
+
+- **Aditivo** (seguro): recria cargos e canais ao lado do que já existe, sem apagar nada. Roda na hora.
+- **Destrutivo**: apaga os cargos e canais atuais antes de recriar tudo do zero a partir da foto. Como é irreversível, pede uma confirmação extra. O `@everyone`, cargos de bots/boosters e canais obrigatórios de Comunidade nunca são apagados.
+
+Em backups completos, você ainda escolhe o que recriar: cargos e canais (sempre), configurações do servidor, cargos e apelidos dos membros, e bans.
+
+A restauração roda em fases, num ritmo controlado pra não esbarrar nos limites do Discord. Em servidores grandes, pode levar alguns minutos. Você acompanha por uma barra de progresso e, no fim, recebe um resumo com o que deu certo e o que foi pulado.
+
+!!! warning "Suba o cargo do bot antes de restaurar"
+    O Delfus só recria cargos que estejam abaixo do cargo dele. Deixe o cargo do bot bem no topo da hierarquia antes de restaurar. Senão os cargos acima dele são pulados e aparecem como "hierarquia" no resumo.
+
+### Devolvendo cargos a quem saiu
+
+Com o snapshot automático ligado, o Delfus guarda os cargos de cada membro no momento em que ele sai. Depois, use `/restaurar-cargos` apontando a pessoa.
+
+O bot mostra um preview do que vai acontecer: quais cargos serão adicionados, quais a pessoa já tem e quais não dá pra aplicar (porque foram deletados, são de integrações ou estão acima do bot). Você confere e confirma.
+
+!!! note
+    O membro precisa estar de volta no servidor pra receber os cargos. Se ainda não voltou, o preview avisa que nada será aplicado.
+
+## Exemplos
+
+!!! example "Reforma que deu errado"
+    Você reorganizou os canais e o servidor virou uma confusão. Abra `/backup`, clique em **Restaurar**, escolha o backup "antes da reforma" no modo **Aditivo** e a estrutura antiga volta, lado a lado com o que já existe, sem apagar nada.
+
+!!! example "Servidor atacado"
+    Alguém invadiu e apagou vários canais. Abra `/backup`, **Restaurar**, pegue o backup mais recente. Use **Aditivo** pra trazer de volta o que foi perdido, ou **Destrutivo** se quiser zerar tudo e recriar exatamente como estava na foto.
+
+!!! example "Proteção no piloto automático"
+    No Dashboard, ligue o **Auto-backup**, escolha *Diário* às 06:00 UTC e deixe o máximo em 7. O Delfus passa a guardar uma semana inteira de fotos diárias, sem você fazer nada.
+
+!!! example "Membro antigo voltou"
+    Aquele moderador veterano saiu e agora voltou. Com o snapshot ligado, rode `/restaurar-cargos`, escolha ele, confira o preview e confirme. Todos os cargos que ele tinha voltam de uma vez.
+
+## Perguntas frequentes
+
+### O backup salva as mensagens dos canais?
+Não. Ele guarda só a estrutura: cargos, canais, categorias, permissões e configurações. Nunca o conteúdo das mensagens nem a lista de membros.
+
+### Posso restaurar sem apagar o que já existe?
+Sim, é o modo **Aditivo**: ele recria os itens ao lado dos atuais, sem deletar nada. O modo **Destrutivo** (que apaga antes) só roda depois de uma confirmação extra.
+
+### Por que alguns cargos não foram restaurados?
+Cargos acima do cargo do bot, cargos já deletados ou cargos de integrações não podem ser recriados. Eles aparecem no resumo como ignorados. Suba o cargo do bot ao topo e tente de novo.
+
+### Quantos backups o servidor guarda?
+De 1 a 10 (padrão 5), definido no Dashboard. Ao passar do limite, o mais antigo é apagado. Os snapshots de cargos por membro têm o próprio limite (padrão 2 por pessoa).
+
+### Preciso de alguma permissão pro bot?
+Sim. Ele precisa de **Gerenciar Cargos** e **Gerenciar Canais** pra criar e restaurar a estrutura. Pra restaurar configurações do servidor, também precisa de **Gerenciar Servidor**; pra restaurar bans, de **Banir Membros**.
+
+!!! tip "Dica"
+    Antes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo **Aditivo**, que não apaga nada e é fácil de desfazer. Deixe o **Destrutivo** só pra quando você realmente quer recomeçar do zero.
+
+Veja também: [Anti-raid](anti-raid.md), [Moderação e punições](moderacao.md).
+
+
+---
+
+<!-- funcionalidades/boost.md -->
+
+# Recompensas de boost
+
+Quando alguém impulsiona o seu servidor Discord, o Delfus agradece sozinho e ainda pode dar um VIP de presente pra quem apoiou. Sem a moderação precisar mexer um dedo.
+
+![Recompensas de boost no painel do Delfus](../assets/dashboard/boost.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Recompensas de boost no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O Delfus acompanha os boosts em tempo real. Assim que o Discord avisa que alguém começou ou deixou de impulsionar, o bot reage na hora.
+
+Quando alguém dá boost, você escolhe o que acontece:
+
+- **Mensagem de agradecimento:** o bot publica, no canal que você definir, a mensagem que você montou. Pode ser texto simples ou um embed com imagem e até 3 botões de link.
+- **VIP automático:** a pessoa ganha na hora o plano VIP que você escolher, válido pelos dias que você definir (padrão de 30 dias).
+
+As duas opções são independentes. Ative só a mensagem, só o VIP, ou os dois.
+
+Enquanto o boost continuar ativo, o Delfus renova o VIP sozinho. A pessoa nunca fica sem o benefício no meio do caminho.
+
+!!! example "Exemplo"
+    A Maria impulsiona o servidor. Em segundos aparece no canal de avisos: *"Maria acabou de dar boost! Agora temos 12 boosts"*. Ao mesmo tempo, ela recebe o cargo VIP de booster. O bot cuidou de tudo.
+
+### Variáveis para as mensagens
+
+Use estas variáveis em qualquer campo de texto. O bot troca pelo valor real no envio.
+
+| Variável | Vira |
+| --- | --- |
+| `{{@user}}` | Menção da pessoa que deu boost (notifica ela) |
+| `{{user}}` | Nome de exibição da pessoa (sem notificar) |
+| `{{server}}` | Nome do servidor |
+| `{{memberCount}}` | Total de membros |
+| `{{boostCount}}` | Total de boosts ativos |
+| `{{boostTier}}` | Nível de boost do servidor (0 a 3) |
+| `{{boostTierName}}` | Nome do nível (`Nenhum`, `Tier 1`, `Tier 2`, `Tier 3`) |
+
+!!! note "E quando alguém para de impulsionar?"
+    O Delfus também percebe quando alguém remove o boost e pode mandar uma mensagem de despedida, com as mesmas opções de personalização. Por enquanto essa parte é configurada nos bastidores do bot. O painel ainda não traz essa opção na interface.
+
+## Comandos
+
+Essa funcionalidade não tem comandos de barra. Toda a configuração é feita pelo [Dashboard](https://admin.delfus.app).
+
+## Configuração
+
+A configuração fica no Dashboard, na seção **Boost do Servidor**, separada por servidor. A tela tem duas abas: **Boost** e **VIP**.
+
+!!! warning "Antes de tudo, ative no Discord"
+    Vá em **Configurações do Servidor → Visão geral / Sistema** e ligue a opção **"Enviar uma mensagem quando alguém impulsionar este servidor"**, escolhendo um canal. Sem isso, o aviso de boost pode não chegar de forma confiável.
+
+### Aba Boost (a mensagem de agradecimento)
+
+1. Ligue o interruptor **Ativo** no topo do cartão.
+2. **Canal:** onde a mensagem vai aparecer.
+3. **Estilo:** escolha **Texto Simples** ou **Rich Embed** (cartão com título, cor, imagem etc.).
+4. **Imagem (opcional):** cole a URL de uma imagem.
+5. **Botões de link (até 3):** cada um com um texto e uma URL.
+
+Use as variáveis da tabela acima em qualquer campo de texto. O painel também mostra todas elas à mão.
+
+### Aba VIP (a recompensa automática)
+
+1. Ligue o interruptor **Ativo** no cartão **VIP por Boost**.
+2. **Tier VIP:** qual plano a pessoa ganha. Você precisa já ter pelo menos um plano VIP criado no servidor.
+3. **Duração (dias):** quanto tempo o VIP dura a cada concessão. De 1 a 365 dias, padrão de 30.
+
+Ao terminar, clique em **Salvar**. O botão **Deletar** remove a configuração inteira (mensagens e VIP) de uma vez.
+
+## Exemplos
+
+!!! example "Agradecer cada novo boost na frente de todo mundo"
+    Ative a aba Boost, escolha o canal de avisos e use algo como:
+    `{{@user}} acabou de dar boost! Agora temos {{boostCount}} boosts e estamos no {{boostTierName}}`
+    Toda vez que alguém impulsionar, o servidor vê o agradecimento e a pessoa é marcada.
+
+!!! example "Premiar boosters com VIP no piloto automático"
+    Crie um plano VIP só pra boosters, vá na aba VIP, selecione esse plano e deixe a duração em 30 dias. Quem impulsiona ganha o VIP na hora, e o bot renova sozinho enquanto o boost continuar. A moderação não precisa acompanhar quem ainda está impulsionando.
+
+!!! example "Uma mensagem caprichada com botões"
+    Monte a mensagem como embed, com a cor da marca do servidor e uma imagem comemorativa. Adicione botões de link como "Saiba mais sobre boost" ou "Entrar no canal VIP", apontando pra uma página ou canal de regras.
+
+## Perguntas frequentes
+
+### O membro perde o VIP assim que ele vence, mesmo continuando a impulsionar?
+Não. A cada 6 horas o bot revisa quem ainda está com boost ativo e renova o VIP de quem continua impulsionando, mesmo que a concessão anterior já tenha vencido. O benefício só acaba quando o VIP vence e o boost some.
+
+### Posso usar texto e embed ao mesmo tempo?
+Você escolhe um estilo por mensagem. No estilo embed, se você também preencher o campo de texto, o bot manda o texto junto com o embed. No estilo texto, vai só o texto (com a imagem como anexo, se houver).
+
+### Recebi uma reclamação de que a pessoa foi notificada sem querer. Por quê?
+A variável `{{@user}}` cria uma menção de verdade e notifica a pessoa. Para mostrar só o nome sem incomodar ninguém, use `{{user}}`.
+
+### Existe comando de barra pra configurar isso?
+Não. Mensagens e VIP são configurados só pelo Dashboard.
+
+!!! tip "Dica"
+    Deixe o VIP ativo com duração perto de 30 dias. Como o bot renova a cada 6 horas enquanto o boost estiver de pé, a pessoa só perde o benefício quando para de impulsionar de verdade. O VIP vira um incentivo contínuo pra manter o boost.
+
+Veja também: [VIP e assinaturas](vip.md), [Cargos automáticos](auto-roles.md).
+
+
+---
+
+<!-- funcionalidades/correio.md -->
+
+# Correio Elegante
+
+Deixe qualquer membro do seu servidor Discord mandar um recado anônimo para outro durante um evento que você marca na agenda. A staff aprova, o Delfus transforma o recado em post público com visual temático e quem enviou continua em segredo. Serve para Dia dos Namorados, festa junina, aniversário do servidor ou qualquer data comemorativa.
+
+## Como funciona
+
+O Correio Elegante é um evento com hora marcada. Você define início e fim, e o comando `/correio` só responde dentro dessa janela, com o evento ligado no painel. Fora disso, o membro vê a mensagem de "evento inativo" que você escreveu.
+
+O caminho de um recado:
+
+1. **O membro envia** com `/correio`, escolhe o destinatário e escreve o recado (até 500 caracteres). A resposta é sempre privada: ninguém ao lado descobre quem mandou.
+2. **A staff avalia** num canal interno. Lá aparece o recado, quem enviou, para quem é, e dois botões: **Aprovar** e **Rejeitar**.
+3. **Se aprovado, vira post anônimo** no canal público, com o tema que você escolheu (cor, banner, ícone, moldura). Mostra para quem é, nunca quem enviou.
+
+!!! example "Na prática"
+    Ana usa `/correio` e manda um recado fofo pro Bruno. Só a Ana vê a confirmação. O recado cai no canal da moderação, alguém clica em **Aprovar**, e ele aparece no `#correio-publico` marcando o Bruno. O Bruno nunca vai saber que foi a Ana.
+
+O bot cuida de alguns limites sozinho:
+
+- Não dá pra mandar correio para **bots** nem **para si mesmo**. O recado é recusado na hora.
+- Há um **intervalo entre envios** (cooldown) por membro, pra ninguém inundar a fila. Tentativas barradas por validação não reiniciam esse cronômetro.
+- **Rejeitar** descarta o recado de vez: some da fila e nada é publicado. Sem histórico, sem aviso ao remetente.
+
+!!! note "Detalhes que valem saber"
+    O cooldown vive na memória do bot. Se ele reiniciar, os contadores zeram. Cooldown `0` desliga a espera. E só quem tem um dos cargos de aprovação consegue usar os botões; quem mais clicar recebe um aviso privado e nada acontece.
+
+### A moldura de texto
+
+Cada tema pode ter uma moldura: um texto fixo que envolve o recado do membro. Use o marcador `{{mensagem}}` no lugar onde o recado deve entrar.
+
+!!! example "Moldura em ação"
+    Com a moldura `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"`, um recado como "você é incrível" sai decorado, com saudação e assinatura. Sem moldura, o recado aparece sozinho.
+
+Ligue **mencionar destinatário** e ele recebe um ping de verdade na publicação. Ligue um **cargo de recompensa** e todo mundo com correio aprovado ganha esse cargo automaticamente.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/correio usuario:<membro> mensagem:<texto>` | Manda um correio anônimo para outro membro. O recado (até 500 caracteres) vai para a fila da staff e, se aprovado, é publicado sem revelar quem enviou. Só funciona durante o evento ativo. |
+
+!!! note
+    Toda a configuração do Correio Elegante é feita pelo painel. Não há comandos de administração.
+
+## Configuração
+
+A configuração fica no Dashboard, em [admin.delfus.app](https://admin.delfus.app), na seção **Eventos → Correio Elegante**. Com o evento ligado, preencha:
+
+- **Período do evento**: data/hora de início e fim (o fim tem que ser depois do início).
+- **Canal de aprovação**: onde a staff avalia (deixe visível só para ela).
+- **Canal público**: onde os correios aprovados aparecem.
+- **Cargos de aprovação**: um ou mais cargos que podem aprovar/rejeitar (pelo menos um).
+- **Temas**: pelo menos um, com um marcado como **ativo**. Cada tema tem nome, título, cor (`#rrggbb`) e, opcionalmente, banner, ícone, rodapé e moldura.
+
+Ajustes opcionais:
+
+- **Intervalo entre envios**: de `0` a `86400` segundos. O sugerido é 300 (5 minutos).
+- **Mencionar destinatário**: liga/desliga o ping na publicação.
+- **Cargo de recompensa**: dado automaticamente a quem tem correio aprovado.
+- **Mensagem de evento inativo**: o texto que aparece fora do período.
+
+!!! warning "O painel é exigente (de propósito)"
+    Com o evento ativado, ele só salva se houver canal de aprovação, canal público, ao menos um cargo de aprovação, ao menos um tema, um tema ativo válido e datas coerentes. Faltou algo, não passa.
+
+Confira também as permissões do bot:
+
+- **Enviar Mensagens** e **Inserir Links/Embeds** nos dois canais, mais acesso para enxergá-los.
+- Se usar cargo de recompensa: **Gerenciar Cargos**, com o cargo de recompensa **abaixo** do cargo mais alto do bot. Sem isso, a recompensa falha em silêncio, mas a publicação acontece normalmente.
+
+## Exemplos
+
+!!! example "Dia dos Namorados"
+    Crie o tema "Dia dos Namorados" com cor rosa, um banner romântico e a moldura `"💕 Alguém preparou um recado especial:\n\n{{mensagem}}\n\nCom carinho 💌"`. Marque o período de 12 a 14 de junho, aponte `#correio-publico` pra publicação e `#staff-correio` pra aprovação, e dê o cargo de aprovação à moderação. Nesses dias, os recados anônimos pipocam e a staff vai liberando.
+
+!!! example "Recompensar quem participa"
+    Crie o cargo "Cupido 2026" como recompensa. Quem tem um correio aprovado ganha o cargo na hora, sem ninguém saber quantos ou quais enviou.
+
+!!! example "Segurar o spam"
+    Ponha o cooldown em 600 segundos (10 minutos). Cada membro só manda um novo correio a cada 10 minutos, e a staff aprova com calma.
+
+## Perguntas frequentes
+
+### Dá pra descobrir quem enviou o recado?
+No canal público, nunca: só aparece o destinatário. O remetente real só é visível na fila de aprovação, que deve ser restrita à staff. Mantenha esse canal fechado para membros comuns.
+
+### O que acontece se a staff rejeitar?
+O recado é descartado na hora: some da fila e nada é publicado. Não há reaproveitamento nem aviso ao remetente. Pra ele, fica só a confirmação de que o correio "foi enviado para aprovação".
+
+### Por que o `/correio` diz que não há evento ativo?
+Ou o evento está desligado no painel, ou o momento atual está fora do período (antes do início ou depois do fim). Confira o toggle e as datas.
+
+### Por que o remetente não ganhou o cargo de recompensa?
+A recompensa é "melhor esforço". Veja se o cargo está configurado, se o bot tem **Gerenciar Cargos** e se o cargo de recompensa está **abaixo** do cargo mais alto do bot. Se algo falhar, o correio é publicado mesmo assim, só sem o cargo.
+
+!!! tip "Dica"
+    Use a moldura de cada tema como uma carta pré-pronta: saudação no começo, `{{mensagem}}` no meio, assinatura no fim. Assim até os recados mais curtos saem com a cara do evento.
+
+Veja também: [Famílias](familia.md), [Aniversários](aniversarios.md), [VIP e assinaturas](vip.md).
+
+
+---
+
+<!-- funcionalidades/emojis.md -->
+
+# Emojis
+
+Veja quais emojis a comunidade mais usa, quais nunca saíram do lugar e quais têm nomes mal escolhidos. A partir do painel do Delfus você ainda renomeia, exclui e clona emojis sem abrir o Discord. A página fica em `/dashboard/emojis`.
+
+![Estatísticas de emojis no painel do Delfus](../assets/dashboard/emojis.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Estatísticas de emojis no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+## Como funciona
+
+O bot conta cada uso de emoji em tempo real, por servidor. Há duas fontes de contagem:
+
+- **Mensagens** (`msg`): toda vez que alguém envia uma mensagem, o bot extrai os emojis do texto e soma uma ocorrência para cada um.
+- **Reações** (`react`): cada reação adicionada a uma mensagem conta uma ocorrência.
+
+Mensagens de bots não entram na contagem de mensagens, e reações do próprio bot ou de outros bots são ignoradas.
+
+A contagem cobre tanto emojis customizados (do próprio servidor ou externos) quanto emojis padrão Unicode. Para emojis customizados, o bot marca se ele pertence ao servidor atual (`is_server_emoji`) ou veio de fora (`Externo`).
+
+Para não gravar no banco a cada mensagem, o bot acumula os usos em memória e grava em lote uma vez por minuto. Isso significa que os números aparecem com até cerca de um minuto de atraso, o que é normal.
+
+O painel organiza tudo em três abas e um par de contadores no topo: **rastreados** (total de emojis com pelo menos um uso registrado) e **sem uso** (emojis do servidor que nunca foram usados).
+
+### Top Usados
+
+Lista os emojis mais usados, do maior para o menor total. Cada item mostra:
+
+- a posição no ranking;
+- a imagem (ou o caractere, no caso de emoji padrão) e o nome;
+- contagem separada de `msg` e `react`;
+- o total somado.
+
+O botão **Ocultar padrões** filtra a lista para mostrar só emojis customizados, escondendo os Unicode. Emojis externos (customizados que não são do servidor) ganham o selo **Externo** e um botão para clonar direto para o servidor.
+
+### Sem Uso
+
+Lista os emojis do servidor que não têm nenhum uso registrado. Útil para faxina: cada item traz botões de renomear e excluir.
+
+!!! note
+    "Sem uso" reflete o que o bot rastreou desde que passou a contar. Um emoji adicionado há muito tempo pode aparecer aqui se ninguém o usou no período rastreado.
+
+### Nomes Estranhos
+
+Lista emojis do servidor cujo nome parece mal escolhido, para você renomear. Um nome é considerado estranho quando:
+
+- é só números (ex.: `123`);
+- tem 1 caractere ou menos;
+- é só underscores, ou começa/termina com dois ou mais underscores;
+- é um nome genérico: `emoji`, `emote`, `custom`, `sticker`, `image`, `img`, `pic`, `icon`, `face`, `reaction`, `react`, `unknown`, `untitled`, `new`, `test`, `temp`, `tmp`;
+- parece string aleatória (mais de 3 caracteres e nenhuma vogal, ex.: `xkcdz`).
+
+Os mesmos botões de renomear e excluir aparecem aqui.
+
+## Gestão de emojis
+
+Três ações ficam disponíveis na página, sempre aplicadas ao servidor selecionado:
+
+| Ação | Onde aparece | O que faz |
+| --- | --- | --- |
+| Renomear | Abas Sem Uso e Nomes Estranhos | Troca o nome do emoji. Aceita 2 a 32 caracteres, apenas letras, números e underscores. |
+| Excluir | Abas Sem Uso e Nomes Estranhos | Remove o emoji do servidor. Pede confirmação e não pode ser desfeito. |
+| Clonar | Aba Top Usados (só emojis externos) | Copia um emoji externo para o seu servidor, mantendo nome e tipo (estático ou animado). |
+
+A clonagem só funciona para emojis customizados externos, ou seja, os que aparecem com o selo **Externo**. Emojis padrão Unicode e os que já são do servidor não têm essa opção.
+
+## Configuração
+
+Não há nada para configurar pelo usuário. O rastreamento liga sozinho assim que o bot está no servidor; basta escrever mensagens e reagir para os números começarem a aparecer.
+
+Para renomear, excluir ou clonar, o bot precisa da permissão **Gerenciar Emojis e Figurinhas** no servidor. Sem ela, essas ações falham.
+
+## Exemplos
+
+!!! example "Limpar emojis que ninguém usa"
+    Abra a aba **Sem Uso**, veja a lista de emojis sem nenhuma contagem e use o botão de excluir nos que não fazem mais sentido. Cada exclusão pede confirmação.
+
+!!! example "Roubar um emoji externo para o servidor"
+    Na aba **Top Usados**, procure um item com o selo **Externo** (alguém usou um emoji de outro servidor). Clique no botão de adicionar para cloná-lo. Ele entra no seu servidor com o mesmo nome.
+
+!!! example "Arrumar nomes ruins de uma vez"
+    Abra **Nomes Estranhos**. O painel já filtrou os emojis com nomes genéricos, só números ou sem vogais. Renomeie um a um para algo pesquisável.
+
+## Perguntas frequentes
+
+### Por que meu uso de emoji ainda não apareceu?
+A contagem é gravada em lote a cada minuto. Espere um pouco e atualize.
+
+### Mensagens e reações antigas contam?
+Não. O bot só conta a partir do momento em que passou a rastrear. Histórico anterior não é importado.
+
+### A aba Sem Uso some com emojis que eu uso?
+Sim. Assim que um emoji recebe pelo menos um uso (mensagem ou reação), ele sai de Sem Uso e passa a aparecer em Top Usados.
+
+### O que significa o selo Externo?
+É um emoji customizado de outro servidor que apareceu nas suas mensagens ou reações. Você pode cloná-lo para o seu servidor pela aba Top Usados.
+
+### Por que não consigo renomear nem excluir um emoji?
+Verifique se o bot tem a permissão **Gerenciar Emojis e Figurinhas** no servidor. Essas ações também ficam indisponíveis no modo demonstração.
+
+### Posso clonar um emoji padrão (Unicode)?
+Não. Clonar só vale para emojis customizados externos.
+
+Veja também: [Starboard](starboard.md), [Análise e insights](analise.md).
+
+
+---
+
+<!-- funcionalidades/equipe.md -->
+
+# Gestão de Equipe (Staff)
+
+Você vê quem da sua equipe está ativo, quanto cada um produz e quem está abaixo do esperado. O painel do Delfus cruza mensagens, tempo em voz e ações de moderação de cada membro de staff do seu servidor Discord, agrupa por setor e dispara alertas quando alguém cai de produção. Tudo em `/dashboard/staff`.
+
+![Painel de gestão de equipe no painel do Delfus](../assets/dashboard/equipe.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Painel de gestão de equipe no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O sistema parte de uma definição simples: **quem é staff são os donos dos cargos que você marcou** na configuração. A partir daí, para cada membro com um desses cargos, o bot já coleta três fontes de dados no dia a dia:
+
+- **Mensagens:** contagem por hora, por canal (agregada, sem registrar mensagem por mensagem).
+- **Voz:** sessões em canais de voz, com duração de cada uma.
+- **Moderação:** cada `warn`, `ban`, `mute` e `kick` aplicado, vinculado a quem aplicou.
+
+O painel lê esses dados sobre um período (7d, 30d, etc.) e calcula as métricas. As cinco rotas atendem perguntas diferentes:
+
+| Rota | Para quê |
+| --- | --- |
+| `/dashboard/staff/overview` | Visão geral: todos os membros lado a lado, médias da equipe, heatmap de atividade |
+| `/dashboard/staff/sector` | Mesma análise, agrupada por setor (categoria do cargo) |
+| `/dashboard/staff/individual` | Lista individual com busca e ordenação por atividade |
+| `/dashboard/staff/members/[userId]` | Perfil completo de um membro |
+| `/dashboard/staff/alertas` | Quem está abaixo dos limites de atividade |
+| `/dashboard/staff/config` | Define os cargos de staff e seus setores |
+
+### Métricas de desempenho
+
+Cada membro tem três blocos de métricas no período selecionado.
+
+**Mensagens**
+
+- **Total** e **média por dia**.
+- **Canais únicos:** em quantos canais diferentes participou.
+- **Dias ativos** e **cobertura**: percentual de dias do período com pelo menos uma mensagem. Cobertura de 100% significa atividade todo dia.
+- **Consistência:** mesmo cálculo da cobertura, usado como nota de regularidade (0 a 100).
+
+**Moderação**
+
+- Contagem separada de **warns, bans, mutes e kicks**, mais o **total**.
+- **Dias com ação:** em quantos dias do período aplicou ao menos uma punição.
+
+**Voz**
+
+- **Minutos totais**, **número de sessões** e **duração média por sessão**.
+
+**Tendências:** cada bloco compara o período atual com o período imediatamente anterior de mesmo tamanho. Uma queda de 40% nas mensagens dos últimos 7 dias é medida contra os 7 dias anteriores. Aparece como variação percentual.
+
+### Médias e comparação
+
+A visão geral calcula a **média de mensagens por staff** e a **média de ações de moderação por staff**. Cada membro é comparado contra essas médias, então você enxerga rápido quem puxa para cima e quem fica abaixo do time.
+
+O **heatmap** mostra atividade por dia da semana × hora do dia (grade de 7×24). O valor de cada célula soma mensagens e metade dos minutos de voz, revelando os horários de cobertura da equipe.
+
+### Divisão por setor
+
+Setores vêm das **categorias** atribuídas aos cargos na configuração. Um membro entra no setor de cada categoria dos cargos que possui. Quem tem cargo sem categoria cai em **Sem Setor**.
+
+A visão por setor mostra, para cada grupo: número de membros, total de mensagens, total de ações de moderação e tempo em voz somados. Expandindo o setor, você vê a grade de métricas individuais daquele grupo. Serve para comparar áreas, por exemplo a atividade da Segurança contra a da Liderança.
+
+### Métricas individuais
+
+O perfil de um membro (`/members/[userId]`) traz tudo do membro mais detalhes que só existem no nível individual:
+
+- **Top canais de mensagens** e **top canais de voz** (5 de cada).
+- **Atividade por hora** (24 pontos) e **por dia da semana** (7 pontos, com mensagens e minutos de voz).
+- **Heatmap pessoal** (7×24).
+- **Últimas 10 ações de moderação:** tipo, alvo, motivo e data.
+- **Radar de competências:** quatro eixos de 0 a 100: Comunicação, Presença, Moderação e Consistência.
+
+### Alertas de baixa atividade
+
+A página de alertas varre todos os membros e marca quem fica abaixo dos limites. Os limites são definidos **por semana** e ajustados ao tamanho do período (um período de 14 dias dobra o mínimo).
+
+Limites padrão por semana:
+
+| Limite | Padrão |
+| --- | --- |
+| Mensagens | 50 |
+| Ações de moderação | 5 |
+| Minutos em voz | 30 |
+| Cobertura de dias | 50% |
+
+Tipos de alerta gerados:
+
+- **Inativo:** zero mensagens, zero voz e zero moderação no período. Sempre **crítico**.
+- **Mensagens insuficientes:** abaixo do mínimo, ou cobertura abaixo de 50%. Vira **crítico** se ficar abaixo de metade do mínimo.
+- **Moderação insuficiente:** só conta para membros do setor **Segurança** (cargos categorizados como `Segurança`) que têm mensagens mas pouca moderação.
+- **Voz insuficiente:** minutos em voz abaixo do mínimo.
+- **Queda de tendência:** queda acima de 40% nas mensagens (ou moderações) versus o período anterior. Acima de 70% vira **crítico**.
+
+Cada alerta é **Aviso** ou **Crítico**, agrupado por tipo e ordenado do pior para o melhor. Você pode filtrar por setor para focar numa área. Clicar num alerta abre o perfil do membro.
+
+!!! note "Por que moderação só vale para Segurança"
+    Cobrar ações de moderação de um cargo de mídia social ou eventos não faz sentido. O alerta de moderação só dispara para quem está na categoria `Segurança`, evitando ruído.
+
+## Configuração
+
+Toda a configuração fica em `/dashboard/staff/config`. Sem nenhum cargo marcado, o painel não tem como saber quem é staff e as outras telas ficam vazias.
+
+1. **Selecione os cargos de staff:** escolha os cargos do servidor que representam sua equipe (moderação, admin, suporte).
+2. **Atribua categorias (opcional):** agrupe cada cargo num setor. Vêm prontos `Segurança` e `Liderança`; você pode criar outros. A categoria habilita a análise por setor e o alerta de moderação.
+3. **Salve:** a partir daí as métricas e relatórios passam a considerar esses cargos.
+
+Os cargos ficam salvos por servidor. Remover um cargo que tinha categoria pede confirmação, porque a categorização daquele cargo é perdida.
+
+Os membros são sincronizados pelo bot: ao detectar um usuário com um cargo de staff, ele registra o vínculo usuário-cargo. Um mesmo membro pode ter vários cargos de staff e aparece em todos os setores correspondentes.
+
+## Exemplos
+
+!!! example "Encontrar quem sumiu na última semana"
+    1. Abra `/dashboard/staff/alertas`.
+    2. Deixe o período em **7d**.
+    3. Olhe o grupo **Inativos** (crítico): são membros sem nenhuma mensagem, voz ou moderação na semana.
+    4. Em seguida veja **Queda de tendência** para quem ainda aparece, mas despencou versus a semana anterior.
+
+!!! example "Comparar dois setores"
+    1. Configure ao menos dois cargos com categorias diferentes (ex: `Segurança` e `Suporte`).
+    2. Abra `/dashboard/staff/sector`.
+    3. Compare os totais no cabeçalho de cada setor: mensagens, ações e voz.
+    4. Expanda um setor para ver membro a membro.
+
+!!! example "Avaliar um moderador específico"
+    1. Em `/dashboard/staff/individual`, busque pelo nome e ordene por **Mais ativos**.
+    2. Clique no membro para abrir o perfil.
+    3. Veja o radar de competências, os top canais e as últimas 10 ações de moderação para entender onde ele atua.
+
+## Perguntas frequentes
+
+### O painel está vazio. Por quê?
+Provavelmente nenhum cargo de staff foi configurado. Vá em `/dashboard/staff/config` e selecione ao menos um cargo.
+
+### Por que um membro aparece em "Sem Setor"?
+Ele tem um cargo de staff, mas esse cargo não recebeu categoria. Atribua uma categoria ao cargo na configuração.
+
+### O alerta de moderação não aparece para alguns membros.
+É o comportamento esperado. Esse alerta só vale para membros no setor `Segurança`. Cargos de outras categorias não são cobrados por moderação.
+
+### Os limites de alerta são fixos?
+Os padrões são 50 mensagens, 5 ações, 30 minutos de voz e 50% de cobertura por semana, ajustados proporcionalmente ao período escolhido.
+
+### As tendências comparam com o quê?
+Com o período anterior de mesmo tamanho. 7d compara com os 7 dias anteriores; 30d com os 30 anteriores.
+
+### As mensagens são lidas individualmente?
+Não. O bot conta mensagens de forma agregada por hora e por canal. O painel não armazena nem mostra conteúdo de mensagens.
+
+### Por que os números podem demorar para atualizar?
+As métricas têm cache curto (2 a 5 minutos conforme o período). Mudanças muito recentes podem levar alguns minutos para refletir.
+
+Veja também: [Moderação e punições](moderacao.md), [Análise e insights](analise.md).
+
+
+---
+
+<!-- funcionalidades/familia.md -->
+
+# Famílias VIP
+
+Cada assinante VIP cria seu próprio grupo no servidor Discord, com um cargo colorido e personalizado para ele e os amigos que convidar. Enquanto o VIP está ativo, a família existe. Quando expira, o Delfus a congela sozinho, sem trabalho de moderação.
+
+## Como funciona
+
+A família é uma recompensa de certos planos VIP. Quem tem assinatura ativa com esse benefício pode criar e administrar a sua.
+
+Tudo passa por um comando: `/familia`. Ele abre um painel privado (só você vê) onde dá pra criar, editar, convidar e gerenciar no clique. Sem decorar subcomandos.
+
+O painel mostra na hora as famílias que você possui, as que participa e quantos slots ainda tem livres. A sessão dura uns 10 minutos. Depois, é só rodar `/familia` de novo.
+
+!!! example "Exemplo"
+    Um assinante usa `/familia`, clica em **Criar** e escolhe o nome "Os Invencíveis". O Delfus gera um cargo exclusivo do Discord e atribui a ele. Em segundos a família está no ar, pronta pra ganhar cor, ícone e membros.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/familia` | Abre o painel de Famílias VIP. Cria família, edita (nome, descrição, cor, ícone), convida e gerencia membros, sai, exclui e descongela. Tudo por botões. |
+
+!!! note "Um comando só"
+    A feature tem **um único** comando de barra. Todas as ações ficam no painel, não em subcomandos separados.
+
+## Configuração
+
+A família faz parte do sistema **VIP** e é configurada no [Dashboard](https://admin.delfus.app), na seção de VIP, no painel **Famílias**. Lá você ajusta:
+
+- **Máximo de membros por família:** de 1 a 50 (padrão 10). Vale o menor número entre esse teto e o limite da recompensa do plano.
+- **Prefixo do cargo:** texto na frente do nome de cada cargo (padrão 🏠). Deixe vazio para não usar.
+- **Expiração de convites:** em horas, de 1 a 720 (padrão 48).
+- **Cargo de referência (âncora):** opcional. Posiciona os cargos de família num ponto fixo da hierarquia e mantém a lista organizada.
+
+!!! warning "Antes de tudo"
+    Para os membros criarem famílias, você precisa de pelo menos um **plano VIP com a recompensa de família**. É nele que se define o limite de membros e se ele libera **gradiente** e **cor holográfica**.
+
+    O bot também precisa da permissão **Gerenciar Cargos**, e o cargo dele tem que estar **acima** dos cargos de família. Lembre que o Discord limita o servidor a 250 cargos: sem espaço, a criação falha.
+
+## O que dá pra fazer
+
+Depois de criada, o dono comanda tudo pelo painel:
+
+- **Personalizar:** nome (até 80 caracteres), descrição (até 255) e a cor do cargo: **sólida**, **gradiente** (duas cores em degradê) ou **holográfica** (efeito especial do Discord). Antes de aplicar a cor, o bot mostra uma prévia pra confirmar.
+- **Ícone do cargo:** por URL ou imagem enviada, em PNG, JPEG, GIF ou WEBP. O Discord limita a 256 KB. Imagens estáticas grandes são comprimidas sozinhas, mas GIFs animados acima disso precisam ser reduzidos antes.
+- **Convidar e gerenciar:** convide membros do servidor, remova quem quiser. Qualquer membro comum pode sair quando quiser. O dono não sai (precisa excluir a família) nem se remove.
+
+Só o dono edita, e só enquanto a família está ativa.
+
+## Exemplos
+
+!!! example "Clãs coloridos como benefício premium"
+    No Dashboard, você cria um tier VIP com recompensa de família (10 membros, gradiente liberado) e define o prefixo do cargo com o emoji do servidor. Cada assinante desse tier monta sua família, ganha um cargo colorido exclusivo e leva até 9 amigos junto.
+
+!!! example "Convite que chega na DM"
+    O dono clica em **Convidar** e escolhe alguém. A pessoa recebe uma mensagem privada com o nome da família, a contagem de membros e botões de **Aceitar** ou **Recusar**. Ao aceitar, ganha o cargo na hora. O convite vale por 48 horas (padrão) e some sozinho se ninguém responder.
+
+!!! example "Quando o VIP expira"
+    A assinatura do dono vence e o Delfus **congela** a família automaticamente: tira o cargo de todo mundo e tranca edições e convites, mas não apaga nada. Quando o VIP volta, basta clicar em **Descongelar** e o bot devolve o cargo a todos os membros, com barra de progresso.
+
+## Perguntas frequentes
+
+### O convite que enviei não chegou. Por quê?
+Quase sempre é DM fechada. Os convites só saem por mensagem privada. Se a pessoa bloqueia DMs do servidor, o bot cancela o convite e te avisa. Peça pra ela abrir as DMs e convide de novo.
+
+### O que acontece com a família se meu VIP expirar?
+Ela é congelada, não apagada. O cargo sai de todo mundo e a família fica trancada, mas nome, cor, ícone e membros ficam guardados. Ao renovar o VIP, abra `/familia`, clique em **Descongelar** e está tudo de volta.
+
+### Posso ter mais de uma família?
+Pode, desde que tenha mais de um slot livre, seja porque seu plano inclui várias recompensas de família, seja porque você mantém mais de uma assinatura VIP ativa. Cada slot dá direito a uma família, e você não pode usar a mesma recompensa em duas.
+
+### Por que meu GIF foi recusado como ícone?
+Por causa do limite de 256 KB do Discord. Imagens estáticas grandes são comprimidas automaticamente, mas GIFs animados não, pois perderiam a animação. Reduza o tamanho do GIF ou use uma imagem estática.
+
+!!! tip "Dica"
+    Peça aos seus assinantes que mantenham as **DMs do servidor abertas**, senão o convite não chega. E reserve um **cargo-âncora** nas configurações para que todos os cargos de família nasçam no mesmo ponto da hierarquia, deixando a lista de cargos arrumada.
+
+Veja também: [VIP e assinaturas](vip.md), [Correio elegante](correio.md), [Aniversários](aniversarios.md).
+
+
+---
+
+<!-- funcionalidades/honeypot.md -->
+
+# Honeypot (Canal Isca)
+
+Pegue spammers no flagrante. Você cria um canal no Discord onde ninguém deveria escrever, e quem escreve ali é punido pelo Delfus na hora, com a mensagem apagada e a equipe avisada.
+
+![Configuração do honeypot no painel do Delfus](../assets/dashboard/honeypot.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Configuração do honeypot no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Deixe um canal visível mas onde nenhum membro legítimo deveria postar, tipo um "nao-escreva-aqui" no topo da lista. Membros reais leem o aviso e passam direto. Bots de spam e contas-laranja escrevem em tudo que veem e caem na isca.
+
+Quando alguém morde a isca, o Delfus age em segundos:
+
+1. Apaga a mensagem na hora (se tiver permissão).
+2. Pune o autor com a ação que você escolheu: advertir, silenciar, expulsar ou banir.
+3. Avisa a equipe no canal de alertas: quem caiu, qual punição levou e em qual canal.
+4. Para por aí. A mensagem não passa por triggers, filtros ou contadores. O Honeypot tem prioridade.
+
+!!! example "Exemplo"
+    Uma conta nova entra e dispara um print de golpe em vários canais, incluindo o seu "🚫-nao-escreva-aqui". O Delfus apaga a mensagem, silencia o autor por 10 minutos e avisa a staff. Seus membros nem chegam a ver o golpe.
+
+!!! note "Detalhes que valem saber"
+    - Bots e mensagens de sistema são sempre ignorados, incluindo o próprio Delfus. Só contas de pessoas reais caem na armadilha.
+    - A punição só funciona se o cargo do bot estiver acima do membro na hierarquia. Se não estiver, a mensagem ainda é apagada e o alerta ainda chega, só a punição pode falhar.
+    - Sua configuração fica salva no banco e volta sozinha quando o bot reinicia. Configurou uma vez, vale até você desligar.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/honeypot ativar` | Liga o Honeypot definindo o canal isca e o canal de alertas. Já começa silenciando por 10 minutos. Rodar de novo com os mesmos dois canais desliga. |
+| `/honeypot acao` | Escolhe o destino de quem cai: advertir, silenciar, expulsar ou banir. No silenciar dá pra definir a duração (de 1 minuto a 28 dias). |
+| `/honeypot mensagem` | Personaliza o alerta da equipe: texto simples ou embed (com título e cor). |
+
+!!! note "Sobre os comandos"
+    - `acao` e `mensagem` só funcionam depois de ativar com `ativar`.
+    - Só administradores podem configurar o Honeypot.
+    - Os campos de canal têm autocompletar.
+
+## Configuração
+
+Dá pra configurar de dois jeitos. Os dois mexem na mesma config, então pode misturar.
+
+**Pelo Dashboard (recomendado):** acesse [admin.delfus.app](https://admin.delfus.app), escolha o servidor e abra a página Honeypot. Lá você define os canais (isca e alertas), a punição (ação + duração) e a mensagem de alerta (padrão, texto ou embed).
+
+**Por comando:**
+
+1. Rode `/honeypot ativar` com o canal isca e o canal de alertas. Já fica ativo silenciando por 10 minutos.
+2. (Opcional) Ajuste a punição com `/honeypot acao`.
+3. (Opcional) Personalize o alerta com `/honeypot mensagem`.
+
+Para desligar: pelo Dashboard, remova a configuração na página. Por comando, rode `/honeypot ativar` de novo com os mesmos dois canais.
+
+!!! tip "Personalizando o alerta"
+    No texto ou embed do alerta, use `{user}` pra mencionar quem caiu e `{channel}` pra apontar o canal isca. O Delfus troca pelos valores reais na hora de enviar. Se você criar um embed totalmente vazio, ele volta pro alerta padrão sozinho, pra nunca deixar de avisar.
+
+## Exemplos
+
+!!! example "Pegar spammers no flagrante"
+    Crie um canal "🚫-nao-escreva-aqui" no topo da lista e rode `/honeypot ativar` apontando ele como isca e um canal de staff como alertas. Qualquer conta que escrever ali é silenciada por 10 minutos, e a equipe é avisada na hora.
+
+!!! example "Banir contas maliciosas sem moderador online"
+    Depois de ativar, rode `/honeypot acao` e escolha Banir. A partir daí, quem cai na armadilha é banido na hora, sem precisar de ninguém da staff acordado às 3 da manhã.
+
+!!! example "Alerta formatado pra equipe"
+    Rode `/honeypot mensagem` com tipo embed, título "⚠️ Honeypot acionado" e descrição "O usuário {user} caiu na isca {channel} e foi punido." O aviso chega formatado e já com as menções certas.
+
+## Perguntas frequentes
+
+### O Honeypot pune bots ou o próprio Delfus?
+Não. Bots e mensagens de sistema são sempre ignorados. Só pessoas reais caem.
+
+### Preciso reconfigurar quando o bot reinicia?
+Não. A config fica salva e volta sozinha. Ativou uma vez, vale até você desligar.
+
+### Como desativo?
+Pelo Dashboard, remova a configuração na página. Por comando, rode `/honeypot ativar` de novo com os mesmos dois canais (isca e alertas) que usou pra ativar.
+
+### O membro punido descobre que era uma armadilha?
+A mensagem dele some e a punição é aplicada como qualquer outra moderação. O alerta detalhado vai só pro canal da equipe, nunca pro usuário.
+
+### Quais permissões o bot precisa?
+Ver canais, Ver histórico de mensagens, Gerenciar mensagens (pra apagar) e Moderar membros (pra silenciar). Pra expulsar ou banir, ele também precisa das permissões de Expulsar / Banir membros. E lembre: o cargo do bot precisa estar acima de quem você quer punir.
+
+!!! tip "Dica"
+    Coloque o canal isca no topo da lista, com um nome claro de "não escreva aqui". Spammers escrevem nos primeiros canais que veem; membros reais leem o aviso e seguem em frente. Combine com a ação Banir e deixe as contas maliciosas saírem sozinhas, sem depender de moderador online.
+
+Veja também: [Anti-raid](anti-raid.md), [Anti-invite](anti-invite.md), [Moderação e punições](moderacao.md).
+
+
+---
+
+<!-- funcionalidades/index.md -->
+
+# Visão geral das funcionalidades
+
+O Delfus reúne moderação, engajamento, monetização e análise num só bot para Discord. Abaixo, os
+principais módulos. Cada um é ativado e configurado pelo [Dashboard](https://admin.delfus.app).
+
+<div class="grid cards" markdown>
+
+-   :material-shield-check: **Moderação e segurança**
+
+    Punições, logs de ação, anti-raid, anti-invite e backups.
+
+    [:octicons-arrow-right-24: Detalhes](moderacao.md)
+
+-   :material-hand-wave: **Boas-vindas e cargos**
+
+    Recepção e despedida, cargos automáticos e cargos por reação.
+
+    [:octicons-arrow-right-24: Detalhes](recepcao.md)
+
+-   :material-crown: **VIP e recompensas**
+
+    Programa VIP com níveis, assinaturas, códigos promocionais e recompensas.
+
+    [:octicons-arrow-right-24: Detalhes](vip.md)
+
+-   :material-star: **Starboard**
+
+    Destaque as melhores mensagens, com ranking e hall da fama.
+
+    [:octicons-arrow-right-24: Detalhes](starboard.md)
+
+-   :material-chart-line: **Análise e insights**
+
+    Métricas em tempo real, pontuação de membros, mapa social e inteligência de canais.
+
+    [:octicons-arrow-right-24: Detalhes](analise.md)
+
+</div>
+
+## E mais
+
+Todos os módulos, por área — tudo configurado no painel:
+
+- **Segurança**: [Anti-raid](anti-raid.md), [Anti-invite](anti-invite.md), [Honeypot](honeypot.md) e [Backups](backup.md)
+- **Recepção e cargos**: [Cargos automáticos](auto-roles.md) e [Cargos por reação](reaction-roles.md)
+- **Monetização**: [Recompensas de boost](boost.md) e [Famílias](familia.md)
+- **Engajamento**: [Mensagens e embeds](mensagens.md), [Emojis](emojis.md), [Aniversários](aniversarios.md), [Correio elegante](correio.md) e [Automações de canal](automacoes.md)
+- **Operação**: [Gestão de equipe](equipe.md) e [Oráculo](oraculo.md)
+- **Utilidades**: [Encurtador de links](links.md) e [Download de vídeos](video.md)
+
+<div class="dx-band" markdown>
+
+## Junte-se à comunidade
+
+Precisa de ajuda, quer sugerir uma ideia ou só trocar uma ideia com a gente?
+Estamos no Discord, chega mais.
+
+[:fontawesome-brands-discord: Entrar no servidor de suporte](https://discord.gg/mTjZg95UJV){ .md-button .md-button--primary }
+
+</div>
+
+
+---
+
+<!-- funcionalidades/links.md -->
+
+# Encurtador de links
+
+Transforme uma URL longa num link curto do Delfus tipo `link.delfus.app/s/CODIGO` e veja quem clicou: país, dispositivo e de onde veio (Twitter, Discord e outros). Bom pra divulgar votações, campanhas e anúncios e medir o que funcionou.
+
+![Encurtador de links no painel do Delfus](../assets/dashboard/links.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Encurtador de links no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Você cria o link pelo painel e escolhe o destino. A cada clique, o Delfus registra de onde veio. Não precisa de comando no Discord.
+
+Na criação, escolha entre dois tipos:
+
+- **Redirecionamento**: o visitante clica e vai direto pra URL que você definiu.
+- **Landing Page**: em vez de mandar pra fora, o Delfus mostra uma página personalizada (título, imagem, cores e até confetes). Boa pra confirmação de voto, anúncios e páginas de "obrigado".
+
+!!! example "Exemplo"
+    Você vai abrir uma votação. Cria um link curto que aponta pro formulário, divulga nos canais e, no dia seguinte, abre o painel: 340 cliques, 210 pessoas diferentes, a maioria do Brasil, pelo celular. Em segundos você sabe o alcance real.
+
+Os números aparecem rápido. Cada clique entra na hora e o Delfus consolida as estatísticas ao longo do dia.
+
+## Comandos
+
+Essa funcionalidade vive 100% no painel web. **Não há comando de barra (`/`) no Discord** pro encurtador.
+
+## Configuração
+
+Tudo acontece no Dashboard, em **[https://admin.delfus.app](https://admin.delfus.app)**, na seção de links. Lá você cria, lista (com busca por título/código/URL, filtro por tag e ordenação), edita, ativa/desativa, exclui e abre as estatísticas de cada link.
+
+**O básico pra criar um link:**
+
+- **Tipo**: redirecionamento ou landing page.
+- **URL de destino** (obrigatória no redirecionamento).
+- **Título** pra você se organizar (o visitante não vê).
+- **Tags** separadas por vírgula, pra filtrar a lista depois.
+- **Código personalizado**: escolha o final do link ou deixe o Delfus gerar um automaticamente.
+
+!!! note "Sobre o código curto"
+    Em branco, o sistema cria um código fácil de ler (sem caracteres confusos como `0`, `O`, `I` ou `l`). Pra escolher o seu, use de 3 a 12 caracteres: letras, números, `_` e `-`. Não vale repetir um código que já existe.
+
+**Opções avançadas:**
+
+- **Proteção**: senha de acesso, data de expiração e limite máximo de cliques.
+- **Prévia em redes sociais** (só redirecionamento): personalize o card que aparece quando o link é colado no Discord ou no Twitter (título, descrição e imagem).
+- **Parâmetros UTM** (só redirecionamento): rótulos que o Delfus gruda na URL de destino pra rastrear de qual campanha veio cada clique.
+
+**Se escolher Landing Page**, você monta a página: um **template** (Confirmação de Voto, Anúncio, Agradecimento ou Personalizado), título e descrição, imagem, cores (fundo, texto e destaque) e um **efeito visual** (confetti, fogos ou brilhos). Dá pra mostrar ou esconder o botão de compartilhar e a marca do Delfus.
+
+!!! note "Vínculo com o servidor"
+    Links criados a partir do painel de um servidor ficam **daquele servidor**: toda a equipe com acesso vê e gerencia os mesmos links. Os criados fora desse contexto ficam **pessoais**, só você enxerga.
+
+## Exemplos
+
+!!! example "Descobrir qual divulgação trouxe mais gente"
+    Você anuncia um evento no Twitter e no Discord. Cria o link com UTMs diferentes pra cada canal. No fim do dia, o painel mostra: o Discord trouxe 80% dos cliques e o Twitter quase nada. Da próxima vez, você sabe onde investir.
+
+!!! example "Link com senha pra conteúdo de membros"
+    Você tem um link só pra apoiadores. Adiciona uma senha na criação. Quem clicar cai numa página pedindo a senha antes de continuar. A senha fica guardada cifrada, nem o Delfus enxerga o texto puro.
+
+!!! example "Campanha com prazo"
+    Um sorteio que fecha sexta. Você cria o link com data de expiração na sexta à noite. Passou da hora? Quem clicar vê uma página avisando que o link não está mais disponível. Sem gente entrando atrasada.
+
+## Perguntas frequentes
+
+### Posso escolher o final do link?
+Pode. Use um código de 3 a 12 caracteres (letras, números, `_` e `-`, sem os confusos `0`, `O`, `I`, `l`). Se já estiver em uso, escolha outro. Em branco, o Delfus gera um automaticamente.
+
+### A senha do link é segura?
+É. Ela nunca é guardada em texto puro, só um "hash" dela. O visitante precisa digitar a senha certa numa página de desbloqueio antes de chegar ao destino.
+
+### O que acontece quando o link expira ou bate o limite de cliques?
+Ele para de redirecionar e o visitante passa a ver uma página de "link indisponível". Vale o mesmo pra links desativados na mão. Você pode reativar ou ajustar o prazo/limite quando quiser pelo painel.
+
+### Como sei de onde veio cada clique?
+Pelas estatísticas. O Delfus classifica a origem sozinho: rede social, busca, e-mail ou direto. Pra separar campanhas específicas (post no Twitter vs. mensagem no Discord), use os UTMs.
+
+### O bot precisa de alguma permissão pra isso?
+Não. O encurtador roda no painel/site, não dentro do servidor. Nada pra configurar no Discord, só estar logado no painel (e, pra gerenciar os links de um servidor, ter acesso ao dashboard dele).
+
+!!! tip "Dica"
+    Use UTMs sempre que divulgar o mesmo link em canais diferentes: o painel mostra qual divulgação trouxe mais gente. Lembre que "cliques únicos" contam cada pessoa uma vez a cada 24 horas (bom pra medir alcance real), enquanto o "total de cliques" mede engajamento.
+
+Veja também: [Anti-invite](anti-invite.md), [Automações de canal](automacoes.md), [Download de vídeos](video.md).
+
+
+---
+
+<!-- funcionalidades/mensagens.md -->
+
+# Mensagens e Embeds
+
+Monte mensagens e embeds completos num editor visual, salve como modelos reutilizáveis e publique no canal do Discord que quiser. O Delfus envia como ele mesmo ou através de um webhook com nome e avatar personalizados. Depois de publicar, dá para editar a mensagem já enviada sem apagar e repostar.
+
+A rota fica em `/dashboard/messages` no painel.
+
+![Editor de mensagens e embeds no painel do Delfus](../assets/dashboard/mensagens.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
+
+*Editor de mensagens e embeds no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+## Como funciona
+
+O fluxo tem três etapas: você edita, salva e envia.
+
+**Editar.** O editor é dividido em duas colunas: o formulário à esquerda e uma prévia ao vivo à direita (no desktop; no mobile a prévia abre num painel lateral). Cada alteração no formulário aparece na prévia na hora. O editor tem desfazer/refazer e um contador de caracteres dos embeds. O formulário se divide em quatro seções: Remetente, Conteúdo, Embeds e Botões.
+
+**Salvar.** Toda mensagem é salva com um nome (ex.: "Boas-vindas", "Regras", "Anúncio"). O modelo salvo guarda todo o conteúdo e fica disponível para reenviar ou editar depois. Você precisa salvar antes de poder enviar.
+
+**Enviar.** Ao enviar, você escolhe o canal de destino e o modo (Bot ou Webhook). O painel chama o bot, que entrega a mensagem no canal e devolve o link do Discord. Cada envio vira um registro na lista "Envios" da mensagem, com canal, modo e data. A partir desse registro você consegue reenviar para atualizar a mensagem publicada.
+
+Não há agendamento. O envio é imediato: você clica em Enviar e a mensagem aparece no canal.
+
+### Modos de envio
+
+| Modo | Quem aparece como autor | Quando usar |
+| --- | --- | --- |
+| **Bot** | O próprio bot Delfus (nome e avatar do bot) | Anúncios oficiais, mensagens do servidor |
+| **Webhook** | Nome e avatar que você definir na seção Remetente | Personalizar a identidade do remetente |
+
+No modo Webhook você pode definir um **Nome** (até 80 caracteres) e uma **URL de avatar**. O nome não pode conter "clyde" nem "discord", nem ser "everyone" ou "here" (restrições do Discord). No modo Bot esses campos ficam indisponíveis.
+
+### Como o bot entrega
+
+Quando você confirma o envio, o painel manda os dados para o bot. O bot localiza o servidor no shard correto, resolve as variáveis, confere se tem as permissões necessárias e então envia.
+
+No modo **Bot**, ele posta direto no canal. No modo **Webhook**, ele procura um webhook chamado "Delfus" no canal e cria um caso não exista. Para editar uma mensagem enviada por webhook, o bot reusa o mesmo webhook.
+
+Canais de texto, de anúncio e threads recebem mensagens. Em threads, o webhook fica no canal-pai e a mensagem é postada dentro da thread.
+
+Se faltar permissão, o bot recusa o envio e informa o que está faltando. Permissões exigidas: Ver Canal, Enviar Mensagens (ou Enviar Mensagens em Threads), Inserir Links. No modo Webhook, também Gerenciar Webhooks.
+
+## Configuração
+
+### Conteúdo
+
+Texto simples da mensagem, acima dos embeds. Até 2000 caracteres. Aceita a formatação Markdown do Discord. A mensagem precisa ter pelo menos uma destas coisas: texto, um embed ou um botão.
+
+### Embeds
+
+Até 10 embeds por mensagem. Cada embed pode ter:
+
+- **Título** (até 256) e **URL** do título
+- **Descrição** (até 4096)
+- **Cor** da barra lateral
+- **Autor**: nome (até 256), URL e ícone
+- **Rodapé**: texto (até 2048) e ícone, mais um **timestamp**
+- **Imagem** e **thumbnail** (por URL)
+- **Campos** (até 25): cada um com nome (até 256), valor (até 1024) e a opção de exibir lado a lado (inline)
+
+A soma de todos os textos dos embeds (títulos, descrições, rodapés, nomes de autor, nomes e valores de campos) não pode passar de 6000 caracteres no total. O contador no topo do editor mostra esse valor e fica vermelho quando estoura.
+
+### Botões
+
+Botões de link, organizados em até 5 linhas com até 5 botões cada. Cada botão tem um rótulo (até 80 caracteres), uma URL de destino e, opcionalmente, um emoji. São botões de link: levam a uma URL externa, não disparam ações no bot.
+
+### Variáveis
+
+Use variáveis no texto e nos embeds. O bot as substitui pelos valores reais no momento do envio. Na prévia do editor elas aparecem com valores de exemplo.
+
+| Variável | Substituída por | Exemplo |
+| --- | --- | --- |
+| `{{server}}` | Nome do servidor | Delfus Community |
+| `{{memberCount}}` | Quantidade de membros | 1234 |
+| `{{serverIcon}}` | URL do ícone do servidor | (link do ícone) |
+
+O botão **Variáveis** na barra do editor lista todas e copia o token com um clique. As variáveis funcionam em qualquer campo de texto: conteúdo, título, descrição, campos, rodapé.
+
+### Importar/Exportar JSON
+
+O editor tem um diálogo de JSON para colar ou copiar a estrutura completa da mensagem. Útil para reaproveitar uma mensagem montada em outra ferramenta ou versionar o conteúdo fora do painel.
+
+### Limites de uma olhada
+
+| Item | Limite |
+| --- | --- |
+| Texto da mensagem | 2000 |
+| Embeds por mensagem | 10 |
+| Título do embed | 256 |
+| Descrição do embed | 4096 |
+| Campos por embed | 25 |
+| Nome do campo | 256 |
+| Valor do campo | 1024 |
+| Rodapé | 2048 |
+| Total de texto (todos os embeds) | 6000 |
+| Linhas de botões | 5 |
+| Botões por linha | 5 |
+| Rótulo do botão | 80 |
+| Nome do webhook | 80 |
+
+## Exemplos
+
+!!! example "Anúncio simples como o bot"
+    1. Em `/dashboard/messages`, crie uma nova mensagem e dê um nome ("Anúncio").
+    2. Na seção Conteúdo, escreva o texto. Use `{{server}}` para inserir o nome do servidor.
+    3. Salve.
+    4. Clique em Enviar, escolha o canal, deixe o modo em **Bot** e confirme.
+    5. Use "Ver no Discord" no aviso de sucesso para conferir.
+
+!!! example "Mensagem de regras com embed e webhook personalizado"
+    1. Crie a mensagem e abra a seção Remetente. Troque para **Webhook** e defina Nome ("Regras do Servidor") e a URL de um avatar.
+    2. Em Embeds, adicione um embed com título, descrição e uma cor. Inclua campos para cada regra.
+    3. Em Botões, adicione um botão de link ("Servidor" → URL do convite).
+    4. Salve e envie no modo Webhook.
+
+!!! example "Atualizar uma mensagem já publicada"
+    1. Abra a mensagem salva. Edite o que precisar (texto, embed, botões).
+    2. Salve.
+    3. No card **Envios**, clique em **Atualizar publicação** no envio que quer atualizar.
+    4. O bot reedita a mensagem original no mesmo canal e modo, sem repostar.
+
+## Perguntas frequentes
+
+### Consigo agendar o envio?
+Não. O envio é imediato. O fluxo é salvar o modelo e enviar quando quiser.
+
+### A mensagem publicada some se eu editar o modelo no painel?
+Não. Editar o modelo salvo não toca na mensagem já publicada. Para refletir as mudanças no Discord, use **Atualizar publicação** no card Envios.
+
+### Posso enviar a mesma mensagem para vários canais?
+Sim. Cada envio cria um registro próprio. Envie de novo escolhendo outro canal e cada publicação fica listada separadamente em Envios.
+
+### Por que o envio falhou por permissão?
+O bot precisa de Ver Canal, Enviar Mensagens (ou Enviar Mensagens em Threads) e Inserir Links no canal de destino. No modo Webhook, também Gerenciar Webhooks. A mensagem de erro indica o que falta.
+
+### Posso editar uma mensagem que foi apagada no Discord?
+Não. Se a mensagem original foi removida, o bot avisa que ela não existe mais. Envie uma nova.
+
+### Qual a diferença entre Bot e Webhook?
+No modo Bot a mensagem aparece como o bot Delfus. No modo Webhook ela aparece com o nome e avatar que você definir. O conteúdo é o mesmo; muda só a identidade do remetente.
+
+### As variáveis funcionam dentro dos embeds e botões?
+Sim. O bot resolve as variáveis em qualquer campo de texto da mensagem no momento do envio.
+
+Veja também: [Boas-vindas e despedida](recepcao.md), [Cargos por reação](reaction-roles.md), [Automações de canal](automacoes.md).
+
+
+---
+
+<!-- funcionalidades/moderacao.md -->
+
+# Moderação e punições
+
+Warns, mutes, kicks e bans no servidor Discord num fluxo único, com checagens de segurança automáticas e histórico permanente. Você decide a punição; o Delfus avisa o usuário, registra e escala.
+
+![Configuração de moderação no painel do Delfus](../assets/dashboard/moderacao.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Configuração de moderação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Toda punição começa com um comando da staff e passa pelas mesmas checagens antes de agir.
+
+Primeiro o bot confere o alvo: ninguém pune a si mesmo, e mute, ban e kick não funcionam em outros bots. Depois valida a hierarquia de cargos. O cargo do bot e o seu precisam estar acima do cargo da pessoa. Isso vale até para Administradores: você não pune alguém com cargo igual ou maior que o seu.
+
+Ban, mute e kick pedem **Confirmar / Cancelar** antes de agir. Warn, unwarn e unmute vão direto. Aplicada a punição, a pessoa pode receber um aviso por DM (se você ativou), o canal da staff pode ser notificado e tudo fica gravado no histórico.
+
+!!! example "Exemplo"
+    Alguém posta um print de golpe no chat. Você roda `/ban`, confirma no botão e pronto: o Delfus apaga as mensagens das últimas 24h do autor, manda uma DM com o motivo (e link de apelação, se você configurou) e registra tudo no histórico. A staff vê no resultado se a DM chegou.
+
+### Punições que se escalam sozinhas
+
+Cada warn soma um ponto no contador da pessoa. Você define o que acontece ao bater um número exato: silenciar, expulsar, banir, dar ou tirar um cargo.
+
+A staff só usa `/warn` e o bot escala a punição sozinho. Ele ainda mostra uma barra de progresso a cada advertência, tipo `Avisos: ▓▓░ 2/3 → mute 1h`, então todo mundo enxerga o que vem pela frente.
+
+### Segunda chance pra quem se comporta
+
+Com a **expiração de warns** ativada, advertências antigas deixam de contar depois do prazo que você escolher (ex.: 30 dias sem novas confusões). O contador é recalculado. Se a queda desfizer um gatilho de "adicionar cargo" (tipo um cargo de observação), o Delfus tira o cargo de volta automaticamente. Se quiser, ele publica um reconhecimento de bom comportamento no canal de logs.
+
+!!! note "Detalhe"
+    Gatilhos de **remover** cargo não são revertidos. O bot não devolve um cargo retirado, para não reconceder algo privilegiado por engano.
+
+### Histórico e auditoria
+
+O `/warnlist` mostra o histórico completo de uma pessoa: quem puniu, tipo, motivo, data, duração e se foi auto-ação. O **registro de ações (action log)** pode publicar num canal de auditoria quase tudo que rola no servidor: mensagens apagadas, entradas e saídas, mudanças de cargo, bans. Sempre identificando o autor pelo log de auditoria do Discord.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/warn` | Adverte alguém, soma no contador, mostra a barra de progresso e dispara gatilhos automáticos ao bater o número configurado. |
+| `/unwarn` | Remove uma advertência pela `id_advertencia` (vista no `/warnlist`) ou, sem ID, a mais recente. |
+| `/warnlist` | Mostra o histórico de punições, 5 por página. Ver o seu é livre; ver o de outra pessoa exige cargo maior que o dela. |
+| `/mute` | Silencia via timeout do Discord. `duration` opcional (ex.: `30s`, `5min`, `2h`); sem duração, vai no máximo de 28 dias. Pede confirmação. |
+| `/unmute` | Tira o silêncio. Avisa se a pessoa não estava silenciada. |
+| `/ban` | Bane. `duration` opcional para ban temporário; sem ela, é permanente. Apaga as mensagens das últimas 24h. Pede confirmação. |
+| `/kick` | Expulsa do servidor (a pessoa pode voltar com novo convite). Pede confirmação. |
+
+!!! note "Opções"
+    Todos os comandos pedem o **usuário**. O **motivo** é sempre opcional (aparece na DM, no histórico e no log). A **duração** de `/mute` e `/ban` aceita segundos (`s`), minutos (`m`/`min`) e horas (`h`). Número sem unidade vira segundos.
+
+## Configuração
+
+As punições rodam pelos comandos no Discord. O **comportamento** delas você ajusta no [Dashboard](https://admin.delfus.app), na seção **Moderação**.
+
+O essencial para deixar pronto:
+
+1. **Avisos por DM:** ligue ou desligue a DM por tipo de punição. Por padrão, warn e unwarn avisam; mute, kick e ban vêm desligados.
+2. **Canal de logs:** escolha onde caem as notificações da staff e o reconhecimento de bom comportamento.
+3. **Link de apelação:** uma URL incluída nas DMs para a pessoa contestar.
+4. **Gatilhos automáticos:** cadastre regras "ao atingir X warns → ação" (silenciar, expulsar, banir, dar ou tirar cargo).
+5. **Expiração de warns:** ative e defina o prazo em dias, semanas ou meses.
+6. **Action log:** ative o registro, escolha um canal (ou um por tipo de evento) e use os filtros para ignorar bots, canais e cargos.
+
+!!! tip "Personalização"
+    Dá pra customizar o embed de cada tipo de punição (título, cor, imagem, campos) usando variáveis como `{user}`, `{staff}`, `{reason}`, `{duration}` e `{guild}`.
+
+## Exemplos
+
+!!! example "Punição em escada, sem decidir caso a caso"
+    Configure "3 warns → mute 1h", "5 warns → mute 12h", "7 warns → ban". A staff só usa `/warn`; o Delfus escala a punição sozinho e mostra a barra de progresso a cada aviso. Ninguém precisa lembrar de cabeça qual é o próximo passo.
+
+!!! example "Segunda chance automática"
+    Ative a expiração em 30 dias. Quem passar um mês sem novas advertências tem o histórico zerado. Se a queda desfizer um cargo de "observação" dado por gatilho, o bot remove o cargo sozinho e reconhece o bom comportamento no canal de logs.
+
+!!! example "Ban temporário com aviso e apelação"
+    Rode `/ban usuario:@Fulano duracao:2h motivo:flood` e confirme. Antes de sair do servidor, a pessoa recebe a DM com o motivo e o link de apelação, as mensagens das últimas 24h dela somem, e você vê no resultado se a DM foi entregue.
+
+## Perguntas frequentes
+
+### Por que o silêncio "permanente" some depois de um tempo?
+O `/mute` usa o timeout do Discord, com teto de 28 dias. Um mute sem duração vira 28 dias. Para algo realmente permanente, use um cargo de "mutado" via gatilho de cargo, ou um ban.
+
+### Posso usar `2d` ou `1w` na duração?
+Não. O campo aceita só segundos (`s`), minutos (`m`/`min`) e horas (`h`), tipo `30s`, `5min`, `2h`. Número sem unidade é lido como segundos.
+
+### A DM diz "DMs fechadas". A punição valeu mesmo assim?
+Valeu. A DM é independente da punição. Se a pessoa bloqueia DMs, o bot só registra isso e segue com o kick ou ban normalmente.
+
+### O `/unwarn` remove qual advertência?
+Com o `id_advertencia` (visto no `/warnlist`), remove aquela específica; sem ID, remove a mais recente. Nos dois casos a contagem é atualizada e fica tudo registrado.
+
+!!! tip "Dica"
+    Combine **gatilhos** com **expiração de warns**: monte a escada (3 → mute, 5 → ban) e ative a expiração em 30 dias. A staff só precisa advertir, a punição fica consistente e quem se comporta ganha histórico limpo, incluindo a remoção automática de cargos de "observação" quando a contagem cai.
+
+Veja também: [Anti-raid](anti-raid.md), [Honeypot](honeypot.md), [Gestão de equipe](equipe.md).
+
+
+---
+
+<!-- funcionalidades/oraculo.md -->
+
+# Oráculo
+
+Saiba quem movimenta cada canal e em que horários ele bomba. O Oráculo do Delfus grava as mensagens dos canais do Discord que você escolher, e esse registro alimenta os painéis do Dashboard: atividade, scoring de membros e análise de conteúdo.
+
+## Como funciona
+
+Você aponta os canais que quer acompanhar. A partir daí, cada mensagem nova é registrada automaticamente.
+
+O Oráculo só grava o que acontece depois que você liga o canal. Ele não puxa o histórico antigo. Quanto antes você ativar, mais cedo os painéis ganham dados.
+
+A cada mensagem, ele guarda: quem postou (nome, apelido, foto), o texto, anexos, embeds, figurinhas, menções, se é resposta, se está numa thread e o horário (UTC e Brasília). Mensagens só com figurinha, anexo ou emoji também contam.
+
+Ele ignora de propósito as mensagens de sistema (entrou no servidor, fixou mensagem) e as do próprio Delfus. Essas nunca são registradas.
+
+!!! example "Exemplo"
+    Você liga o `#geral` às 14h. A mensagem do João às 14h05 é registrada na hora, com o texto, a foto dele e o horário. A conversa da manhã, antes de você ligar, não entra.
+
+!!! note "E os outros bots?"
+    Mensagens de outros bots são registradas e marcadas como "de bot". Só as do próprio Delfus e as de sistema ficam de fora.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/oraculo canal:<#canal>` | Liga ou desliga o monitoramento do canal. Funciona como interruptor: liga se estava desligado, desliga se estava ligado. O campo `canal` tem autocompletar. Só administradores. |
+
+## Configuração
+
+Dá pra ligar e desligar de dois jeitos. Os dois escrevem na mesma configuração e ficam sempre em sincronia. Use o que for mais prático.
+
+### Pelo Dashboard (recomendado)
+
+Em [admin.delfus.app](https://admin.delfus.app), abra a **Configuração do Oráculo**:
+
+1. Clique no seletor e escolha um ou mais canais para acompanhar.
+2. Os canais aparecem na lista "Canais monitorados". Para tirar um, clique no "X".
+3. Clique em **Salvar**. Enquanto houver mudanças não salvas, o painel avisa e oferece um botão **Desfazer**.
+4. A mudança vale na hora, sem reiniciar nada.
+
+O Dashboard é uma seleção múltipla: você gerencia a lista inteira de uma vez, em vez de ir canal por canal.
+
+### Pelo comando
+
+Rode `/oraculo` e escolha o canal. Liga se estava desligado, desliga se estava ligado. O bot confirma o que fez ("Monitoramento Iniciado" ou "Monitoramento Parado").
+
+## Exemplos
+
+!!! example "Acompanhar o canal mais movimentado"
+    Adicione o `#geral` pelo Dashboard e salve. Os painéis de Insights e Análise de conteúdo passam a mostrar quem mais participa e em que horários o canal fica mais agitado.
+
+!!! example "Medir engajamento em vários canais de uma vez"
+    No painel, selecione `#geral`, `#anúncios` e `#suporte` juntos e salve. O scoring de membros passa a considerar a participação nos três canais.
+
+!!! example "Ligar e desligar rápido para uma campanha"
+    Vai rodar um evento? Rode `/oraculo canal:#eventos` para começar a registrar. Quando acabar, rode o mesmo comando de novo para parar.
+
+## Onde os dados aparecem
+
+Todo o registro alimenta os painéis do Dashboard:
+
+- **Insights:** análise automática da atividade do servidor.
+- **Scoring de membros:** pontuação baseada na participação.
+- **Análise de conteúdo:** métricas e tendências por canal.
+- **Status do Oráculo:** quantos e quais canais estão sendo monitorados.
+
+## Requisitos
+
+- No canal monitorado, o Delfus precisa de permissão para **Ver canal** e **Ler histórico de mensagens**.
+- Para usar o comando `/oraculo`, você precisa ser **Administrador** do servidor.
+- Para configurar pelo Dashboard, você precisa ter acesso àquele servidor no painel.
+
+## Perguntas frequentes
+
+### O Oráculo registra mensagens antigas?
+Não. Só as novas, enviadas depois que você ligou o canal. O histórico anterior não é importado.
+
+### Configurei pelo painel e usei o comando, qual vale?
+Os dois escrevem na mesma lista e ficam sincronizados. Vale a última ação.
+
+### Preciso reiniciar o bot depois de mudar a configuração?
+Não. A mudança vale na hora, tanto pelo Dashboard quanto pelo comando.
+
+!!! tip "Dica"
+    Monitore só os canais que você vai analisar. Cada canal ligado gera registro contínuo de tudo que é postado. Focar nos mais relevantes (geral, anúncios, suporte) deixa os painéis mais precisos e enxutos.
+
+Veja também: [Análise e insights](analise.md), [Moderação e punições](moderacao.md).
+
+
+---
+
+<!-- funcionalidades/reaction-roles.md -->
+
+# Cargos por reação (reaction roles)
+
+Seus membros pegam e largam cargos sozinhos, num clique, sem pedir nada a um moderador. Você publica um painel de botões do Delfus num canal do Discord e cada um se serve: cargos de notificação, cores, pronomes, jogos, regiões, acesso a áreas do servidor. Seus canais de aviso ficam só com quem quer estar lá.
+
+![Cargos por reação no painel do Delfus](../assets/dashboard/reaction-roles.webp){ .dx-shot width="1200" height="1227" fetchpriority=high }
+
+*Cargos por reação no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+Você cria um **painel**: uma mensagem que o bot publica num canal. Ela pode ter texto, um embed (título, descrição, cor, imagem) e os **botões**, cada botão amarrado a um cargo.
+
+O membro clica e o bot resolve. Cada botão é um interruptor: o mesmo botão dá e tira o cargo. Não tem o cargo, clicar adiciona; já tem, clicar remove.
+
+Ao clicar, o membro recebe uma confirmação privada (só ele vê, e ela some sozinha) dizendo o que aconteceu. A confirmação é instantânea. O cargo entra logo depois, em segundo plano, normalmente em poucos segundos.
+
+!!! example "Exemplo"
+    Você abre um painel de notificações e 200 pessoas clicam ao mesmo tempo. Cada uma vê na hora a mensagem "Você recebeu o cargo **Eventos**!", e o bot aplica os cargos em fila, sem travar nem apanhar do Discord. Ninguém espera tela de carregamento.
+
+!!! note "Por baixo dos panos"
+    O bot processa os cliques com controle de ritmo e tenta de novo sozinho se houver instabilidade momentânea. Cliques duplicados em sequência rápida são ignorados, pra não ficar dando e tirando o cargo várias vezes. Tudo automático.
+
+### Escolha única (modo exclusivo)
+
+Todo painel tem o botão **"Permitir múltiplos cargos"**:
+
+- **Ligado** (padrão): o membro acumula vários cargos do painel ao mesmo tempo. Bom pra notificações, jogos e pronomes, onde faz sentido marcar várias opções.
+- **Desligado**: vira escolha única. Ao pegar um cargo do painel, o bot tira sozinho os outros do mesmo painel. Bom pra cor do nome, região e plataforma, onde só pode existir uma.
+
+!!! note
+    O modo exclusivo só mexe nos cargos **daquele painel**. Cargos de outros painéis, ou que o membro ganhou de outras formas, ficam intocados.
+
+## Comandos
+
+Essa feature não tem comando de barra. Criar painéis, botões, cargos, mensagens e publicar acontece tudo no [Dashboard](https://admin.delfus.app), na seção **Cargos por Reação**.
+
+## Configuração
+
+Toda a montagem é pelo [Dashboard](https://admin.delfus.app):
+
+1. **Ligue o sistema** no interruptor geral no topo da página. Ele liga e desliga todos os painéis de uma vez. Com tudo desligado, os botões param de entregar cargos e o membro vê um aviso ao clicar.
+2. **Crie um painel**, do zero em "Novo Painel" ou a partir de um **template** pronto: **Notificações**, **Cores** (já em escolha única), **Jogos** ou **Pronomes**. Se o template usar cargos que ainda não existem, o bot cria eles pra você ao salvar, já com nome e cor sugeridos.
+3. **Configure o painel**: dê um nome (só pra você achar na lista), escolha o canal de destino (texto ou anúncios), escreva o conteúdo e monte a lista de botões.
+4. **Salve**. O bot publica a mensagem no canal. Se você editar depois, ele atualiza a mesma mensagem em vez de criar outra. Se alguém apagou a mensagem nesse meio-tempo, ele percebe e publica uma nova.
+
+Cada botão tem **emoji** (opcional), **rótulo**, **cargo** e **cor** (azul, cinza, verde ou vermelho).
+
+Você também personaliza as **mensagens de confirmação** que o membro recebe ao ganhar e ao perder um cargo. Use `{cargo}` pra inserir o nome automaticamente:
+
+!!! example "Exemplo"
+    Em vez do padrão "Você recebeu o cargo **Lives**!", escreva `Pronto! Agora você é avisado toda vez que rolar uma {cargo}.`
+
+!!! tip "Organizar painéis"
+    Na lista você ativa e desativa cada painel individualmente, **duplica** um (sai uma cópia "(copia)" pronta pra ajustar) e **exclui** o que não usa mais.
+
+!!! note "Limites"
+    Até **25 botões** por painel (5 linhas de 5). Texto acima do embed: 2000 caracteres. Mensagens de confirmação: 500 cada. Nome do painel: 100.
+
+## Exemplos
+
+!!! example "Central de notificações (acúmulo livre)"
+    Crie um painel "Central de Notificações" com os botões **Anúncios**, **Eventos**, **Transmissões** e **Votações**, cada um num cargo de menção. Deixe **"Permitir múltiplos cargos" ligado**, já que dá pra querer ser avisado de várias coisas. Quem quer ser marcado em anúncios, clica e pronto.
+
+!!! example "Cor do nome (escolha única)"
+    Use o template **Cores** ou monte um painel com um botão por cor e **desligue "Permitir múltiplos cargos"**. Escolher uma cor nova remove a anterior sozinha, sem ninguém ficar com duas cores brigando. Lembre de arrastar esses cargos de cor pra cima dos demais na lista de cargos, pra cor aparecer no nome.
+
+!!! example "Pronomes, sem pedir a ninguém"
+    Publique um painel "Pronomes" (Ele/Dele, Ela/Dela, Elu/Delu) com emojis. Deixe acúmulo livre pra permitir combinações, ou escolha única pra uma seleção só. Cada um se identifica sozinho, sem ticket e sem moderador.
+
+## Veja na prática
+
+Montar um painel novo é direto pelo editor, com pré-visualização da mensagem como ela sai no Discord:
+
+![Editor de criar painel interativo no painel do Delfus](../assets/dashboard/modal-painel.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Editor de painel interativo no painel (dados de demonstração).*
+
+## Perguntas frequentes
+
+### O mesmo botão dá e tira o cargo?
+Sim, é um liga/desliga. Não tem o cargo, clicar adiciona; já tem, clicar remove. A confirmação avisa o que aconteceu.
+
+### Por que o cargo demora alguns instantes pra aparecer?
+A confirmação é na hora, mas o cargo é aplicado em segundo plano, em fila, pro servidor aguentar muita gente clicando junto. Costuma entrar em poucos segundos.
+
+### Como faço um menu de uma opção só (uma cor só)?
+Desligue o "Permitir múltiplos cargos" do painel. Escolher uma opção passa a remover as outras automaticamente.
+
+### Editei o painel, preciso apagar a mensagem antiga e publicar de novo?
+Não. Ao salvar, o bot atualiza a mensagem que já está lá. Só publica uma nova se a antiga tiver sido apagada do canal.
+
+### O bot não está entregando um cargo. Por quê?
+Quase sempre é hierarquia: o bot só mexe em cargos que estão **abaixo** dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, o Discord não deixa e a ação é ignorada. Confira também se o bot tem a permissão **Gerenciar Cargos** e consegue **enviar mensagens** no canal do painel.
+
+!!! tip "Dica"
+    Quer cargos de cor sem criar nada na mão? Use o template **Cores**: já vem em escolha única e o bot cria os cargos coloridos sozinho ao salvar. Depois é só arrastar esses cargos pra cima dos demais na lista, e a cor aparece no nome dos membros.
+
+Veja também: [Cargos automáticos](auto-roles.md), [Boas-vindas e despedida](recepcao.md), [Mensagens e embeds](mensagens.md).
+
+
+---
+
+<!-- funcionalidades/recepcao.md -->
+
+# Boas-vindas e despedida
+
+Receba cada novo membro do seu servidor Discord pelo nome e avise quando alguém sai, no automático. Você configura uma vez e o Delfus cuida do resto.
+
+As mensagens podem ser texto simples, um cartão do Discord (embed) ou uma imagem gerada na hora com o avatar da pessoa. Dá pra mandar boas-vindas no canal, no privado (DM), ou nos dois.
+
+![Configuração de boas-vindas no painel do Delfus](../assets/dashboard/recepcao.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
+
+*Configuração de boas-vindas no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+São três tipos de mensagem, cada um liga e desliga separado:
+
+- **Boas-vindas no canal**: aparece num canal que você escolhe quando alguém entra.
+- **DM de boas-vindas**: chega no privado do novo membro assim que ele entra.
+- **Despedida no canal**: aparece num canal quando alguém sai.
+
+Use um, dois, os três ou nenhum. São independentes.
+
+Quando alguém entra, o Delfus atualiza a contagem de membros e dispara as boas-vindas ativas (canal e DM). Quando alguém sai, ele atualiza a contagem e posta a despedida, se estiver ligada.
+
+!!! example "Exemplo"
+    A Ana entra no servidor. Em segundos, aparece no canal de boas-vindas: *"Bem-vinda, Ana! Você é o membro nº 1.240 do nosso servidor."*, com o avatar dela num cartão. E no privado dela chega uma mensagem com os primeiros passos.
+
+### Os três formatos
+
+Cada tipo de mensagem aceita formatos diferentes:
+
+| Tipo | Texto | Embed | Cartão de imagem |
+| --- | :---: | :---: | :---: |
+| Boas-vindas no canal | sim | sim | sim |
+| DM de boas-vindas | sim | sim | não |
+| Despedida no canal | sim | sim | não |
+
+- **Texto**: uma mensagem simples, de uma ou várias linhas.
+- **Embed**: o cartão organizado do Discord, com título, cor, imagem e rodapé.
+- **Cartão de imagem**: uma imagem gerada na hora com o avatar do membro. Exclusivo das boas-vindas no canal.
+
+!!! note "Por que a despedida não tem DM nem cartão?"
+    A pessoa já saiu, então não dá pra mandar DM. Despedida é só texto ou embed.
+
+### Atalhos que se preenchem sozinhos
+
+Escreva a mensagem com atalhos e o Delfus troca pelos dados reais na hora de enviar:
+
+- `{{@user}}`: menciona a pessoa (com notificação). No cartão de imagem, vira só o nome.
+- `{{user}}`: o nome da pessoa (apelido ou usuário).
+- `{{server}}`: o nome do servidor.
+- `{{memberCount}}`: quantos membros o servidor tem naquele momento.
+
+### O cartão de imagem
+
+O cartão é uma imagem de 960×540 px com o avatar do membro num círculo. Escolha um de três layouts:
+
+- **Centralizado**: avatar no meio, título e subtítulo embaixo.
+- **À esquerda**: avatar à esquerda, textos ao lado.
+- **Minimalista**: sem avatar, só o título grande, uma linha colorida e o subtítulo.
+
+Você ajusta título, subtítulo, cores, fonte (Inter, Roboto, Poppins, Montserrat, Open Sans ou Lato), imagem de fundo por URL, sombra no texto e a cor de destaque do avatar. Para as cores, há predefinições prontas (Blurple, Oceano, Pôr do Sol, Floresta, Escuro, Rosa Neon, Ouro, Ártico, Lavanda, Vermelho) que você aplica com um clique.
+
+!!! tip "Texto difícil de ler sobre a imagem de fundo?"
+    Aumente a opacidade do overlay (a camada de cor por cima do fundo) ou ligue a sombra do texto.
+
+### Botões de link
+
+Nas boas-vindas do canal você adiciona até 3 botões com link, tipo "Leia as regras" ou "Site oficial". Cada botão tem um nome e uma URL. Só existe nas boas-vindas do canal, não na DM nem na despedida.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/welcome teste tipo:<Welcome \| Farewell \| DM>` | Mostra uma prévia de uma das três mensagens, usando você como exemplo, sem esperar ninguém entrar ou sair. Só você vê. |
+
+A prévia respeita o que você configurou: gera o cartão de imagem de verdade, monta o embed real e troca os atalhos pelos seus dados. Se o tipo escolhido ainda não estiver configurado, o bot pede pra configurar pelo painel primeiro.
+
+## Configuração
+
+Tudo é feito no Dashboard em [admin.delfus.app](https://admin.delfus.app), na seção de boas-vindas e despedida. Cada tipo se configura separado.
+
+**Boas-vindas no canal:**
+
+1. Ative o toggle.
+2. Escolha o canal.
+3. Escolha o formato (texto, embed ou cartão).
+4. Escreva o conteúdo ou monte o cartão. Use os atalhos à vontade.
+5. (Opcional) Adicione até 3 botões de link.
+6. Decida se quer ignorar bots.
+
+**DM de boas-vindas:**
+
+1. Ative o toggle.
+2. Escolha o formato (texto ou embed).
+3. Escreva o conteúdo. (Aqui não tem botões nem a opção de ignorar bots.)
+
+**Despedida no canal:**
+
+1. Ative o toggle.
+2. Escolha o canal.
+3. Escolha o formato (texto ou embed).
+4. Escreva o conteúdo.
+5. Decida se quer ignorar bots.
+
+!!! warning "Antes de soltar pra geral"
+    Rode `/welcome teste` dentro do servidor pra conferir o resultado. A prévia já mostra como vai ficar, com o seu avatar.
+
+## Exemplos
+
+!!! example "Receber com um cartão visual"
+    Ative as boas-vindas no canal, escolha o formato **cartão**, defina o título `Bem-vindo, {{user}}!` e o subtítulo `Você é o membro nº {{memberCount}} do {{server}}`. Use o layout centralizado, aplique uma predefinição de cores e adicione um botão "Leia as regras" apontando pro canal de regras. Rode `/welcome teste tipo:Welcome` e veja o cartão pronto.
+
+!!! example "Mandar um guia no privado"
+    Para orientar quem chega sem poluir os canais, ative a **DM de boas-vindas** em formato embed, com uma descrição tipo `Olá {{user}}, seja bem-vindo ao {{server}}!` e os primeiros passos do servidor. Cada novo membro recebe isso direto no privado.
+
+!!! example "Anunciar saídas só pra staff"
+    Para registrar quem sai sem alarde, ative a **despedida** em texto simples, num canal de logs da staff, com `{{user}} deixou o servidor. Agora somos {{memberCount}} membros.` Ligue **ignorar bots** pra não anunciar entrada e saída de robôs.
+
+## Veja na prática
+
+O estilo **Cartão de Imagem** monta uma arte de boas-vindas na hora, com o avatar do membro e presets de cor prontos:
+
+![Cartão de boas-vindas no painel do Delfus](../assets/dashboard/recepcao-cartao.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Estilo "Cartão de Imagem" com preview ao vivo e presets de cor (dados de demonstração).*
+
+## Perguntas frequentes
+
+### Posso ter cartão de imagem na despedida ou na DM?
+Não. O cartão é exclusivo das boas-vindas no canal. Despedida e DM aceitam só texto ou embed.
+
+### Por que alguns membros não recebem a DM?
+Porque bloqueiam mensagens privadas de gente do servidor. O bot tenta enviar e, se não der, ignora sem erro.
+
+### A opção "ignorar bots" vale pra DM também?
+Não. Vale pras boas-vindas do canal e pra despedida. A DM não tem essa opção (mas, na prática, bots quase nunca aceitam DM).
+
+### Quantos botões de link posso colocar?
+Até 3, e só nas boas-vindas do canal.
+
+### E se o canal escolhido for apagado?
+O Delfus pula a mensagem em silêncio, sem erro visível. Ele precisa ter permissão pra enviar mensagens (e imagens/embeds) no canal. Pro comando `/welcome teste`, quem roda precisa ser Administrador e o bot precisa da permissão Gerenciar Servidor.
+
+!!! tip "Dica"
+    Monte o cartão e rode `/welcome teste tipo:Welcome` antes de ativar pra todos. A prévia gera o cartão real com o seu avatar, então você vê como vai ficar, inclusive se o texto está legível sobre a imagem de fundo.
+
+Veja também: [Cargos automáticos](auto-roles.md), [Cargos por reação](reaction-roles.md), [Mensagens e embeds](mensagens.md).
+
+
+---
+
+<!-- funcionalidades/starboard.md -->
+
+# Starboard
+
+Republique automaticamente as melhores mensagens do seu servidor Discord num canal de destaques. Quando uma mensagem junta estrelas suficientes (ou o emoji que você escolher), o Delfus copia ela pra lá. Bom pra premiar memes, arte, prints e momentos marcantes.
+
+![Ranking do Starboard no painel do Delfus](../assets/dashboard/starboard.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
+
+*Ranking do Starboard no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+## Como funciona
+
+A galera reage numa mensagem. Se ela bater o mínimo de estrelas, o Delfus copia ela pro canal de destaques num cartão. Conforme mais gente vota, o cartão atualiza a contagem.
+
+Tudo gira em torno de **murais**. Cada mural tem:
+
+- um nome
+- um ou mais emojis de voto (não precisa ser ⭐)
+- um canal de destino
+- um número mínimo de estrelas pra entrar
+
+Você pode ter vários murais ao mesmo tempo: um pros melhores memes, outro pras mensagens marcantes, e assim por diante.
+
+!!! example "Exemplo"
+    Alguém posta um meme no `#geral`. Os amigos reagem com ⭐. Na quinta estrela, o Delfus republica o meme no `#destaques` com um cartão mostrando o autor, o conteúdo e a contagem de estrelas. Quem não viu na hora, vê agora.
+
+### Quando as estrelas caem
+
+Se as pessoas tirarem a reação (ou o post levar votos negativos) e a pontuação cair muito, o destaque é removido do canal.
+
+O limite de saída é separado do de entrada, pra evitar que o post fique piscando perto da borda. Você cria uma zona de segurança: entra com 5, mas só sai abaixo de 3.
+
+### Recursos que valem conhecer
+
+Camadas extras que você liga conforme a necessidade:
+
+- **Pesos e votos negativos**: cada emoji pode valer mais (ou menos) de um ponto, e dá pra ter emojis que descontam pontos.
+- **Níveis visuais**: conforme a pontuação sobe, o cartão troca de emoji e de cor. Os mais votados ficam mais chamativos.
+- **Ranking e cargos de recompensa**: quem mais aparece no mural junta estrelas e pode ganhar cargos automáticos.
+- **Reset periódico**: zere o ranking de tempos em tempos pra recomeçar a competição.
+- **Hall da Fama**: uma coleção permanente, curada pela moderação, que nunca some.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/starboard` | Mostra as estrelas de um membro: total, quantas vezes apareceu no destaque e melhor pontuação. Sem argumento, mostra as suas; com um usuário, as de outra pessoa. |
+| `/hall-of-fame` | Exibe o Hall da Fama do servidor, com navegação por páginas. |
+| **Forçar no Starboard** | Envia uma mensagem ao destaque mesmo sem os votos. Com vários murais, você escolhe o destino. Pede **Gerenciar Mensagens**. |
+| **Adicionar ao Hall da Fama** | Eterniza a mensagem no Hall da Fama. Pede **Gerenciar Mensagens**. |
+
+!!! note "Onde ficam os dois últimos"
+    Não são comandos de barra. Acesse clicando com o **botão direito** numa mensagem → **Apps**.
+
+## Configuração
+
+Tudo pelo **Dashboard** em [admin.delfus.app](https://admin.delfus.app), na seção **Starboard**. É lá que você cria e ajusta os murais.
+
+O essencial pra começar:
+
+1. Crie um mural, dê um nome e aponte pro **canal de destino**.
+2. Escolha o **emoji de voto** (⭐ é o clássico).
+3. Defina **quantas estrelas** pra entrar e abaixo de quantas pra sair.
+4. Deixe o mural **ativo**. Pronto.
+
+A partir daí, refine o quanto quiser:
+
+- **Cartão**: como mostrar o autor, avatar, link pra mensagem original, anexos e tamanho do texto.
+- **Filtros**: ignorar reações de bots, bloquear auto-voto, limitar spam de votos, e listas de bloqueio/permissão por usuário, cargo ou canal.
+- **Auto-estrela**: em canais escolhidos, o bot reage sozinho nas mensagens, ou manda direto pro destaque sem precisar de votos.
+- **Cargos de recompensa**: entregue cargos automáticos por metas (total de estrelas, mensagem mais estrelada, etc.).
+- **Reset de ranking**: zere a disputa a cada N dias ou num dia fixo do mês.
+- **Hall da Fama**: defina um canal opcional onde as entradas curadas são republicadas em dourado.
+
+!!! warning "Permissões do bot"
+    O Delfus precisa de **Ver Canal**, **Enviar Mensagens** e **Incorporar Links** nos canais de destaque. Pra remover reações inválidas ou usar auto-estrela com apagamento, precisa de **Gerenciar Mensagens**. Pra dar cargos de recompensa, precisa de **Gerenciar Cargos**, e o cargo dele tem que estar **acima** dos cargos de recompensa.
+
+## Exemplos
+
+!!! example "Mural clássico de estrelas"
+    Crie um mural "Destaques" apontando pro `#destaques`, use ⭐ com entrar em 5 e sair abaixo de 3, e ligue "remover reações inválidas". Toda mensagem que juntar 5 ⭐ vai parar lá, e some se as estrelas caírem demais.
+
+!!! example "Canal de arte no automático"
+    No `#arte`, configure a auto-estrela pro Delfus já reagir com ⭐ em toda mensagem **com imagem**, e ligue "apagar inválidas" pra manter o canal só com arte. As reações dos membros decidem o que sobe ao destaque.
+
+!!! example "Competição mensal com prêmio"
+    Ligue um reset "dia fixo do mês" pra zerar a disputa toda virada de mês, e crie um cargo "Estrela do Mês" com meta de 100 estrelas. O Delfus dá e tira o cargo sozinho conforme o ranking muda.
+
+!!! example "Hall da Fama curado"
+    Apareceu uma mensagem icônica? Um moderador clica com o botão direito → **Apps** → **Adicionar ao Hall da Fama**. Ela fica eternizada, não importa o que aconteça com os votos.
+
+## Veja na prática
+
+Criar um mural é direto pelo painel:
+
+![Dialog de criar board do Starboard no painel](../assets/dashboard/modal-starboard.webp){ .dx-shot width="1200" height="934" loading=lazy }
+
+*Dialog de criar board no painel (dados de demonstração).*
+
+## Perguntas frequentes
+
+### Posso ter mais de um mural no mesmo servidor?
+Sim, quantos quiser, cada um com seu emoji, canal e limites. Se quiser que uma mensagem apareça em só um mural de um grupo, use **grupos exclusivos** (o de maior prioridade vence).
+
+### Dá pra destacar uma mensagem antiga na mão?
+Dá. Um moderador clica com o botão direito → **Apps** → **Forçar no Starboard**, e ela vai pro destaque mesmo sem os votos.
+
+### E se as estrelas caírem depois que a mensagem já entrou?
+O cartão se atualiza a cada mudança. Se a pontuação cair até o **limite de saída**, o destaque é retirado. Por isso vale deixar esse limite abaixo do de entrada.
+
+### Por que minha reação não contou?
+Pode ser auto-voto (com auto-voto desligado), uma reação de bot, voto acima do limite anti-spam, alguém numa lista de bloqueio, ou a mensagem não passou nos filtros (muito nova, muito antiga ou texto curto). Em murais com "remover reações inválidas", a reação é tirada nesses casos.
+
+!!! tip "Dica"
+    Deixe **estrelas para entrar** maior que **estrelas para sair** (ex.: entra com 5, sai abaixo de 3) pra criar uma zona de segurança e evitar o post piscando perto do limite. E combine **votos negativos** com **níveis visuais**: os destaques muito votados ganham um cartão mais chamativo, enquanto os negativos derrubam o que não merece ficar.
+
+Veja também: [Emojis](emojis.md), [Mensagens e embeds](mensagens.md), [Análise e insights](analise.md).
+
+
+---
+
+<!-- funcionalidades/video.md -->
+
+# Download de vídeos
+
+Cola um link de TikTok, Reels ou YouTube no chat e o Delfus baixa o vídeo, reenviando o `.mp4` direto no canal do Discord. Funciona com YouTube, TikTok, Instagram, Twitter/X, Reddit e Twitch. Vídeo grande, ele comprime.
+
+## Como funciona
+
+Você ativa o recurso num canal e o Delfus passa a observar as mensagens dali. Quando alguém posta um link de vídeo, ele baixa nos bastidores e responde com o arquivo anexado, sem dar ping. O link continua na conversa, agora com o vídeo logo abaixo.
+
+Detalhes que valem saber:
+
+- Se a mensagem tem vários links, o Delfus baixa só o primeiro, pra não lotar o canal de anexos.
+- Enquanto trabalha, ele mostra o "digitando…".
+- O arquivo é apagado logo após o envio. Nada fica guardado.
+
+!!! example "Exemplo"
+    Alguém cola um Reel no `#memes`. Em segundos, o Delfus responde àquela mensagem com o vídeo em `.mp4` anexado, e a galera assiste sem abrir o Instagram.
+
+Plataformas suportadas: YouTube (vídeos, Shorts e `youtu.be`), TikTok, Instagram (posts e Reels), Twitter/X, Reddit e clipes da Twitch. Links que não são vídeo direto (playlist, página de canal, live inteira) são ignorados.
+
+## Comandos
+
+| Comando | O que faz |
+| --- | --- |
+| `/video-download canal:<#canal>` | Liga ou desliga o download automático no canal. Rodar de novo no mesmo canal inverte o estado. |
+
+!!! tip "Atalho"
+    O campo `canal` tem autocompletar: comece a digitar e o Discord sugere os canais do servidor.
+
+## Configuração
+
+Tudo é feito por comando, dentro do Discord. Não há ajuste no painel web.
+
+1. Rode `/video-download` em qualquer canal onde você possa usar comandos.
+2. No campo `canal`, escolha onde quer ativar.
+3. Envie:
+    - Canal inativo: o bot confirma com "📹 Download de Vídeos Ativado".
+    - Canal já ativo: o mesmo comando desativa e responde "⏹️ Download de Vídeos Desativado".
+
+Pra ativar em vários canais, repita o comando em cada um. A configuração vale por servidor e continua valendo mesmo se o bot reiniciar. Você não precisa reativar nada.
+
+!!! note "Quem pode configurar"
+    Só administradores usam `/video-download`. O bot precisa de permissão pra ver o canal, enviar mensagens e anexar arquivos. Sem "Anexar arquivos", ele não posta o `.mp4`. O comando só funciona dentro de um servidor, não em DM.
+
+## Exemplos
+
+!!! example "Um canal só pra colar links"
+    Crie um `#links-virais` e rode `/video-download canal:#links-virais`. Daí em diante, todo TikTok, Reel ou Short colado ali vira vídeo assistível na hora, e os outros canais ficam livres de anexos.
+
+!!! example "Canal de clipes e memes"
+    Ative no `#clipes`. Os clipes da Twitch e vídeos do Reddit que a comunidade postar aparecem já reproduzíveis, sem prévia quebrada nem link pra abrir no navegador.
+
+!!! example "Desligar quando virar bagunça"
+    Canal lotado de download indesejado? Rode `/video-download` de novo apontando pro mesmo canal. O recurso desliga ali na hora, sem mexer nos outros.
+
+## Vídeos grandes e quando o bot fica quieto
+
+O Discord limita o tamanho dos anexos, então o Delfus trabalha com teto de 8 MB (margem segura, funciona até sem Nitro). Se o vídeo passa disso, ele comprime: reduz a resolução pra no máximo 720p, mira um arquivo de uns 7,5 MB e mantém a proporção original. Vídeos grandes ou longos podem perder um pouco de qualidade nesse processo.
+
+!!! warning "Quando o Delfus não responde"
+    O recurso nunca polui o canal com mensagens de erro. Se algo dá errado, o bot fica quieto e o link original continua na conversa. Isso acontece quando o vídeo é privado, removido, exige login, tem restrição de idade ou bloqueio de direitos autorais; quando é longo demais pra caber mesmo após comprimir; ou quando o download demora demais. Há também um limite anti-spam: cada pessoa só dispara um download a cada 10 segundos.
+
+## Perguntas frequentes
+
+### O bot baixa qualquer vídeo da internet?
+Não. Só YouTube, TikTok, Instagram, Twitter/X, Reddit e clipes da Twitch, nos formatos de vídeo direto de cada plataforma. O resto ele ignora.
+
+### Postei um link e o bot não respondeu. O que houve?
+Provavelmente o vídeo é privado, foi removido, exige login, tem restrição de idade, está bloqueado por direitos autorais, é longo demais pra caber no limite, ou você postou outro link nos últimos 10 segundos. Em todos esses casos ele ignora em silêncio, sem mensagem de erro.
+
+### A qualidade é a original?
+Se o vídeo já cabe em 8 MB, vai como veio. Se é maior, o Delfus comprime pra caber (até 720p), então pode haver alguma perda em vídeos grandes ou longos.
+
+### Posso ativar em mais de um canal?
+Pode. Rode `/video-download` uma vez pra cada canal. Cada um funciona de forma independente e a configuração sobrevive a reinícios do bot.
+
+!!! tip "Dica"
+    Dedique um canal só pra colar links de vídeo e ative o recurso apenas nele. Assim os membros sabem onde os links viram vídeos, e os outros canais não enchem de anexos. Se um deles sair de controle, rode `/video-download` de novo no mesmo canal pra desligar na hora.
+
+Veja também: [Encurtador de links](links.md), [Automações de canal](automacoes.md).
+
+
+---
+
+<!-- funcionalidades/vip.md -->
+
+# VIP, assinaturas e recompensas
+
+Defina os benefícios uma vez e o Delfus cuida do resto no seu servidor Discord: ativa o VIP, controla o prazo, avisa o membro antes de acabar e remove tudo na hora certa, sem trabalho manual.
+
+![Planos VIP no painel do Delfus](../assets/dashboard/vip.webp){ .dx-shot width="1200" height="934" fetchpriority=high }
+
+*Planos VIP no [Dashboard](https://admin.delfus.app) (exemplo com dados de demonstração).*
+
+## Como funciona
+
+O VIP tem três peças, nesta ordem: benefícios, níveis e entrega.
+
+1. **Benefícios (recompensas)**: as vantagens individuais. Um cargo, XP em dobro, mais chances em sorteios, bônus no `/daily` ou um slot de família.
+2. **Níveis (tiers)**: você junta vários benefícios num pacote, tipo "Ouro" ou "Diamante", e dá uma prioridade. Quanto maior o número, mais alto o nível.
+3. **Entrega**: você passa o nível pro membro de duas formas. Gerando um código que ele resgata, ou concedendo direto pra alguém.
+
+A partir daí o Delfus assume. Aplica os benefícios na hora, marca quando expira, avisa o membro antes do prazo, remove tudo quando acaba e devolve sozinho cargos VIP que sumiram.
+
+!!! example "Exemplo"
+    Você cria um cargo "VIP Ouro" e um bônus de XP em dobro. Junta os dois num nível "Ouro". Gera um código e vende. O membro digita `/vip resgatar`, o código é validado e ele já fica com o cargo e ganhando XP dobrado. Daqui a 30 dias o bot tira tudo automaticamente, depois de avisá-lo antes.
+
+### Os tipos de benefício
+
+Cada recompensa é de um tipo:
+
+- **Cargo**: dá um cargo automático ao membro VIP e tira quando expira.
+- **Multiplicador de XP**: multiplica o XP que ele ganha, de 1x a 5x.
+- **Sorteios**: mais entradas nos sorteios, de 1 a 10 chances.
+- **Bônus diário**: moedas extras no `/daily`, fixas ("+50") ou em percentual ("+25%").
+- **Família**: libera um slot pro membro criar uma família com cargo próprio, via `/familia criar`.
+
+### O que acontece nos bastidores
+
+Você não precisa se preocupar com isso, mas é bom saber que o bot:
+
+- **Calcula a expiração** e cria a assinatura quando o VIP é ativado.
+- **Avisa de hora em hora** quem está perto de perder o VIP. Por padrão, 3 dias antes.
+- **Expira sozinho**: tira os cargos, para os bônus e congela famílias vinculadas àquele VIP.
+- **Conserta cargos a cada 6 horas**: devolve cargo VIP que alguém tirou na mão e remove cargo que sobrou.
+
+!!! note "Já tem VIP e ganha outro?"
+    Se o novo nível for mais alto, o bot faz upgrade e troca o nível. Se for igual ou menor, ele soma os dias ao VIP atual em vez de recomeçar, ótimo pra quem renovou. Um VIP permanente continua permanente.
+
+## Comandos
+
+### Para os membros: `/vip`
+
+| Comando | O que faz |
+| --- | --- |
+| `/vip status` | Mostra seu VIP atual: nível, quando expira e seus benefícios. |
+| `/vip info [tier]` | Lista os níveis disponíveis, ou os detalhes de um nível específico. |
+| `/vip resgatar codigo:<código>` | Resgata um código VIP (também funciona como `/vip redeem`). |
+
+### Para administradores: `/vip-admin`
+
+Restrito a admins. Os comandos estão organizados em grupos:
+
+| Comando | O que faz |
+| --- | --- |
+| `/vip-admin reward create` | Cria uma recompensa (cargo, XP, sorteio, bônus diário ou família). |
+| `/vip-admin reward list` / `delete` | Lista ou remove recompensas. |
+| `/vip-admin tier create` | Monta um nível com nome, prioridade e recompensas. |
+| `/vip-admin tier list` / `info` / `edit` / `delete` | Lista, detalha, edita ou apaga um nível. |
+| `/vip-admin code create` | Gera um código: nível, duração, máximo de usos e validade opcional. |
+| `/vip-admin code list` / `delete` | Lista ou remove códigos. |
+| `/vip-admin user give` | Concede VIP direto a um membro. |
+| `/vip-admin user remove` / `time` / `list` | Remove o VIP, ajusta dias ou lista quem tem VIP. |
+| `/vip-admin config ...` | Configura canal de avisos, DMs, dias de antecedência e mais. |
+
+!!! tip "Como escrever a duração"
+    Aceita `30d` (dias), `2w` (semanas), `1m` (mês = 30 dias) ou só um número (`30` = 30 dias). Use `0` para deixar o VIP permanente. Vale só ao conceder ou criar código.
+
+## Configuração
+
+Configure tudo pelos comandos `/vip-admin config` ou pelo [Dashboard](https://admin.delfus.app). Dá no mesmo.
+
+O caminho mais tranquilo:
+
+1. **Crie os benefícios** primeiro (`reward create`).
+2. **Monte os níveis** juntando os benefícios e definindo a prioridade (`tier create`). Cada nível precisa de pelo menos um benefício, e nome e prioridade não podem repetir.
+3. **Distribua**: gere códigos pra vender ou sortear (`code create`), ou conceda direto (`user give`).
+4. **Ajuste os avisos** no grupo `config`: canal de notificações, DMs e quantos dias antes avisar.
+
+!!! note "Bom saber"
+    Cada servidor pode ter até 10 níveis, 20 benefícios por nível e 100 códigos ativos. Detalhe das DMs: se o membro está com as mensagens do servidor fechadas, o aviso não chega, mas o VIP ativa normalmente.
+
+## Exemplos
+
+!!! example "Vender um plano mensal"
+    Crie um cargo "VIP Ouro" e um XP em dobro, junte num nível "Ouro" e gere códigos com `/vip-admin code create tier:Ouro duracao:30d`. Venda cada código. O membro resgata com `/vip resgatar` e ganha cargo + XP dobrado por 30 dias. Quando acabar, o bot tira tudo sozinho.
+
+!!! example "Recompensar staff ou apoiador na hora"
+    Sem código nenhum: `/vip-admin user give usuario:@membro tier:Diamante duracao:0` dá um VIP permanente direto. Ideal pra quem você quer premiar pra sempre.
+
+!!! example "Quem renovou ganha mais tempo, não recomeça"
+    Um membro já tem "Ouro" e compra outro mês? Entregue outro código do mesmo nível. O bot soma 30 dias à assinatura atual em vez de zerar o relógio.
+
+!!! example "Família com cargo próprio"
+    Inclua um benefício de família num nível. Os assinantes montam a própria família com `/familia criar`, com cargo e tudo. Se o VIP expirar, a família é congelada automaticamente.
+
+## Veja na prática
+
+Criar um plano é direto pelo painel:
+
+![Dialog de criar plano VIP no painel](../assets/dashboard/modal-vip.webp){ .dx-shot width="1200" height="934" loading=lazy }
+
+*Dialog de criar plano VIP no painel (dados de demonstração).*
+
+## Perguntas frequentes
+
+### Um membro pode usar o mesmo código duas vezes?
+Não. Cada pessoa resgata um código só uma vez. Mas o mesmo código pode ser usado por vários membros, até bater o limite de usos que você definiu.
+
+### E se o membro já tem VIP e resgata outro código?
+Se for de um nível mais alto, vira upgrade. Se for do mesmo nível ou menor, o bot soma os dias ao VIP atual (com a extensão habilitada, que é o padrão).
+
+### Tirei o cargo VIP de alguém na mão. O bot devolve?
+Devolve. A cada 6 horas ele confere e restaura cargos VIP que sumiram. É só esperar o próximo ciclo.
+
+### Posso apagar um nível que ainda tem assinantes?
+Não. O bot bloqueia enquanto houver VIP ativo naquele nível. Espere os VIPs expirarem ou remova-os antes.
+
+!!! tip "Dica"
+    Códigos podem ter validade própria, separada da duração do VIP. Use isso em promoções: `duracao:30d expira:7d` cria um código que dá 30 dias de VIP, mas só pode ser resgatado nos próximos 7 dias. Se você não escolher um código, o bot gera um automático no formato `VIP-XXXXXX`.
+
+Veja também: [Recompensas de boost](boost.md), [Famílias](familia.md), [Correio elegante](correio.md).
+
+
+---
+
+<!-- index.md -->
+
+<div class="dx-home">
+
+<section class="dxh-hero">
+  <img class="dxh-hero__mascot" src="assets/mascote-oculos.webp" alt="Mascote do Delfus" width="166" height="166" fetchpriority="high">
+  <span class="dxh-badge">Central de documentação</span>
+  <h1 class="dxh-title">O que você quer <span class="dxh-gold">configurar?</span></h1>
+  <p class="dxh-sub">O Delfus é um bot para Discord com moderação, segurança, cargos, VIP e análise. Digite abaixo e a documentação encontra o guia certo.</p>
+
+  <div class="dxh-searchbox" id="dxh-search">
+    <div class="dxh-searchbox__field">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.2-4.2"/></svg>
+      <input type="text" id="dxh-q" autocomplete="off" spellcheck="false" placeholder="Busque por anti-raid, cartão de boas-vindas, programa VIP…">
+      <span class="dxh-kbd">/</span>
+    </div>
+    <div class="dxh-results" id="dxh-results" hidden>
+      <div class="dxh-results__label" id="dxh-results-label">Sugestões</div>
+      <div id="dxh-results-list"></div>
+    </div>
+  </div>
+
+  <div class="dxh-chips">
+    <a href="funcionalidades/anti-raid/">Anti-raid</a>
+    <a href="funcionalidades/recepcao/">Cartão de boas-vindas</a>
+    <a href="funcionalidades/vip/">Programa VIP</a>
+    <a href="funcionalidades/reaction-roles/">Cargos por reação</a>
+    <a href="funcionalidades/backup/">Backups</a>
+    <a href="funcionalidades/analise/">Métricas</a>
+  </div>
+</section>
+
+<section class="dxh-2col">
+  <aside class="dxh-side">
+    <div class="dxh-seclabel">Comece por aqui</div>
+    <a class="dxh-side__step" href="comecar/adicionar/">
+      <div class="dxh-side__n">01</div>
+      <div><div class="dxh-side__t">Adicionar o bot</div><p class="dxh-side__d">Convide o Delfus e autorize as permissões.</p></div>
+    </a>
+    <a class="dxh-side__step" href="comecar/configuracao/">
+      <div class="dxh-side__n">02</div>
+      <div><div class="dxh-side__t">Configuração inicial</div><p class="dxh-side__d">Defina canais, cargos e módulos no painel.</p></div>
+    </a>
+    <a class="dxh-side__step" href="funcionalidades/">
+      <div class="dxh-side__n">03</div>
+      <div><div class="dxh-side__t">Ativar módulos</div><p class="dxh-side__d">Segurança, recepção, monetização e análise.</p></div>
+    </a>
+    <a class="dxh-side__step" href="comecar/idioma/">
+      <div class="dxh-side__n">04</div>
+      <div><div class="dxh-side__t">Definir o idioma</div><p class="dxh-side__d">Português ou inglês, do seu jeito.</p></div>
+    </a>
+    <a class="dxh-side__more" href="comecar/adicionar/">Guia completo <span>→</span></a>
+  </aside>
+
+  <div>
+    <div class="dxh-seclabel">Explore por tópico</div>
+    <div class="dxh-topics">
+      <a class="dxh-topic" href="comecar/configuracao/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg></div>
+        <div><div class="dxh-topic__t">Configuração</div><p class="dxh-topic__d">Painel web, canais, cargos e como ativar cada módulo.</p><div class="dxh-topic__n">3 artigos →</div></div>
+      </a>
+      <a class="dxh-topic" href="funcionalidades/moderacao/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><div class="dxh-topic__t">Segurança e moderação</div><p class="dxh-topic__d">Gatilhos automáticos, anti-raid, anti-invite, honeypot e backups.</p><div class="dxh-topic__n">5 artigos →</div></div>
+      </a>
+      <a class="dxh-topic" href="funcionalidades/recepcao/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg></div>
+        <div><div class="dxh-topic__t">Recepção e cargos</div><p class="dxh-topic__d">Cartão de boas-vindas, cargos automáticos e por reação.</p><div class="dxh-topic__n">3 artigos →</div></div>
+      </a>
+      <a class="dxh-topic" href="funcionalidades/vip/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg></div>
+        <div><div class="dxh-topic__t">Monetização</div><p class="dxh-topic__d">Programa VIP, níveis, códigos de resgate, recompensas e boost.</p><div class="dxh-topic__n">2 artigos →</div></div>
+      </a>
+      <a class="dxh-topic" href="funcionalidades/starboard/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
+        <div><div class="dxh-topic__t">Engajamento</div><p class="dxh-topic__d">Starboard, aniversários, famílias, correio e automações de canal.</p><div class="dxh-topic__n">5 artigos →</div></div>
+      </a>
+      <a class="dxh-topic" href="funcionalidades/analise/">
+        <div class="dxh-topic__ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><rect x="15" y="5" width="4" height="12" rx="1"/><rect x="7" y="8" width="4" height="9" rx="1"/></svg></div>
+        <div><div class="dxh-topic__t">Análise</div><p class="dxh-topic__d">Métricas em tempo real, pontuação, mapa social e inteligência de canais.</p><div class="dxh-topic__n">1 artigo →</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dxh-section">
+  <div class="dxh-sechead">
+    <div class="dxh-seclabel">Mais acessados</div>
+    <a class="dxh-morelink" href="funcionalidades/">Ver todos →</a>
+  </div>
+  <div class="dxh-popular">
+    <a class="dxh-pop" href="funcionalidades/anti-raid/">
+      <span class="dxh-pop__rank">01</span>
+      <span class="dxh-pop__t">Configurar o anti-raid por imagem</span>
+      <span class="dxh-pop__cat">Segurança</span>
+    </a>
+    <a class="dxh-pop" href="funcionalidades/recepcao/">
+      <span class="dxh-pop__rank">02</span>
+      <span class="dxh-pop__t">Criar um cartão de boas-vindas</span>
+      <span class="dxh-pop__cat">Recepção</span>
+    </a>
+    <a class="dxh-pop" href="funcionalidades/vip/">
+      <span class="dxh-pop__rank">03</span>
+      <span class="dxh-pop__t">Configurar o programa VIP e níveis</span>
+      <span class="dxh-pop__cat">Monetização</span>
+    </a>
+    <a class="dxh-pop" href="funcionalidades/backup/">
+      <span class="dxh-pop__rank">04</span>
+      <span class="dxh-pop__t">Backups automáticos do servidor</span>
+      <span class="dxh-pop__cat">Segurança</span>
+    </a>
+  </div>
+</section>
+
+<section class="dxh-cta">
+  <div class="dxh-cta__left">
+    <img src="assets/mascote-feliz.png" alt="" width="180" height="192" loading="lazy">
+    <div>
+      <h3>Não achou o que precisa?</h3>
+      <p>Tire dúvidas, sugira ideias ou fale com a equipe no nosso servidor de suporte.</p>
+    </div>
+  </div>
+  <a class="dxh-cta__btn" href="https://discord.gg/mTjZg95UJV">Entrar no servidor</a>
+</section>
+
+</div>
+
+
+---
+
+<!-- suporte.md -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O Delfus é gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Todos os módulos essenciais são gratuitos. O programa VIP e alguns recursos avançados são opcionais e configuráveis por você."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Um módulo parou de funcionar. E agora?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase sempre é permissão. Confira se o cargo do Delfus está acima dos cargos que ele gerencia e se as permissões sugeridas no convite foram mantidas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como troco o idioma do bot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No painel, em Configuração inicial, escolha entre português e inglês. A mudança vale para mensagens automáticas e respostas de comando."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês guardam dados do meu servidor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Guardamos apenas o necessário para os módulos funcionarem (configurações, histórico de moderação e métricas). Veja a Política de Privacidade para os detalhes."
+      }
+    }
+  ]
+}
+</script>
+
+<div class="dxs-wrap">
+
+<div class="dxs-eyebrow">Suporte</div>
+<h1 class="dxs-title">Precisa de uma mão?</h1>
+<p class="dxs-lead">Fala com a gente pelo canal que preferir. A equipe e a comunidade respondem, e a maioria das dúvidas se resolve no servidor de suporte.</p>
+
+<section class="dxs-hero">
+  <div class="dxs-hero__text">
+    <span class="dxs-online"><span class="dxs-online__dot"></span>Equipe ativa</span>
+    <h2 class="dxs-hero__h">Servidor de Suporte</h2>
+    <p class="dxs-hero__p">O jeito mais rápido. Abra um ticket, tire dúvidas e acompanhe as novidades junto da comunidade.</p>
+    <a class="dxs-hero__btn" href="https://discord.gg/mTjZg95UJV">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 5.6A17 17 0 0 0 15.4 4.3l-.3.5a15 15 0 0 1 3.7 1.2 15.6 15.6 0 0 0-13.6 0 15 15 0 0 1 3.7-1.2l-.3-.5A17 17 0 0 0 4.4 5.6 17.8 17.8 0 0 0 1.4 17.5a17.2 17.2 0 0 0 5.2 2.6l.7-1.1a11 11 0 0 1-1.8-.9l.4-.3a12.4 12.4 0 0 0 10.6 0l.4.3c-.6.3-1.2.6-1.8.9l.7 1.1a17.1 17.1 0 0 0 5.2-2.6 17.8 17.8 0 0 0-3-11.9zM8.7 15c-.9 0-1.6-.9-1.6-1.9s.7-1.9 1.6-1.9 1.7.9 1.6 1.9c0 1-.7 1.9-1.6 1.9zm6.6 0c-.9 0-1.6-.9-1.6-1.9s.7-1.9 1.6-1.9 1.7.9 1.6 1.9c0 1-.7 1.9-1.6 1.9z"/></svg>
+      Entrar no servidor
+    </a>
+  </div>
+  <div class="dxs-hero__art">
+    <img src="../assets/mascote-suporte.jpg" alt="Mascote do Delfus acenando" width="900" height="450">
+  </div>
+</section>
+
+<div class="dxs-channels">
+  <a class="dxs-channel" href="https://admin.delfus.app">
+    <span class="dxs-channel__ic dxs-ic--purple"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-2.5"/><path d="M12 12v-5"/></svg></span>
+    <h3 class="dxs-channel__t">Dashboard</h3>
+    <p class="dxs-channel__d">Configure o bot visualmente, sem comandos.</p>
+    <span class="dxs-channel__a">Abrir painel <span>→</span></span>
+  </a>
+  <a class="dxs-channel" href="https://delfus.app">
+    <span class="dxs-channel__ic dxs-ic--teal"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></span>
+    <h3 class="dxs-channel__t">Site</h3>
+    <p class="dxs-channel__d">Conheça o Delfus e todos os módulos.</p>
+    <span class="dxs-channel__a">Visitar <span>→</span></span>
+  </a>
+  <a class="dxs-channel" href="mailto:delfus.app@proton.me">
+    <span class="dxs-channel__ic dxs-ic--gold"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></span>
+    <h3 class="dxs-channel__t">E-mail</h3>
+    <p class="dxs-channel__d">Contato direto para assuntos formais.</p>
+    <span class="dxs-channel__a">delfus.app@proton.me <span>→</span></span>
+  </a>
+</div>
+
+<section class="dxs-faq">
+  <div class="dxs-eyebrow">Antes de perguntar</div>
+  <h2 class="dxs-faq__h">Perguntas frequentes</h2>
+
+  <details class="dxs-q" name="faq" open>
+    <summary><span>O Delfus é gratuito?</span><svg class="dxs-q__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="dxs-q__a">Sim. Todos os módulos essenciais são gratuitos. O programa VIP e alguns recursos avançados são opcionais e configuráveis por você.</div>
+  </details>
+  <details class="dxs-q" name="faq">
+    <summary><span>Um módulo parou de funcionar. E agora?</span><svg class="dxs-q__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="dxs-q__a">Quase sempre é permissão. Confira se o cargo do Delfus está acima dos cargos que ele gerencia e se as permissões sugeridas no convite foram mantidas.</div>
+  </details>
+  <details class="dxs-q" name="faq">
+    <summary><span>Como troco o idioma do bot?</span><svg class="dxs-q__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="dxs-q__a">No painel, em Configuração inicial, escolha entre português e inglês. A mudança vale para mensagens automáticas e respostas de comando.</div>
+  </details>
+  <details class="dxs-q" name="faq">
+    <summary><span>Vocês guardam dados do meu servidor?</span><svg class="dxs-q__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <div class="dxs-q__a">Guardamos apenas o necessário para os módulos funcionarem (configurações, histórico de moderação e métricas). Veja a <a href="https://admin.delfus.app/privacy">Política de Privacidade</a> para os detalhes.</div>
+  </details>
+</section>
+
+<div class="dxs-links">
+  <span class="dxs-links__label">Links úteis:</span>
+  <a href="https://admin.delfus.app/privacy">Política de Privacidade</a>
+  <a href="https://admin.delfus.app/terms">Termos de Serviço</a>
+</div>
+
+</div>

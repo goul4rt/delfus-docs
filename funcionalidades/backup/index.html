@@ -43,17 +43,14 @@
       
     
     
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.cefe9b4b.css">
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
-
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -121,7 +118,7 @@
         "url": "https://docs.delfus.app/funcionalidades/backup/",
         "image": "https://docs.delfus.app/assets/og/funcionalidades-backup.jpg",
         "inLanguage": "pt-BR",
-        "dateModified": "2026-07-15",
+        "dateModified": "2026-08-08",
         "isPartOf": { "@id": "https://docs.delfus.app/#website" },
         "author": { "@id": "https://docs.delfus.app/#organization" },
         "publisher": { "@id": "https://docs.delfus.app/#organization" }
@@ -129,6 +126,9 @@
     ]
   }
   </script>
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O backup salva as mensagens dos canais?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Ele guarda só a estrutura: cargos, canais, categorias, permissões e configurações. Nunca o conteúdo das mensagens nem a lista de membros."}}, {"@type": "Question", "name": "Posso restaurar sem apagar o que já existe?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, é o modo Aditivo: ele recria os itens ao lado dos atuais, sem deletar nada. O modo Destrutivo (que apaga antes) só roda depois de uma confirmação extra."}}, {"@type": "Question", "name": "Por que alguns cargos não foram restaurados?", "acceptedAnswer": {"@type": "Answer", "text": "Cargos acima do cargo do bot, cargos já deletados ou cargos de integrações não podem ser recriados. Eles aparecem no resumo como ignorados. Suba o cargo do bot ao topo e tente de novo."}}, {"@type": "Question", "name": "Quantos backups o servidor guarda?", "acceptedAnswer": {"@type": "Answer", "text": "De 1 a 10 (padrão 5), definido no Dashboard. Ao passar do limite, o mais antigo é apagado. Os snapshots de cargos por membro têm o próprio limite (padrão 2 por pessoa)."}}, {"@type": "Question", "name": "Preciso de alguma permissão pro bot?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Ele precisa de Gerenciar Cargos e Gerenciar Canais pra criar e restaurar a estrutura. Pra restaurar configurações do servidor, também precisa de Gerenciar Servidor; pra restaurar bans, de Banir Membros.\n\nDica\nAntes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo Aditivo, que não apaga nada e é fácil de desfazer. Deixe o Destrutivo só pra quando você realmente quer recomeçar do zero.\n\nVeja também: Anti-raid, Moderação e punições."}}]}</script>
+  
   
 
   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
@@ -2130,7 +2130,7 @@
 
 <h1 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">¶</a></h1>
 <p>Recrie cargos, canais, categorias, permissões e configurações do seu servidor Discord com poucos cliques, mesmo depois de um ataque ou de uma reforma que deu errado. O Delfus tira uma "foto" da estrutura do servidor e guarda pra você restaurar quando precisar.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/backup.webp" data-desc-position="bottom"><img alt="Backups do servidor no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/backup.webp" width="1200"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Backups do servidor no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/backup.webp" width="1200"></a></p>
 <p><em>Backups do servidor no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>O Delfus salva uma foto da estrutura do servidor: cargos, canais, categorias, permissões e configurações. Mensagens e a lista de membros não entram. Só o esqueleto.</p>
@@ -2236,6 +2236,7 @@
 <p class="admonition-title">Dica</p>
 <p>Antes de qualquer mudança grande, crie um backup manual com um nome descritivo. Se algo der errado, restaure primeiro no modo <strong>Aditivo</strong>, que não apaga nada e é fácil de desfazer. Deixe o <strong>Destrutivo</strong> só pra quando você realmente quer recomeçar do zero.</p>
 </div>
+<p>Veja também: <a href="../anti-raid/">Anti-raid</a>, <a href="../moderacao/">Moderação e punições</a>.</p>
 
 
 
@@ -2256,7 +2257,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="15 de julho de 2026 21:14:21 UTC"><span class="timeago" datetime="2026-07-15T21:14:21+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="15 de julho de 2026 21:14:21 UTC">2026-07-15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 05:42:06 UTC"><span class="timeago" datetime="2026-08-08T05:42:06+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 05:42:06 UTC">2026-08-08</span>
   </span>
 
     
@@ -2393,6 +2394,18 @@
       
     
   
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+<script id="init-glightbox">document.querySelectorAll('.glightbox').forEach(function(element) {
+    try {
+        var img = element.querySelector('img');
+        if (img && img.src) {
+            element.setAttribute('href', img.src);
+        } else {
+            console.log('No img element with src attribute found');
+        }
+    } catch (error) {
+        console.log('Error:', error);
+    }
+});
+const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

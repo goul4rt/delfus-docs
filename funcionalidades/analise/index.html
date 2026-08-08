@@ -43,17 +43,14 @@
       
     
     
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        
+        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.cefe9b4b.css">
         <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
-
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
@@ -129,6 +126,9 @@
     ]
   }
   </script>
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?", "acceptedAnswer": {"@type": "Answer", "text": "Essas análises só olham os canais que você mandou o Oráculo monitorar. Configure com /oráculo <canal> no Discord ou pelo botão Configurar na tela — a partir daí os dados começam a acumular."}}, {"@type": "Question", "name": "Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. O bot consolida a atividade mais ou menos uma vez por minuto, e o ranking de emojis pode levar mais alguns instantes. Espere um pouco e clique em Reload, ou rode o comando de novo."}}, {"@type": "Question", "name": "O gráfico de membros diz \"sem dados\". O que houve?", "acceptedAnswer": {"@type": "Answer", "text": "Ainda não há entradas ou saídas registradas na janela escolhida. É comum em servidor novo ou em períodos curtos e parados. Troque para 30 dias no botão Período ou aguarde mais movimento."}}, {"@type": "Question", "name": "O que significa o marcador 🔗 no /emoji-stats top?", "acceptedAnswer": {"@type": "Answer", "text": "É um emoji personalizado de outro servidor que foi usado aqui (por alguém com Nitro, por exemplo). Ele entra no ranking de uso, mas não faz parte da lista do seu servidor, por isso nunca aparece em sem-uso nem em nomes-estranhos."}}, {"@type": "Question", "name": "O /emoji-stats top não respondeu de primeira. Por quê?", "acceptedAnswer": {"@type": "Answer", "text": "Esse comando tem um limite de uso (uma chamada a cada poucos segundos) para evitar spam. Espere uns segundos e tente de novo.\n\nDica\nQuer acompanhar um pico ao vivo, tipo uma divulgação ou evento? Deixe o /grafico overview aberto e clique em Reload a cada poucos minutos. Como o bot consolida os dados quase em tempo real, você vê mensagens e horas de voz subindo sem rodar o comando de novo.\n\nVeja também: Oráculo, Emojis, Gestão de equipe."}}]}</script>
+  
   
 
   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
@@ -2240,7 +2240,7 @@
 
 <h1 id="analise-e-insights">Análise e insights<a class="headerlink" href="#analise-e-insights" title="Permanent link">¶</a></h1>
 <p>Saiba quem mais participa, quais canais bombam e em que horário a galera aparece. O Delfus observa mensagens, entradas e saídas de membros, tempo em call e uso de emojis, e transforma tudo em gráficos, rankings e estatísticas que você consulta pelo Discord ou pelo painel web.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise.webp" data-desc-position="bottom"><img alt="Insights do servidor no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/analise.webp" width="1200"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Insights do servidor no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/analise.webp" width="1200"></a></p>
 <p><em>Insights do servidor no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>O bot acompanha a atividade do servidor o tempo todo e vai juntando os números em segundo plano. Quando você pede uma estatística, ele lê o que já está pronto e responde na hora. A resposta é quase instantânea, com poucos minutos de atraso em relação ao que acabou de acontecer.</p>
@@ -2343,7 +2343,7 @@
 </ul>
 <p>As análises do Oráculo dependem de você escolher quais canais ele monitora — pelo comando <code>/oráculo &lt;canal&gt;</code> no Discord ou pelo botão <strong>Configurar</strong> na própria tela. Sem isso, essas três abas mostram um aviso de configuração pendente.</p>
 <h3 id="pontuacao-de-membros">Pontuação de membros<a class="headerlink" href="#pontuacao-de-membros" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-membros.webp" data-desc-position="bottom"><img alt="Pontuação de membros no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-membros.webp" width="1200"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Pontuação de membros no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-membros.webp" width="1200"></a></p>
 <p><em>Pontuação de membros no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
 <p>Cada membro recebe uma nota de 0 a 100 que resume o quanto ele participa. A conta soma quatro fatores: mensagens enviadas (até 40 pontos), tempo em call (até 30), respostas a outros membros (até 15) e um bônus de tendência (15) para quem acelerou em relação ao período anterior.</p>
 <p>A nota classifica cada um em categorias que você usa como filtro: <strong>Power Users</strong>, <strong>Rising Stars</strong>, <strong>Em Declínio</strong>, <strong>Regulares</strong>, <strong>Em Risco</strong> (era ativo e parou de repente), <strong>Novatos</strong> (menos de 14 dias de servidor) e <strong>Inativos</strong>. Os destaques no topo da tela avisam quando algo pede atenção — membros em risco de saída, novatos que já chegaram participando.</p>
@@ -2352,7 +2352,7 @@
 <p>A aba <strong>Fluxo de Membros</strong> responde se o servidor está crescendo ou encolhendo no período escolhido: entradas, saídas, saldo e churn (a proporção de saídas sobre entradas). A timeline mostra as três curvas por dia ou por hora e marca os picos — útil pra ligar uma onda de entradas a uma divulgação, ou uma fuga a algum incidente.</p>
 <p>A mesma tela acompanha a <strong>presença</strong>: quantos membros ficam online, ausentes ou em não perturbe ao longo do período, com a taxa de atividade e o horário de pico.</p>
 <h3 id="mapa-social">Mapa social<a class="headerlink" href="#mapa-social" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-mapa.webp" data-desc-position="bottom"><img alt="Mapa social da comunidade no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-mapa.webp" width="1200"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Mapa social da comunidade no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-mapa.webp" width="1200"></a></p>
 <p><em>Mapa social no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
 <p>O mapa social enxerga o servidor como uma rede: quem responde quem. Ele conta as conexões formadas por respostas entre membros e mostra quantos estão conectados, quantos estão isolados e quais pares conversam mais.</p>
 <p>Os <strong>Top Conectores</strong> são as pessoas que ligam a comunidade — se elas saírem, grupos inteiros se desligam; vale cuidar delas. A distribuição da rede separa os membros em <strong>Conectores</strong>, <strong>Ativos</strong>, <strong>Periféricos</strong> e <strong>Isolados</strong>, e a lista de conexões mais fortes revela as duplas que sustentam o papo.</p>
@@ -2362,7 +2362,7 @@
 <h3 id="conteudo-engajamento">Conteúdo &amp; engajamento<a class="headerlink" href="#conteudo-engajamento" title="Permanent link">¶</a></h3>
 <p>A aba <strong>Conteúdo</strong> mostra do que as conversas são feitas: proporção de texto puro, anexos, embeds, stickers e respostas, além da taxa de resposta por canal (quanto do papo gera conversa de verdade, não só mensagens soltas), os top contribuidores do período e o engajamento hora a hora.</p>
 <h3 id="visao-avancada">Visão avançada<a class="headerlink" href="#visao-avancada" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/dashboard/analise-avancada.webp" data-desc-position="bottom"><img alt="Visão avançada com painel de correlação no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-avancada.webp" width="1200"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Visão avançada com painel de correlação no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/analise-avancada.webp" width="1200"></a></p>
 <p><em>Visão avançada no <a href="https://admin.delfus.app">Dashboard</a> (dados de demonstração).</em></p>
 <p>A <strong>Visão Avançada</strong> cruza quatro gráficos na mesma linha do tempo — mensagens por hora, atividade por canal, presença e fluxo de membros — pra responder de uma vez: o que aconteceu, onde, quem estava lá e quem entrou ou saiu. Passe o mouse num horário e os quatro se alinham.</p>
 <p>No fim da tela, os <strong>insights estratégicos</strong> transformam esse histórico em sugestão prática: os melhores horários pra aquecer o chat, publicar um anúncio ou rodar um evento, os melhores dias da semana e o pico de voz do servidor.</p>
@@ -2381,6 +2381,7 @@
 <p class="admonition-title">Dica</p>
 <p>Quer acompanhar um pico ao vivo, tipo uma divulgação ou evento? Deixe o <code>/grafico overview</code> aberto e clique em <strong>Reload</strong> a cada poucos minutos. Como o bot consolida os dados quase em tempo real, você vê mensagens e horas de voz subindo sem rodar o comando de novo.</p>
 </div>
+<p>Veja também: <a href="../oraculo/">Oráculo</a>, <a href="../emojis/">Emojis</a>, <a href="../equipe/">Gestão de equipe</a>.</p>
 
 
 
@@ -2401,7 +2402,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 02:25:22 UTC"><span class="timeago" datetime="2026-08-08T02:25:22+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 02:25:22 UTC">2026-08-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 05:42:06 UTC"><span class="timeago" datetime="2026-08-08T05:42:06+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 05:42:06 UTC">2026-08-08</span>
   </span>
 
     
@@ -2538,6 +2539,18 @@
       
     
   
-<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+<script id="init-glightbox">document.querySelectorAll('.glightbox').forEach(function(element) {
+    try {
+        var img = element.querySelector('img');
+        if (img && img.src) {
+            element.setAttribute('href', img.src);
+        } else {
+            console.log('No img element with src attribute found');
+        }
+    } catch (error) {
+        console.log('Error:', error);
+    }
+});
+const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>
