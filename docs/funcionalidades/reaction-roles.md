@@ -71,6 +71,14 @@ Você também personaliza as **mensagens de confirmação** que o membro recebe 
 !!! example "Pronomes, sem pedir a ninguém"
     Publique um painel "Pronomes" (Ele/Dele, Ela/Dela, Elu/Delu) com emojis. Deixe acúmulo livre pra permitir combinações, ou escolha única pra uma seleção só. Cada um se identifica sozinho, sem ticket e sem moderador.
 
+## Veja na prática
+
+Montar um painel novo é direto pelo editor, com pré-visualização da mensagem como ela sai no Discord:
+
+![Editor de criar painel interativo no painel do Delfus](../assets/dashboard/modal-painel.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Editor de painel interativo no painel (dados de demonstração).*
+
 ## Perguntas frequentes
 
 ### O mesmo botão dá e tira o cargo?

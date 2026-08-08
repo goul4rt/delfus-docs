@@ -91,6 +91,14 @@ A partir daí, refine o quanto quiser:
 !!! example "Hall da Fama curado"
     Apareceu uma mensagem icônica? Um moderador clica com o botão direito → **Apps** → **Adicionar ao Hall da Fama**. Ela fica eternizada, não importa o que aconteça com os votos.
 
+## Veja na prática
+
+Criar um mural é direto pelo painel:
+
+![Dialog de criar board do Starboard no painel](../assets/dashboard/modal-starboard.webp){ .dx-shot width="1200" height="934" loading=lazy }
+
+*Dialog de criar board no painel (dados de demonstração).*
+
 ## Perguntas frequentes
 
 ### Posso ter mais de um mural no mesmo servidor?

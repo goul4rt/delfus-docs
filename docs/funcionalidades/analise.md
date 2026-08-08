@@ -1,5 +1,5 @@
 ---
-description: "Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, rankings de emojis e insights no painel ou por comando."
+description: "Estatísticas do seu servidor Discord com o Delfus: gráficos de mensagens, membros e voz, pontuação de membros, mapa social, saúde de canais e insights no painel ou por comando."
 ---
 
 # Análise e insights
@@ -76,11 +76,67 @@ Detalhes úteis das opções:
 !!! example "Faxina nos emojis"
     Rode `/emoji-stats sem-uso` para descobrir quais emojis ninguém usa e `/emoji-stats nomes-estranhos` para achar os de nome ruim. Cruze com `/emoji-stats top` para confirmar quais valem a pena manter antes de remover.
 
-## Veja na prática
+## Análises no painel
 
-Tudo no [Dashboard](https://admin.delfus.app), atualizado continuamente.
+Os comandos respondem rápido no Discord; o [Dashboard](https://admin.delfus.app) vai mais fundo. As telas de análise ficam em dois lugares:
+
+- **Hub de análises** (entre pelo *Resumo*): abas **Dashboard**, **Visão Avançada**, **Insights**, **Fluxo de Membros**, **Retenção** e **Pontuação**.
+- **Oráculo** (grupo *Operação* na barra lateral): abas **Mapa Social**, **Canais** e **Conteúdo**.
+
+As análises do Oráculo dependem de você escolher quais canais ele monitora — pelo comando `/oráculo <canal>` no Discord ou pelo botão **Configurar** na própria tela. Sem isso, essas três abas mostram um aviso de configuração pendente.
+
+### Pontuação de membros
+
+![Pontuação de membros no painel do Delfus](../assets/dashboard/analise-membros.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Pontuação de membros no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+Cada membro recebe uma nota de 0 a 100 que resume o quanto ele participa. A conta soma quatro fatores: mensagens enviadas (até 40 pontos), tempo em call (até 30), respostas a outros membros (até 15) e um bônus de tendência (15) para quem acelerou em relação ao período anterior.
+
+A nota classifica cada um em categorias que você usa como filtro: **Power Users**, **Rising Stars**, **Em Declínio**, **Regulares**, **Em Risco** (era ativo e parou de repente), **Novatos** (menos de 14 dias de servidor) e **Inativos**. Os destaques no topo da tela avisam quando algo pede atenção — membros em risco de saída, novatos que já chegaram participando.
+
+Dá para trocar o período (de 24 horas a 90 dias, ou um intervalo personalizado), ordenar por score, mensagens, voz, replies ou tendência, e copiar o top 10 já no formato de menção pra colar num anúncio no Discord. Clicar num membro abre o perfil individual dele: score, top canais, horários em que costuma aparecer, punições e parceiros de conversa. A aba **Retenção** complementa: mostra quantos novatos de cada leva participaram e quantos ficaram após 1, 7 e 30 dias.
+
+### Fluxo de membros
+
+A aba **Fluxo de Membros** responde se o servidor está crescendo ou encolhendo no período escolhido: entradas, saídas, saldo e churn (a proporção de saídas sobre entradas). A timeline mostra as três curvas por dia ou por hora e marca os picos — útil pra ligar uma onda de entradas a uma divulgação, ou uma fuga a algum incidente.
+
+A mesma tela acompanha a **presença**: quantos membros ficam online, ausentes ou em não perturbe ao longo do período, com a taxa de atividade e o horário de pico.
+
+### Mapa social
+
+![Mapa social da comunidade no painel do Delfus](../assets/dashboard/analise-mapa.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Mapa social no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+O mapa social enxerga o servidor como uma rede: quem responde quem. Ele conta as conexões formadas por respostas entre membros e mostra quantos estão conectados, quantos estão isolados e quais pares conversam mais.
+
+Os **Top Conectores** são as pessoas que ligam a comunidade — se elas saírem, grupos inteiros se desligam; vale cuidar delas. A distribuição da rede separa os membros em **Conectores**, **Ativos**, **Periféricos** e **Isolados**, e a lista de conexões mais fortes revela as duplas que sustentam o papo.
+
+### Inteligência de canais
+
+A aba **Canais** dá uma nota de saúde de 0 a 100 pra cada canal monitorado, combinando volume de mensagens, quantidade de pessoas diferentes participando e tendência. Os rótulos vão de **Muito Ativo** a **Inativo**, e o ranking ordena do mais saudável ao mais parado.
+
+Quando há canais definhando, a tela sugere ação: arquivar ou mesclar os de baixíssima atividade, revisar o conteúdo dos que estão em declínio.
+
+### Conteúdo & engajamento
+
+A aba **Conteúdo** mostra do que as conversas são feitas: proporção de texto puro, anexos, embeds, stickers e respostas, além da taxa de resposta por canal (quanto do papo gera conversa de verdade, não só mensagens soltas), os top contribuidores do período e o engajamento hora a hora.
+
+### Visão avançada
+
+![Visão avançada com painel de correlação no painel do Delfus](../assets/dashboard/analise-avancada.webp){ .dx-shot width="1200" height="1227" loading=lazy }
+
+*Visão avançada no [Dashboard](https://admin.delfus.app) (dados de demonstração).*
+
+A **Visão Avançada** cruza quatro gráficos na mesma linha do tempo — mensagens por hora, atividade por canal, presença e fluxo de membros — pra responder de uma vez: o que aconteceu, onde, quem estava lá e quem entrou ou saiu. Passe o mouse num horário e os quatro se alinham.
+
+No fim da tela, os **insights estratégicos** transformam esse histórico em sugestão prática: os melhores horários pra aquecer o chat, publicar um anúncio ou rodar um evento, os melhores dias da semana e o pico de voz do servidor.
 
 ## Perguntas frequentes
+
+### O Mapa Social (ou Canais/Conteúdo) diz que o Oráculo não está configurado. E agora?
+Essas análises só olham os canais que você mandou o Oráculo monitorar. Configure com `/oráculo <canal>` no Discord ou pelo botão **Configurar** na tela — a partir daí os dados começam a acumular.
 
 ### Minha última mensagem (ou emoji) ainda não apareceu no ranking. Normal?
 Sim. O bot consolida a atividade mais ou menos uma vez por minuto, e o ranking de emojis pode levar mais alguns instantes. Espere um pouco e clique em **Reload**, ou rode o comando de novo.
