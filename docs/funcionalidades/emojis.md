@@ -1,4 +1,5 @@
 ---
+title: Estatísticas de emojis
 description: "Estatísticas de emojis do Delfus: veja os mais usados no servidor Discord, os sem uso e os de nome ruim, e renomeie, exclua ou clone pelo painel."
 ---
 

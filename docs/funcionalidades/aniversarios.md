@@ -1,4 +1,5 @@
 ---
+title: Aniversários automáticos
 description: "Sistema de aniversários do Delfus para Discord: membros registram a data e o bot parabeniza no dia, no canal e horário certos, com cargo especial."
 ---
 

@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
+{# Título com palavra-chave (SEO) sem mudar o site_name visível no header #}
+{% block htmltitle %}
+  {% if page.is_homepage %}
+    <title>Delfus — Documentação do bot para Discord</title>
+  {% elif page and page.meta and page.meta.title %}
+    <title>{{ page.meta.title }} - Delfus, bot para Discord</title>
+  {% elif page and page.title %}
+    <title>{{ page.title }} - Delfus, bot para Discord</title>
+  {% else %}
+    <title>{{ config.site_name }}</title>
+  {% endif %}
+{% endblock %}
+
 {% block fonts %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   {{ super() }}
@@ -8,7 +21,7 @@
 {% block extrahead %}
   {{ super() }}
   {% if page and page.canonical_url %}
-    {% set og_title = "Delfus" if page.is_homepage else page.title ~ " - Delfus" %}
+    {% set og_title = "Delfus — Documentação do bot para Discord" if page.is_homepage else (page.meta.title | default(page.title, true)) ~ " - Delfus, bot para Discord" %}
     {% set og_description = page.meta.description | default(config.site_description, true) %}
     {% set og_image = config.site_url ~ "assets/og/" ~ page.file.src_uri | replace("/", "-") | replace(".md", ".jpg") %}
     <meta property="og:type" content="{{ 'website' if page.is_homepage else 'article' }}">
@@ -70,32 +83,54 @@
   }
   </script>
   {% elif page and page.title and page.canonical_url %}
+  {# Breadcrumb só com ancestrais clicáveis (Section do mkdocs não tem url e o
+     Google exige "item" em todo elemento que não seja o último). Organization e
+     WebSite inline no mesmo @graph: @id não resolve entre páginas diferentes. #}
+  {% set crumbs = page.ancestors | reverse | selectattr("url") | list %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
-      {%- for doc in page.ancestors | reverse %}
-      {%- if doc.title %}
-      ,{ "@type": "ListItem", "position": {{ loop.index + 1 }}, "name": {{ doc.title | tojson }}{% if doc.url %}, "item": {{ (config.site_url ~ doc.url) | tojson }}{% endif %} }
-      {%- endif %}
-      {%- endfor %}
-      ,{ "@type": "ListItem", "position": {{ (page.ancestors | length) + 2 }}, "name": {{ page.title | tojson }}, "item": {{ page.canonical_url | tojson }} }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://docs.delfus.app/#organization",
+        "name": "Delfus",
+        "url": "https://delfus.app",
+        "logo": "https://docs.delfus.app/assets/mascote-feliz.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://docs.delfus.app/#website",
+        "url": "https://docs.delfus.app/",
+        "name": "Documentação do Delfus",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://docs.delfus.app/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
+          {%- for doc in crumbs %}
+          ,{ "@type": "ListItem", "position": {{ loop.index + 1 }}, "name": {{ doc.title | tojson }}, "item": {{ (config.site_url ~ doc.url) | tojson }} }
+          {%- endfor %}
+          ,{ "@type": "ListItem", "position": {{ (crumbs | length) + 2 }}, "name": {{ page.title | tojson }}, "item": {{ page.canonical_url | tojson }} }
+        ]
+      },
+      {
+        "@type": "TechArticle",
+        "headline": {{ page.title | tojson }},
+        "description": {{ (page.meta.description or config.site_description) | tojson }},
+        "url": {{ page.canonical_url | tojson }},
+        "image": {{ og_image | tojson }},
+        "inLanguage": "pt-BR",
+        {%- if page.meta.git_revision_date_localized_raw_iso_date %}
+        "dateModified": {{ page.meta.git_revision_date_localized_raw_iso_date | tojson }},
+        {%- endif %}
+        "isPartOf": { "@id": "https://docs.delfus.app/#website" },
+        "author": { "@id": "https://docs.delfus.app/#organization" },
+        "publisher": { "@id": "https://docs.delfus.app/#organization" }
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": {{ page.title | tojson }},
-    "description": {{ (page.meta.description or config.site_description) | tojson }},
-    "url": {{ page.canonical_url | tojson }},
-    "inLanguage": "pt-BR",
-    "isPartOf": { "@type": "WebSite", "@id": "https://docs.delfus.app/#website" },
-    "author": { "@id": "https://docs.delfus.app/#organization" },
-    "publisher": { "@id": "https://docs.delfus.app/#organization" }
   }
   </script>
   {% endif %}

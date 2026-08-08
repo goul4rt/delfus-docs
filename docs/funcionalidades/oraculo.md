@@ -1,4 +1,5 @@
 ---
+title: Oráculo — monitoramento de canais
 description: "Oráculo do Delfus: monitore canais do Discord e registre mensagens para alimentar insights, scoring de membros e análise de conteúdo no painel."
 ---
 
