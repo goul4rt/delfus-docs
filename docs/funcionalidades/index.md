@@ -50,7 +50,7 @@ Todos os módulos, por área — tudo configurado no painel:
 - **Monetização**: [Recompensas de boost](boost.md) e [Famílias](familia.md)
 - **Engajamento**: [Mensagens e embeds](mensagens.md), [Emojis](emojis.md), [Aniversários](aniversarios.md), [Correio elegante](correio.md) e [Automações de canal](automacoes.md)
 - **Operação**: [Gestão de equipe](equipe.md) e [Oráculo](oraculo.md)
-- **Utilidades**: [Encurtador de links](links.md) e [Download de vídeos](video.md)
+- **Utilidades**: [Encurtador de links](links.md), [Download de vídeos](video.md) e [Transcrição de áudio](transcricao.md)
 
 <div class="dx-band" markdown>
 
