@@ -131,5 +131,6 @@ nav:
       - Utilidades:
           - Encurtador de links: funcionalidades/links.md
           - Download de vídeos: funcionalidades/video.md
+          - Transcrição de áudio: funcionalidades/transcricao.md
           - Oráculo: funcionalidades/oraculo.md
   - Suporte: suporte.md
