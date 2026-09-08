@@ -3,19 +3,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Cargos por reação (reaction roles) no Delfus: painéis de botões no Discord para membros pegarem cargos sozinhos, com modo de escolha única.">
+        <meta name="description" content="Transcrição de áudio do Delfus no Discord: mensagens de voz viram texto no canal, com quem falou, duração e páginas para áudios longos.">
       
       
         <meta name="author" content="Delfus">
       
       
-        <link rel="canonical" href="https://docs.delfus.app/funcionalidades/reaction-roles/">
+        <link rel="canonical" href="https://docs.delfus.app/funcionalidades/transcricao/">
       
       
-        <link rel="prev" href="../auto-roles/">
+        <link rel="prev" href="../video/">
       
       
-        <link rel="next" href="../vip/">
+        <link rel="next" href="../oraculo/">
       
       
         
@@ -26,7 +26,7 @@
     
     
   
-    <title>Cargos por reação - Delfus, bot para Discord</title>
+    <title>Transcrição de áudio - Delfus, bot para Discord</title>
   
 
     
@@ -70,17 +70,17 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Delfus">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:title" content="Cargos por reação - Delfus, bot para Discord">
-    <meta property="og:description" content="Cargos por reação (reaction roles) no Delfus: painéis de botões no Discord para membros pegarem cargos sozinhos, com modo de escolha única.">
-    <meta property="og:url" content="https://docs.delfus.app/funcionalidades/reaction-roles/">
-    <meta property="og:image" content="https://docs.delfus.app/assets/og/funcionalidades-reaction-roles.jpg">
+    <meta property="og:title" content="Transcrição de áudio - Delfus, bot para Discord">
+    <meta property="og:description" content="Transcrição de áudio do Delfus no Discord: mensagens de voz viram texto no canal, com quem falou, duração e páginas para áudios longos.">
+    <meta property="og:url" content="https://docs.delfus.app/funcionalidades/transcricao/">
+    <meta property="og:image" content="https://docs.delfus.app/assets/og/funcionalidades-transcricao.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cargos por reação - Delfus, bot para Discord">
-    <meta name="twitter:description" content="Cargos por reação (reaction roles) no Delfus: painéis de botões no Discord para membros pegarem cargos sozinhos, com modo de escolha única.">
-    <meta name="twitter:image" content="https://docs.delfus.app/assets/og/funcionalidades-reaction-roles.jpg">
+    <meta name="twitter:title" content="Transcrição de áudio - Delfus, bot para Discord">
+    <meta name="twitter:description" content="Transcrição de áudio do Delfus no Discord: mensagens de voz viram texto no canal, com quem falou, duração e páginas para áudios longos.">
+    <meta name="twitter:image" content="https://docs.delfus.app/assets/og/funcionalidades-transcricao.jpg">
   
   
   
@@ -108,17 +108,17 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://docs.delfus.app/" }
-          ,{ "@type": "ListItem", "position": 2, "name": "Cargos por rea\u00e7\u00e3o", "item": "https://docs.delfus.app/funcionalidades/reaction-roles/" }
+          ,{ "@type": "ListItem", "position": 2, "name": "Transcri\u00e7\u00e3o de \u00e1udio", "item": "https://docs.delfus.app/funcionalidades/transcricao/" }
         ]
       },
       {
         "@type": "TechArticle",
-        "headline": "Cargos por rea\u00e7\u00e3o",
-        "description": "Cargos por rea\u00e7\u00e3o (reaction roles) no Delfus: pain\u00e9is de bot\u00f5es no Discord para membros pegarem cargos sozinhos, com modo de escolha \u00fanica.",
-        "url": "https://docs.delfus.app/funcionalidades/reaction-roles/",
-        "image": "https://docs.delfus.app/assets/og/funcionalidades-reaction-roles.jpg",
+        "headline": "Transcri\u00e7\u00e3o de \u00e1udio",
+        "description": "Transcri\u00e7\u00e3o de \u00e1udio do Delfus no Discord: mensagens de voz viram texto no canal, com quem falou, dura\u00e7\u00e3o e p\u00e1ginas para \u00e1udios longos.",
+        "url": "https://docs.delfus.app/funcionalidades/transcricao/",
+        "image": "https://docs.delfus.app/assets/og/funcionalidades-transcricao.jpg",
         "inLanguage": "pt-BR",
-        "dateModified": "2026-08-08",
+        "dateModified": "2026-09-08",
         "isPartOf": { "@id": "https://docs.delfus.app/#website" },
         "author": { "@id": "https://docs.delfus.app/#organization" },
         "publisher": { "@id": "https://docs.delfus.app/#organization" }
@@ -127,7 +127,7 @@
   }
   </script>
   
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O mesmo botão dá e tira o cargo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, é um liga/desliga. Não tem o cargo, clicar adiciona; já tem, clicar remove. A confirmação avisa o que aconteceu."}}, {"@type": "Question", "name": "Por que o cargo demora alguns instantes pra aparecer?", "acceptedAnswer": {"@type": "Answer", "text": "A confirmação é na hora, mas o cargo é aplicado em segundo plano, em fila, pro servidor aguentar muita gente clicando junto. Costuma entrar em poucos segundos."}}, {"@type": "Question", "name": "Como faço um menu de uma opção só (uma cor só)?", "acceptedAnswer": {"@type": "Answer", "text": "Desligue o \"Permitir múltiplos cargos\" do painel. Escolher uma opção passa a remover as outras automaticamente."}}, {"@type": "Question", "name": "Editei o painel, preciso apagar a mensagem antiga e publicar de novo?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Ao salvar, o bot atualiza a mensagem que já está lá. Só publica uma nova se a antiga tiver sido apagada do canal."}}, {"@type": "Question", "name": "O bot não está entregando um cargo. Por quê?", "acceptedAnswer": {"@type": "Answer", "text": "Quase sempre é hierarquia: o bot só mexe em cargos que estão abaixo dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, o Discord não deixa e a ação é ignorada. Confira também se o bot tem a permissão Gerenciar Cargos e consegue enviar mensagens no canal do painel.\n\nDica\nQuer cargos de cor sem criar nada na mão? Use o template Cores: já vem em escolha única e o bot cria os cargos coloridos sozinho ao salvar. Depois é só arrastar esses cargos pra cima dos demais na lista, e a cor aparece no nome dos membros.\n\nVeja também: Cargos automáticos, Boas-vindas e despedida, Mensagens e embeds."}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O bot transcreve qualquer áudio postado?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Só mensagens de voz gravadas pelo próprio Discord. Um .mp3 anexado, um vídeo ou um link não são transcritos."}}, {"@type": "Question", "name": "Mandei um áudio e o bot não respondeu. O que houve?", "acceptedAnswer": {"@type": "Answer", "text": "Confira se o canal (e o seu cargo) estão nas listas certas e se a transcrição está ligada. Se aparecer ⏳ na mensagem, o áudio passou dos limites ou a cota diária acabou; se aparecer ⚠️, a transcrição falhou."}}, {"@type": "Question", "name": "A transcrição é sempre correta?", "acceptedAnswer": {"@type": "Answer", "text": "Não. É automática e erra, principalmente com ruído de fundo, várias pessoas falando ao mesmo tempo, gírias e nomes próprios. Por isso o rodapé avisa. Trate como apoio, não como registro literal."}}, {"@type": "Question", "name": "Dá para transcrever só num canal?", "acceptedAnswer": {"@type": "Answer", "text": "Dá. Escolha \"só nestes canais\" e marque apenas ele. É a configuração mais comum: um canal de recados por voz onde todo áudio vira texto, e o resto do servidor fica de fora."}}, {"@type": "Question", "name": "E se o áudio for muito longo?", "acceptedAnswer": {"@type": "Answer", "text": "Até 3 minutos ele transcreve normalmente; se o texto ficar grande, vira páginas. Acima disso, ele reage com ⏳ e não transcreve.\n\nDica\nCombine com o canal de log: os membros leem a transcrição no canal onde o áudio foi mandado, e a equipe acompanha tudo num canal só, com link para cada conversa.\n\nVeja também: Automações de canal, Mensagens e embeds, Moderação."}}]}</script>
   
   
 
@@ -160,7 +160,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cargos-por-reacao-reaction-roles" class="md-skip">
+        <a href="#transcricao-de-audio" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -195,7 +195,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cargos por reação
+              Transcrição de áudio
             
           </span>
         </div>
@@ -864,8 +864,6 @@
                 
   
   
-    
-  
   
   
     
@@ -881,11 +879,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
@@ -906,7 +904,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -977,37 +975,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cargos por reação
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../reaction-roles/" class="md-nav__link">
         
   
   
@@ -1023,170 +994,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#como-funciona" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Como funciona
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Como funciona">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#escolha-unica-modo-exclusivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Escolha única (modo exclusivo)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comandos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuração
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemplos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#veja-na-pratica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Veja na prática
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#perguntas-frequentes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Perguntas frequentes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Perguntas frequentes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#o-mesmo-botao-da-e-tira-o-cargo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        O mesmo botão dá e tira o cargo?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#por-que-o-cargo-demora-alguns-instantes-pra-aparecer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Por que o cargo demora alguns instantes pra aparecer?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#como-faco-um-menu-de-uma-opcao-so-uma-cor-so" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Como faço um menu de uma opção só (uma cor só)?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#editei-o-painel-preciso-apagar-a-mensagem-antiga-e-publicar-de-novo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Editei o painel, preciso apagar a mensagem antiga e publicar de novo?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#o-bot-nao-esta-entregando-um-cargo-por-que" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        O bot não está entregando um cargo. Por quê?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1764,6 +1571,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1779,11 +1588,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked="">
         
           
           <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
@@ -1804,7 +1613,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1875,10 +1684,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../transcricao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transcrição de áudio
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1894,6 +1730,176 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#como-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como funciona
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como funciona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#audios-longos-viram-paginas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Áudios longos viram páginas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuração
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-de-audios-transcritos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log de áudios transcritos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privacidade
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perguntas-frequentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perguntas frequentes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perguntas frequentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-bot-transcreve-qualquer-audio-postado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O bot transcreve qualquer áudio postado?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandei-um-audio-e-o-bot-nao-respondeu-o-que-houve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mandei um áudio e o bot não respondeu. O que houve?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-transcricao-e-sempre-correta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A transcrição é sempre correta?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#da-para-transcrever-so-num-canal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dá para transcrever só num canal?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-se-o-audio-for-muito-longo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E se o áudio for muito longo?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2008,10 +2014,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#escolha-unica-modo-exclusivo" class="md-nav__link">
+  <a href="#audios-longos-viram-paginas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Escolha única (modo exclusivo)
+        Áudios longos viram páginas
       
     </span>
   </a>
@@ -2024,17 +2030,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comandos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comandos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configuracao" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2043,13 +2038,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuração">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-de-audios-transcritos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log de áudios transcritos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplos" class="md-nav__link">
+  <a href="#limites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exemplos
+        Limites
       
     </span>
   </a>
@@ -2057,10 +2069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#veja-na-pratica" class="md-nav__link">
+  <a href="#privacidade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Veja na prática
+        Privacidade
       
     </span>
   </a>
@@ -2080,10 +2092,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#o-mesmo-botao-da-e-tira-o-cargo" class="md-nav__link">
+  <a href="#o-bot-transcreve-qualquer-audio-postado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O mesmo botão dá e tira o cargo?
+        O bot transcreve qualquer áudio postado?
       
     </span>
   </a>
@@ -2091,10 +2103,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#por-que-o-cargo-demora-alguns-instantes-pra-aparecer" class="md-nav__link">
+  <a href="#mandei-um-audio-e-o-bot-nao-respondeu-o-que-houve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por que o cargo demora alguns instantes pra aparecer?
+        Mandei um áudio e o bot não respondeu. O que houve?
       
     </span>
   </a>
@@ -2102,10 +2114,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#como-faco-um-menu-de-uma-opcao-so-uma-cor-so" class="md-nav__link">
+  <a href="#a-transcricao-e-sempre-correta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Como faço um menu de uma opção só (uma cor só)?
+        A transcrição é sempre correta?
       
     </span>
   </a>
@@ -2113,10 +2125,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#editei-o-painel-preciso-apagar-a-mensagem-antiga-e-publicar-de-novo" class="md-nav__link">
+  <a href="#da-para-transcrever-so-num-canal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editei o painel, preciso apagar a mensagem antiga e publicar de novo?
+        Dá para transcrever só num canal?
       
     </span>
   </a>
@@ -2124,10 +2136,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#o-bot-nao-esta-entregando-um-cargo-por-que" class="md-nav__link">
+  <a href="#e-se-o-audio-for-muito-longo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O bot não está entregando um cargo. Por quê?
+        E se o áudio for muito longo?
       
     </span>
   </a>
@@ -2156,89 +2168,99 @@
 
 
 
-<h1 id="cargos-por-reacao-reaction-roles">Cargos por reação (reaction roles)<a class="headerlink" href="#cargos-por-reacao-reaction-roles" title="Permanent link">¶</a></h1>
-<p>Seus membros pegam e largam cargos sozinhos, num clique, sem pedir nada a um moderador. Você publica um painel de botões do Delfus num canal do Discord e cada um se serve: cargos de notificação, cores, pronomes, jogos, regiões, acesso a áreas do servidor. Seus canais de aviso ficam só com quem quer estar lá.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Cargos por reação no painel do Delfus" class="dx-shot" fetchpriority="high" height="1227" src="../../assets/dashboard/reaction-roles.webp" width="1200"></a></p>
-<p><em>Cargos por reação no <a href="https://admin.delfus.app">Dashboard</a> (exemplo com dados de demonstração).</em></p>
+<h1 id="transcricao-de-audio">Transcrição de áudio<a class="headerlink" href="#transcricao-de-audio" title="Permanent link">¶</a></h1>
+<p>Alguém manda uma mensagem de voz e o Delfus responde ali mesmo com o que foi dito. Quem está no ônibus, sem fone, ou simplesmente não pode ouvir, lê. Você escolhe em quais canais e para quais cargos isso vale.</p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
-<p>Você cria um <strong>painel</strong>: uma mensagem que o bot publica num canal. Ela pode ter texto, um embed (título, descrição, cor, imagem) e os <strong>botões</strong>, cada botão amarrado a um cargo.</p>
-<p>O membro clica e o bot resolve. Cada botão é um interruptor: o mesmo botão dá e tira o cargo. Não tem o cargo, clicar adiciona; já tem, clicar remove.</p>
-<p>Ao clicar, o membro recebe uma confirmação privada (só ele vê, e ela some sozinha) dizendo o que aconteceu. A confirmação é instantânea. O cargo entra logo depois, em segundo plano, normalmente em poucos segundos.</p>
-<div class="admonition example">
-<p class="admonition-title">Exemplo</p>
-<p>Você abre um painel de notificações e 200 pessoas clicam ao mesmo tempo. Cada uma vê na hora a mensagem "Você recebeu o cargo <strong>Eventos</strong>!", e o bot aplica os cargos em fila, sem travar nem apanhar do Discord. Ninguém espera tela de carregamento.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Por baixo dos panos</p>
-<p>O bot processa os cliques com controle de ritmo e tenta de novo sozinho se houver instabilidade momentânea. Cliques duplicados em sequência rápida são ignorados, pra não ficar dando e tirando o cargo várias vezes. Tudo automático.</p>
-</div>
-<h3 id="escolha-unica-modo-exclusivo">Escolha única (modo exclusivo)<a class="headerlink" href="#escolha-unica-modo-exclusivo" title="Permanent link">¶</a></h3>
-<p>Todo painel tem o botão <strong>"Permitir múltiplos cargos"</strong>:</p>
+<p>O Delfus só olha para <strong>mensagens de voz gravadas no Discord</strong> (aquelas do botão de microfone). Áudio anexado como arquivo não conta, nem vídeo, nem link.</p>
+<p>Quando uma chega num canal onde o recurso está ligado, ele mostra o "digitando…", transcreve e responde à mensagem original com um cartão contendo:</p>
 <ul>
-<li><strong>Ligado</strong> (padrão): o membro acumula vários cargos do painel ao mesmo tempo. Bom pra notificações, jogos e pronomes, onde faz sentido marcar várias opções.</li>
-<li><strong>Desligado</strong>: vira escolha única. Ao pegar um cargo do painel, o bot tira sozinho os outros do mesmo painel. Bom pra cor do nome, região e plataforma, onde só pode existir uma.</li>
+<li><strong>Quem falou e quanto durou</strong>, no topo: "Áudio de Lua · 48s", com o avatar da pessoa.</li>
+<li><strong>O texto transcrito</strong>.</li>
+<li>Um rodapé lembrando que é transcrição automática e pode conter erros.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>O modo exclusivo só mexe nos cargos <strong>daquele painel</strong>. Cargos de outros painéis, ou que o membro ganhou de outras formas, ficam intocados.</p>
-</div>
-<h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">¶</a></h2>
-<p>Essa feature não tem comando de barra. Criar painéis, botões, cargos, mensagens e publicar acontece tudo no <a href="https://admin.delfus.app">Dashboard</a>, na seção <strong>Cargos por Reação</strong>.</p>
-<h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
-<p>Toda a montagem é pelo <a href="https://admin.delfus.app">Dashboard</a>:</p>
-<ol>
-<li><strong>Ligue o sistema</strong> no interruptor geral no topo da página. Ele liga e desliga todos os painéis de uma vez. Com tudo desligado, os botões param de entregar cargos e o membro vê um aviso ao clicar.</li>
-<li><strong>Crie um painel</strong>, do zero em "Novo Painel" ou a partir de um <strong>template</strong> pronto: <strong>Notificações</strong>, <strong>Cores</strong> (já em escolha única), <strong>Jogos</strong> ou <strong>Pronomes</strong>. Se o template usar cargos que ainda não existem, o bot cria eles pra você ao salvar, já com nome e cor sugeridos.</li>
-<li><strong>Configure o painel</strong>: dê um nome (só pra você achar na lista), escolha o canal de destino (texto ou anúncios), escreva o conteúdo e monte a lista de botões.</li>
-<li><strong>Salve</strong>. O bot publica a mensagem no canal. Se você editar depois, ele atualiza a mesma mensagem em vez de criar outra. Se alguém apagou a mensagem nesse meio-tempo, ele percebe e publica uma nova.</li>
-</ol>
-<p>Cada botão tem <strong>emoji</strong> (opcional), <strong>rótulo</strong>, <strong>cargo</strong> e <strong>cor</strong> (azul, cinza, verde ou vermelho).</p>
-<p>Você também personaliza as <strong>mensagens de confirmação</strong> que o membro recebe ao ganhar e ao perder um cargo. Use <code>{cargo}</code> pra inserir o nome automaticamente:</p>
+<p>A resposta não dá ping em ninguém.</p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Em vez do padrão "Você recebeu o cargo <strong>Lives</strong>!", escreva <code>Pronto! Agora você é avisado toda vez que rolar uma {cargo}.</code></p>
+<p>No <code>#combinados</code>, alguém manda 48 segundos de áudio explicando o evento de sábado. Logo abaixo aparece o cartão com o texto inteiro, e quem está no trabalho lê sem precisar dar play.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Organizar painéis</p>
-<p>Na lista você ativa e desativa cada painel individualmente, <strong>duplica</strong> um (sai uma cópia "(copia)" pronta pra ajustar) e <strong>exclui</strong> o que não usa mais.</p>
-</div>
+<h3 id="audios-longos-viram-paginas">Áudios longos viram páginas<a class="headerlink" href="#audios-longos-viram-paginas" title="Permanent link">¶</a></h3>
+<p>Transcrição comprida não vira um paredão de texto. O Delfus quebra em páginas de mais ou menos 3.500 caracteres, cortando no fim de uma frase, e coloca os botões <strong>Anterior</strong> e <strong>Próxima</strong> embaixo do cartão. O rodapé mostra em qual página você está.</p>
+<p>Qualquer pessoa do canal pode virar as páginas, como qualquer outra leitura pública. O texto completo fica guardado por 24 horas; depois disso os botões somem e a página que estava aberta continua visível.</p>
+<h2 id="configuracao">Configuração<a class="headerlink" href="#configuracao" title="Permanent link">¶</a></h2>
+<p>Tudo pelo painel, em <a href="https://admin.delfus.app/dashboard/transcricao">Transcrição de áudio</a>. Não há comando no Discord.</p>
+<ol>
+<li>Ligue a chave <strong>Transcrição automática</strong>.</li>
+<li>Escolha <strong>em quais canais</strong> vale:<ul>
+<li><em>Só nestes canais</em>: apenas os que você marcar transcrevem. Lista vazia significa nenhum canal, e o painel avisa.</li>
+<li><em>Em todos, exceto</em>: transcreve no servidor inteiro, menos os marcados.</li>
+</ul>
+</li>
+<li>Escolha <strong>para quais cargos</strong> vale, com a mesma lógica. Deixe em "para todos, exceto" com a lista vazia para liberar todo mundo.</li>
+<li>Opcional: escolha um <strong>canal de log</strong>.</li>
+</ol>
 <div class="admonition note">
-<p class="admonition-title">Limites</p>
-<p>Até <strong>25 botões</strong> por painel (5 linhas de 5). Texto acima do embed: 2000 caracteres. Mensagens de confirmação: 500 cada. Nome do painel: 100.</p>
+<p class="admonition-title">Quem pode configurar</p>
+<p>Quem tem acesso ao painel do servidor. O bot precisa conseguir ver o canal e enviar mensagens ali; sem isso, a transcrição não aparece.</p>
 </div>
-<h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Central de notificações (acúmulo livre)</p>
-<p>Crie um painel "Central de Notificações" com os botões <strong>Anúncios</strong>, <strong>Eventos</strong>, <strong>Transmissões</strong> e <strong>Votações</strong>, cada um num cargo de menção. Deixe <strong>"Permitir múltiplos cargos" ligado</strong>, já que dá pra querer ser avisado de várias coisas. Quem quer ser marcado em anúncios, clica e pronto.</p>
+<h3 id="log-de-audios-transcritos">Log de áudios transcritos<a class="headerlink" href="#log-de-audios-transcritos" title="Permanent link">¶</a></h3>
+<p>Se você escolher um canal de log, cada transcrição também é publicada lá, com um botão <strong>Ir para a mensagem</strong> que leva à conversa original. Serve para moderação acompanhar o que foi dito em áudio sem precisar entrar em cada canal.</p>
+<p>É o mesmo campo que aparece em <a href="https://admin.delfus.app/dashboard/action-log/config">Logs de Ação</a>: mudou num lugar, muda no outro. As páginas funcionam na cópia igual funcionam na resposta original.</p>
+<h2 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Limite</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duração máxima do áudio</td>
+<td>3 minutos</td>
+</tr>
+<tr>
+<td>Tamanho máximo do arquivo</td>
+<td>8 MB</td>
+</tr>
+<tr>
+<td>Cota diária no plano grátis</td>
+<td>5 minutos de áudio por servidor</td>
+</tr>
+<tr>
+<td>Cota diária no premium</td>
+<td>60 minutos de áudio por servidor</td>
+</tr>
+</tbody>
+</table>
+<p>A cota conta a duração dos áudios transcritos e zera à meia-noite UTC (21h em Brasília). O painel mostra quanto do dia já foi usado e quantos áudios foram transcritos.</p>
+<div class="admonition warning">
+<p class="admonition-title">Quando o bot reage em vez de responder</p>
+<p>O Delfus nunca enche o canal com mensagem de erro. Em vez disso, ele reage à mensagem de voz:</p>
+<ul>
+<li>⏳ significa que o áudio passou de 3 minutos, de 8 MB, ou que a cota do dia acabou.</li>
+<li>⚠️ significa que a transcrição falhou (problema na conversão ou no serviço de fala).</li>
+</ul>
+<p>Nos dois casos o áudio continua lá, intacto, e nada é apagado.</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Cor do nome (escolha única)</p>
-<p>Use o template <strong>Cores</strong> ou monte um painel com um botão por cor e <strong>desligue "Permitir múltiplos cargos"</strong>. Escolher uma cor nova remove a anterior sozinha, sem ninguém ficar com duas cores brigando. Lembre de arrastar esses cargos de cor pra cima dos demais na lista de cargos, pra cor aparecer no nome.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Pronomes, sem pedir a ninguém</p>
-<p>Publique um painel "Pronomes" (Ele/Dele, Ela/Dela, Elu/Delu) com emojis. Deixe acúmulo livre pra permitir combinações, ou escolha única pra uma seleção só. Cada um se identifica sozinho, sem ticket e sem moderador.</p>
-</div>
-<h2 id="veja-na-pratica">Veja na prática<a class="headerlink" href="#veja-na-pratica" title="Permanent link">¶</a></h2>
-<p>Montar um painel novo é direto pelo editor, com pré-visualização da mensagem como ela sai no Discord:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Editor de criar painel interativo no painel do Delfus" class="dx-shot" height="1227" loading="lazy" src="../../assets/dashboard/modal-painel.webp" width="1200"></a></p>
-<p><em>Editor de painel interativo no painel (dados de demonstração).</em></p>
+<h2 id="privacidade">Privacidade<a class="headerlink" href="#privacidade" title="Permanent link">¶</a></h2>
+<p>O áudio é enviado a um serviço de reconhecimento de fala só para virar texto, e não fica guardado depois disso. O que persiste é o texto da transcrição na mensagem publicada no canal (e no canal de log, se houver) — visível para quem já podia ler aquele canal.</p>
+<p>Se o servidor não quer isso em determinados espaços, use a lista de canais para deixá-los de fora, ou restrinja por cargo.</p>
 <h2 id="perguntas-frequentes">Perguntas frequentes<a class="headerlink" href="#perguntas-frequentes" title="Permanent link">¶</a></h2>
-<h3 id="o-mesmo-botao-da-e-tira-o-cargo">O mesmo botão dá e tira o cargo?<a class="headerlink" href="#o-mesmo-botao-da-e-tira-o-cargo" title="Permanent link">¶</a></h3>
-<p>Sim, é um liga/desliga. Não tem o cargo, clicar adiciona; já tem, clicar remove. A confirmação avisa o que aconteceu.</p>
-<h3 id="por-que-o-cargo-demora-alguns-instantes-pra-aparecer">Por que o cargo demora alguns instantes pra aparecer?<a class="headerlink" href="#por-que-o-cargo-demora-alguns-instantes-pra-aparecer" title="Permanent link">¶</a></h3>
-<p>A confirmação é na hora, mas o cargo é aplicado em segundo plano, em fila, pro servidor aguentar muita gente clicando junto. Costuma entrar em poucos segundos.</p>
-<h3 id="como-faco-um-menu-de-uma-opcao-so-uma-cor-so">Como faço um menu de uma opção só (uma cor só)?<a class="headerlink" href="#como-faco-um-menu-de-uma-opcao-so-uma-cor-so" title="Permanent link">¶</a></h3>
-<p>Desligue o "Permitir múltiplos cargos" do painel. Escolher uma opção passa a remover as outras automaticamente.</p>
-<h3 id="editei-o-painel-preciso-apagar-a-mensagem-antiga-e-publicar-de-novo">Editei o painel, preciso apagar a mensagem antiga e publicar de novo?<a class="headerlink" href="#editei-o-painel-preciso-apagar-a-mensagem-antiga-e-publicar-de-novo" title="Permanent link">¶</a></h3>
-<p>Não. Ao salvar, o bot atualiza a mensagem que já está lá. Só publica uma nova se a antiga tiver sido apagada do canal.</p>
-<h3 id="o-bot-nao-esta-entregando-um-cargo-por-que">O bot não está entregando um cargo. Por quê?<a class="headerlink" href="#o-bot-nao-esta-entregando-um-cargo-por-que" title="Permanent link">¶</a></h3>
-<p>Quase sempre é hierarquia: o bot só mexe em cargos que estão <strong>abaixo</strong> dele na lista de cargos do servidor. Se o cargo do botão estiver igual ou acima do cargo do bot, o Discord não deixa e a ação é ignorada. Confira também se o bot tem a permissão <strong>Gerenciar Cargos</strong> e consegue <strong>enviar mensagens</strong> no canal do painel.</p>
+<h3 id="o-bot-transcreve-qualquer-audio-postado">O bot transcreve qualquer áudio postado?<a class="headerlink" href="#o-bot-transcreve-qualquer-audio-postado" title="Permanent link">¶</a></h3>
+<p>Não. Só mensagens de voz gravadas pelo próprio Discord. Um <code>.mp3</code> anexado, um vídeo ou um link não são transcritos.</p>
+<h3 id="mandei-um-audio-e-o-bot-nao-respondeu-o-que-houve">Mandei um áudio e o bot não respondeu. O que houve?<a class="headerlink" href="#mandei-um-audio-e-o-bot-nao-respondeu-o-que-houve" title="Permanent link">¶</a></h3>
+<p>Confira se o canal (e o seu cargo) estão nas listas certas e se a transcrição está ligada. Se aparecer ⏳ na mensagem, o áudio passou dos limites ou a cota diária acabou; se aparecer ⚠️, a transcrição falhou.</p>
+<h3 id="a-transcricao-e-sempre-correta">A transcrição é sempre correta?<a class="headerlink" href="#a-transcricao-e-sempre-correta" title="Permanent link">¶</a></h3>
+<p>Não. É automática e erra, principalmente com ruído de fundo, várias pessoas falando ao mesmo tempo, gírias e nomes próprios. Por isso o rodapé avisa. Trate como apoio, não como registro literal.</p>
+<h3 id="da-para-transcrever-so-num-canal">Dá para transcrever só num canal?<a class="headerlink" href="#da-para-transcrever-so-num-canal" title="Permanent link">¶</a></h3>
+<p>Dá. Escolha "só nestes canais" e marque apenas ele. É a configuração mais comum: um canal de recados por voz onde todo áudio vira texto, e o resto do servidor fica de fora.</p>
+<h3 id="e-se-o-audio-for-muito-longo">E se o áudio for muito longo?<a class="headerlink" href="#e-se-o-audio-for-muito-longo" title="Permanent link">¶</a></h3>
+<p>Até 3 minutos ele transcreve normalmente; se o texto ficar grande, vira páginas. Acima disso, ele reage com ⏳ e não transcreve.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Quer cargos de cor sem criar nada na mão? Use o template <strong>Cores</strong>: já vem em escolha única e o bot cria os cargos coloridos sozinho ao salvar. Depois é só arrastar esses cargos pra cima dos demais na lista, e a cor aparece no nome dos membros.</p>
+<p>Combine com o canal de log: os membros leem a transcrição no canal onde o áudio foi mandado, e a equipe acompanha tudo num canal só, com link para cada conversa.</p>
 </div>
-<p>Veja também: <a href="../auto-roles/">Cargos automáticos</a>, <a href="../recepcao/">Boas-vindas e despedida</a>, <a href="../mensagens/">Mensagens e embeds</a>.</p>
+<p>Veja também: <a href="../automacoes/">Automações de canal</a>, <a href="../mensagens/">Mensagens e embeds</a>, <a href="../moderacao/">Moderação</a>.</p>
 
 
 
@@ -2259,7 +2281,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 05:42:06 UTC"><span class="timeago" datetime="2026-08-08T05:42:06+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 05:42:06 UTC">2026-08-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de setembro de 2026 18:00:30 UTC"><span class="timeago" datetime="2026-09-08T18:00:30+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de setembro de 2026 18:00:30 UTC">2026-09-08</span>
   </span>
 
     
@@ -2295,7 +2317,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé">
         
           
-          <a href="../auto-roles/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Cargos automáticos">
+          <a href="../video/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Download de vídeos">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -2305,20 +2327,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Cargos automáticos
+                Download de vídeos
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vip/" class="md-footer__link md-footer__link--next" aria-label="Próximo: VIP, assinaturas e recompensas">
+          <a href="../oraculo/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Oráculo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                VIP, assinaturas e recompensas
+                Oráculo
               </div>
             </div>
             <div class="md-footer__button md-icon">
