@@ -118,7 +118,7 @@
         "url": "https://docs.delfus.app/funcionalidades/anti-raid/",
         "image": "https://docs.delfus.app/assets/og/funcionalidades-anti-raid.jpg",
         "inLanguage": "pt-BR",
-        "dateModified": "2026-08-08",
+        "dateModified": "2026-10-09",
         "isPartOf": { "@id": "https://docs.delfus.app/#website" },
         "author": { "@id": "https://docs.delfus.app/#organization" },
         "publisher": { "@id": "https://docs.delfus.app/#organization" }
@@ -2186,7 +2186,7 @@
 <p>Quando alguém posta uma mensagem com imagem num servidor com o Anti-raid ligado, o bot analisa a imagem. Ele roda checagens em ordem, das mais leves para as mais pesadas, e para na primeira que confirmar um golpe.</p>
 <p>São três:</p>
 <ul>
-<li><strong>Reincidência.</strong> Ao punir alguém, o bot marca a pessoa como golpista por 5 minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.</li>
+<li><strong>Reincidência.</strong> Ao punir alguém, o bot marca a pessoa como golpista por alguns minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.</li>
 <li><strong>Velocidade.</strong> Se a mesma pessoa joga imagens em vários canais em poucos segundos, ou se um monte de contas novas posta junto, o bot trata como ataque (detalhes abaixo).</li>
 <li><strong>Imagem conhecida.</strong> A camada principal. O bot calcula uma impressão digital visual da imagem e compara com uma base de golpes conhecidos. Se bater, é ataque.</li>
 </ul>
@@ -2195,18 +2195,14 @@
 <p>Alguém entra no servidor e posta um print de "sorteio oficial do MrBeast: resgate seus 5 BTC". O Delfus reconhece a arte do golpe, apaga a mensagem na hora e bane o autor, antes que mais alguém clique no link.</p>
 </div>
 <h3 id="velocidade-flood-e-enxame">Velocidade: flood e enxame<a class="headerlink" href="#velocidade-flood-e-enxame" title="Permanent link">¶</a></h3>
-<p>Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta (padrão: 10 segundos) e reage a dois cenários:</p>
+<p>Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta e reage a dois cenários:</p>
 <ul>
-<li><strong>Uma pessoa floodando vários canais.</strong> Se a mesma conta espalha imagens por vários canais distintos de uma vez (padrão: 3 canais em 10 segundos), é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.</li>
-<li><strong>Enxame de contas novas.</strong> Se várias contas recém-chegadas (padrão: 5 contas que entraram há menos de 24h) começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal (slowmode de 30s) e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.</li>
+<li><strong>Uma pessoa floodando vários canais.</strong> Se a mesma conta espalha imagens por vários canais distintos em poucos segundos, é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.</li>
+<li><strong>Enxame de contas novas.</strong> Se várias contas recém-chegadas começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Detalhe</p>
-<p>A idade da conta no caso do enxame conta a partir de quando o membro entrou no servidor, não da data de criação no Discord.</p>
-</div>
 <h3 id="aprendizado-continuo">Aprendizado contínuo<a class="headerlink" href="#aprendizado-continuo" title="Permanent link">¶</a></h3>
 <p>Quando aparece uma arte de golpe nova que o bot ainda não conhece, ele tenta aprender com ela sem travar a resposta ao usuário.</p>
-<p>Em segundo plano, o bot lê o texto da imagem (OCR) e procura palavras típicas de golpe: crypto, "claim", "airdrop", "promo code", "withdrawal success", "MrBeast", "Elon" e outras. Para não errar, ele só considera golpe quando o texto bate em pelo menos 2 categorias diferentes.</p>
+<p>Em segundo plano, o bot lê o texto da imagem (OCR) e procura sinais típicos de golpe. Para não errar, ele só considera golpe quando vários sinais aparecem juntos.</p>
 <p>Ao reconhecer o padrão, ele memoriza a arte para sempre. A primeira mensagem com uma arte nova pode escapar, mas na próxima vez o bot barra na hora.</p>
 <div class="admonition note">
 <p class="admonition-title">Importante</p>
@@ -2216,7 +2212,7 @@
 <p>Assim que qualquer camada confirma o golpe, o bot, em sequência:</p>
 <ol>
 <li><strong>Apaga</strong> a mensagem.</li>
-<li><strong>Marca o autor como golpista por 5 minutos</strong>, para apagar tudo que ele postar nesse intervalo.</li>
+<li><strong>Marca o autor como golpista por alguns minutos</strong>, para apagar tudo que ele postar nesse intervalo.</li>
 <li><strong>Aplica a punição</strong> configurada: advertir, silenciar, expulsar ou banir.</li>
 <li><strong>Avisa o canal de moderação</strong>: qual módulo disparou, quem foi punido, qual ação e o motivo.</li>
 <li><strong>Limpa o rastro</strong>: varre os canais e apaga tudo que aquele usuário postou nos últimos 10 minutos.</li>
@@ -2243,7 +2239,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Limites finos</p>
-<p>As regras de velocidade (flood e enxame) fazem parte do Anti-raid, mas seus números exatos são ajustados pela equipe Delfus por servidor. Os padrões: 3 canais em 10s para flood de um usuário; 5 contas com menos de 24h para enxame; slowmode de 30s no bloqueio brando.</p>
+<p>As regras de velocidade (flood e enxame) fazem parte do Anti-raid, e seus números são ajustados pela equipe Delfus por servidor. Não publicamos os limites: quem sabe onde o gatilho dispara posta logo abaixo dele. Se o seu servidor precisa de outro ajuste, fale com a gente no servidor de suporte.</p>
 </div>
 <h2 id="exemplos">Exemplos<a class="headerlink" href="#exemplos" title="Permanent link">¶</a></h2>
 <div class="admonition example">
@@ -2301,7 +2297,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="8 de agosto de 2026 05:42:06 UTC"><span class="timeago" datetime="2026-08-08T05:42:06+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="8 de agosto de 2026 05:42:06 UTC">2026-08-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="9 de outubro de 2026 13:24:27 UTC"><span class="timeago" datetime="2026-10-09T13:24:27+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="9 de outubro de 2026 13:24:27 UTC">2026-10-09</span>
   </span>
 
     

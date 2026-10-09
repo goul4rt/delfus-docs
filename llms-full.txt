@@ -489,7 +489,7 @@ Quando alguém posta uma mensagem com imagem num servidor com o Anti-raid ligado
 
 São três:
 
-- **Reincidência.** Ao punir alguém, o bot marca a pessoa como golpista por 5 minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.
+- **Reincidência.** Ao punir alguém, o bot marca a pessoa como golpista por alguns minutos. Nesse tempo, tudo que ela postar é apagado na hora, sem reanálise. Evita que ela continue espalhando durante a punição.
 - **Velocidade.** Se a mesma pessoa joga imagens em vários canais em poucos segundos, ou se um monte de contas novas posta junto, o bot trata como ataque (detalhes abaixo).
 - **Imagem conhecida.** A camada principal. O bot calcula uma impressão digital visual da imagem e compara com uma base de golpes conhecidos. Se bater, é ataque.
 
@@ -498,19 +498,16 @@ São três:
 
 ### Velocidade: flood e enxame
 
-Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta (padrão: 10 segundos) e reage a dois cenários:
+Com a checagem de velocidade ligada, o bot mede o ritmo de envio numa janela curta e reage a dois cenários:
 
-- **Uma pessoa floodando vários canais.** Se a mesma conta espalha imagens por vários canais distintos de uma vez (padrão: 3 canais em 10 segundos), é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.
-- **Enxame de contas novas.** Se várias contas recém-chegadas (padrão: 5 contas que entraram há menos de 24h) começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal (slowmode de 30s) e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.
-
-!!! note "Detalhe"
-    A idade da conta no caso do enxame conta a partir de quando o membro entrou no servidor, não da data de criação no Discord.
+- **Uma pessoa floodando vários canais.** Se a mesma conta espalha imagens por vários canais distintos em poucos segundos, é ataque confirmado. Aqui a punição é sempre ban, independente do que você configurou.
+- **Enxame de contas novas.** Se várias contas recém-chegadas começam a postar imagens ao mesmo tempo, o bot pisa no freio com cuidado: liga o modo lento no canal e chama a moderação. Ele nunca bane em massa nesse caso, só desacelera e pede revisão.
 
 ### Aprendizado contínuo
 
 Quando aparece uma arte de golpe nova que o bot ainda não conhece, ele tenta aprender com ela sem travar a resposta ao usuário.
 
-Em segundo plano, o bot lê o texto da imagem (OCR) e procura palavras típicas de golpe: crypto, "claim", "airdrop", "promo code", "withdrawal success", "MrBeast", "Elon" e outras. Para não errar, ele só considera golpe quando o texto bate em pelo menos 2 categorias diferentes.
+Em segundo plano, o bot lê o texto da imagem (OCR) e procura sinais típicos de golpe. Para não errar, ele só considera golpe quando vários sinais aparecem juntos.
 
 Ao reconhecer o padrão, ele memoriza a arte para sempre. A primeira mensagem com uma arte nova pode escapar, mas na próxima vez o bot barra na hora.
 
@@ -522,7 +519,7 @@ Ao reconhecer o padrão, ele memoriza a arte para sempre. A primeira mensagem co
 Assim que qualquer camada confirma o golpe, o bot, em sequência:
 
 1. **Apaga** a mensagem.
-2. **Marca o autor como golpista por 5 minutos**, para apagar tudo que ele postar nesse intervalo.
+2. **Marca o autor como golpista por alguns minutos**, para apagar tudo que ele postar nesse intervalo.
 3. **Aplica a punição** configurada: advertir, silenciar, expulsar ou banir.
 4. **Avisa o canal de moderação**: qual módulo disparou, quem foi punido, qual ação e o motivo.
 5. **Limpa o rastro**: varre os canais e apaga tudo que aquele usuário postou nos últimos 10 minutos.
@@ -552,7 +549,7 @@ Um interruptor liga ou desliga o módulo. Com ele ativo, você define:
 - **Motivo (opcional):** texto que aparece na punição e no alerta. Vazio, o bot usa um padrão.
 
 !!! note "Limites finos"
-    As regras de velocidade (flood e enxame) fazem parte do Anti-raid, mas seus números exatos são ajustados pela equipe Delfus por servidor. Os padrões: 3 canais em 10s para flood de um usuário; 5 contas com menos de 24h para enxame; slowmode de 30s no bloqueio brando.
+    As regras de velocidade (flood e enxame) fazem parte do Anti-raid, e seus números são ajustados pela equipe Delfus por servidor. Não publicamos os limites: quem sabe onde o gatilho dispara posta logo abaixo dele. Se o seu servidor precisa de outro ajuste, fale com a gente no servidor de suporte.
 
 ## Exemplos
 
