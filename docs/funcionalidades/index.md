@@ -48,7 +48,7 @@ Todos os módulos, por área — tudo configurado no painel:
 - **Segurança**: [Anti-raid](anti-raid.md), [Anti-invite](anti-invite.md), [Honeypot](honeypot.md) e [Backups](backup.md)
 - **Recepção e cargos**: [Cargos automáticos](auto-roles.md) e [Cargos por reação](reaction-roles.md)
 - **Monetização**: [Recompensas de boost](boost.md) e [Famílias](familia.md)
-- **Engajamento**: [Mensagens e embeds](mensagens.md), [Emojis](emojis.md), [Aniversários](aniversarios.md), [Correio elegante](correio.md) e [Automações de canal](automacoes.md)
+- **Engajamento**: [Mensagens e embeds](mensagens.md), [Emojis](emojis.md), [Eventos com drops](eventos-drops.md), [Aniversários](aniversarios.md), [Correio elegante](correio.md) e [Automações de canal](automacoes.md)
 - **Operação**: [Gestão de equipe](equipe.md) e [Oráculo](oraculo.md)
 - **Utilidades**: [Encurtador de links](links.md), [Download de vídeos](video.md) e [Transcrição de áudio](transcricao.md)
 
