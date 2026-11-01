@@ -118,6 +118,7 @@ nav:
           - Recompensas de boost: funcionalidades/boost.md
       - Engajamento:
           - Starboard: funcionalidades/starboard.md
+          - Eventos com drops: funcionalidades/eventos-drops.md
           - Mensagens e embeds: funcionalidades/mensagens.md
           - Emojis: funcionalidades/emojis.md
           - Aniversários: funcionalidades/aniversarios.md
