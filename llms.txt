@@ -42,6 +42,7 @@ Suporte (Discord): https://discord.gg/mTjZg95UJV
 ### Engajamento
 
 - [Starboard](https://docs.delfus.app/funcionalidades/starboard/): mural de mensagens em destaque por reação
+- [Eventos com drops](https://docs.delfus.app/funcionalidades/eventos-drops/): drops no chat que premiam com cargo e pontos, com gatilhos, fórum e antiabuso
 - [Mensagens e embeds](https://docs.delfus.app/funcionalidades/mensagens/): embeds e mensagens customizadas com variáveis
 - [Emojis](https://docs.delfus.app/funcionalidades/emojis/): gestão e estatísticas de emojis do servidor
 - [Aniversários](https://docs.delfus.app/funcionalidades/aniversarios/): celebração automática de aniversário dos membros

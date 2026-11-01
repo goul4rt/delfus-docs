@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://docs.delfus.app/funcionalidades/mensagens/">
       
       
-        <link rel="prev" href="../starboard/">
+        <link rel="prev" href="../eventos-drops/">
       
       
         <link rel="next" href="../emojis/">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
   
@@ -30,10 +30,10 @@
   
 
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -1198,6 +1198,34 @@
     
   
     Starboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eventos-drops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eventos com drops
   
 
     
@@ -2573,7 +2601,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé">
         
           
-          <a href="../starboard/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Starboard">
+          <a href="../eventos-drops/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Eventos com drops">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -2583,7 +2611,7 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Starboard
+                Eventos com drops
               </div>
             </div>
           </a>
@@ -2661,10 +2689,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
@@ -2677,10 +2705,15 @@
 <script id="init-glightbox">document.querySelectorAll('.glightbox').forEach(function(element) {
     try {
         var img = element.querySelector('img');
-        if (img && img.src) {
-            element.setAttribute('href', img.src);
+        if (img) {
+            const imageSrc = img.dataset.src || img.src;
+            if (imageSrc) {
+                element.setAttribute('href', imageSrc);
+            } else {
+                console.log('No img element with src or data-src attribute found');
+            }
         } else {
-            console.log('No img element with src attribute found');
+            console.log('No img element found');
         }
     } catch (error) {
         console.log('Error:', error);
