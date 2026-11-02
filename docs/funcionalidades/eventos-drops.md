@@ -8,6 +8,8 @@ Faça o chat do seu servidor Discord ficar de olho. Num evento com drops, o Delf
 
 Tudo é configurado no [Dashboard](https://admin.delfus.app/dashboard/events/premiados), no menu **Eventos**.
 
+![Lista de eventos com prêmios no painel do Delfus](../assets/dashboard/eventos-drops-painel-lista.webp){ .dx-shot width="1220" height="400" fetchpriority=high }
+
 ## Como funciona
 
 Um **drop** é uma mensagem (um embed com título, descrição, cor e imagem) que o bot solta no chat. Cada drop tem uma **mecânica**: a galera clica num botão, digita uma palavra, escolhe uma opção ou responde um quiz. O resultado cai em um de três:
@@ -22,6 +24,10 @@ Regras que valem pra todo drop:
 - O resultado aparece **só pra quem clicou**, numa mensagem colorida que só a pessoa vê.
 - O embed mostra "N de M vagas" e o tempo restante ao vivo.
 - O drop fecha quando o tempo acaba ou as vagas enchem. Aí o embed fica cinza e lista os ganhadores.
+
+![Drop no Discord com o contador 4 de 5 vagas e a resposta que só quem clicou vê](../assets/dashboard/eventos-drops-discord-drop.webp){ .dx-shot width="600" height="357" loading=lazy style="max-width:600px" }
+
+![Drop encerrado listando os ganhadores](../assets/dashboard/eventos-drops-discord-encerrado.webp){ .dx-shot width="480" height="222" loading=lazy style="max-width:480px" }
 
 !!! example "Exemplo"
     O Delfus solta um drop "Uma abóbora apareceu!" no `#geral` com 2 vagas e 5 minutos. A primeira pessoa clica e tira doce: ganha o cargo "Caçador de Doces" e 10 pontos. A segunda clica e cai em travessura. Com as vagas cheias, o embed fica cinza com a lista dos ganhadores.
@@ -39,13 +45,15 @@ Passo a passo, do zero até o primeiro drop caindo.
 
 ### 2. Crie o evento
 
-1. Abra o menu **Eventos** no [painel](https://admin.delfus.app/dashboard/events/premiados) e clique em **Novo evento**.
+1. Abra o menu **Eventos** no [painel](https://admin.delfus.app/dashboard/events/premiados) e clique em **Criar Evento**.
 2. Escolha o tipo **Drops no chat**. (O outro tipo é o de Voz/música.)
 3. Escolha o ponto de partida:
     - **Modelo Halloween**: já vem com drops prontos.
     - **Em branco**: você monta tudo.
     - **Duplicar evento existente**: reaproveita a configuração de outro evento.
 4. Defina o **nome**, o **período** (início e fim, com fuso horário), o **cargo de recompensa** e o **canal da staff**.
+
+![Janela Criar Evento com o tipo Drops no chat](../assets/dashboard/eventos-drops-painel-criar.webp){ .dx-shot width="570" height="746" loading=lazy style="max-width:570px" }
 
 ### 3. Monte os drops
 
@@ -62,6 +70,8 @@ Na aba **Drops**, crie cada drop com:
 - **Textos** de vitória, travessura, vazio e "chegou atrasado", mais o **rótulo do botão**.
 
 Dá pra reordenar, duplicar e remover drops. Comece com uns 3 a 5 drops de raridades diferentes.
+
+![Editor de drops com a lista, o formulário e a prévia do Discord](../assets/dashboard/eventos-drops-painel-editor.webp){ .dx-shot width="1220" height="680" loading=lazy }
 
 ### 4. Defina quando os drops caem
 
@@ -110,6 +120,8 @@ Nos canais escolhidos, quando há **X mensagens numa janela de tempo**, existe *
 
 Escolha **data e hora** (no fuso do evento), o **drop** e o **canal**. Ótimo para abrir o evento com estardalhaço ou marcar um drop especial no fim de semana.
 
+![Aba Gatilhos com chat ativo e horários fixos](../assets/dashboard/eventos-drops-painel-gatilhos.webp){ .dx-shot width="1220" height="680" loading=lazy }
+
 ## Fórum
 
 A aba **Fórum** premia posts de fórum que geram conversa. Quando um post atinge **N respostas de M pessoas diferentes**, o autor ganha o cargo e pontos. Você configura:
@@ -151,11 +163,15 @@ Para a staff:
 
 A aba **Acompanhamento** mostra o evento em andamento: participantes, doces, travessuras, ranking das famílias e os últimos ganhadores.
 
+![Aba Acompanhamento com participantes, doces, travessuras e desempenho por drop](../assets/dashboard/eventos-drops-painel-acompanhamento.webp){ .dx-shot width="1220" height="680" loading=lazy }
+
 No menu da página você ainda tem **Exportar JSON** e **Importar JSON**. Use para guardar a configuração e reaproveitar em outros eventos (Natal, aniversário do servidor etc.).
 
 ## Drop permanente
 
 Recurso avançado, hoje montado pela equipe do Delfus. É um **botão fixo num canal** que vale até o fim do evento, com **uma tentativa por pessoa** e chance de ganhar o cargo. Quem não ganha é convidado a acompanhar os drops que caem no chat. Quer um no seu servidor? Fale com a gente no [servidor de suporte](https://discord.gg/mTjZg95UJV).
+
+![Drop permanente A Abóbora Encantada com chance de 1 em 5](../assets/dashboard/eventos-drops-discord-permanente.webp){ .dx-shot width="600" height="304" loading=lazy style="max-width:600px" }
 
 ## Dicas
 
