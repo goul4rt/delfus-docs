@@ -118,7 +118,7 @@
         "url": "https://docs.delfus.app/funcionalidades/eventos-drops/",
         "image": "https://docs.delfus.app/assets/og/funcionalidades-eventos-drops.jpg",
         "inLanguage": "pt-BR",
-        "dateModified": "2026-11-01",
+        "dateModified": "2026-11-02",
         "isPartOf": { "@id": "https://docs.delfus.app/#website" },
         "author": { "@id": "https://docs.delfus.app/#organization" },
         "publisher": { "@id": "https://docs.delfus.app/#organization" }
@@ -2507,6 +2507,7 @@
 <h1 id="eventos-com-drops">Eventos com drops<a class="headerlink" href="#eventos-com-drops" title="Permanent link">¶</a></h1>
 <p>Faça o chat do seu servidor Discord ficar de olho. Num evento com drops, o Delfus solta mensagens-surpresa nos canais: quem for rápido (ou der sorte) leva um cargo exclusivo e pontos pro ranking das famílias. Dá pra rodar um evento de Halloween, de Natal, de aniversário do servidor ou qualquer data que você quiser.</p>
 <p>Tudo é configurado no <a href="https://admin.delfus.app/dashboard/events/premiados">Dashboard</a>, no menu <strong>Eventos</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lista de eventos com prêmios no painel do Delfus" class="dx-shot" fetchpriority="high" height="400" src="../../assets/dashboard/eventos-drops-painel-lista.webp" width="1220"></a></p>
 <h2 id="como-funciona">Como funciona<a class="headerlink" href="#como-funciona" title="Permanent link">¶</a></h2>
 <p>Um <strong>drop</strong> é uma mensagem (um embed com título, descrição, cor e imagem) que o bot solta no chat. Cada drop tem uma <strong>mecânica</strong>: a galera clica num botão, digita uma palavra, escolhe uma opção ou responde um quiz. O resultado cai em um de três:</p>
 <ul>
@@ -2521,6 +2522,8 @@
 <li>O embed mostra "N de M vagas" e o tempo restante ao vivo.</li>
 <li>O drop fecha quando o tempo acaba ou as vagas enchem. Aí o embed fica cinza e lista os ganhadores.</li>
 </ul>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Drop no Discord com o contador 4 de 5 vagas e a resposta que só quem clicou vê" class="dx-shot" height="357" loading="lazy" src="../../assets/dashboard/eventos-drops-discord-drop.webp" style="max-width:600px" width="600"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Drop encerrado listando os ganhadores" class="dx-shot" height="222" loading="lazy" src="../../assets/dashboard/eventos-drops-discord-encerrado.webp" style="max-width:480px" width="480"></a></p>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
 <p>O Delfus solta um drop "Uma abóbora apareceu!" no <code>#geral</code> com 2 vagas e 5 minutos. A primeira pessoa clica e tira doce: ganha o cargo "Caçador de Doces" e 10 pontos. A segunda clica e cai em travessura. Com as vagas cheias, o embed fica cinza com a lista dos ganhadores.</p>
@@ -2536,7 +2539,7 @@
 </ol>
 <h3 id="2-crie-o-evento">2. Crie o evento<a class="headerlink" href="#2-crie-o-evento" title="Permanent link">¶</a></h3>
 <ol>
-<li>Abra o menu <strong>Eventos</strong> no <a href="https://admin.delfus.app/dashboard/events/premiados">painel</a> e clique em <strong>Novo evento</strong>.</li>
+<li>Abra o menu <strong>Eventos</strong> no <a href="https://admin.delfus.app/dashboard/events/premiados">painel</a> e clique em <strong>Criar Evento</strong>.</li>
 <li>Escolha o tipo <strong>Drops no chat</strong>. (O outro tipo é o de Voz/música.)</li>
 <li>Escolha o ponto de partida:<ul>
 <li><strong>Modelo Halloween</strong>: já vem com drops prontos.</li>
@@ -2546,6 +2549,7 @@
 </li>
 <li>Defina o <strong>nome</strong>, o <strong>período</strong> (início e fim, com fuso horário), o <strong>cargo de recompensa</strong> e o <strong>canal da staff</strong>.</li>
 </ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Janela Criar Evento com o tipo Drops no chat" class="dx-shot" height="746" loading="lazy" src="../../assets/dashboard/eventos-drops-painel-criar.webp" style="max-width:570px" width="570"></a></p>
 <h3 id="3-monte-os-drops">3. Monte os drops<a class="headerlink" href="#3-monte-os-drops" title="Permanent link">¶</a></h3>
 <p>Na aba <strong>Drops</strong>, crie cada drop com:</p>
 <ul>
@@ -2560,6 +2564,7 @@
 <li><strong>Textos</strong> de vitória, travessura, vazio e "chegou atrasado", mais o <strong>rótulo do botão</strong>.</li>
 </ul>
 <p>Dá pra reordenar, duplicar e remover drops. Comece com uns 3 a 5 drops de raridades diferentes.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Editor de drops com a lista, o formulário e a prévia do Discord" class="dx-shot" height="680" loading="lazy" src="../../assets/dashboard/eventos-drops-painel-editor.webp" width="1220"></a></p>
 <h3 id="4-defina-quando-os-drops-caem">4. Defina quando os drops caem<a class="headerlink" href="#4-defina-quando-os-drops-caem" title="Permanent link">¶</a></h3>
 <p>Na aba <strong>Gatilhos</strong>, escolha o <strong>chat ativo</strong> (o drop cai quando o canal está movimentado), os <strong>horários fixos</strong>, ou os dois. Detalhes na seção <a href="#gatilhos">Gatilhos</a>.</p>
 <h3 id="5-ajuste-as-regras">5. Ajuste as regras<a class="headerlink" href="#5-ajuste-as-regras" title="Permanent link">¶</a></h3>
@@ -2625,6 +2630,7 @@
 </ul>
 <h3 id="horarios-fixos">Horários fixos<a class="headerlink" href="#horarios-fixos" title="Permanent link">¶</a></h3>
 <p>Escolha <strong>data e hora</strong> (no fuso do evento), o <strong>drop</strong> e o <strong>canal</strong>. Ótimo para abrir o evento com estardalhaço ou marcar um drop especial no fim de semana.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Aba Gatilhos com chat ativo e horários fixos" class="dx-shot" height="680" loading="lazy" src="../../assets/dashboard/eventos-drops-painel-gatilhos.webp" width="1220"></a></p>
 <h2 id="forum">Fórum<a class="headerlink" href="#forum" title="Permanent link">¶</a></h2>
 <p>A aba <strong>Fórum</strong> premia posts de fórum que geram conversa. Quando um post atinge <strong>N respostas de M pessoas diferentes</strong>, o autor ganha o cargo e pontos. Você configura:</p>
 <ul>
@@ -2681,9 +2687,11 @@
 </table>
 <h2 id="acompanhamento">Acompanhamento<a class="headerlink" href="#acompanhamento" title="Permanent link">¶</a></h2>
 <p>A aba <strong>Acompanhamento</strong> mostra o evento em andamento: participantes, doces, travessuras, ranking das famílias e os últimos ganhadores.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Aba Acompanhamento com participantes, doces, travessuras e desempenho por drop" class="dx-shot" height="680" loading="lazy" src="../../assets/dashboard/eventos-drops-painel-acompanhamento.webp" width="1220"></a></p>
 <p>No menu da página você ainda tem <strong>Exportar JSON</strong> e <strong>Importar JSON</strong>. Use para guardar a configuração e reaproveitar em outros eventos (Natal, aniversário do servidor etc.).</p>
 <h2 id="drop-permanente">Drop permanente<a class="headerlink" href="#drop-permanente" title="Permanent link">¶</a></h2>
 <p>Recurso avançado, hoje montado pela equipe do Delfus. É um <strong>botão fixo num canal</strong> que vale até o fim do evento, com <strong>uma tentativa por pessoa</strong> e chance de ganhar o cargo. Quem não ganha é convidado a acompanhar os drops que caem no chat. Quer um no seu servidor? Fale com a gente no <a href="https://discord.gg/mTjZg95UJV">servidor de suporte</a>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Drop permanente A Abóbora Encantada com chance de 1 em 5" class="dx-shot" height="304" loading="lazy" src="../../assets/dashboard/eventos-drops-discord-permanente.webp" style="max-width:600px" width="600"></a></p>
 <h2 id="dicas">Dicas<a class="headerlink" href="#dicas" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Para começar bem</p>
@@ -2729,7 +2737,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="1 de novembro de 2026 21:49:16 UTC"><span class="timeago" datetime="2026-11-01T21:49:16+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="1 de novembro de 2026 21:49:16 UTC">2026-11-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2 de novembro de 2026 02:37:01 UTC"><span class="timeago" datetime="2026-11-02T02:37:01+00:00" locale="pt_BR"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2 de novembro de 2026 02:37:01 UTC">2026-11-02</span>
   </span>
 
     
