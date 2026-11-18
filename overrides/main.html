@@ -44,11 +44,17 @@
     {% elif slug in ["anti-raid", "anti-invite", "honeypot", "oraculo", "moderacao", "links", "backup"] %}{% set fig = "seguranca" %}
     {% elif slug in ["analise", "equipe"] %}{% set fig = "metricas" %}
     {% else %}{% set fig = "tutorial" %}{% endif %}
-    {% set card = {"component": {"type": 17, "accent_color": 7097033, "components": [
-      {"type": 9, "components": [
-        {"type": 10, "content": "### [" ~ card_title ~ "](" ~ page.canonical_url ~ ")\n" ~ og_description},
-        {"type": 10, "content": "-# Documentação do Delfus"}
-      ], "accessory": {"type": 11, "media": {"url": "https://delfus.app/fig/" ~ fig ~ ".webp"}}},
+    {% set texto = [
+      {"type": 10, "content": "### [" ~ card_title ~ "](" ~ page.canonical_url ~ ")\n" ~ og_description},
+      {"type": 10, "content": "-# Documentação do Delfus"}
+    ] %}
+    {# Home: a faixa animada da landing, igual às páginas do delfus.app. Páginas internas: figurinha ao lado. #}
+    {% if page.is_homepage %}
+      {% set topo = texto + [{"type": 12, "items": [{"media": {"url": "https://delfus.app/cartao-banner.webp"}, "description": "Resumo diário, retenção, alerta de staff, tickets e anti-golpe"}]}] %}
+    {% else %}
+      {% set topo = [{"type": 9, "components": texto, "accessory": {"type": 11, "media": {"url": "https://delfus.app/fig/" ~ fig ~ ".webp"}}}] %}
+    {% endif %}
+    {% set card = {"component": {"type": 17, "accent_color": 7097033, "components": topo + [
       {"type": 14, "divider": true, "spacing": 1},
       {"type": 1, "components": [
         {"type": 2, "style": 5, "label": "Adicionar", "url": "https://discord.com/oauth2/authorize?client_id=1401773694711369801&scope=bot%20applications.commands&permissions=0"},
