@@ -33,12 +33,16 @@ O que não cabe no Discord fica no painel web, em **Ajustes no painel**.
 
 Em [admin.delfus.app](https://admin.delfus.app) → **Voz dinâmica** você tem tudo do `/voz setup` e mais:
 
+![Canal de entrada, categoria, nome, vagas e canal do procurando membros no painel do Delfus](../assets/dashboard/voz-dinamica.webp){ .dx-shot width="1200" height="575" loading=lazy }
+
 - **Nome dos canais**: um modelo com variáveis. `{{user}}` é o nome do membro, `{{n}}` é um número (Squad 1, Squad 2...) e `{{jogo}}` é o que ele está jogando. Vazio, o nome fica "Canal de *nome*".
 - **Vagas**: quantas pessoas cabem no canal novo. 0 é sem limite.
 - **Categoria**: onde os canais novos aparecem. Por padrão, na mesma categoria do canal de entrada.
 - **Outros hubs**: até 5 canais de entrada a mais, cada um com categoria, nome e vagas próprios.
 - **Quem pode usar cada ação**: criar canal, renomear, trancar, convidar e as outras podem exigir VIP ativo, um VIP específico, impulsionar o servidor, usar a tag do servidor no perfil ou ter um cargo.
 - **Mensagem do painel**: troque o texto do painel do canal pelo seu, no mesmo editor das outras mensagens do Delfus. Os menus continuam embaixo.
+
+![Dois hubs extras, Duo e Squad, cada um com categoria, nome e vagas](../assets/dashboard/voz-dinamica-hubs.webp){ .dx-shot width="1200" height="836" loading=lazy }
 
 !!! example "Exemplo: um hub para cada tamanho de grupo"
     - **➕ Duo**: 2 vagas, nome `Duo de {{user}}`.
@@ -48,6 +52,8 @@ Em [admin.delfus.app](https://admin.delfus.app) → **Voz dinâmica** você tem 
 
 !!! example "Exemplo: criar canal só para quem apoia o servidor"
     Em **Criar canal**, exija **impulsionar o servidor** ou **VIP ativo**. Quem não cumpre e entra no ➕ recebe uma mensagem dizendo o que falta, e o Delfus tira a pessoa do canal de entrada.
+
+    ![Criar canal com requisito: VIP ativo ou impulsionando o servidor](../assets/dashboard/voz-dinamica-regras.webp){ .dx-shot width="1200" height="535" loading=lazy }
 
 ## O painel do canal
 
