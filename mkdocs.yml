@@ -125,6 +125,7 @@ nav:
           - Famílias: funcionalidades/familia.md
           - Correio: funcionalidades/correio.md
           - Automações de canal: funcionalidades/automacoes.md
+          - Voz dinâmica: funcionalidades/voz-dinamica.md
       - Operação:
           - Gestão de equipe: funcionalidades/equipe.md
       - Análise:
