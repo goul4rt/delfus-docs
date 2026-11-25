@@ -8,6 +8,10 @@ Cada membro entra num canal **➕ Criar canal** e o Delfus cria na hora um canal
 
 Acaba a lista de "Sala 1, Sala 2, Sala 3" vazias e a equipe não precisa ficar arrumando canal de voz.
 
+![Painel do canal com os menus Configurações do canal e Quem entra no canal](../assets/voz/painel-canal.webp){ .dx-shot width="432" style="max-width:432px" height="308" fetchpriority=high }
+
+*O painel que o dono recebe no chat do canal novo.*
+
 ## Configurar em 1 minuto
 
 1. Num canal de texto qualquer, use **`/voz setup`**. Precisa de **Gerenciar servidor**.
@@ -15,6 +19,8 @@ Acaba a lista de "Sala 1, Sala 2, Sala 3" vazias e a equipe não precisa ficar a
 3. Entre em **➕ Criar canal**. Você vai para o seu canal novo, e o painel de controle aparece no chat dele.
 
 Pronto. O resto é opcional.
+
+![Tela do /voz setup ligada, com o canal de entrada, permissões e ações](../assets/voz/voz-setup.webp){ .dx-shot width="690" style="max-width:690px" height="692" loading=lazy }
 
 !!! tip "Já tem um canal de voz que quer usar como entrada?"
     Na mesma tela do `/voz setup`, escolha o canal no menu **Ou use um canal de voz que já existe**. Ele vira o canal de entrada (o "hub") e os canais novos nascem na categoria dele.
@@ -61,6 +67,8 @@ Quando o canal nasce, o Delfus posta no chat dele um painel com dois menus. Só 
 
 **⚙️ Configurações do canal**
 
+![Menu Configurações do canal aberto](../assets/voz/menu-configuracoes.webp){ .dx-shot width="314" style="max-width:314px" height="360" loading=lazy }
+
 | Opção | O que faz |
 | --- | --- |
 | ✏️ Renomear | Muda o nome do canal. |
@@ -70,7 +78,11 @@ Quando o canal nasce, o Delfus posta no chat dele um painel com dois menus. Só 
 | 🌎 Região | O servidor de voz mais perto de vocês (Brasil, EUA, Europa...). Ajuda quando a voz está atrasada. |
 | 📣 Procurando membros | Posta no canal escolhido pela equipe que o seu canal procura gente, com um botão **Entrar no canal**. |
 
+![Aviso de procurando membros com o botão Entrar no canal](../assets/voz/procurando-membros.webp){ .dx-shot width="600" style="max-width:600px" height="152" loading=lazy }
+
 **🛡️ Quem entra no canal**
+
+![Menu Quem entra no canal aberto](../assets/voz/menu-quem-entra.webp){ .dx-shot width="314" style="max-width:314px" height="432" loading=lazy }
 
 | Opção | O que faz |
 | --- | --- |
@@ -105,6 +117,8 @@ Tudo do painel também funciona por comando, de qualquer canal do servidor. Voc�
 | `/voz assumir` | Assume o canal quando o dono já saiu. |
 
 Se o servidor ainda não ligou a voz dinâmica, o `/voz` avisa. Quem pode configurar vê o botão **Ativar agora**. Os outros membros recebem uma dica para pedir à equipe.
+
+![Aviso de que a voz dinâmica não está ligada, com o botão Ativar agora](../assets/voz/convite-ativar.webp){ .dx-shot width="690" style="max-width:690px" height="206" loading=lazy }
 
 ## Limites
 
