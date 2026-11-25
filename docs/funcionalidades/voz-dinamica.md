@@ -41,14 +41,14 @@ Em [admin.delfus.app](https://admin.delfus.app) → **Voz dinâmica** você tem 
 
 ![Canal de entrada, categoria, nome, vagas e canal do procurando membros no painel do Delfus](../assets/dashboard/voz-dinamica.webp){ .dx-shot width="1200" height="575" loading=lazy }
 
-- **Nome dos canais**: um modelo com variáveis. `{{user}}` é o nome do membro, `{{n}}` é um número (Squad 1, Squad 2...) e `{{jogo}}` é o que ele está jogando. Vazio, o nome fica "Canal de *nome*".
+- **Nome dos canais**: um modelo com variáveis. `{{user}}` é o nome do membro, `{{n}}` é um número (Squad 1, Squad 2...) e `{{jogo}}` é o jogo que a pessoa tem aberto (sem jogo, entra o nome dela). Vazio, o nome fica "Canal de *nome*".
 - **Vagas**: quantas pessoas cabem no canal novo. 0 é sem limite.
 - **Categoria**: onde os canais novos aparecem. Por padrão, na mesma categoria do canal de entrada.
 - **Outros hubs**: até 5 canais de entrada a mais, cada um com categoria, nome e vagas próprios.
 - **Quem pode usar cada ação**: criar canal, renomear, trancar, convidar e as outras podem exigir VIP ativo, um VIP específico, impulsionar o servidor, usar a tag do servidor no perfil ou ter um cargo.
 - **Mensagem do painel**: troque o texto do painel do canal pelo seu, no mesmo editor das outras mensagens do Delfus. Os menus continuam embaixo.
 
-![Dois hubs extras, Duo e Squad, cada um com categoria, nome e vagas](../assets/dashboard/voz-dinamica-hubs.webp){ .dx-shot width="1200" height="836" loading=lazy }
+![Dois hubs extras, Duo e Squad, cada um com categoria, nome e vagas](../assets/dashboard/voz-dinamica-hubs.webp){ .dx-shot width="1200" height="934" loading=lazy }
 
 !!! example "Exemplo: um hub para cada tamanho de grupo"
     - **➕ Duo**: 2 vagas, nome `Duo de {{user}}`.
@@ -157,7 +157,7 @@ O `/voz setup` confere isso e mostra o que falta, se faltar.
 ??? question "Tranquei o canal e eu mesmo não consigo voltar"
     Não acontece com o dono: o dono sempre entra no próprio canal. Se você saiu e outra pessoa assumiu o canal, peça para ela liberar você com **Liberar alguém**.
 
-??? question "A ação \"Procurando membros\" não aparece"
+??? question "A ação “Procurando membros” não aparece"
     Ela só aparece quando a equipe escolhe o canal de texto onde os avisos vão. Faça isso no `/voz setup` ou no painel web.
 
 ??? question "Uma ação sumiu do menu"
